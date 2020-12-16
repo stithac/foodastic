@@ -1,6 +1,6 @@
 # Group Name: RAIJ _(RAGE)_
 
-# Project Descrition
+# Project Description
 
 An app to help decide what’s for lunch/dinner!!!
 
