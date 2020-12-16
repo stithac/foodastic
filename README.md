@@ -61,4 +61,4 @@ Ikra, Rabia, Ashley, Jenner working on everything together and then split up in 
 
   # Landing Page Mockup
 
-  ![demo](assets/DineIn-DineOut.png)
+  ![demo](assets/DineIn-DineOut.jpg)
