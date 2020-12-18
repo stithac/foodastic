@@ -61,4 +61,4 @@ Ikra, Rabia, Ashley, Jenner working on everything together and then split up in 
 
   # Landing Page Mockup
 
-  ![demo](assets/2nd mockup.png)
+  ![demo](assets/2nd%20mockup.png)
