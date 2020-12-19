@@ -8,6 +8,13 @@ An app to help decide what’s for lunch/dinner!!!
 - You want to eat out? We got restaurants!
 - You don’t know? Tell us what you’re in the mood for and we’ll give you both!
 
+# Battle Rhythm
+- Daily Check-in via Slack: 9AM
+  - What we'ved worked on? Issues?
+- Daily push deadline: 10PM
+  - On a rotational basis (Rabia - Ashley - Ikra Jenner): Each team member reaches out to slack channel around 930 to remind team to push changes to repo
+  - Team member merges all changes at 10PM
+
 # Starting Ideas
 
 Dine In/Dine Out
