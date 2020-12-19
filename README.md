@@ -1,5 +1,12 @@
 # Group Name: RAIJ _(RAGE)_
 
+# Project Battle Rhythm
+- Team members check-in daily via slack: 9AM
+  - What we've worked on? Issues?
+- All team members complete a daily push to the main branch by: 10PM 
+  - On a rotational basis (Rabia - Ashley - Ikra - Jenner) send reminder to team at 930 to push to main branch
+  - Team member merges all changes by 10PM
+
 # Project Description
 
 An app to help decide what’s for lunch/dinner!!!
