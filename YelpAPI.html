@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+        integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <title>Yelp API Test</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="myData">
+                    Searching using term="Starbucks" in the San Francisco area which are open now.
+                    <br /><br />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+        integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+    <script>
+        var mainContainer = document.getElementById("myData");
+
+        var settings = {
+            "url": "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?open_now=true&term=Starbucks&latitude=37.786882&longitude=-122.399972",
+            "method": "GET",
+            "timeout": 0,
+            "headers": {
+                "Authorization": "Bearer 3O5kyW6F4g5mDywsBmxsp0roWlT-dciawIInefnOItXxFkZFSR3rvRenorOaVfIEtnNRdlOHqVEXwHJQat0PkPa-YBt9EIf_NTTOo0S1AmHCbk3ALK0mPPXCCSLeX3Yx"
+            },
+        };
+
+        $.ajax(settings).done(function (response) {
+            console.log(response, response.businesses.length);
+
+            for (var i = 0; i < response.businesses.length; i++) {
+                var div = document.createElement("div");
+                div.innerHTML = 'Name: ' + response.businesses[i].name + '<br />'
+                    + 'Phone: ' + response.businesses[i].display_phone
+                    + '<br />' + 'Rating: ' + response.businesses[i].rating
+                    + '<br />' + 'Reviews: ' + response.businesses[i].review_count
+                    + '<br />' + 'Price: ' + response.businesses[i].price
+                    + '<br /><br />';
+                mainContainer.appendChild(div);
+            }
+        });
+    </script>
+</body>
+
+</html>
