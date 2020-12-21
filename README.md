@@ -1,6 +1,7 @@
 # group7_project
 
 RAIJ *RAGE*
+
 Dine In/Dine Out
 -	Dine In and Dine Out:
 	- Cuisine
