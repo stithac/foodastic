@@ -39,6 +39,7 @@ function getResults(){
                             // console.log(time + " id: " + response.id);
                             // $("time[class == 'response.id']").text(response.readyInMinutes);
                             recipes.push(response);
+                            console.log(response);
                         });
                         console.log(recipes);
 
@@ -59,15 +60,14 @@ function populateResults(response){
 
             $("#pic"+ j).attr("src", response.results[i].image);
             console.log($("#pic"+j));
-            console.log(j);
 
+            
 
             $("#title" + j).text(response.results[i].title);
+            $("#blurb" + j).text(response.results[i].summary);
+            console.log(response.results[i]);
             j++;
-
         }
-
-
 }
 
 $(searchBtn).on("click",function(event){
