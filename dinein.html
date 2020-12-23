@@ -74,27 +74,27 @@
             <!-- Check Selections -->
             <p>MAIN INGREDIENT</p>
             <label class="checkbox">
-              <input type="checkbox">
+              <input type="checkbox" id="vegetables">
               Vegetables / Plant-based
             </label><br>
             <label class="checkbox">
-              <input type="checkbox">
+              <input type="checkbox" id="meat">
               Meat
             </label><br>
             <label class="checkbox">
-              <input type="checkbox">
+              <input type="checkbox" id="seafood">
               Seafood
             </label><br>
             <label class="checkbox">
-              <input type="checkbox">
+              <input type="checkbox" id="poultry">
               Poultry
             </label><br>
             <label class="checkbox">
-              <input type="checkbox">
+              <input type="checkbox" id="dairy">
               Dairy
             </label><br>
             <label class="checkbox">
-              <input type="checkbox">
+              <input type="checkbox" id="bread">
               Bread
             </label><br>
             <br>
@@ -122,9 +122,9 @@
 
             <!-- Dropdown -->
             <div class="select is-rounded is-medium">
-              <select>
+              <select id="cuisines">
                 <option>BY CUISINE</option>
-                <option>BBQ/Steak</option>
+                <option id="american">BBQ/Steak</option>
                 <option>Japanese</option>
                 <option>Italian</option>
                 <option>Greek</option>
@@ -158,37 +158,45 @@
             <br>
             <br>
             <div class="buttons">
-              <button class="button is-large is-warning is-light">Search</button>
+              <button id="searchBtn" class="button is-large is-warning is-light">Search</button>
             </div>
           </div>
         </div>
         <!--Image Suggestions-->
         <div class="tile is-4 is-vertical is-parent">
-          <div class="tile is-child box">
+          <div class="tile is-child box result">
             <figure class="image is-3by3">
-              <img src="assets/spicy.jpg" height="480" ;>
+              <img id="pic1" src="https://bulma.io/images/placeholders/640x480.png">
             </figure>
-            <p>Image quick link filter "Spicy"</p>
+            <p id="title1">Blurb</p>
+            <p id="rating">Rating</p>
+            <p id="price">$$$</p>
           </div>
-          <div class="tile is-child box">
+          <div class="tile is-child box result">
             <figure class="image is-3by3">
-              <img src="https://bulma.io/images/placeholders/640x480.png">
+              <img id="pic2" src="https://bulma.io/images/placeholders/640x480.png">
             </figure>
-            <p>Image quick link filter "Comfort Food"</p>
+            <p id="title2">Blurb</p>
+            <p id="rating">Rating</p>
+            <p id="price">$$$</p>
           </div>
         </div>
         <div class="tile is-4 is-vertical is-parent">
-          <div class="tile is-child box">
+          <div class="tile is-child box result">
             <figure class="image is-3by3">
-              <img src="https://bulma.io/images/placeholders/640x480.png">
+              <img id="pic3" src="https://bulma.io/images/placeholders/640x480.png">
             </figure>
-            <p>Image quick link filter "Exotic"</p>
+            <p id="title3">Blurb</p>
+            <p id="rating">Rating</p>
+            <p id="price">$$$</p>
           </div>
-          <div class="tile is-child box">
+          <div class="tile is-child box result">
             <figure class="image is-3by3">
-              <img src="https://bulma.io/images/placeholders/640x480.png">
+              <img id="pic4" src="https://bulma.io/images/placeholders/640x480.png">
             </figure>
-            <p>Image quick link filter "Surprise Me"</p>
+            <p id="title4">Blurb</p>
+            <p id="rating">Rating</p>
+            <p id="price">$$$</p>
           </div>
         </div>
 
@@ -197,7 +205,9 @@
     </div>
   </section>
   </main>
-  <script src="app.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="./spoonacular.js"></script>
 </body>
 
 </html>
