@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DineIn | Dine Out</title>
+    <!-- Bulma CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+    <!-- NOTE: Included CSS here so you can add to test before adding to project style sheet -->
+    <style>
+        body {
+            /* background-image: url("vector-menu-sketches-different-dishes-handwriting-inscriptions-black-background-drawing-chalk-wooden-board-91568497.jpg")*/
+            background-color: #000;
+            color: #fff;
+        }
+
+        .title,
+        .subtitle {
+            display: inline;
+        }
+
+        .tile.is-parent {
+            padding: 0;
+        }
+
+        /* Sidebar styles */
+        .menu.sticky {
+            position: sticky;
+            top: 0;
+        }
+
+        .box-sidebar-tr {
+            padding: 10px;
+        }
+
+        .section-jg {
+            padding: 1rem 1rem;
+        }
+
+        .input-tr,
+        .textarea {
+            width: 80%;
+        }
+
+
+        /* image divs for ICONS */
+        .icon-box {
+            height: 250px;
+            background-color: #fdc407;
+        }
+
+        .icon-box img {
+            max-width: 100%;
+            max-height: 100%;
+            margin: auto;
+            display: block;
+        }
+
+        /* image divs for IMGs */
+        .img-box img {
+            max-width: 100%;
+            max-height: 100%;
+            margin: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* decrese space between image div columns */
+        .column {
+            padding: .25rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Page Header -->
+    <section class="section">
+        <div class="container">
+            <div class="columns is-vcentered has-background-light">
+                <div class="column is-12 col-title">
+                    <h2 class="is-size-1 title dine-out">Where to dine out?<span>
+                            <h3 class="is-size-2 subtitle">tell us more</h3>
+                        </span></h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- NOTE: FILTERS SHOWN ARE WERE PUSHED 12/27 P.M. -- I DID NOT ALTER -->
+    <!-- NOTE: Made html/css changes to side bar and elements-->
+    <!-- Sidebar Filters -->
+    <!-- TODO: FOR JENNER: FIX CSS KINKS IN SIDEBAR SPACING TO RIGHT AND TOP -->
+    <section class="section">
+        <div class="container">
+            <div class="tile is-ancestor">
+                <div class="tile is-parent is-3">
+                    <div class="menu sticky">
+                        <article class="tile is-child box" id="main-selections">
+                            <div class="content">
+                                <div class="box">
+                                    <!-- Check Selections -->
+                                    <p>SPECIALITY FOOD</p>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="chkCheese">
+                                        Cheese Shops
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="chkChocolatier">
+                                        Chocolatiers
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="chkMeat">
+                                        Meat Shops
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="chkPasta">
+                                        Pasta Shops
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="chkSeafood">
+                                        Seafoood Markets
+                                    </label><br>
+                                    <br>
+
+                                    <!-- Dropdown -->
+                                    <div class=" select is-rounded is-small is-dark">
+                                        <select>
+                                            <option value="default" disabled="true">BY CUISINE</option>
+                                            <option value="steak">BBQ/Steak</option>
+                                            <option value="Japanese">Japanese</option>
+                                            <option value="Italian">Italian</option>
+                                            <option value="Greek">Greek</option>
+                                            <option value="Southern">Southern</option>
+                                            <option value="Thai">Thai</option>
+                                            <option value="Indian">Indian</option>
+                                            <option value="Chinese">Chinese</option>
+                                            <option value="Spanish">Spanish</option>
+                                            <option value="Latin">Latin American</option>
+                                        </select>
+                                    </div>
+                                    <br>
+                                    <br>
+
+                                    <!-- Input Search -->
+                                    <div>
+                                        <p>SEARCH BY CITY</p>
+                                        <div class="field">
+                                            <div class="control">
+                                                <input class="input input-tr is-small is-primary" type="text" placeholder="City" id="cityInput">
+                                            </div>
+                                        </div>
+                                        <p>SEARCH BY ZIP CODE</p>
+                                        <div class="field">
+                                            <div class="control">
+                                                <input class="input input-tr is-small is-primary" type="text" placeholder="Zip" id="zipInput">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br>
+                                    <!-- Dropdown -->
+                                    <div class="select is-rounded is-small">
+                                        <select id="radiusOptions">
+                                            <!-- values are in meters so work with yelp API. The maximum value is 40,000 meters (25 miles)  -->
+                                            <option value="default" disabled="true">MILE RADIUS</option>
+                                            <option value="8047">5 mi</option>
+                                            <option value="16093">10 mi</option>
+                                            <option value="24140">15 mi</option>
+                                            <option value="32187">20 mi</option>
+                                            <option value="max">20+ mi</option>
+                                        </select>
+                                    </div>
+                                    <br>
+                                    <br>
+
+                                    <!-- Select Multiple 2-->
+                                    <p>PRICE</p>
+                                    <label class="checkbox">
+                                        <input type="checkbox" value="">
+                                        $
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" value="">
+                                        $$
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" value="">
+                                        $$$
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" value="">
+                                        $$$$
+                                    </label>
+                                    <br>
+                                    <br>
+                                    <div class="buttons">
+                                        <button class="button is-small is-danger is-light" id="btnSearch">Search</button>
+                                    </div>
+                                </div><!-- End of main box -->
+                            </div><!-- End of content -->
+                        </article><!-- End child tile -->
+                    </div><!-- End of menu sticky -->
+                </div><!-- End of 1st parent -->
+
+
+
+                <!-- NEW: ICON & IMAGE DUMP DIV -->
+                <!-- ************************** NOTE: THESE HIDE ON RESULTS LOAD -->
+                <!-- Main content: Icon Filters -->
+                <div class="tile is-parent is-9">
+                    <article class="tile is-child ">
+                        <div class="columns box is-multiline">
+                            <div class="column is-4">
+                                <div class="box icon-box">
+                                    <img class="is-square" src="assets/img/filter-spicy.png" alt="chili icon">
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="box icon-box">
+                                    <img class="is-square" src="assets/img/filter-savory.png" alt="savory herbs icon">
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="box icon-box">
+                                    <img class="is-square" src="assets/img/filter-onepot.png" alt="one-pot icon">
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="box icon-box">
+                                    <img class="is-square" src="assets/img/filter-special.png" alt="special day icon">
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="box icon-box">
+                                    <img class="is-square" src="assets/img/filter-surprise.png" alt="surprise me icon">
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="box icon-box">
+                                    <img class="is-square" src="assets/img/filter-healthy.png" alt="healthy icon">
+                                </div>
+                            </div>
+                            <!-- End of icon filters -->
+
+                            <!-- **********************FOR RESULTS***************-->
+                            <!-- Results Area-->
+                            <div class="column is-4">
+                                <div class="box img-box card">
+                                    <figure class="image is-4by5">
+                                        <img id="pic1" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                    </figure>
+                                    <br>
+                                    <p id="name">Name:</p>
+                                    <p id="phone">Phone: </p>
+                                    <p id="rating">Rating: </p>
+                                    <p id="reviews">Reviews</p>
+                                    <p id="price">Price</p>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="box img-box card">
+                                    <figure class="image is-4by5">
+                                        <img id="pic2" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                    </figure>
+                                    <br>
+                                    <p id="name">Name:</p>
+                                    <p id="phone">Phone: </p>
+                                    <p id="rating">Rating: </p>
+                                    <p id="reviews">Reviews</p>
+                                    <p id="price">Price</p>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="box img-box card">
+                                    <figure class="image is-4by5">
+                                        <img id="pic3" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                    </figure>
+                                    <br>
+                                    <p id="name">Name:</p>
+                                    <p id="phone">Phone: </p>
+                                    <p id="rating">Rating: </p>
+                                    <p id="reviews">Reviews</p>
+                                    <p id="price">Price</p>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="box img-box card">
+                                    <figure class="image is-4by5">
+                                        <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                    </figure>
+                                    <br>
+                                    <p id="name">Name:</p>
+                                    <p id="phone">Phone: </p>
+                                    <p id="rating">Rating: </p>
+                                    <p id="reviews">Reviews</p>
+                                    <p id="price">Price</p>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="box img-box card">
+                                    <figure class="image is-4by5">
+                                        <img id="pic5" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                    </figure>
+                                    <br>
+                                    <p id="name">Name:</p>
+                                    <p id="phone">Phone: </p>
+                                    <p id="rating">Rating: </p>
+                                    <p id="reviews">Reviews</p>
+                                    <p id="price">Price</p>
+                                </div>
+                            </div>
+
+                        </div><!-- End of columns -->
+                    </article>
+                </div><!-- End main image-icon divs-->
+            </div><!-- End of sole ancestor -->
+        </div> <!-- End of main container -->
+    </section><!-- End of filters section -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
