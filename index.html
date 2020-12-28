@@ -4,33 +4,40 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Foodational</title>
+        <title>Foodastic</title>
 
         <!-- Icons  -->
         <link rel="shortcut icon" href="" type="image/x-icon">
         <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-
-      <!-- Adobe Typekit: Sophia -->
-        <link href="https://use.typekit.net/xif0zzu.css" rel="stylesheet">
-      <!-- CSS -->
-      <link href="style.css" rel="stylesheet">
-      <!-- Bulma -->
+        
+        <!-- Google Fonts: Nerko One as Header and Montserrat as Body -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+      
+        <!-- CSS -->
+        <link href="index.css" rel="stylesheet">
+  
+        <!-- Bulma -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/>
         <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
         <script src = "https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
-
     </head>
+
+<!-- Start -->
     <body>
-
+     
     <!-- Hero and navbar -->
+    <div class="dark-wrapper">
 
-        <section class="hero is-primary is-medium">
+        <section class="hero is-fullheight is-transparent">
             <div class="hero-head">
-                <nav class="navbar">
+                <nav class="navbar" style="background-color: white">
                     <div class="container">
                         <div class="navbar-brand">
-                            <a class="navbar-item" href="project1_group7\homepage.html">
-                                <img src="Foodational Logo URL" alt="Logo">
+                            <a class="navbar-item" href="index.css">
+                                <img src="assets/foodastic_logo-red.jpg" alt="Logo">
                             </a>
                             <span class="navbar-burger burger" data-target="navbarMenu">
                                 <span></span>
@@ -41,20 +48,18 @@
                         <div id="navbarMenu" class="navbar-menu">
                             <div class="navbar-end">
                                 <div class="tabs is-right">
-                                    <ul>
-                                        <li class="is-active"><a>Home</a></li>
-                                        <li><a href="./dinein.html">Dine In</a></li>
-                                        <li><a href="./dineout.html">Dine Out</a></li>
-                                        <li><a href="">Dunno</a></li>
-                                        <li><a href="">About Us</a></li>
+                                    <ul class="nav-links">
+                                        <li><a href="dinein.html" style="color: black">Dine In</a></li>
+                                        <li><a href="dineout.html" style="color: black">Dine Out</a></li>
+                                        <li><a href="#" style="color:black">Dunno?</a></li>
+                                        <li><a href="#" style="color:black">About Us</a></li>
+                                        <li><a href="#Contact Us" style="color:black">Contact Us</a></li>
                                     </ul>
                                     <span class="navbar-item">
                                         <a class="button is-white is-outlined" href="Favorites">
-                                            <span class="icon">
-                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true" style="color: #e02239"></i>
 
-                                            </span>
-                                            <span title="favorites">Favorites</span>
+                                            <span title="favorites" style="color: #e02239">Favorites</span>
                                         </a>
                                     </span>
                                 </div>
@@ -63,30 +68,30 @@
                     </div>
                 </nav>
             </div>
-            <div class="hero-body" style="background-image: url('https://tinyurl.com/ydfr5aa8')" width =100%>
+            <div class="hero-body">
                 <div class="container has-text-centered" >
-                    <h1 class="title">
-                    Foodational is a revolutionary search engine <br> to help you find what to eat next
-                    </h1>
-                    <h2 class="subtitle">
-                    Subtitle
-                    </h2>
-                </div>
+                    <h1 class="hero-text">
+                    Foodastic is a revolutionary search engine to guide your taste buds</h1>
+                    <p>
+               </div>
             </div>
         </section>
+        </div>
+
+        <!-- Dine In/Out, Dunno Tiles -->
         <br>
         <section class="tile-wrapper container">
             <div class="columns features">
                 <div class="column is-4">
                     <div class="card is-shady">
                         <div class="card-image has-text-centered">
-                            <i class="fa fa-paw"></i>
+                            <img src="assets/foodastic_icon-dinein.jpg" style="padding-top:10px;">
                         </div>
                         <div class="card-content">
                             <div class="content">
-                                <h4>Dine In</h4>
+                                <h4 class="section-title">Dine In</h4>
                                 <p>Looking for some recipes?</p>
-                                <p><a href=""><button class="button is-link is-primary is-light"><a href="project1_group7\dinein.html">Learn More</button></a>
+                                <p><a href="dinein.html"><button class="button" class="button" style="background-color:#e02239; color: white"><span>Bon Appétit!</span></button></a>
                                 </p>
                             </div>
                         </div>
@@ -95,13 +100,13 @@
                 <div class="column is-4">
                     <div class="card is-shady">
                         <div class="card-image has-text-centered">
-                            <i class="fa fa-empire"></i>
+                            <img src="assets/foodastic_icon-dineout.png" style="padding-top: 10px;">
                         </div>
                         <div class="card-content">
                             <div class="content">
-                                <h4>Dine Out</h4>
+                                <h4 class="section-title">Dine Out</h4>
                                 <p>Too lazy to cook?</p>
-                                <p><a href=""><button class="button is-link is-primary is-light"><a href="project1_group7\dinein.html">Learn More</button></a>
+                                <p><a href="project1_group7/dineout.html"><button class="button" style="background-color:#e02239; color: white"><span>Let's Grub!</span></button></a>
                                 </p>
                             </div>
                         </div>
@@ -110,73 +115,37 @@
                 <div class="column is-4">
                     <div class="card is-shady">
                         <div class="card-image has-text-centered">
-                            <i class="fa fa-apple"></i>
+                            <img src="assets/foodastic_icon-dunno.jpg" style="padding-top: 5px;">
                         </div>
                         <div class="card-content">
                             <div class="content">
-                                <h4>Dunno?</h4>
+                                <h4 class="section-title">Dunno?</h4>
                                 <p>Are you that indecisive?</p>
-                                <p><a href=""><button class="button is-link is-primary is-light"><a href="project1_group7\dinein.html">Learn More</button></a>
+                                <p><a href="#"><button class="button" class="button" style="background-color:#e02239; color: white"><span>Help!</span></button></a>
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="intro column is-8 is-offset-2">
-                <h2 class="title">Adding more containers later</h2><br>
-                <p class="subtitle">This is for another possible option.</p>
-            </div>
-            <section class="contact">
-              <div class="container">
-                <div class="row">
-                  <div class="col-sm-6 col aos-init aos-animate" data-aos="fade-right" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000">
-                       <h3>Contact Us</h3>
-                       <h4>Have questions or comments?</h4>
-                       <p>Get in touch with us if you would like to know more about our services.</p>
-                  <address>
-                       <p><i class="fa fa-map-marker" aria-hidden="true"></i> 555 Phoodnomenal Way, USA</p>
-                       <p><i class="fa fa-clock-o" aria-hidden="true"><span></span></i>9:00 am - 5:00 pm ET</p>
-                       <p><i class="fa fa-phone" aria-hidden="true"></i>555 555 5555</p>
-                   </address>
-                  </div>
-                  <form>
-                  <div class="col-sm-6 col">
-                    <div class="row aos-init aos-animate" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000">
-                      <div class="col-sm-6 col form-group">
-                        <input class="form-control" placeholder="Your Name" type="text" required="">
-                      </div>
-                      <div class="col-sm-6 col form-group">
-                        <input class="form-control" placeholder="Your Email Id" type="email" required="">
-                      </div>
-                    </div>
-                    <textarea class="form-control" placeholder="Your Message" rows="8" required=""></textarea>
-                    <div class="row">
-                      <div class="col-sm-12 col form-group">
-                        <button type="submit" class="btn btn-default pull-left">Submit</button>
-                      </div>
-                    </div>
-                  </div>
-                  </form>
-                </div>
-              </div>
-              </section>
-
+            
+           
+           <!-- Contact Section -->        
 
             <!-- Footer -->
         <footer class="footer">
-          <h2 class="title">Contact Us</h1>
+          <h2 class="title" style="font-size: 60px;" id="Contact Us">Contact Us</h1>
             <div class="field">
-                <label class="label">Name</label>
+                <label class="label" style="font-size: 20px;">Name</label>
                 <div class="control">
                   <input class="input" type="text" placeholder="Text input">
                 </div>
               </div>
-
-
-
+              
+            
+              
               <div class="field">
-                <label class="label">Email</label>
+                <label class="label" style="font-size: 20px;">Email</label>
                 <div class="control has-icons-left has-icons-right">
                   <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
                   <span class="icon is-small is-left">
@@ -188,46 +157,29 @@
                 </div>
                 <p class="help is-danger">This email is invalid</p>
               </div>
-
+              
+                            
               <div class="field">
-                <label class="label">Subject</label>
+                <label class="label" style="font-size: 20px;">Message</label>
                 <div class="control">
-                  <div class="select">
-                    <select>
-                      <option>Select dropdown</option>
-                      <option>With options</option>
-                    </select>
-                  </div>
+                  <textarea class="textarea" placeholder="Text area"></textarea>
                 </div>
               </div>
-
-              <div class="field">
-                <label class="label">Message</label>
-                <div class="control">
-                  <textarea class="textarea" placeholder="Textarea"></textarea>
-                </div>
-              </div>
-
-              <div class="field">
-                <div class="control">
-                  <label class="checkbox">
-                    <input type="checkbox">
-                    I agree to the <a href="#">terms and conditions</a>
-                  </label>
-                </div>
-              </div>
-
-
+              
+                      
+              
               <div class="field is-grouped">
                 <div class="control">
-                  <button class="button is-link">Submit</button>
+                  <button class="button" style="background-color:#e02239; color: white"><span>Submit</span></button>
                 </div>
                 <div class="control">
-                  <button class="button is-link is-light">Cancel</button>
+                  <button class="button" style="background-color:#e02239; color: white"><span>Cancel</span></button>
                 </div>
               </div>
-
+         
         </footer>
+        
 
+        <!-- End Footer and Contact -->
     </body>
 </html>
