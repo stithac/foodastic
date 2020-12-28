@@ -7,7 +7,11 @@
     <title>DineIn | Dine Out</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Bring in the bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -17,7 +21,8 @@
             <!-- logo/brand -->
             <div class="navbar-brand">
                 <a class="navbar item">
-                    <img src="assets/eating-computer-icons-spoon-fork-lunch-7d56894e393f5075a621664c945bf41d.png" alt="dummy logo" style="max-height: 80px" class="py-2 px-2">
+                    <img src="assets/eating-computer-icons-spoon-fork-lunch-7d56894e393f5075a621664c945bf41d.png"
+                        alt="dummy logo" style="max-height: 80px" class="py-2 px-2">
                 </a>
                 <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
                     <span aria-hidden="true"></span>
@@ -69,43 +74,43 @@
                     <div class="tile is-parent is-4">
                         <div class="tile is-child box" id="main-selections">
                             <!-- Check Selections -->
-                            <p>SPECIALITY DISHES</p>
+                            <p>SPECIALITY FOOD</p>
                             <label class="checkbox">
-                                <input type="checkbox">
-                                Farm To Table
+                                <input type="checkbox" id="chkCheese">
+                                Cheese Shops
                             </label><br>
                             <label class="checkbox">
-                                <input type="checkbox">
-                                Meat
+                                <input type="checkbox" id="chkChocolatier">
+                                Chocolatiers
                             </label><br>
                             <label class="checkbox">
-                                <input type="checkbox">
-                                Seafood
+                                <input type="checkbox" id="chkMeat">
+                                Meat Shops
                             </label><br>
                             <label class="checkbox">
-                                <input type="checkbox">
-                                Poultry
+                                <input type="checkbox" id="chkPasta">
+                                Pasta Shops
                             </label><br>
                             <label class="checkbox">
-                                <input type="checkbox">
-                                Pasta
+                                <input type="checkbox" id="chkSeafood">
+                                Seafoood Markets
                             </label><br>
                             <br>
 
                             <!-- Dropdown -->
                             <div class=" select is-rounded is-large">
                                 <select>
-                                    <option>BY CUISINE</option>
-                                    <option>BBQ/Steak</option>
-                                    <option>Japanese</option>
-                                    <option>Italian</option>
-                                    <option>Greek</option>
-                                    <option>Southern</option>
-                                    <option>Thai</option>
-                                    <option>Indian</option>
-                                    <option>Chinese</option>
-                                    <option>Spanish</option>
-                                    <option>Latin American</option>
+                                    <option value="default" disabled="true">BY CUISINE</option>
+                                    <option value="steak">BBQ/Steak</option>
+                                    <option value="Japanese">Japanese</option>
+                                    <option value="Italian">Italian</option>
+                                    <option value="Greek">Greek</option>
+                                    <option value="Southern">Southern</option>
+                                    <option value="Thai">Thai</option>
+                                    <option value="Indian">Indian</option>
+                                    <option value="Chinese">Chinese</option>
+                                    <option value="Spanish">Spanish</option>
+                                    <option value="Latin">Latin American</option>
                                 </select>
                             </div>
                             <br>
@@ -116,27 +121,28 @@
                                 <p>SEARCH BY CITY</p>
                                 <div class="field">
                                     <div class="control">
-                                        <input class="input is-small is-primary" type="text" placeholder="City">
+                                        <input class="input is-small is-primary" type="text" placeholder="City" id="cityInput">
                                     </div>
                                 </div>
                                 <p>SEARCH BY ZIP CODE</p>
                                 <div class="field">
                                     <div class="control">
-                                        <input class="input is-small is-primary" type="text" placeholder="Zip">
+                                        <input class="input is-small is-primary" type="text" placeholder="Zip" id="zipInput">
                                     </div>
                                 </div>
 
                             </div>
                             <br>
                             <!-- Dropdown -->
-                            <div class=" select is-rounded is-large">
-                                <select>
-                                    <option>MILE RADIUS</option>
-                                    <option>5 mi</option>
-                                    <option>10 mi</option>
-                                    <option>15 mi</option>
-                                    <option>20 mi</option>
-                                    <option>25+ mi</option>
+                            <div class="select is-rounded is-large">
+                                <select id="radiusOptions">
+                                    <!-- values are in meters so work with yelp API. The maximum value is 40,000 meters (25 miles)  -->
+                                    <option value="default" disabled="true">MILE RADIUS</option>
+                                    <option value="8047">5 mi</option>
+                                    <option value="16093">10 mi</option>
+                                    <option value="24140">15 mi</option>
+                                    <option value="32187">20 mi</option>
+                                    <option value="max">20+ mi</option>
                                 </select>
                             </div>
                             <br>
@@ -145,58 +151,57 @@
                             <!-- Select Multiple 2-->
                             <p>PRICE</p>
                             <label class="checkbox">
-                                <input type="checkbox">
+                                <input type="checkbox" value="">
                                 $
                             </label><br>
                             <label class="checkbox">
-                                <input type="checkbox">
+                                <input type="checkbox" value="">
                                 $$
                             </label><br>
                             <label class="checkbox">
-                                <input type="checkbox">
+                                <input type="checkbox" value="">
                                 $$$
                             </label><br>
                             <label class="checkbox">
-                                <input type="checkbox">
+                                <input type="checkbox" value="">
                                 $$$$
-                            </label><br>
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                Pasta
-                            </label><br>
+                            </label>
+                            <br>
                             <br>
                             <div class="buttons">
-                                <button class="button is-large is-primary is-light">Search</button>
+                                <button class="button is-large is-primary is-light" id="btnSearch">Search</button>
                             </div>
                         </div>
                     </div>
                     <!--Image Suggestions-->
-                    <div class="tile is-4 is-vertical is-parent">
-                        <div class="tile is-child box is-success">
-                            <figure class="image is-3by3">
-                                <img src="https://bulma.io/images/placeholders/640x480.png">
-                            </figure>
-                            <p>Image Image quick link filter "Spicy"</p>
+                    <div class="card-columns" id="imageContainer">
+                        <div class="tile is-4 is-vertical is-parent">
+                            <div class="tile is-child box is-success">
+                                <figure class="image is-3by3">
+                                    <img src="https://bulma.io/images/placeholders/640x480.png">
+                                </figure>
+                                <p>Image Image quick link filter "Spicy"</p>
+                            </div>
+                            <div class="tile is-child box">
+                                <figure class="image is-3by3">
+                                    <img src="https://bulma.io/images/placeholders/640x480.png">
+                                </figure>
+                                <p>Image Image quick link filter "Comfort Food"</p>
+                            </div>
                         </div>
-                        <div class="tile is-child box">
-                            <figure class="image is-3by3">
-                                <img src="https://bulma.io/images/placeholders/640x480.png">
-                            </figure>
-                            <p>Image Image quick link filter "Comfort Food"</p>
-                        </div>
-                    </div>
-                    <div class="tile is-4 is-vertical is-parent">
-                        <div class="tile is-child box">
-                            <figure class="image is-3by3">
-                                <img src="https://bulma.io/images/placeholders/640x480.png">
-                            </figure>
-                            <p>Image Image quick link filter "Exotic"</p>
-                        </div>
-                        <div class="tile is-child box">
-                            <figure class="image is-3by3">
-                                <img src="https://bulma.io/images/placeholders/640x480.png">
-                            </figure>
-                            <p>Image Image quick link filter "Surprise Me"</p>
+                        <div class="tile is-4 is-vertical is-parent">
+                            <div class="tile is-child box">
+                                <figure class="image is-3by3">
+                                    <img src="https://bulma.io/images/placeholders/640x480.png">
+                                </figure>
+                                <p>Image Image quick link filter "Exotic"</p>
+                            </div>
+                            <div class="tile is-child box">
+                                <figure class="image is-3by3">
+                                    <img src="https://bulma.io/images/placeholders/640x480.png">
+                                </figure>
+                                <p>Image Image quick link filter "Surprise Me"</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -205,7 +210,14 @@
             <!--ender container-->
         </section>
     </main>
-    <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
