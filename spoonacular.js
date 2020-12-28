@@ -1,5 +1,5 @@
-// var apiKey = "2e56dceb3b5427994c61b93b6326f08";
-var apiKey = "214f60134dc9416a9544280f08aa9f0b"
+
+var apiKey = ""
 var cuisine;
 var limit = 2;
 var ids = [];
