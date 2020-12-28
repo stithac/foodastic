@@ -1,21 +1,17 @@
-
-
-var apiKey = "";
+// var apiKey = "2e56dceb3b5427994c61b93b6326f08";
+var apiKey = "214f60134dc9416a9544280f08aa9f0b"
 var cuisine;
-// var i = 0;
 var limit = 2;
 var ids = [];
 var recipes = [];
 
+$(".result").hide();
 
 function getResults(){
 
     var recipeId;
 
-    // console.log($("#cuisines").val());
-
     cuisine = $("#cuisines").val();
-    // console.log(cuisine);
 
     var queryURL1 ="https://api.spoonacular.com/recipes/complexSearch?apiKey=" + apiKey + "&includeNutrition=true&cuisine="+ cuisine;
 
@@ -33,10 +29,9 @@ function getResults(){
 
         }
             console.log(ids);
+            $(".result").show();
+            $(".placeholder").hide();
             getRecipeDetails(ids);
-
-        // console.log(recipes);
-        // populateResults(recipes);
 
     });
 
@@ -44,22 +39,20 @@ function getResults(){
 
 function getRecipeDetails(ids){
 
-
     for (i = 0; i < ids.length; i++){
 
         var queryURL2 = "https://api.spoonacular.com/recipes/" + ids[i] + "/information" + "/?apiKey=" + apiKey;
 
-                    $.ajax({
-                        url: queryURL2,
-                        method: "GET"
-                        }).then(function(response) {
+            $.ajax({
+                url: queryURL2,
+                method: "GET"
+                }).then(function(response) {
 
-                            recipes.push(response);
-                            console.log(recipes);
+                    recipes.push(response);
+                    console.log(recipes);
 
-
-                            populateResults(recipes);
-                        });
+                    populateResults(recipes);
+                });
 
     }
 }
@@ -67,7 +60,6 @@ function getRecipeDetails(ids){
 function populateResults(recipes){
     console.log(recipes);
     var j = 1;
-
 
     for (i = 0; i < limit; i++){
 
@@ -85,19 +77,21 @@ function populateResults(recipes){
                 $("#price" + j).text("$$$");
             }
     //         // $("#blurb" + j).text(response[i].summary);
-
             j++;
         }
 }
 
 //Event Listeners
 $(searchBtn).on("click",function(event){
+
     event.preventDefault();
     getResults();
 
 });
 
 $(".result").on("click", function(event){
+
+    event.preventDefault();
     console.log("Result clicked");
-    $(".result").hide();;
+    $(".result").hide();
 });
