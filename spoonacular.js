@@ -1,6 +1,6 @@
 
-// var apiKey = "214f60134dc9416a9544280f08aa9f0b";
-var apiKey = "d2e56dceb3b5427994c61b93b6326f08";
+
+var apiKey = "";
 var cuisine;
 // var i = 0;
 var limit = 2;
