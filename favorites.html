@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Favorites</title>
+
+        <!-- Icons: Use as placeholders for now until images are created. Update: Only using this for favorites, star icon  -->
+        <link rel="shortcut icon" href="" type="image/x-icon">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        
+        <!-- Google Fonts: Nerko One as Header and Montserrat as Body -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+      
+        <!-- CSS -->
+        <link href="filter.css" rel="stylesheet">
+  
+        <!-- Bulma -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/>
+        <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+        <script src = "https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+    </head>
+
+<body>
+
+     <!-- Hero and navbar -->
+     <div class="dark-wrapper">
+
+        <section class="hero is-fullheight is-transparent">
+            <div class="hero-head">
+                <nav class="navbar" style="background-color: white">
+                    <div class="container">
+                        <div class="navbar-brand">
+                            <a class="navbar-item" href="index.html" target="_blank">
+                                <img src="assets/foodastic_logo-yellow.jpg" alt="Logo">
+                            </a>
+                            <span class="navbar-burger burger" data-target="navbarMenu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </div>
+                        <div id="navbarMenu" class="navbar-menu">
+                            <div class="navbar-end">
+                                <div class="tabs is-right">
+                                    <ul class="nav-links">
+                                        <li><a href="dinein.html" style="color: black" target="_blank">Dine In</a></li>
+                                        <li><a href="dineout.html" style="color: black" target="_blank">Dine Out</a></li>
+                                        <li><a href="#" style="color:black" target="_blank">Dunno?</a></li>
+                                        <li><a href="#" style="color:black" target="_blank">About Us</a></li>
+                                        <li><a href="#Contact Us" style="color:black">Contact Us</a></li>
+                                    </ul>
+                                    <span class="navbar-item">
+                                        <a class="button is-white is-outlined" href="favorites.html">
+                                                <i class="fa fa-star" aria-hidden="true" style="color: #fab01a"></i>
+
+                                            <span title="favorites" style="color: #fab01a">Favorites</span>
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="hero-body">
+                <div class="container has-text-centered" >
+                    <div class="column is-12">
+                        <h1 class="hero-text">Favorites</h1><br>
+                        
+                    </div>
+            </div>
+        </div>
+
+        </section>
+
+        <!-- Dine In/Out, Dunno Tiles -->
+        <br>
+    <!-- Page Header -->
+    <section class="section">
+        <div class="container">
+            <div class="columns is-vcentered has-background-light">
+                <div class="column is-12">
+                    <h2 class="is-size-2 title">Your personal repository of delicious food for now, later or to share.
+                        <span>
+                            <h3 class="is-size-3 subtitle">see below</h3>
+                        </span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+                
+
+<!-- recycled from filter and result pages, similar coding -->
+<section class="section">
+    <div class="container">
+        <div class="tile is-ancestor">
+
+
+
+            <!-- NEW: ICON & IMAGE DUMP DIV -->
+            <!-- ************************** NOTE: THESE HIDE ON RESULTS LOAD -->
+            <!-- Main content: Icon Filters -->
+            <div class="tile is-parent is-12">
+                <article class="tile is-child ">
+                    <div class="columns box is-multiline" style="margin-top:0;">
+
+                        <div class="column is-3">
+                            <div class="box img-box">
+                                <figure class="image is-2by2">
+                                    <img id="pic1" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                </figure>
+                                <br>
+                                <p id="title1"></p>
+                                <p id="blurb1"></p>
+                                <p id="rating1"></p>
+                                <p id="price1">$$$</p>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="box img-box">
+                                <figure class="image is-2by2">
+                                    <img id="pic2" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                </figure>
+                                <br>
+                                <p id="title2"></p>
+                                <p id="blurb2"></p>
+                                <p id="rating2"></p>
+                                <p id="price2">$$$</p>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="box img-box">
+                                <figure class="image is-2by2">
+                                    <img id="pic3" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                </figure>
+                                <br>
+                                <p id="title3"></p>
+                                <p id="blurb3"></p>
+                                <p id="rating3"></p>
+                                <p id="price3">$$$</p>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="box img-box">
+                                <figure class="image is-2by2">
+                                    <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                </figure>
+                                <br>
+                                <p id="title4"></p>
+                                <p id="blurb4"></p>
+                                <p id="rating4"></p>
+                                <p id="price4">$$$</p>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="box img-box">
+                                <figure class="image is-2by2">
+                                    <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                </figure>
+                                <br>
+                                <p id="title5"></p>
+                                <p id="blurb5"></p>
+                                <p id="rating5"></p>
+                                <p id="price5">$$$</p>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="box img-box">
+                                <figure class="image is-2by2">
+                                    <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                </figure>
+                                <br>
+                                <p id="title6"></p>
+                                <p id="blurb6"></p>
+                                <p id="rating6"></p>
+                                <p id="price6">$$$</p>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="box img-box">
+                                <figure class="image is-2by2">
+                                    <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                </figure>
+                                <br>
+                                <p id="title7"></p>
+                                <p id="blurb7"></p>
+                                <p id="rating7"></p>
+                                <p id="price7">$$$</p>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="box img-box">
+                                <figure class="image is-2by2">
+                                    <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                </figure>
+                                <br>
+                                <p id="title8"></p>
+                                <p id="blurb8"></p>
+                                <p id="rating8"></p>
+                                <p id="price8">$$$</p>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="box img-box">
+                                <figure class="image is-2by2">
+                                    <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                </figure>
+                                <br>
+                                <p id="title9"></p>
+                                <p id="blurb9"></p>
+                                <p id="rating9"></p>
+                                <p id="price9">$$$</p>
+                            </div>
+                        </div>
+                    </div><!-- End of columns -->
+                </article>
+            </div>
+                <!-- End main image-icon divs -->
+        </div>
+        <!-- End of sole ancestor --> 
+    </div> 
+    <!-- End of main container -->
+</section>
+<!-- End of filters section -->
+
+
+
+
+
+
+
+
+
+<!-- Contact Section -->        
+
+            <!-- Footer -->
+            <footer class="footer">
+                <h2 class="title" style="font-size: 60px;" id="Contact Us">Contact Us</h1>
+                  <div class="field">
+                      <label class="label" style="font-size: 20px;">Name</label>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Text input">
+                      </div>
+                    </div>
+                    
+                  
+                    
+                    <div class="field">
+                      <label class="label" style="font-size: 20px;">Email</label>
+                      <div class="control has-icons-left has-icons-right">
+                        <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
+                        <span class="icon is-small is-left">
+                          <i class="fas fa-envelope"></i>
+                        </span>
+                        <span class="icon is-small is-right">
+                          <i class="fas fa-exclamation-triangle"></i>
+                        </span>
+                      </div>
+                      <p class="help is-danger">This email is invalid</p>
+                    </div>
+                    
+                                  
+                    <div class="field">
+                      <label class="label" style="font-size: 20px;">Message</label>
+                      <div class="control">
+                        <textarea class="textarea" placeholder="Text area"></textarea>
+                      </div>
+                    </div>
+                    
+                            
+                    
+                    <div class="field is-grouped">
+                      <div class="control">
+                        <button class="button" style="background-color:#fab01a; color: white"><span>Submit</span></button>
+                      </div>
+                      <div class="control">
+                        <button class="button" style="background-color:#fab01a; color: white"><span>Cancel</span></button>
+                      </div>
+                    </div>
+               
+              </footer>
+              
+      
+              <!-- End Footer and Contact -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./spoonacular.js"></script>
+</body>
+
+</html>

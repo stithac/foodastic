@@ -1,0 +1,192 @@
+/* CSS stylesheet for Filter and Result pages */
+/* Favorites, Results, Dine-In, Dine-Out, and Dunno? */
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap');
+
+
+
+
+body, html {
+    height: 100%;
+    background-image: url('http://ubuntuhandbook.org/wp-content/uploads/2016/09/Yakkety_Yak_Wallpaper_grey.jpg');
+}
+
+/* Fonts and headers */
+h1, h2, h3, h4, h5, h6 {
+    clear: both;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p, .main-selections {
+    font-family: 'Monteserrat' sans-serif;
+    font-size: 20px;
+    color:#fab01a;
+    font-weight: 900px;
+}
+
+
+
+option {
+    font-family: 'Monteserrat' sans-serif;
+    font-size: 10px;
+    font-weight: 500px;
+}
+
+
+.is-3, {
+    font-family: 'Monteserrat' sans-serif;
+    font-size: 15px;
+    color: black;
+}
+
+/* Containers for subheader */
+.has-background-light {
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: center;
+}
+
+
+/* nav-links style in html */
+.nav-links {
+    font-family: 'Nerko One', cursive;
+}
+
+.navbar-item {
+    font-family: 'Nerko One', cursive;
+}
+
+/* Hero section */
+.hero-body {
+    background-image: url('./assets/foodastic_Hero-yellow.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 25%;
+    
+}
+
+.hero-text {
+  font-family: 'Nerko One', cursive;
+  font-size: 60px;
+  text-align: center;
+  position: absolute;
+  object-position: center;
+  top: 50%;
+  left: 50%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: #fab01a;
+}
+
+.title,
+.subtitle {
+    display: inline;
+}
+
+.tile.is-parent {
+    padding: 0;
+}
+
+/* Sidebar styles */
+.menu.sticky {
+    position: sticky;
+    top: 0;
+}
+
+.box-sidebar-tr {
+    padding: 10px;
+}
+
+.section-jg {
+    padding: 1rem 1rem;
+}
+
+.input-tr,
+.textarea {
+    width: 80%;
+}
+
+
+/* image divs for ICONS */
+.icon-box {
+    height: 250px;
+    background-color: #fdc407;
+}
+
+.icon-box img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    display: block;
+}
+
+/* image divs for IMGs */
+.img-box img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    display: block;
+    object-fit: cover;
+
+}
+
+/* decrese space between image div columns */
+.column {
+    padding: .25rem;
+}
+.img-box{
+    height:470px;
+    overflow-y: auto !important;
+}
+
+/* Button animation and styling */
+button  {
+    font-family: 'Monteserrat', sans-serif;
+    border-radius: none;
+    font-size: 15px;
+    padding: 20px;
+    width: 150px;
+    transition: all 0.5s;
+    background-color: #fab01a !important;
+    color: white !important;
+    
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+/* Contact */
+label {
+    font-family: 'Nerko One', cursive;
+}
+
+.title {
+    font-family: 'Nerko One', cursive;
+}
