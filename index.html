@@ -1,57 +1,185 @@
-<!--Yelp API - RB-->
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Foodastic</title>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
-        integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <title>Yelp API Test</title>
-</head>
+        <!-- Icons  -->
+        <link rel="shortcut icon" href="" type="image/x-icon">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        
+        <!-- Google Fonts: Nerko One as Header and Montserrat as Body -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+      
+        <!-- CSS -->
+        <link href="index.css" rel="stylesheet">
+  
+        <!-- Bulma -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/>
+        <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+        <script src = "https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+    </head>
 
-<body>
+<!-- Start -->
+    <body>
+     
+    <!-- Hero and navbar -->
+    <div class="dark-wrapper">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div id="myData">
-                    Searching using term="Starbucks" in the San Francisco area which are open now.
-                    <br /><br />
+        <section class="hero is-fullheight is-transparent">
+            <div class="hero-head">
+                <nav class="navbar" style="background-color: white">
+                    <div class="container">
+                        <div class="navbar-brand">
+                            <a class="navbar-item" href="index.css">
+                                <img src="assets/foodastic_logo-red.jpg" alt="Logo">
+                            </a>
+                            <span class="navbar-burger burger" data-target="navbarMenu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </div>
+                        <div id="navbarMenu" class="navbar-menu">
+                            <div class="navbar-end">
+                                <div class="tabs is-right">
+                                    <ul class="nav-links">
+                                        <li><a href="dinein.html" style="color: black">Dine In</a></li>
+                                        <li><a href="dineout.html" style="color: black">Dine Out</a></li>
+                                        <li><a href="#" style="color:black">Dunno?</a></li>
+                                        <li><a href="#" style="color:black">About Us</a></li>
+                                        <li><a href="#Contact Us" style="color:black">Contact Us</a></li>
+                                    </ul>
+                                    <span class="navbar-item">
+                                        <a class="button is-white is-outlined" href="Favorites">
+                                                <i class="fa fa-star" aria-hidden="true" style="color: #e02239"></i>
+
+                                            <span title="favorites" style="color: #e02239">Favorites</span>
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="hero-body">
+                <div class="container has-text-centered" >
+                    <h1 class="hero-text">
+                    Foodastic is a revolutionary search engine to guide your taste buds</h1>
+                    <p>
+               </div>
+            </div>
+        </section>
+        </div>
+
+        <!-- Dine In/Out, Dunno Tiles -->
+        <br>
+        <section class="tile-wrapper container">
+            <div class="columns features">
+                <div class="column is-4">
+                    <div class="card is-shady">
+                        <div class="card-image has-text-centered">
+                            <img src="assets/foodastic_icon-dinein.jpg" style="padding-top:10px;">
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <h4 class="section-title">Dine In</h4>
+                                <p>Looking for some recipes?</p>
+                                <p><a href="dinein.html"><button class="button" class="button" style="background-color:#e02239; color: white"><span>Bon Appétit!</span></button></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="card is-shady">
+                        <div class="card-image has-text-centered">
+                            <img src="assets/foodastic_icon-dineout.png" style="padding-top: 10px;">
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <h4 class="section-title">Dine Out</h4>
+                                <p>Too lazy to cook?</p>
+                                <p><a href="project1_group7/dineout.html"><button class="button" style="background-color:#e02239; color: white"><span>Let's Grub!</span></button></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="card is-shady">
+                        <div class="card-image has-text-centered">
+                            <img src="assets/foodastic_icon-dunno.jpg" style="padding-top: 5px;">
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <h4 class="section-title">Dunno?</h4>
+                                <p>Are you that indecisive?</p>
+                                <p><a href="#"><button class="button" class="button" style="background-color:#e02239; color: white"><span>Help!</span></button></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+            
+           
+           <!-- Contact Section -->        
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
-        integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
-        crossorigin="anonymous"></script>
-    <script>
-        var mainContainer = document.getElementById("myData");
+            <!-- Footer -->
+        <footer class="footer">
+          <h2 class="title" style="font-size: 60px;" id="Contact Us">Contact Us</h1>
+            <div class="field">
+                <label class="label" style="font-size: 20px;">Name</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Text input">
+                </div>
+              </div>
+              
+            
+              
+              <div class="field">
+                <label class="label" style="font-size: 20px;">Email</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                  <span class="icon is-small is-right">
+                    <i class="fas fa-exclamation-triangle"></i>
+                  </span>
+                </div>
+                <p class="help is-danger">This email is invalid</p>
+              </div>
+              
+                            
+              <div class="field">
+                <label class="label" style="font-size: 20px;">Message</label>
+                <div class="control">
+                  <textarea class="textarea" placeholder="Text area"></textarea>
+                </div>
+              </div>
+              
+                      
+              
+              <div class="field is-grouped">
+                <div class="control">
+                  <button class="button" style="background-color:#e02239; color: white"><span>Submit</span></button>
+                </div>
+                <div class="control">
+                  <button class="button" style="background-color:#e02239; color: white"><span>Cancel</span></button>
+                </div>
+              </div>
+         
+        </footer>
+        
 
-        var settings = {
-            "url": "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?open_now=true&term=Starbucks&latitude=37.786882&longitude=-122.399972",
-            "method": "GET",
-            "timeout": 0,
-            "headers": {
-                "Authorization": "Bearer 3O5kyW6F4g5mDywsBmxsp0roWlT-dciawIInefnOItXxFkZFSR3rvRenorOaVfIEtnNRdlOHqVEXwHJQat0PkPa-YBt9EIf_NTTOo0S1AmHCbk3ALK0mPPXCCSLeX3Yx"
-            },
-        };
-
-        $.ajax(settings).done(function (response) {
-            console.log(response, response.businesses.length);
-
-            for (var i = 0; i < response.businesses.length; i++) {
-                var div = document.createElement("div");
-                div.innerHTML = 'Name: ' + response.businesses[i].name + '<br />'
-                    + 'Phone: ' + response.businesses[i].display_phone
-                    + '<br />' + 'Rating: ' + response.businesses[i].rating
-                    + '<br />' + 'Reviews: ' + response.businesses[i].review_count
-                    + '<br />' + 'Price: ' + response.businesses[i].price
-                    + '<br /><br />';
-                mainContainer.appendChild(div);
-            }
-        });
-    </script>
-</body>
+        <!-- End Footer and Contact -->
+    </body>
+</html>
