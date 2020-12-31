@@ -7,236 +7,92 @@
     <title>DineIn | Dine Out</title>
     <!-- Bulma CSS-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <!-- Icons  -->
+
+    <script src="https://kit.fontawesome.com/4f8132285b.js" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
     <!-- NOTE: Included CSS here so you can add to test before adding to project style sheet -->
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #000;
-        }
-
-        .title,
-        .subtitle {
-            display: inline;
-        }
-
-        .d-section {
-            margin-top: 30px;
-        }
-
-        .tile.is-parent {
-            padding: 0;
-        }
-
-        /* Sidebar styles */
-        .menu.sticky {
-            position: sticky;
-            top: 0;
-        }
-
-        .box-sidebar-tr {
-            padding: 10px;
-        }
-
-        .section-jg {
-            padding: 1rem 1rem;
-        }
-
-        .input-tr,
-        .textarea {
-            width: 80%;
-        }
-
-        /* image divs for ICONS */
-        .icon-box,
-        .dunno-icon-box {
-            height: 250px;
-            background-color: #fdc407;
-        }
-
-        .icon-box img {
-            max-width: 100%;
-            max-height: 100%;
-            margin: auto;
-            display: block;
-        }
-
-        /* image divs for IMGs */
-        .img-box img {
-            max-width: 100%;
-            max-height: 100%;
-            margin: auto;
-            display: block;
-            object-fit: cover;
-        }
-
-        /* decrese space between image div columns */
-        .column {
-            padding: .25rem;
-        }
-
-        /* *********************************** */
-        /********* NEW CSS 12/28/2020 **********/
-        /* ************************************* */
-
-        .fa-exclamation-circle,
-        .fa-smile,
-        .fa-frown,
-        .fa-angry,
-        .fa-meh,
-        .fa-kiss-wink-heart,
-        .fa-meh-rolling-eyes {
-            color: #000;
-        }
-
-        .dunno-random-button:hover,
-        .fa-exclamation-circle:hover,
-        .fa-smile:hover,
-        .fa-frown:hover,
-        .fa-angry:hover,
-        .fa-meh:hover,
-        .fa-kiss-wink-heart:hover,
-        .fa-meh-rolling-eyes:hover {
-            color: #e02239 !important;
-        }
-
-        .dunno-random-button:visited,
-        .fa-exclamation-circle:hover,
-        .fa-smile:hover,
-        .fa-frown:hover,
-        .fa-angry:hover,
-        .fa-meh:hover,
-        .fa-kiss-wink-heart:hover,
-        .fa-meh-rolling-eyes:hover {
-            color: #e02239 !important;
-        }
-
-
-        /* center stuff */
-        .dunno-text,
-        .dunno-icon-row,
-        .dunno-surprise-icon {
-            margin-right: auto;
-            margin-left: auto;
-            text-align: center;
-        }
-
-        .dunno-text {
-            margin: 5px 0 20px;
-        }
-
-        .dunno-icon-row {
-            padding: 8px 0;
-            letter-spacing: .8rem;
-        }
-
-        .dunno-moth-input {
-            text-align: center;
-            margin-top: 25px;
-        }
-
-        .dunno-random-button {
-            background-color: #000;
-            color: #fff;
-            width: 130px;
-            margin-bottom: 5px;
-            font-weight: bold;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Makes icons clickable */
-        .clickable {
-            cursor: pointer;
-        }
-
-
-
-        /* Margin for input boxes */
-        input {
-            margin-right: 8px;
-        }
-
-        /* Add space between inline inputs */
-        .moth-choice:after {
-            content: " ";
-            display: inline-block;
-            width: 10px;
-        }
-
-        @media screen and (max-width: 760px) {
-
-            .fa-smile,
-            .fa-frown,
-            .fa-angry,
-            .fa-meh,
-            .fa-kiss-wink-heart,
-            .fa-meh-rolling-eyes,
-            .fa-palette {
-                font-size: 4em;
-            }
-
-            .dunno-random-button {
-                width: 15rem;
-                height: 3rem;
-            }
-
-            /* TODO: Fix */
-            .moth-choice {
-                float: left;
-                display: block;
-            }
-
-            /* TODO: FIX */
-            .dunno-moth-div {
-                float: left;
-                margin-left: 25px;
-
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="dine.css">
 </head>
 
 <body>
-    <!-- Page Header -->
-    <section class="hero is-primary">
+    <!-- NAVBAR  -->
+    <div class="hero-head">
+        <nav class="navbar" style="background-color: white">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="index.css">
+                        <img src="assets/foodastic_logo-red.jpg" alt="Logo">
+                    </a>
+                    <span class="navbar-burger burger" data-target="navbarMenu">
+                        <span></span>
+                    <span></span>
+                    <span></span>
+                    </span>
+                </div>
+                <div id="navbarMenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        <div class="tabs is-right">
+                            <ul class="nav-links">
+                                <li><a href="dinein.html" style="color: black">Dine In</a></li>
+                                <li><a href="dineout.html" style="color: black">Dine Out</a></li>
+                                <li><a href="#" style="color:black">Dunno?</a></li>
+                                <li><a href="#" style="color:black">About Us</a></li>
+                                <li><a href="#Contact Us" style="color:black">Contact Us</a></li>
+                            </ul>
+                            <span class="navbar-item">
+                                <a class="button is-white is-outlined" href="Favorites">
+                                    <i class="fa fa-star" aria-hidden="true" style="color: #e02239"></i>
+
+                                    <span title="favorites" style="color: #e02239">Favorites</span>
+                            </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- HERO BANNER -->
+    <section class="hero is-light">
         <div class="hero-body">
             <div class="container">
-                <h1 class="title">
-                    Dine Out?<span>
-                        <h3 class="is-size-2 subtitle">tell us more</h3>
-                    </span>
-                </h1>
+
+                <div class="column column-banner is-12 has-text-centered has-text-white">
+                    <h3 class="title has-text-white">
+                        Dunno?<span>
+                            <h2 class="is-size-2 subtitle has-text-white">tell us more</h2>
+                        </span>
+                    </h3>
+                </div>
+
             </div>
         </div>
     </section>
 
+
+    <!-- SIDE BAR-->
     <section class="d-section">
         <div class="container">
-            <!-- Filter sidebar -->
-            <div class="columns is-multiline">
-                <div class="column is-one-quarter">
+            <div class="columns is-multiline ">
+                <!-- Filter sidebar -->
+                <div class="column is-one-quarter ">
                     <article class="tile box" id="main-selections">
-                        <div class="content">
-                            <div class="box">
+                        <div class="box box-sidebar">
+                            <div class="content">
                                 <!-- Check Selections -->
-                                <p>LIKE MAGIC, our Foodtastic Mind-Reader will make food suggestions base on a few simple questions.</p>
-                                <br>
+                                <p><span class="magic">LIKE MAGIC!</span><br><span class="foodastic">Foodtastic</span> will make food suggestions base on a few simple questions.</p>
                                 <br>
                                 <!-- Input Search -->
                                 <div>
-                                    <p>YOUR CITY</p>
+                                    <p class="allcaps">PLEASE ENTER YOUR CITY</p>
                                     <div class="field">
                                         <div class="control">
                                             <input class="input input-tr is-small" type="text" placeholder="City" id="cityInput">
                                         </div>
                                     </div>
-                                    <p>OR ZIP CODE</p>
+                                    <p class="allcaps">OR ZIP CODE</p>
                                     <div class="field">
                                         <div class="control">
                                             <input class="input input-tr is-small" type="text" placeholder="Zip" id="zipInput">
@@ -246,7 +102,7 @@
                                 <br>
                                 <!-- Dropdown -->
                                 <div class="select is-rounded is-small">
-                                    <select id="radiusOptions">
+                                    <select id="radiusOptions" class="has-text-weight-bold">
                                         <!-- values are in meters so work with yelp API. The maximum value is 40,000 meters (25 miles)  -->
                                         <option value="default" disabled="true">MILE RADIUS</option>
                                         <option value="8047">5 mi</option>
@@ -259,7 +115,7 @@
                                 <br>
                                 <br>
                                 <!-- Select Multiple 2-->
-                                <p>PREFERRED PRICE RANGE</p>
+                                <p class="allcaps">PREFERRED PRICE RANGE</p>
                                 <label class="checkbox"><input type="checkbox" value="">$</label>
                                 <br>
                                 <label class="checkbox"><input type="checkbox" value="">$$</label>
@@ -270,31 +126,36 @@
                                 <br>
                                 <br>
                                 <div class="buttons">
-                                    <button class="button is-medium" id="btnSearch">Search</button>
+                                    <button class="button is-medium is-dark" id="btnSearch">Search</button>
                                 </div>
-                            </div><!-- End main box -->
-                        </div><!-- End content -->
-                    </article><!-- End tile -->
+                            </div>
+                            <!-- end content -->
+                        </div>
+                        <!-- end box -->
+                    </article>
+                    <!-- end tile -->
                 </div>
                 <!-- ******************************************************-->
-                <!-- Icon Filters -->
+                <!-- ICON FILTERS -->
                 <div class="column is-three-quarters">
-                    <article class="tile box">
-                        <div class="columns is-multiline">
-                            <!-- Filter Faces -->
+                    <article class="box">
+                        <div class="columns is-multiline ">
                             <div class="column is-4">
                                 <div class="box dunno-icon-box">
                                     <p class="dunno-text">your mood now</p>
                                     <div class="dunno-icon-div">
                                         <div class="dunno-icon-row">
-                                            <span class="clickable"><i class="good-mood far fa-smile fa-3x far-clickable"></i></span>
-                                            <span class="clickable"><i class="sad-mood far fa-frown fa-3x"></i></span>
-                                            <span class="clickable"><i class="sad-mood far fa-meh fa-3x"></i></span>
+
+                                            <!-- TODO: ONCLICK ICON COLOR TOGGLE TEST  -->
+
+                                            <span class="clickable"><i class="good-mood far fa-smile fa-3x selected icon-toggle"></i></span>
+                                            <span class="clickable"><i class="sad-mood far fa-frown fa-3x icon-toggle"></i></span>
+                                            <span class="clickable"><i class="sad-mood far fa-meh fa-3x icon-toggle"></i></span>
                                         </div>
                                         <div class="dunno-icon-row">
-                                            <span class="clickable"><i class="good-mood far fa-kiss-wink-heart fa-3x"></i></span>
-                                            <span class="clickable"><i class="bad-mood far fa-angry fa-3x"></i></span>
-                                            <span class="clickable"><i class="bad-mood far fa-meh-rolling-eyes fa-3x"></i></span>
+                                            <span class="clickable"><i class="good-mood far fa-kiss-wink-heart fa-3x icon-toggle"></i></span>
+                                            <span class="clickable"><i class="bad-mood far fa-angry fa-3x icon-toggle"></i></span>
+                                            <span class="clickable"><i class="bad-mood far fa-meh-rolling-eyes fa-3x icon-toggle"></i></span>
                                         </div>
                                     </div>
                                 </div>
@@ -325,7 +186,7 @@
                             <div class="column is-4">
                                 <div class="box dunno-icon-box">
                                     <div class="dunno-moth-div" style="text-align: center;">
-                                        <img src="assets/img/filter-inkblot.png" class="moth-icon" alt="moth icon">
+                                        <img src="assets/filter-inkblot.png" class="moth-icon" alt="moth icon">
                                     </div>
                                     <div class="dunno-moth-input">
                                         <span class=moth-choice><label><input type="checkbox" value="">bat</label></span>
@@ -353,14 +214,14 @@
                             </div>
                             <div class="column is-4">
                                 <div class="box dunno-icon-box">
-                                    <p class="dunno-text">Nevermind All That...<br>SURPRISE ME!</p>
+                                    <p>Nevermind All That...<br><span class="dunno-text">SURPRISE ME!</span></p>
                                     <div class="dunno-icon-row">
                                         <span class="clickable dunno-surprise-icon"><i class="fas fa-exclamation-circle fa-8x"></i></span>
                                     </div>
                                 </div>
                             </div>
-                            <!-- **********************FOR RESULTS*************** -->
-                            <!-- ************************************************ -->
+                            <!-- ******************************************************-->
+                            <!-- RESULTS IMAGES -->
                             <div class="column is-4">
                                 <div class="box img-box card">
                                     <figure class="image is-4by5">
@@ -427,18 +288,36 @@
                                 </div>
                             </div>
                     </article>
-
-                    <!-- end columns, end container -->
+                    </div>
                 </div>
+                <!-- end main columns-->
             </div>
+            <!-- end main container -->
+        </div>
+
+        <!-- TODO: Toggle Test -->
+        <!-- <i class="selected icon-toggle">icon 1</i>
+            <i class="icon-toggle">icon 2</i>
+            <i class="icon-toggle">icon 3</i>
+            <i class="icon-toggle">icon 4</i>
+            <i class="icon-toggle">icon 5</i>
+            <i class="icon-toggle">icon 6</i> -->
+
+
     </section>
+    <!-- end main section -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/js/app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script>
+        // TODO: ICON TOGGLE TEST
+        $('.icon-toggle').on('click', function() {
+            $(".icon-toggle.selected").not(this).removeClass('selected');
+            $(this).toggleClass('selected')
+        })
+    </script>
 </body>
 
 </html>

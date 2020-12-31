@@ -19,12 +19,14 @@ body, html {
 
 /* Hero section */
 .hero-body {
-    background-image: url('/assets/foodastic-Hero.jpg');
+    background-image: url('./assets/foodastic-Hero.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 500px;
+    padding-bottom: calc(700px + (474 - 700) * (100vw - 600px) / (1200 - 600));
 }
+
+
 
 .hero-text {
   font-family: 'Nerko One', cursive;
