@@ -8,9 +8,12 @@
     <!-- Bulma-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
-    <!-- TODO: Not sure what link below is -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="styles.css">
+
+    <!-- Need to update below link with correct css once done testing -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
     <!-- NOTE: Included CSS here so you can add to test before adding to project style sheet -->
     <style>
         body {
@@ -46,7 +49,6 @@
         .textarea {
             width: 80%;
         }
-
 
         /* image divs for ICONS */
         .icon-box {
@@ -109,42 +111,47 @@
                         <div class="tile is-child box" id="main-selections">
                             <div class="content">
                                 <div class="box">
+
                                     <!-- Check Selections -->
                                     <p>MAIN INGREDIENT</p>
-                                    <label class="checkbox">
-                                        <input type="checkbox" id="vegetables">
-                                        Vegetables / Plant-based
-                                    </label><br>
-                                    <label class="checkbox">
-                                        <input type="checkbox" id="meat">
-                                        Meat
-                                    </label><br>
-                                    <label class="checkbox">
-                                        <input type="checkbox" id="seafood">
-                                        Seafood
-                                    </label><br>
-                                    <label class="checkbox">
-                                        <input type="checkbox" id="poultry">
-                                        Poultry
-                                    </label><br>
-                                    <label class="checkbox">
-                                        <input type="checkbox" id="dairy">
-                                        Dairy
-                                    </label><br>
-                                    <label class="checkbox">
-                                        <input type="checkbox" id="bread">
-                                        Bread
-                                    </label><br>
+                                    <fieldset id ="ingredientSelections">
+                                        <label class="checkbox">
+                                            <input type="checkbox" id="bread">
+                                            Bread
+                                        </label><br>
+                                        <label class="checkbox">
+                                            <input type="checkbox" id="vegetables">
+                                            Vegetables / Plant-based
+                                        </label><br>
+                                        <label class="checkbox">
+                                            <input type="checkbox" id="beef">
+                                            Beef
+                                        </label><br>
+                                        <label class="checkbox">
+                                            <input type="checkbox" id="chicken">
+                                            Chicken
+                                        </label><br>
+                                        <label class="checkbox">
+                                            <input type="checkbox" id="pork">
+                                            Pork
+                                        </label><br>
+                                        <label class="checkbox">
+                                            <input type="checkbox" id="fish">
+                                            Seafood
+                                        </label>
+
+                                    </fieldset>
                                     <br>
+
                                     <!-- By Specific Ingredient -->
                                     <div>
                                         <p>FIND A RECIPE</p>
                                         <div class="field">
                                             <div class="control">
-                                                <input class="input input-tr is-small is-dark" type="text" placeholder="Recipe Name or Keyword">
+                                                <input id="nameInput" class="input input-tr is-small is-dark" type="text" placeholder="Recipe Name or Keyword">
                                             </div>
                                         </div>
-                                        <div class="field">
+                                        <!-- <div class="field">
                                             <div class="control">
                                                 <input class="input input-tr is-small is-dark" type="text" placeholder="Include">
                                             </div>
@@ -153,43 +160,52 @@
                                             <div class="control">
                                                 <input class="input input-tr is-small is-dark" type="text" placeholder="Do Not Include">
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <br>
 
                                     <!-- Dropdown -->
+                                    <p>BY CUISINE</p>
                                     <div class="select is-rounded is-small">
-                                        <select id="cuisines">
-                                            <option>BY CUISINE</option>
-                                            <option id="american">BBQ/Steak</option>
-                                            <option>Japanese</option>
-                                            <option>Italian</option>
-                                            <option>Greek</option>
-                                            <option>Southern</option>
-                                            <option>Thai</option>
-                                            <option>Indian</option>
-                                            <option>Chinese</option>
-                                            <option>Spanish</option>
-                                            <option>Latin American</option>
+                                        <select id="cuisineSelections">
+                                            <option value="">-- SELECT --</option>
+                                            <option value="african">African</option>
+                                            <option value="american">American</option>
+                                            <option value="cajun">Cajun</option>
+                                            <option value="caribbean">Caribbean</option>
+                                            <option value="chinese">Chinese</option>
+                                            <option value="european">European</option>
+                                            <option value="french">French</option>
+                                            <option value="greek">Greek</option>
+                                            <option value="italian">Italian</option>
+                                            <option value="indian">Indian</option>
+                                            <option value="japanese">Japanese</option>
+                                            <option value="latin american">Latin American</option>
+                                            <option value="mexican">Mexican</option>
+                                            <option value="southern">Southern</option>
+                                            <option value="spanish">Spanish</option>
+                                            <option value="thai">Thai</option>
+                                            <option value="vietnamese">Vietnamese</option>
                                         </select>
                                     </div>
                                     <br>
                                     <br>
 
                                     <!-- dropdown 2-->
+                                    <P>BY CATEGORY</P>
                                     <div class="select is-rounded is-small">
-                                        <select>
-                                            <option>BY CATEGORY</option>
-                                            <option>Appetizers</option>
-                                            <option>Bowls</option>
-                                            <option>Casseroles</option>
-                                            <option>Entertaining</option>
-                                            <option>Breakfast & Brunch</option>
-                                            <option>Salads</option>
-                                            <option>Main Dish</option>
-                                            <option>Side Dishes</option>
-                                            <option>Desserts</option>
-                                            <option>Drinks</option>
+                                        <select id="categorySelections">
+                                            <option value="">-- SELECT --</option>
+                                            <option value="breakfast">Breakfast & Brunch</option>
+                                            <option value="lunch">Lunch</option>
+                                            <option value="dinner">Dinner</option>
+                                            <option value="soup">Soups</option>
+                                            <option value="salad">Salads</option>
+                                            <option value="appetizer">Appetizers</option>
+                                            <option value="side dish">Side Dishes</option>
+                                            <option value="main course">Main Dishes</option>
+                                            <option value="dessert">Desserts</option>
+                                            <option value="beverage">Drinks</option>
                                         </select>
                                     </div>
                                     <br>
@@ -203,40 +219,39 @@
                     </div><!-- End of menu sticky -->
                 </div><!-- End of 1st parent -->
 
-
                 <!-- NEW: ICON & IMAGE DUMP DIV -->
                 <!-- ************************** NOTE: THESE HIDE ON RESULTS LOAD -->
                 <!-- Main content: Icon Filters -->
-                <div class="tile is-parent is-9">
+                <div id = "resultsDiv" class="tile is-parent is-9">
                     <article class="tile is-child ">
                         <div class="columns box is-multiline" style="margin-top:0;">
-                            <div class="column is-4 placeholder">
-                                <div class="box icon-box">
+                            <div  class="column is-4 ">
+                                <div id="spicy" class="box icon-box filterImage">
                                     <img class="is-square" src="assets/img/filter-spicy.png" alt="chili icon">
                                 </div>
                             </div>
-                            <div class="column is-4 placeholder">
-                                <div class="box icon-box">
+                            <div  class="column is-4 ">
+                                <div id="savory" class="box icon-box filterImage">
                                     <img class="is-square" src="assets/img/filter-savory.png" alt="savory herbs icon">
                                 </div>
                             </div>
-                            <div class="column is-4 placeholder">
-                                <div class="box icon-box">
+                            <div class="column is-4">
+                                <div id="onepot" class="box icon-box filterImage">
                                     <img class="is-square" src="assets/img/filter-onepot.png" alt="one-pot icon">
                                 </div>
                             </div>
-                            <div class="column is-4 placeholder">
-                                <div class="box icon-box">
+                            <div  class="column is-4 ">
+                                <div id="special" class="box icon-box filterImage">
                                     <img class="is-square" src="assets/img/filter-special.png" alt="special day icon">
                                 </div>
                             </div>
-                            <div class="column is-4 placeholder">
-                                <div class="box icon-box">
+                            <div  class="column is-4 ">
+                                <div id="surprise" class="box icon-box filterImage">
                                     <img class="is-square" src="assets/img/filter-surprise.png" alt="surprise me icon">
                                 </div>
                             </div>
-                            <div class="column is-4 placeholder">
-                                <div class="box icon-box">
+                            <div class="column is-4">
+                                <div id="healthy" class="box icon-box filterImage">
                                     <img class="is-square" src="assets/img/filter-healthy.png" alt="healthy icon">
                                 </div>
                             </div>
@@ -244,119 +259,116 @@
 
                             <!-- *******************************THIS FORMAT FOR RESULTS TO RENDER, ADD TEXT AS NEEDED-->
                             <!-- Results Area-->
-                            <div>
-
-
-                            </div>
-                            <div class="column is-4 result">
-                                <div class="box img-box">
+                            <div class="column is-4">
+                                <div class="box img-box result">
                                     <figure class="image is-4by5">
                                         <img id="pic1" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
                                     </figure>
                                     <br>
-                                    <p id="title1"></p>
-                                    <p id="blurb1"></p>
-                                    <p id="rating1"></p>
-                                    <p id="price1">$$$</p>
+                                    <p class="recipeTitle" id="title1"></p>
+                                    <p class="blurb" id="blurb1">Test</p>
+                                    <p class="rating" id="rating1"></p>
+                                    <p class="price" id="price1">$$$</p>
                                 </div>
                             </div>
-                            <div class="column is-4 result">
-                                <div class="box img-box">
+                            <div class="column is-4 ">
+                                <div class="box img-box result">
                                     <figure class="image is-4by5">
                                         <img id="pic2" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
                                     </figure>
                                     <br>
-                                    <p id="title2"></p>
-                                    <p id="blurb2"></p>
-                                    <p id="rating2"></p>
-                                    <p id="price2">$$$</p>
+                                    <p class="recipeTitle" id="title2"></p>
+                                    <p class="blurb" id="blurb2"></p>
+                                    <p class="rating" id="rating2"></p>
+                                    <p class="price" id="price2">$$$</p>
                                 </div>
                             </div>
-                            <div class="column is-4 result">
-                                <div class="box img-box">
+                            <div class="column is-4 ">
+                                <div class="box img-box result">
                                     <figure class="image is-4by5">
                                         <img id="pic3" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
                                     </figure>
                                     <br>
-                                    <p id="title3"></p>
-                                    <p id="blurb3"></p>
-                                    <p id="rating3"></p>
-                                    <p id="price3">$$$</p>
+                                    <p class="recipeTitle" id="title3"></p>
+                                    <p class="blurb" id="blurb3"></p>
+                                    <p class="rating" id="rating3"></p>
+                                    <p class="price" id="price3">$$$</p>
                                 </div>
                             </div>
-                            <div class="column is-4 result">
-                                <div class="box img-box">
+                            <div class="column is-4">
+                                <div class="box img-box result">
                                     <figure class="image is-4by5">
                                         <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
                                     </figure>
                                     <br>
-                                    <p id="title4"></p>
-                                    <p id="blurb4"></p>
-                                    <p id="rating4"></p>
-                                    <p id="price4">$$$</p>
+                                    <p class="recipeTitle" id="title4"></p>
+                                    <p class="blurb" id="blurb4"></p>
+                                    <p class="rating" id="rating4"></p>
+                                    <p class="price" id="price4">$$$</p>
                                 </div>
                             </div>
-                            <div class="column is-4 result">
-                                <div class="box img-box">
+                            <div class="column is-4">
+                                <div class="box img-box result">
                                     <figure class="image is-4by5">
                                         <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
                                     </figure>
                                     <br>
-                                    <p id="title5"></p>
-                                    <p id="blurb5"></p>
-                                    <p id="rating5"></p>
-                                    <p id="price5">$$$</p>
+                                    <p class="recipeTitle" id="title5"></p>
+                                    <p class="blurb" id="blurb5"></p>
+                                    <p class="rating" id="rating5"></p>
+                                    <p class="price" id="price5">$$$</p>
                                 </div>
                             </div>
-                            <div class="column is-4 result">
-                                <div class="box img-box">
+                            <div class="column is-4">
+                                <div class="box img-box result">
                                     <figure class="image is-4by5">
                                         <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
                                     </figure>
                                     <br>
-                                    <p id="title6"></p>
-                                    <p id="blurb6"></p>
-                                    <p id="rating6"></p>
-                                    <p id="price6">$$$</p>
+                                    <p class="recipeTitle" id="title6"></p>
+                                    <p class="blurb" id="blurb6"></p>
+                                    <p class="rating" id="rating6"></p>
+                                    <p class="price" id="price6">$$$</p>
                                 </div>
                             </div>
-                            <div class="column is-4 result">
-                                <div class="box img-box">
+                            <div class="column is-4">
+                                <div class="box img-box  result">
                                     <figure class="image is-4by5">
                                         <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
                                     </figure>
                                     <br>
-                                    <p id="title7"></p>
-                                    <p id="blurb7"></p>
-                                    <p id="rating7"></p>
-                                    <p id="price7">$$$</p>
+                                    <p class="recipeTitle" id="title7"></p>
+                                    <p class="blurb" id="blurb7"></p>
+                                    <p class="rating" id="rating7"></p>
+                                    <p class="price" id="price7">$$$</p>
                                 </div>
                             </div>
-                            <div class="column is-4 result">
-                                <div class="box img-box">
+                            <div class="column is-4">
+                                <div class="box img-box  result">
                                     <figure class="image is-4by5">
                                         <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
                                     </figure>
                                     <br>
-                                    <p id="title8"></p>
-                                    <p id="blurb8"></p>
-                                    <p id="rating8"></p>
-                                    <p id="price8">$$$</p>
+                                    <p class="recipeTitle" id="title8"></p>
+                                    <p class="blurb" id="blurb8"></p>
+                                    <p class="rating" id="rating8"></p>
+                                    <p class="price" id="price8">$$$</p>
                                 </div>
                             </div>
-                            <div class="column is-4 result">
-                                <div class="box img-box">
+                            <div class="column is-4">
+                                <div class="box img-box  result">
                                     <figure class="image is-4by5">
                                         <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
                                     </figure>
                                     <br>
-                                    <p id="title9"></p>
-                                    <p id="blurb9"></p>
-                                    <p id="rating9"></p>
-                                    <p id="price9">$$$</p>
+                                    <p class="recipeTitle" id="title9"></p>
+                                    <p class="blurb" id="blurb9"></p>
+                                    <p class="rating" id="rating9"></p>
+                                    <p class="price" id="price9">$$$</p>
                                 </div>
                             </div>
                         </div><!-- End of columns -->
+
                     </article>
                 </div><!-- End main image-icon divs-->
             </div><!-- End of sole ancestor -->
@@ -364,7 +376,9 @@
     </section><!-- End of filters section -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./spoonacular.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> <!--Bootstrap js -->
+    <script src="./assets/js/spoonacular.js"></script>
+
 </body>
 
 </html>
