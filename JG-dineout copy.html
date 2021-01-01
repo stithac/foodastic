@@ -67,8 +67,8 @@
     </div>
 
     <!-- HERO BANNER -->
-    <section class="hero is-light">
-        <div class="hero-body">
+    <section class="hero is-light ">
+        <div class="hero-body ">
             <div class="container">
 
                 <div class="column column-banner is-12 has-text-centered has-text-white">
@@ -90,8 +90,8 @@
                 <!-- Filter sidebar -->
                 <div class="column is-one-quarter">
                     <article class="box" id="main-selections">
-                        <div class="box box-sidebar">
-                            <div class="content">
+                        <div class="box box-sidebar has-background-white-ter">
+                            <div class="content has-background-white-ter">
                                 <!-- Check Selections -->
                                 <p class="allcaps">SPECIALITY FOOD</p>
                                 <label class="checkbox">
@@ -205,15 +205,18 @@
                 <!-- Main content: Icon Filters -->
                 <div class="column is-three-quarters">
                     <article class="box">
-                        <div class="columns is-multiline">
-                            <div class="column is-4">
-                                <div class="box icon-box">
-                                    <img class="is-square" src="assets/filter-spicy.png" alt="chili icon">
+                        <div class="columns is-multiline is-half-mobile ">
+
+                            <div class="column is-4 ">
+                                <div id="spicy" class="box icon-box filterImage">
+                                    <p class="dine-text">spicy</p>
+                                    <img class="is-square" src="assets/filter-spicy2.svg" alt="chili icon">
                                 </div>
                             </div>
-                            <div class="column is-4">
-                                <div class="box icon-box">
-                                    <img src="assets/filter-savory.png" alt="savory herbs icon">
+                            <div class="column is-4 ">
+                                <div id="savory" class="box icon-box filterImage">
+                                    <p class="dine-text">savory</p>
+                                    <img class="is-square-icon" src="assets/filter-savory.png" alt="savory herbs icon">
                                 </div>
                             </div>
                             <div class="column is-4">
@@ -224,21 +227,26 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="column is-4">
-                                <div class="box icon-box">
-                                    <img src="assets/filter-special.png" alt="special day icon">
+                            <div class="column is-4 ">
+                                <div id="special" class="box icon-box filterImage">
+                                    <p class="dine-text">special occasion</p>
+                                    <img class="is-square" src="assets/filter-special.png" alt="special day icon">
+                                </div>
+                            </div>
+                            <div class="column is-4 ">
+                                <div id="surprise" class="box icon-box filterImage">
+                                    <p class="dine-text">surprise me</p>
+                                    <img class="is-square" src="assets/filter-surprise.png" alt="surprise me icon">
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box icon-box">
-                                    <img src="assets/filter-surprise.png" alt="surprise me icon">
+                                <div id="healthy" class="box icon-box filterImage">
+                                    <p class="dine-text">healthy</p>
+                                    <img class="is-square" src="assets/filter-healthy.png" alt="healthy icon">
                                 </div>
                             </div>
-                            <div class="column is-4">
-                                <div class="box icon-box">
-                                    <img src="assets/filter-healthy.png" alt="healthy icon">
-                                </div>
-                            </div>
+
+
                             <!-- End of icon filters -->
 
                             <!-- **********************FOR RESULTS***************-->
@@ -249,7 +257,7 @@
                             <!-- ************************************************ -->
 
 
-                            <div class="column is-4">
+                            <!-- <div class="column is-4">
                                 <div class="box img-box card">
                                     <figure class="image is-4by5">
                                         <img id="pic3" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
@@ -287,7 +295,7 @@
                                     <p id="reviews">Reviews</p>
                                     <p id="price">Price</p>
                                 </div>
-                            </div>
+                            </div> -->
 
                         </div>
                         <!-- End of columns -->

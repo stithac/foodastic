@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap');
-
-
-body, html {
+body,
+html {
     height: 100%;
     background-image: url('http://ubuntuhandbook.org/wp-content/uploads/2016/09/Yakkety_Yak_Wallpaper_grey.jpg');
-
 }
 
+
 /* nav-links style in html */
+
 .nav-links {
     font-family: 'Nerko One', cursive;
 }
@@ -17,8 +17,10 @@ body, html {
     font-family: 'Nerko One', cursive;
 }
 
+
 /* Hero section */
-.hero-body {
+
+.hero-body-tr {
     background-image: url('./assets/foodastic-Hero.jpg');
     background-position: center;
     background-size: cover;
@@ -26,21 +28,19 @@ body, html {
     padding-bottom: calc(700px + (474 - 700) * (100vw - 600px) / (1200 - 600));
 }
 
-
-
 .hero-text {
-  font-family: 'Nerko One', cursive;
-  font-size: 40px;
-  line-height: 1;
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  transform: translate(-50%, -50%);
-  color: white;
-  background-color: #e02239;
+    font-family: 'Nerko One', cursive;
+    font-size: 40px;
+    line-height: 1;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: #e02239;
 }
 
 .content {
@@ -51,10 +51,12 @@ body, html {
 p {
     font-family: 'Monteserrat', sans-serif;
     font-size: 20px;
-    color:#e02239;
+    color: #e02239;
 }
 
+
 /* Button animation and styling */
+
 button {
     font-family: 'Monteserrat', sans-serif;
     border-radius: none;
@@ -69,27 +71,29 @@ button {
     display: inline-block;
     position: relative;
     transition: 0.5s;
-  }
-  
-  .button span:after {
+}
+
+.button span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
     top: 0;
     right: -20px;
     transition: 0.5s;
-  }
-  
-  .button:hover span {
+}
+
+.button:hover span {
     padding-right: 25px;
-  }
-  
-  .button:hover span:after {
+}
+
+.button:hover span:after {
     opacity: 1;
     right: 0;
-  }
+}
+
 
 /* Contact */
+
 label {
     font-family: 'Nerko One', cursive;
 }
