@@ -4,16 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DineIn | Dine Out</title>
+    <title>Foodastic</title>
     <!-- Bulma-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
-<<<<<<< HEAD
     <!-- Bootstrap CSS JENNER NOT USING, this tag is affecting layout -->
-=======
-
-    <!-- TODO: Bootstrap CSS JENNER NOT USING, this tag is affecting layout -->
->>>>>>> 1457323694e89f52c74e4bbce72bf4036829db67
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
     <!-- Not sure what link below is -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -83,13 +78,12 @@
         <div class="container">
             <div class="columns is-multiline ">
                 <!-- Filter sidebar -->
-                <div class="column is-one-quarter has-background-warning ">
-                    <article class="tile box has-background-info" id="main-selections">
+                <div class="column is-one-quarter">
+                    <article class="tile box" id="main-selections">
 
                         <!-- ******* NOTE: switched placement of box and content tag AND added class box-sidecar -->
-                        <div class="box box-sidebar ">
-                            <div class="content">
-
+                        <div class="box box-sidebar has-background-white-ter">
+                            <div class="content has-background-white-ter">
                                 <!-- Check Selections -->
                                 <p class="allcaps">MAIN INGREDIENT</p>
                                 <fieldset id="ingredientSelections">
@@ -130,7 +124,6 @@
                                         </div>
                                     </div>
                                     <!-- <div class="field">
-
                                             <div class="control">
                                                 <input class="input input-tr is-small" type="text" placeholder="Include">
                                             </div>
@@ -140,7 +133,6 @@
                                                 <input class="input input-tr is-small" type="text" placeholder="Do Not Include">
                                             </div>
                                         </div> -->
-
                                 </div>
                                 <br>
 
@@ -215,56 +207,57 @@
                 <!-- ISSUE END************************ -->
 
                 <!-- This stays -->
-                <div class=" column is-three-quarters has-background-danger">
-                    <article class=" box box-container has-background-primary">
+                <div class=" column is-three-quarters">
+                    <article class=" box">
 
                         <!-- ISSUE START: LINE 207 INLINE STYLE MARGIN MIGHT AFFECT LAYOUT will check back on this *************************** -->
 
-                        <div class="columns box is-multiline has-background-link" style="margin-top:0;">
-
+                        <div class="columns is-multiline is-half-mobile ">
+                            <!-- this is inline style removed from #line 215 ** style="margin-top:0;" ** -->
                             <!-- ISSUE END ************************ -->
 
 
                             <div class="column is-4 ">
                                 <div id="spicy" class="box icon-box filterImage">
-                                    <img class="is-square" src="assets/filter-spicy.png" alt="chili icon">
+                                    <p class="dine-text">spicy</p>
+                                    <img class="is-square" src="assets/filter-spicy2.svg" alt="chili icon">
                                 </div>
                             </div>
                             <div class="column is-4 ">
                                 <div id="savory" class="box icon-box filterImage">
-                                    <img class="is-square" src="assets/filter-savory.png" alt="savory herbs icon">
-
+                                    <p class="dine-text">savory</p>
+                                    <img class="is-square-icon" src="assets/filter-savory.png" alt="savory herbs icon">
                                 </div>
                             </div>
                             <div class="column is-4">
                                 <div id="onepot" class="box icon-box filterImage">
-
+                                    <p class="dine-text">one pot</p>
                                     <img class="is-square" src="assets/filter-onepot.png" alt="one-pot icon">
                                 </div>
                             </div>
                             <div class="column is-4 ">
                                 <div id="special" class="box icon-box filterImage">
+                                    <p class="dine-text">special occasion</p>
                                     <img class="is-square" src="assets/filter-special.png" alt="special day icon">
                                 </div>
                             </div>
                             <div class="column is-4 ">
                                 <div id="surprise" class="box icon-box filterImage">
+                                    <p class="dine-text">surprise me</p>
                                     <img class="is-square" src="assets/filter-surprise.png" alt="surprise me icon">
-
                                 </div>
                             </div>
                             <div class="column is-4">
                                 <div id="healthy" class="box icon-box filterImage">
-
+                                    <p class="dine-text">healthy</p>
                                     <img class="is-square" src="assets/filter-healthy.png" alt="healthy icon">
-
                                 </div>
                             </div>
                             <!-- End of icon filters -->
 
                             <!-- *******************************THIS FORMAT FOR RESULTS TO RENDER, ADD TEXT AS NEEDED-->
                             <!-- Results Area-->
-                            <div class="column is-4">
+                            <!-- <div class="column is-4">
                                 <div class="box img-box result">
                                     <figure class="image is-4by5">
                                         <img id="pic1" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
@@ -371,11 +364,9 @@
                                     <p class="rating" id="rating9"></p>
                                     <p class="price" id="price9">$$$</p>
                                 </div>
-                            </div>
-
+                            </div> -->
                         </div>
                         <!-- End img-icon columns -->
-
                     </article>
                     <!-- End img-icon box -->
                 </div>
@@ -399,7 +390,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!--Bootstrap js -->
-
     <script src="./assets/js/spoonacular.js"></script>
 
 </body>

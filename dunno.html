@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DineIn | Dine Out</title>
+    <title>Foodastic</title>
     <!-- Bulma CSS-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <!-- Icons  -->
@@ -13,7 +13,26 @@
     <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
     <!-- NOTE: Included CSS here so you can add to test before adding to project style sheet -->
     <link rel="stylesheet" href="dine.css">
+    <style>
+        .clickable {
+            cursor: pointer;
+        }
+        
+        .icon-toggle {
+            color: #000;
+        }
+        
+        .selected {
+            color: #e02239;
+        }
+    </style>
+
+
+
+
+
 </head>
+
 
 <body>
     <!-- NAVBAR  -->
@@ -55,8 +74,8 @@
     </div>
 
     <!-- HERO BANNER -->
-    <section class="hero is-light">
-        <div class="hero-body">
+    <section class="hero is-light ">
+        <div class="hero-body ">
             <div class="container">
 
                 <div class="column column-banner is-12 has-text-centered has-text-white">
@@ -77,13 +96,13 @@
         <div class="container">
             <div class="columns is-multiline ">
                 <!-- Filter sidebar -->
-                <div class="column is-one-quarter ">
+                <div class="column is-one-quarter">
                     <article class="tile box" id="main-selections">
-                        <div class="box box-sidebar">
-                            <div class="content">
+                        <div class="box box-sidebar has-background-white-ter">
+                            <div class="content has-background-white-ter">
                                 <!-- Check Selections -->
                                 <p><span class="magic">LIKE MAGIC!</span><br><span class="foodastic">Foodtastic</span> will make food suggestions base on a few simple questions.</p>
-                                <br>
+
                                 <!-- Input Search -->
                                 <div>
                                     <p class="allcaps">PLEASE ENTER YOUR CITY</p>
@@ -137,44 +156,41 @@
                 </div>
                 <!-- ******************************************************-->
                 <!-- ICON FILTERS -->
-                <div class="column is-three-quarters">
-                    <article class="box">
-                        <div class="columns is-multiline ">
+                <div class="column is-three-quarters ">
+                    <article class="box ">
+                        <div class="columns is-multiline is-half-mobile">
                             <div class="column is-4">
                                 <div class="box dunno-icon-box">
-                                    <p class="dunno-text">your mood now</p>
-                                    <div class="dunno-icon-div">
-                                        <div class="dunno-icon-row">
+                                    <p class="dunno-text">mood du jour</p>
 
-                                            <!-- TODO: ONCLICK ICON COLOR TOGGLE TEST  -->
+                                    <figure class="dunno-icon-row">
+                                        <span class="clickable"><i class="good-mood far fa-smile fa-3x selected icon-toggle"></i></span>
+                                        <span class="clickable"><i class="sad-mood far fa-frown fa-3x icon-toggle"></i></span>
+                                        <span class="clickable"><i class="sad-mood far fa-meh fa-3x icon-toggle"></i></span>
+                                    </figure>
+                                    <figure class="dunno-icon-row">
+                                        <span class="clickable"><i class="good-mood far fa-kiss-wink-heart fa-3x icon-toggle"></i></span>
+                                        <span class="clickable"><i class="bad-mood far fa-angry fa-3x icon-toggle"></i></span>
+                                        <span class="clickable"><i class="bad-mood far fa-meh-rolling-eyes fa-3x icon-toggle"></i></span>
+                                    </figure>
 
-                                            <span class="clickable"><i class="good-mood far fa-smile fa-3x selected icon-toggle"></i></span>
-                                            <span class="clickable"><i class="sad-mood far fa-frown fa-3x icon-toggle"></i></span>
-                                            <span class="clickable"><i class="sad-mood far fa-meh fa-3x icon-toggle"></i></span>
-                                        </div>
-                                        <div class="dunno-icon-row">
-                                            <span class="clickable"><i class="good-mood far fa-kiss-wink-heart fa-3x icon-toggle"></i></span>
-                                            <span class="clickable"><i class="bad-mood far fa-angry fa-3x icon-toggle"></i></span>
-                                            <span class="clickable"><i class="bad-mood far fa-meh-rolling-eyes fa-3x icon-toggle"></i></span>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
 
                             <div class="column is-4">
                                 <div class="box dunno-icon-box">
-                                    <p class="dunno-text">random</p>
+                                    <p class="dunno-text">pick</p>
                                     <div class="dunno-icon-div">
-                                        <button class="dunno-random-button button is-rounded">veni?</button>
-                                        <button class="dunno-random-button button is-rounded">vidi?</button>
-                                        <button class="dunno-random-button button is-rounded">vici?</button>
+                                        <button class="dunno-random-button button is-rounded selected icon-toggle2">veni?</button>
+                                        <button class="dunno-random-button button is-rounded icon-toggle2">vidi?</button>
+                                        <button class="dunno-random-button button is-rounded icon-toggle2">vici?</button>
                                     </div>
                                 </div>
                             </div>
                             <div class="column is-4">
                                 <div class="box dunno-icon-box">
-                                    <p class="dunno-text">about today</p>
-                                    <div class="dunno-icon-div">
+                                    <p class="dunno-text">your day?</p>
+                                    <div class="dunno-choice-div">
                                         <label class="good-mood checkbox day-choice"><input type="checkbox">Normal, Chill</label><br>
                                         <label class="good-mood checkbox day-choice"><input type="checkbox">Awesome</label><br>
                                         <label class="sad-mood checkbox day-choice"><input type="checkbox">Too Long</label><br>
@@ -187,11 +203,11 @@
                                 <div class="box dunno-icon-box">
                                     <div class="dunno-moth-div" style="text-align: center;">
                                         <img src="assets/filter-inkblot.png" class="moth-icon" alt="moth icon">
-                                    </div>
-                                    <div class="dunno-moth-input">
-                                        <span class=moth-choice><label><input type="checkbox" value="">bat</label></span>
-                                        <span class=moth-choice><label><input type="checkbox" value="">moth</label></span>
-                                        <span class=moth-choice><label><input type="checkbox" value="">butterfly</label></span>
+                                    </div><br>
+                                    <div class="dunno-icon-input">
+                                        <span class=moth-choice><label><input type="checkbox" value="">bat?</label></span>
+                                        <span class=moth-choice><label><input type="checkbox" value="">moth?</label></span>
+                                        <span class=moth-choice><label><input type="checkbox" value="">butterfly?</label></span>
                                     </div>
                                 </div>
                             </div>
@@ -200,7 +216,7 @@
                                     <p class="dunno-text">choose</p>
                                     <div class="dunno-icon-div">
                                         <div class="dunno-icon-row">
-                                            <span class="sad-mood clickable" style="color: #e02239;"><i class="fas fa-palette fa-3x"></i></span>
+                                            <span class="sad-mood clickable" style="color: #e02239;"><i class="fas fa-palette fa-3x"></i></span>&nbsp;
                                             <span class="good-mood clickable" style="color: #52cc00;"><i class="fas fa-palette fa-3x"></i></span>
                                             <span class="bad-mood clickable" style="color: #654321;"><i class="fas fa-palette fa-3x"></i></span>
                                         </div>
@@ -214,15 +230,15 @@
                             </div>
                             <div class="column is-4">
                                 <div class="box dunno-icon-box">
-                                    <p>Nevermind All That...<br><span class="dunno-text">SURPRISE ME!</span></p>
+                                    <p class="surpriseme"><span class="nevermind">Nevermind All That..</span>.<br><span class="dunno-text">SURPRISE ME!</span></p>
                                     <div class="dunno-icon-row">
-                                        <span class="clickable dunno-surprise-icon"><i class="fas fa-exclamation-circle fa-8x"></i></span>
+                                        <span class="clickable dunno-surprise-icon"><i class="fas fa-exclamation-circle fa-7x"></i></span>
                                     </div>
                                 </div>
                             </div>
                             <!-- ******************************************************-->
                             <!-- RESULTS IMAGES -->
-                            <div class="column is-4">
+                            <!-- <div class="column is-4">
                                 <div class="box img-box card">
                                     <figure class="image is-4by5">
                                         <img id="pic1" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
@@ -286,7 +302,7 @@
                                     <p id="reviews">Reviews</p>
                                     <p id="price">Price</p>
                                 </div>
-                            </div>
+                            </div> -->
                     </article>
                     </div>
                 </div>
@@ -297,11 +313,11 @@
 
         <!-- TODO: Toggle Test -->
         <!-- <i class="selected icon-toggle">icon 1</i>
-            <i class="icon-toggle">icon 2</i>
-            <i class="icon-toggle">icon 3</i>
-            <i class="icon-toggle">icon 4</i>
-            <i class="icon-toggle">icon 5</i>
-            <i class="icon-toggle">icon 6</i> -->
+        <i class="icon-toggle">icon 2</i>
+        <i class="icon-toggle">icon 3</i>
+        <i class="icon-toggle">icon 4</i>
+        <i class="icon-toggle">icon 5</i>
+        <i class="icon-toggle">icon 6</i> -->
 
 
     </section>
@@ -313,6 +329,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script>
         // TODO: ICON TOGGLE TEST
+        $('.icon-toggle2').on('click', function() {
+            $(".icon-toggle2.selected2").not(this).removeClass('selected2');
+            $(this).toggleClass('selected2')
+        })
+
         $('.icon-toggle').on('click', function() {
             $(".icon-toggle.selected").not(this).removeClass('selected');
             $(this).toggleClass('selected')

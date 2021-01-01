@@ -1,335 +1,352 @@
-@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap');
-
-/* TODO: Taken from index.css bec. other styles clashing with dining pages */
-
-
-/* nav-links style in html */
-
-.nav-links {
-    font-family: 'Nerko One', cursive;
-}
-
-.navbar-item {
-    font-family: 'Nerko One', cursive;
-}
-
-
-/* Dine CSS */
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    /* background-color: hsl(0, 0%, 14%) */
-    background-color: hsl(0, 0%, 10%)
-}
-
-.hero-body {
-    background-image: url('./assets/fodastic-header-Hero.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    /* &.is-transparent opacity: 0.3 */
-}
-
-.column-banner {
-    height: 75px;
-    margin: auto;
-    background-color: #fdc407;
-    /* background-color: #e02239; */
-    align-items: center;
-}
-
-.title {
-    font-family: 'Nerko One', cursive;
-    font-size: 4rem;
-    color: #fff;
-    font-weight: normal;
-}
-
-.subtitle {
-    font-family: 'Monteserrat', sans-serif;
-    font-size: 2rem;
-    color: #fff;
-    text-align: center;
-}
-
-.dunno-text {
-    font-family: 'Nerko One', cursive;
-    font-size: 25px;
-}
-
-p {
-    font-family: 'Monteserrat', sans-serif;
-    font-size: .90rem;
-    color: hsl(0, 0%, 14%);
-}
-
-
-/* Sidebar all caps */
-
-.allcaps {
-    font-family: 'Monteserrat', sans-serif;
-    font-size: .80rem;
-    color: hsl(0, 0%, 14%);
-    font-weight: bold;
-}
-
-.checkbox,
-.choice {
-    font-family: 'Monteserrat', sans-serif;
-    font-size: .90rem;
-    color: #363636;
-}
-
-.magic {
-    font-family: 'Nerko One', cursive;
-    font-size: 2rem;
-}
-
-.foodastic {
-    font-family: 'Monteserrat', sans-serif;
-    color: #e02239;
-    font-weight: bold;
-}
-
-
-/*  cheap eats filter */
-
-.best {
-    font-family: 'Monteserrat', sans-serif;
-    font-size: 1.5rem;
-    /* padding-top: 8px; */
-    /* display: block; */
-}
-
-.cheap {
-    font-family: 'Nerko One', cursive;
-    font-size: 4rem;
-    line-height: .5;
-}
-
-.box-cheapeats {
-    text-align: center;
-    height: 210px;
-    /* margin: auto 0; */
-}
-
-.box-sidebar {
-    width: 100%;
-}
-
-
-/* Margin for global input boxes */
-
-input {
-    margin-right: 8px;
-}
-
-.title,
-.subtitle {
-    display: inline;
-}
-
-
-/* TODO: FIX */
-
-.d-section {
-    margin-top: 0px;
-}
-
-.box-sidebar-tr {
-    padding: 10px;
-}
-
-
-/* .section-jg {
-    padding: 1rem 1rem;
-} */
-
-.input-tr,
-.textarea {
-    width: 80%;
-}
-
-
-/* image divs for ICONS */
-
-.icon-box,
-.dunno-icon-box {
-    height: 250px;
-    background-color: #fdc407;
-}
-
-.icon-box img {
-    max-width: 100%;
-    max-height: 100%;
-    margin: auto;
-    display: block;
-}
-
-
-/* image divs for IMGs */
-
-.img-box img {
-    max-width: 100%;
-    max-height: 100%;
-    margin: auto;
-    display: block;
-    object-fit: cover;
-}
-
-
-/* TODO: TEST THIS SPACING decrese space between image div columns */
-
-.column {
-    padding: .5rem;
-}
-
-
-/* TODO: CHECK (applied to dinein.html by Ashley - When active here it distorts images */
-
-
-/* .img-box {
-            height: 470px;
-            overflow-y: auto !important;
-        } */
-
-
-/* ICONS */
-
-
-/* Makes icons clickable */
-
-.clickable {
-    cursor: pointer;
-}
-
-
-/* styles for DUNNO icon filters  */
-
-.fa-exclamation-circle,
-.fa-smile,
-.fa-frown,
-.fa-angry,
-.fa-meh,
-.fa-kiss-wink-heart,
-.fa-meh-rolling-eyes {
-    color: #000;
-}
-
-
-/* .dunno-random-button:hover,
-.fa-exclamation-circle:hover,
-.fa-smile:hover,
-.fa-frown:hover,
-.fa-angry:hover,
-.fa-meh:hover,
-.fa-kiss-wink-heart:hover,
-.fa-meh-rolling-eyes:hover {
-    color: #e02239 !important;
-} */
-
-
-/* TODO: Visted color change for icons */
-
-
-/* .dunno-random-button:visited:after {
-    content: " ";
-    background-image: url('your-background-image.jpg');
-    height: 10px;
-    width: 10px;
-} */
-
-
-/* center stuff */
-
-.dunno-text,
-.dunno-icon-row,
-.dunno-surprise-icon,
-.dunno-icon-box {
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
-}
-
-.dunno-icon-today {
-    margin: 5px 0 20px;
-    text-align: center;
-}
-
-.dunno-text-today {
-    text-align: left;
-}
-
-.dunno-icon-row {
-    padding: 8px 5px;
-    letter-spacing: .8rem;
-}
-
-.dunno-moth-input {
-    text-align: center;
-    margin-top: 25px;
-}
-
-.dunno-random-button {
-    background-color: #000;
-    color: #fff;
-    width: 130px;
-    margin-bottom: 5px;
-    font-weight: bold;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-/* Add space between inline inputs */
-
-.moth-choice:after {
-    content: " ";
-    display: inline-block;
-    width: 10px;
-}
-
-
-/* MEDIA QUERIES */
-
-@media screen and (max-width: 760px) {
-    .fa-smile,
-    .fa-frown,
-    .fa-angry,
-    .fa-meh,
-    .fa-kiss-wink-heart,
-    .fa-meh-rolling-eyes,
-    .fa-palette {
-        font-size: 4em;
-    }
-    .dunno-random-button {
-        width: 15rem;
-        height: 3rem;
-    }
-    /* TODO: Fix */
-    .moth-choice {
-        float: left;
-        display: block;
-    }
-    /* TODO: FIX */
-    .dunno-moth-div {
-        float: left;
-        margin-left: 25px;
-    }
-}
-
-
-/****** Icon toggle test */
-
-.icon-toggle {
-    color: #000;
-}
-
-.selected {
-    color: #e02239;
-}
+            @import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap');
+            /* TODO: Taken from index.css bec. other styles clashing with dining pages */
+            /* nav-links style in html */
+            
+            html {
+                background-color: hsl(0, 0%, 96%);
+            }
+            
+            .nav-links {
+                font-family: 'Nerko One', cursive;
+            }
+            
+            .navbar-item {
+                font-family: 'Nerko One', cursive;
+            }
+            /* Dine CSS */
+            
+            * {
+                box-sizing: border-box;
+            }
+            /* html {
+                background-color: hsl(0, 0%, 10%)
+            } */
+            
+            .hero-body {
+                background-image: url('./assets/fodastic-header-Hero.png');
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                /* &.is-transparent opacity: 0.3 */
+            }
+            
+            .column-banner {
+                height: 75px;
+                margin: auto;
+                background-color: #fdc407;
+                /* background-color: #e02239; */
+                align-items: center;
+            }
+            
+            .column-banner-about {
+                height: 75px;
+                margin: auto;
+                /* background-color: #fdc407; */
+                background-color: #e02239;
+                align-items: center;
+            }
+            
+            .title {
+                font-family: 'Nerko One', cursive;
+                font-size: 4rem;
+                color: #fff;
+                font-weight: normal;
+            }
+            
+            .subtitle {
+                font-family: 'Monteserrat', sans-serif;
+                font-size: 2rem;
+                color: #fff;
+                text-align: center;
+            }
+            
+            .dunno-text,
+            .dine-text {
+                font-family: 'Nerko One', cursive;
+                font-size: 25px;
+            }
+            
+            p {
+                font-family: 'Monteserrat', sans-serif;
+                font-size: .90rem;
+                color: hsl(0, 0%, 14%);
+            }
+            /* Sidebar all caps */
+            
+            .allcaps {
+                font-family: 'Monteserrat', sans-serif;
+                font-size: .80rem;
+                color: hsl(0, 0%, 14%);
+                font-weight: bold;
+            }
+            
+            .checkbox,
+            .choice {
+                font-family: 'Monteserrat', sans-serif;
+                font-size: .90rem;
+                color: #363636;
+            }
+            
+            .magic {
+                font-family: 'Nerko One', cursive;
+                font-size: 2rem;
+            }
+            
+            .foodastic {
+                font-family: 'Monteserrat', sans-serif;
+                color: #e02239;
+                font-weight: bold;
+            }
+            /*  cheap eats filter */
+            
+            .best {
+                font-family: 'Monteserrat', sans-serif;
+                font-size: 1.5rem;
+                /* padding-top: 8px; */
+                /* display: block; */
+            }
+            
+            .cheap {
+                font-family: 'Nerko One', cursive;
+                font-size: 4rem;
+                line-height: .5;
+            }
+            
+            .nevermind {
+                font-family: 'Monteserrat', sans-serif;
+                font-size: 1rem;
+            }
+            
+            .box-cheapeats {
+                text-align: center;
+                height: 210px;
+                /* margin: auto 0; */
+            }
+            
+            .box-sidebar {
+                width: 100%;
+            }
+            /* Margin for global input boxes */
+            
+            input {
+                margin-right: 8px;
+            }
+            
+            .title,
+            .subtitle {
+                display: inline;
+            }
+            /* TODO: FIX */
+            
+            .d-section {
+                margin-top: 0px;
+            }
+            
+            .box-sidebar-tr {
+                padding: 10px;
+            }
+            
+            .input-tr,
+            .textarea {
+                width: 80%;
+            }
+            /*ICONS - DUNNO */
+            
+            .box.dunno-icon-box,
+            .dine-icon.box,
+            .icon-box {
+                height: 250px;
+                background-color: #fdc407;
+            }
+            
+            .avatar-box {
+                height: 250px;
+                margin-right: auto;
+                margin-left: auto;
+            }
+            
+            .dine-text {
+                text-align: center;
+            }
+            
+            .dunno-text,
+            .surpriseme {
+                padding: 10px 0 15px;
+                text-align: center;
+            }
+            
+            .dunno-icon-row {
+                text-align: center;
+                letter-spacing: 5px;
+                line-height: 3;
+            }
+            
+            .dunno-random-button {
+                background-color: #000;
+                color: #fff;
+                width: 125px;
+                margin-bottom: 5px;
+                font-weight: bold;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .moth-icon {
+                width: 175px;
+                padding: 10px 0 10px;
+                text-align: center;
+            }
+            
+            .dunno-icon-input {
+                display: block;
+                text-align: center;
+            }
+            /* Add space between inline inputs */
+            
+            .moth-choice:after {
+                content: " ";
+                display: inline-block;
+                width: 10px;
+            }
+            
+            .moth-choice {
+                display: inline-block;
+                text-align: center;
+            }
+            /* ****************************** */
+            /* Images */
+            
+            .img-box img {
+                max-width: 100%;
+                max-height: 100%;
+                margin: auto;
+                display: block;
+                object-fit: cover;
+            }
+            /* TODO: TEST THIS SPACING decrese space between image div columns */
+            
+            .column {
+                padding: .5rem;
+            }
+            /* Makes icons clickable */
+            /* .clickable {
+                cursor: pointer;
+            }
+           
+            
+            .icon-toggle {
+                color: #000;
+            }
+            
+            .selected {
+                color: #e02239;
+            } */
+            
+            .fa-exclamation-circle,
+            .fa-smile,
+            .fa-frown,
+            .fa-angry,
+            .fa-meh,
+            .fa-kiss-wink-heart,
+            .fa-meh-rolling-eyes {
+                color: #000;
+            }
+            
+            .dunno-random-button:hover,
+            .fa-exclamation-circle:hover,
+            .fa-smile:hover,
+            .fa-frown:hover,
+            .fa-angry:hover,
+            .fa-meh:hover,
+            .fa-kiss-wink-heart:hover,
+            .fa-meh-rolling-eyes:hover {
+                color: #e02239 !important;
+            }
+            
+            .is-square {
+                width: 150px;
+                margin-right: auto;
+                margin-left: auto;
+                display: block;
+            }
+            
+            .is-square-icon {
+                width: 250px;
+                margin-right: auto;
+                margin-left: auto;
+                display: block;
+            }
+            /* ICONS */
+            /* @media (min-width: 745px) {
+                    .fa-smile,
+                    .fa-frown,
+                    .fa-angry,
+                    .fa-meh,
+                    .fa-kiss-wink-heart,
+                    .fa-meh-rolling-eyes,
+                    .fa-palette {
+                        font-size: 3em !important;
+                        float: left;
+                        display: block;
+                    }
+                    .dunno-random-button {
+                        width: 15rem;
+                        height: 1.5rem;
+                    }
+                    body {
+                        background-color: white;
+                    }
+                    .box.dunno-icon-box,
+                    .icon-box {
+                        height: 180px;
+                        background-color: #fdc407;
+                        margin-right: auto;
+                        margin-left: auto;
+                        text-align: center;
+                    }
+                    .dunno-icon-row,
+                    .dunno-random-button {
+                        display: inline-block;
+                        text-align: center;
+                    }
+                    .dunno-text,
+                    .surpriseme {
+                        padding: 7px 0 15px;
+                        text-align: center;
+                    }
+                    .dunno-random-button {
+                        background-color: #000;
+                        color: #fff;
+                        width: 125px;
+                        margin-bottom: 5px;
+                        font-weight: bold;
+                        display: block;
+                        margin-left: auto;
+                        margin-right: auto;
+                        float: left;
+                        height: 40px;
+                    }
+                    .moth-icon {
+                        width: 175px;
+                        padding: 10px 0 10px;
+                        text-align: center;
+                    }
+                    .dunno-icon-input {
+                        display: block;
+                        text-align: center;
+                    }
+                    /* Add space between inline inputs */
+            /* .moth-choice:after {
+                    content: " ";
+                    display: inline-block;
+                    width: 10px;
+                }
+                
+                .moth-choice {
+                    float: left;
+                    display: block;
+                }
+            }
+             */
