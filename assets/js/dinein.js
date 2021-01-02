@@ -1,5 +1,5 @@
 
-var apiKey = ""
+var apiKey = "214f60134dc9416a9544280f08aa9f0b"
 
 //filter variables
 var cuisine;
