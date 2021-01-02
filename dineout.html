@@ -21,7 +21,7 @@
     <!-- NOTE: Included CSS here so you can add to test before adding to project style sheet -->
 
     <!-- CSS-2 -->
-    <link rel="stylesheet" href="./assets/css/dine.css">
+    <link rel="stylesheet" href="assets/css/dine.css">
 </head>
 
 </head>
@@ -38,8 +38,8 @@
                     </a>
                     <span class="navbar-burger burger" data-target="navbarMenu">
                         <span></span>
-                    <span></span>
-                    <span></span>
+                        <span></span>
+                        <span></span>
                     </span>
                 </div>
                 <div id="navbarMenu" class="navbar-menu">
@@ -57,7 +57,7 @@
                                     <i class="fa fa-star" aria-hidden="true" style="color: #e02239"></i>
 
                                     <span title="favorites" style="color: #e02239">Favorites</span>
-                            </a>
+                                </a>
                             </span>
                         </div>
                     </div>
@@ -70,15 +70,15 @@
     <section class="hero is-light ">
         <div class="hero-body ">
             <div class="container">
-
-                <div class="column column-banner is-12 has-text-centered has-text-white">
-                    <h3 class="title has-text-white">
-                        Prefer to Dine Out?<span>
-                            <h2 class="is-size-2 subtitle has-text-white">tell us more</h2>
-                        </span>
-                    </h3>
+                <div class="columns is-centered">
+                    <div class="column is-half column-banner has-text-centered has-text-white">
+                        <h3 class="title has-text-white">
+                            Prefer to Dine Out?<span>
+                                <h2 class="subtitle has-text-white">tell us more</h2>
+                            </span>
+                        </h3>
+                    </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -88,7 +88,7 @@
         <div class="container">
             <div class="columns is-multiline">
                 <!-- Filter sidebar -->
-                <div class="column is-one-quarter">
+                <div class="column is-3 column-sidebar">
                     <article class="box" id="main-selections">
                         <div class="box box-sidebar has-background-white-ter">
                             <div class="content has-background-white-ter">
@@ -203,25 +203,25 @@
                 <!-- NEW: ICON & IMAGE DUMP DIV -->
                 <!-- ************************** NOTE: THESE HIDE ON RESULTS LOAD -->
                 <!-- Main content: Icon Filters -->
-                <div class="column is-three-quarters">
+                <div class="column ">
                     <article class="box">
-                        <div class="columns is-multiline is-half-mobile ">
+                        <div class="columns is-multiline">
 
                             <div class="column is-4 ">
                                 <div id="spicy" class="box icon-box filterImage">
                                     <p class="dine-text">spicy</p>
-                                    <img class="is-square" src="assets/filter-spicy2.svg" alt="chili icon">
+                                    <img class="is-square-icon" src="assets/filter-spicy2.svg" alt="chili icon">
                                 </div>
                             </div>
                             <div class="column is-4 ">
                                 <div id="savory" class="box icon-box filterImage">
                                     <p class="dine-text">savory</p>
-                                    <img class="is-square-icon" src="assets/filter-savory.png" alt="savory herbs icon">
+                                    <img class="is-square-savory" src="assets/filter-savory.png" alt="savory herbs icon">
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box icon-box">
-                                    <div class="box box-cheapeats">
+                                <div class="box icon-box filterImage">
+                                    <div class="box box-cheapeats is-square-eats">
                                         <p class="p-best"><span class="best">BEST</span></p>
                                         <p class="p-cheap"><span class="cheap">cheap eats</span></p>
                                     </div>
@@ -230,22 +230,21 @@
                             <div class="column is-4 ">
                                 <div id="special" class="box icon-box filterImage">
                                     <p class="dine-text">special occasion</p>
-                                    <img class="is-square" src="assets/filter-special.png" alt="special day icon">
-                                </div>
-                            </div>
-                            <div class="column is-4 ">
-                                <div id="surprise" class="box icon-box filterImage">
-                                    <p class="dine-text">surprise me</p>
-                                    <img class="is-square" src="assets/filter-surprise.png" alt="surprise me icon">
+                                    <img class="is-square-icon" src="assets/filter-special.png" alt="special day icon">
                                 </div>
                             </div>
                             <div class="column is-4">
                                 <div id="healthy" class="box icon-box filterImage">
                                     <p class="dine-text">healthy</p>
-                                    <img class="is-square" src="assets/filter-healthy.png" alt="healthy icon">
+                                    <img class="is-square-icon" src="assets/filter-healthy.png" alt="healthy icon">
                                 </div>
                             </div>
-
+                            <div class="column is-4 ">
+                                <div id="surprise" class="box icon-box filterImage">
+                                    <p class="dine-text">surprise me</p>
+                                    <img class="is-square-icon" src="assets/filter-surprise.png" alt="surprise me icon">
+                                </div>
+                            </div>
 
                             <!-- End of icon filters -->
 
@@ -338,7 +337,8 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="assets/js/dineout.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="./assets/js/specialfx.js"></script>
     <!-- NOT USING BOOTSTRAP -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
