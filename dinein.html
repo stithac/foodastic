@@ -61,14 +61,15 @@
     <section class="hero is-light">
         <div class="hero-body">
             <div class="container">
-                <div class="column column-banner is-12 has-text-centered has-text-white">
-                    <h3 class="title has-text-white">
-                        Cooking to Dine In?<span>
-                            <h2 class="is-size-2 subtitle has-text-white">tell us more</h2>
-                        </span>
-                    </h3>
+                <div class="columns is-centered">
+                    <div class="column is-half column-banner has-text-centered has-text-white">
+                        <h3 class="title has-text-white">
+                            Dining In?<span>
+                                <h2 class="subtitle has-text-white">tell us more</h2>
+                            </span>
+                        </h3>
+                    </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -78,7 +79,7 @@
         <div class="container">
             <div class="columns is-multiline ">
                 <!-- Filter sidebar -->
-                <div class="column is-one-quarter">
+                <div class="column is-3 column-sidebar">
                     <article class="tile box" id="main-selections">
 
                         <!-- ******* NOTE: switched placement of box and content tag AND added class box-sidecar -->
@@ -207,50 +208,51 @@
                 <!-- ISSUE END************************ -->
 
                 <!-- This stays -->
-                <div class=" column is-three-quarters">
+                <div class=" column">
                     <article class=" box">
 
                         <!-- ISSUE START: LINE 207 INLINE STYLE MARGIN MIGHT AFFECT LAYOUT will check back on this *************************** -->
 
-                        <div class="columns is-multiline is-half-mobile ">
+                        <div class="columns is-multiline ">
                             <!-- this is inline style removed from #line 215 ** style="margin-top:0;" ** -->
                             <!-- ISSUE END ************************ -->
 
 
                             <div class="column is-4 ">
-                                <div id="spicy" class="box icon-box filterImage">
+                                <div id="spicy" class="box icon-box filterImage clicked">
                                     <p class="dine-text">spicy</p>
-                                    <img class="is-square" src="assets/filter-spicy2.svg" alt="chili icon">
+                                    <img class="is-square-icon " src="assets/filter-spicy2.svg" alt="chili icon">
                                 </div>
                             </div>
                             <div class="column is-4 ">
                                 <div id="savory" class="box icon-box filterImage">
                                     <p class="dine-text">savory</p>
-                                    <img class="is-square-icon" src="assets/filter-savory.png" alt="savory herbs icon">
+                                    <img class="is-square-savory" src="assets/filter-savory.png" alt="savory herbs icon">
                                 </div>
                             </div>
                             <div class="column is-4">
                                 <div id="onepot" class="box icon-box filterImage">
                                     <p class="dine-text">one pot</p>
-                                    <img class="is-square" src="assets/filter-onepot.png" alt="one-pot icon">
+                                    <img class="is-square-icon " src="assets/filter-onepot.png" alt="one-pot icon">
                                 </div>
                             </div>
                             <div class="column is-4 ">
                                 <div id="special" class="box icon-box filterImage">
                                     <p class="dine-text">special occasion</p>
-                                    <img class="is-square" src="assets/filter-special.png" alt="special day icon">
+                                    <img class="is-square-icon" src="assets/filter-special.png" alt="special day icon">
+                                </div>
+                            </div>
+
+                            <div class="column is-4">
+                                <div id="healthy" class="box icon-box filterImage">
+                                    <p class="dine-text">healthy</p>
+                                    <img class="is-square-icon" src="assets/filter-healthy.png" alt="healthy icon">
                                 </div>
                             </div>
                             <div class="column is-4 ">
                                 <div id="surprise" class="box icon-box filterImage">
                                     <p class="dine-text">surprise me</p>
-                                    <img class="is-square" src="assets/filter-surprise.png" alt="surprise me icon">
-                                </div>
-                            </div>
-                            <div class="column is-4">
-                                <div id="healthy" class="box icon-box filterImage">
-                                    <p class="dine-text">healthy</p>
-                                    <img class="is-square" src="assets/filter-healthy.png" alt="healthy icon">
+                                    <img class="is-square-icon" src="assets/filter-surprise.png" alt="surprise me icon">
                                 </div>
                             </div>
                             <!-- End of icon filters -->
@@ -390,7 +392,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!--Bootstrap js -->
+<<<<<<< HEAD
     <script src="./assets/js/dinein.js"></script>
+=======
+    <script src="./assets/js/spoonacular.js"></script>
+    <script src="./assets/js/specialfx.js"></script>
+>>>>>>> f070232635fd1e13dd7419a23953b8e50b18746c
 
 </body>
 

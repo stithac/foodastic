@@ -12,6 +12,7 @@
     <script src="https://kit.fontawesome.com/4f8132285b.js" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
     <!-- NOTE: Included CSS here so you can add to test before adding to project style sheet -->
+<<<<<<< HEAD
     <link rel="stylesheet" href="./assets/css/dine.css">
     <style>
         .clickable {
@@ -29,10 +30,12 @@
 
 
 
+=======
+    <link rel="stylesheet" href="dine.css">
+>>>>>>> f070232635fd1e13dd7419a23953b8e50b18746c
 
 
 </head>
-
 
 <body>
     <!-- NAVBAR  -->
@@ -77,15 +80,15 @@
     <section class="hero is-light ">
         <div class="hero-body ">
             <div class="container">
-
-                <div class="column column-banner is-12 has-text-centered has-text-white">
-                    <h3 class="title has-text-white">
-                        Dunno?<span>
-                            <h2 class="is-size-2 subtitle has-text-white">tell us more</h2>
-                        </span>
-                    </h3>
+                <div class="columns is-centered">
+                    <div class="column is-half column-banner has-text-centered has-text-white">
+                        <h3 class="title has-text-white">
+                            Dunno?<span>
+                                <h2 class="subtitle has-text-white">tell us more</h2>
+                            </span>
+                        </h3>
+                    </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -96,21 +99,22 @@
         <div class="container">
             <div class="columns is-multiline ">
                 <!-- Filter sidebar -->
-                <div class="column is-one-quarter">
+                <div class="column is-3">
                     <article class="tile box" id="main-selections">
                         <div class="box box-sidebar has-background-white-ter">
-                            <div class="content has-background-white-ter">
+                            <div class="content1 has-background-white-ter">
                                 <!-- Check Selections -->
                                 <p><span class="magic">LIKE MAGIC!</span><br><span class="foodastic">Foodtastic</span> will make food suggestions base on a few simple questions.</p>
-
+                                <br>
                                 <!-- Input Search -->
-                                <div>
-                                    <p class="allcaps">PLEASE ENTER YOUR CITY</p>
-                                    <div class="field">
-                                        <div class="control">
-                                            <input class="input input-tr is-small" type="text" placeholder="City" id="cityInput">
-                                        </div>
+
+                                <p class="allcaps">PLEASE ENTER YOUR CITY</p>
+                                <div class="field">
+                                    <div class="control">
+                                        <input class="input input-tr is-small" type="text" placeholder="City" id="cityInput">
                                     </div>
+                                </div>
+                                <div class="content2">
                                     <p class="allcaps">OR ZIP CODE</p>
                                     <div class="field">
                                         <div class="control">
@@ -131,9 +135,12 @@
                                         <option value="max">20+ mi</option>
                                     </select>
                                 </div>
-                                <br>
-                                <br>
-                                <!-- Select Multiple 2-->
+                            </div>
+                            <!-- end content2 -->
+
+                            <br>
+                            <!-- Select Multiple 2-->
+                            <div class="column">
                                 <p class="allcaps">PREFERRED PRICE RANGE</p>
                                 <label class="checkbox"><input type="checkbox" value="">$</label>
                                 <br>
@@ -144,6 +151,7 @@
                                 <label class="checkbox"><input type="checkbox" value="">$$$$</label>
                                 <br>
                                 <br>
+
                                 <div class="buttons">
                                     <button class="button is-medium is-dark" id="btnSearch">Search</button>
                                 </div>
@@ -156,15 +164,15 @@
                 </div>
                 <!-- ******************************************************-->
                 <!-- ICON FILTERS -->
-                <div class="column is-three-quarters ">
+                <div class="column ">
                     <article class="box ">
-                        <div class="columns is-multiline is-half-mobile">
+                        <div class="columns is-multiline">
                             <div class="column is-4">
                                 <div class="box dunno-icon-box">
                                     <p class="dunno-text">mood du jour</p>
 
                                     <figure class="dunno-icon-row">
-                                        <span class="clickable"><i class="good-mood far fa-smile fa-3x selected icon-toggle"></i></span>
+                                        <span class="clickable"><i class="good-mood far fa-smile fa-3x icon-toggle"></i></span>
                                         <span class="clickable"><i class="sad-mood far fa-frown fa-3x icon-toggle"></i></span>
                                         <span class="clickable"><i class="sad-mood far fa-meh fa-3x icon-toggle"></i></span>
                                     </figure>
@@ -179,11 +187,11 @@
 
                             <div class="column is-4">
                                 <div class="box dunno-icon-box">
-                                    <p class="dunno-text">pick</p>
+                                    <p class="dunno-text">random query</p>
                                     <div class="dunno-icon-div">
-                                        <button class="dunno-random-button button is-rounded selected icon-toggle2">veni?</button>
-                                        <button class="dunno-random-button button is-rounded icon-toggle2">vidi?</button>
-                                        <button class="dunno-random-button button is-rounded icon-toggle2">vici?</button>
+                                        <button class="button is-rounded dunno-random-button has-text-white-ter">veni?</button>
+                                        <button class="button is-rounded dunno-random-button has-text-white-ter">vidi?</button>
+                                        <button class="button is-rounded dunno-random-button has-text-white-ter">vici?</button>
                                     </div>
                                 </div>
                             </div>
@@ -194,7 +202,7 @@
                                         <label class="good-mood checkbox day-choice"><input type="checkbox">Normal, Chill</label><br>
                                         <label class="good-mood checkbox day-choice"><input type="checkbox">Awesome</label><br>
                                         <label class="sad-mood checkbox day-choice"><input type="checkbox">Too Long</label><br>
-                                        <label class="bad-mood checkbox day-choice"><input type="checkbox">Bat **** crazy (aka BAD)</label><br>
+                                        <label class="bad-mood checkbox day-choice"><input type="checkbox">Bat **** crazy </label><br>
                                         <label class="sad-mood checkbox day-choice"><input type="checkbox">Doesn't Matter</label>
                                     </div>
                                 </div>
@@ -202,7 +210,7 @@
                             <div class="column is-4">
                                 <div class="box dunno-icon-box">
                                     <div class="dunno-moth-div" style="text-align: center;">
-                                        <img src="assets/filter-inkblot.png" class="moth-icon" alt="moth icon">
+                                        <img class="moth-icon" src="assets/filter-inkblot.png" alt="moth icon">
                                     </div><br>
                                     <div class="dunno-icon-input">
                                         <span class=moth-choice><label><input type="checkbox" value="">bat?</label></span>
@@ -213,7 +221,7 @@
                             </div>
                             <div class="column is-4">
                                 <div class="box dunno-icon-box">
-                                    <p class="dunno-text">choose</p>
+                                    <p class="dunno-text">pick</p>
                                     <div class="dunno-icon-div">
                                         <div class="dunno-icon-row">
                                             <span class="sad-mood clickable" style="color: #e02239;"><i class="fas fa-palette fa-3x"></i></span>&nbsp;
@@ -230,7 +238,7 @@
                             </div>
                             <div class="column is-4">
                                 <div class="box dunno-icon-box">
-                                    <p class="surpriseme"><span class="nevermind">Nevermind All That..</span>.<br><span class="dunno-text">SURPRISE ME!</span></p>
+                                    <p class="surpriseme"><span class="nevermind">Nevermind The Rest...</span><br><span class="dunno-text">SURPRISE ME!</span></p>
                                     <div class="dunno-icon-row">
                                         <span class="clickable dunno-surprise-icon"><i class="fas fa-exclamation-circle fa-7x"></i></span>
                                     </div>
@@ -310,16 +318,6 @@
             </div>
             <!-- end main container -->
         </div>
-
-        <!-- TODO: Toggle Test -->
-        <!-- <i class="selected icon-toggle">icon 1</i>
-        <i class="icon-toggle">icon 2</i>
-        <i class="icon-toggle">icon 3</i>
-        <i class="icon-toggle">icon 4</i>
-        <i class="icon-toggle">icon 5</i>
-        <i class="icon-toggle">icon 6</i> -->
-
-
     </section>
     <!-- end main section -->
 
@@ -327,18 +325,9 @@
     <script src="assets/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script>
-        // TODO: ICON TOGGLE TEST
-        $('.icon-toggle2').on('click', function() {
-            $(".icon-toggle2.selected2").not(this).removeClass('selected2');
-            $(this).toggleClass('selected2')
-        })
+    <script src="./assets/js/specialfx.js"></script>
 
-        $('.icon-toggle').on('click', function() {
-            $(".icon-toggle.selected").not(this).removeClass('selected');
-            $(this).toggleClass('selected')
-        })
-    </script>
+
 </body>
 
 </html>
