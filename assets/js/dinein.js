@@ -10,28 +10,29 @@ var recipes = [];
 
 $(".result").hide(); //Hide results divs on page load
 
-//getFilters() function is called when the searchBtn is clicked. The filter values are stored in an object "parameters" and passed to the getQueryURL() function
+//getFilters() function is called when the searchBtn is clicked. The filter values are taken from the left-hand filters and stored in an object "parameters". It is then passed to the getQueryURL() function
 function getFilters(){
 
-    //get selected ingredients
+    //get selected ingredients from #ingredientSelections
     var ingredients = [];
     $("#ingredientSelections input:checked").each(function(){
         ingredients.push($(this).attr("id"));
     })
         console.log(ingredients); //testing
 
-    //get recipe name
+    //get recipe name from #nameInput
     var name = $("#nameInput").val();
         console.log(name); //testing
 
-    //get selected cuisine
+    //get selected cuisine from #cusineSelections
     var cuisine = $("#cuisineSelections").val();
         console.log(cuisine); //testing
 
-    //get selected category
+    //get selected category from #categorySelections
     var category = $("#categorySelections").val();
         console.log(category); //testing
 
+    //create parameters object to hold all parameter values stored from filters
     var parameters = {
         ingredients: ingredients,
         name: name,
@@ -39,7 +40,7 @@ function getFilters(){
         category: category,
     }
 
-    createQueryURL(parameters);
+    createQueryURL(parameters); //call createQueryURL and pass in parameters object
 
 }//End of getFilters()
 
@@ -54,7 +55,7 @@ function createQueryURL(params){
 
 }//End of createQueryURL()
 
-//getResults() function takes in the queryURL and makes the AJAX call
+//getResults() function takes in the queryURL and makes the AJAX call.  The response is then passed to the populateRecipes function
 function getResults(url){
 
     $.ajax({
@@ -67,24 +68,24 @@ function getResults(url){
 
 }//End of getResults()
 
-function getRecipeDetails(ids){
+// function getRecipeDetails(ids){
 
-    for (i = 0; i < ids.length; i++){
+//     for (i = 0; i < ids.length; i++){
 
-        var queryURL2 = "https://api.spoonacular.com/recipes/" + ids[i] + "/information" + "/?apiKey=" + apiKey;
+//         var queryURL2 = "https://api.spoonacular.com/recipes/" + ids[i] + "/information" + "/?apiKey=" + apiKey;
 
-        $.ajax({
-            url: queryURL2,
-            method: "GET"
-        }).then(function(response) {
+//         $.ajax({
+//             url: queryURL2,
+//             method: "GET"
+//         }).then(function(response) {
 
-            recipes.push(response);
-            console.log(recipes);
+//             recipes.push(response);
+//             console.log(recipes);
 
-            populateResults(recipes);
-        });
-    }
-}
+//             populateResults(recipes);
+//         });
+//     }
+// }
 
 function populateResults(recipes){
     console.log(recipes);

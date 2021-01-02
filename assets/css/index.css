@@ -22,7 +22,7 @@ html {
 /* Hero section */
 
 .hero-body-tr {
-    background-image: url('./assets/foodastic-Hero.jpg');
+    background-image: url('../foodastic-Hero.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
