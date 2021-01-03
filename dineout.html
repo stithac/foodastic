@@ -68,12 +68,12 @@
 
     <!-- HERO BANNER -->
     <section class="hero is-light ">
-        <div class="hero-body ">
+        <div class="hero-body hero-body-jtr">
             <div class="container">
                 <div class="columns is-centered">
                     <div class="column is-half column-banner has-text-centered has-text-white">
                         <h3 class="title has-text-white">
-                            Prefer to Dine Out?<span>
+                            Dining Out?<span>
                                 <h2 class="subtitle has-text-white">tell us more</h2>
                             </span>
                         </h3>
@@ -94,42 +94,47 @@
                             <div class="content has-background-white-ter">
                                 <!-- Check Selections -->
                                 <p class="allcaps">SPECIALITY FOOD</p>
-                                <label class="checkbox">
-                                    <input type="checkbox" id="chkCheese">
-                                    Cheese Shops
-                                </label><br>
-                                <label class="checkbox">
-                                    <input type="checkbox" id="chkChocolatier">
-                                    Chocolatiers
-                                </label><br>
-                                <label class="checkbox">
-                                    <input type="checkbox" id="chkMeat">
-                                    Meat Shops
-                                </label><br>
-                                <label class="checkbox">
-                                    <input type="checkbox" id="chkPasta">
-                                    Pasta Shops
-                                </label><br>
-                                <label class="checkbox">
-                                    <input type="checkbox" id="chkSeafood">
-                                    Seafoood Markets
-                                </label><br>
+                                <fieldset id="specialitySelections">
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="cheese">
+                                        Cheese Shops
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="chocolatier">
+                                        Chocolatiers
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="meat">
+                                        Meat Shops
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="pasta">
+                                        Pasta Shops
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="seafood">
+                                        Seafoood Markets
+                                    </label>
+                                </fieldset>
                                 <br>
 
+
                                 <!-- Dropdown -->
+                                <p class="allcaps">BY CUISINE</p>
                                 <div class=" select is-rounded is-small">
-                                    <select class="has-text-weight-bold">
-                                        <option value="default" disabled="true">BY CUISINE</option>
+                                    <select id="cuisineSelections">
+                                        <!-- <option value="default" disabled="true">BY CUISINE</option> -->
+                                        <option value="">-- SELECT --</option>
                                         <option value="steak">BBQ/Steak</option>
-                                        <option value="Japanese">Japanese</option>
+                                        <option value="japanese">Japanese</option>
                                         <option value="Italian">Italian</option>
-                                        <option value="Greek">Greek</option>
-                                        <option value="Southern">Southern</option>
-                                        <option value="Thai">Thai</option>
-                                        <option value="Indian">Indian</option>
-                                        <option value="Chinese">Chinese</option>
-                                        <option value="Spanish">Spanish</option>
-                                        <option value="Latin">Latin American</option>
+                                        <option value="greek">Greek</option>
+                                        <option value="southern">Southern</option>
+                                        <option value="thai">Thai</option>
+                                        <option value="indian">Indian</option>
+                                        <option value="chinese">Chinese</option>
+                                        <option value="spanish">Spanish</option>
+                                        <option value="latin">Latin American</option>
                                     </select>
                                 </div>
                                 <br>
@@ -168,7 +173,7 @@
 
                                 <!-- Select Multiple 2-->
                                 <p class="allcaps">PRICE</p>
-                                <label class="checkbox">
+                                <label class="checkbox" id="price">
                                     <input type="checkbox" value="">
                                     $
                                 </label><br>
@@ -337,7 +342,7 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="assets/js/dineout.js"></script>
     <script src="./assets/js/specialfx.js"></script>
     <!-- NOT USING BOOTSTRAP -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

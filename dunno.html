@@ -57,7 +57,7 @@
 
     <!-- HERO BANNER -->
     <section class="hero is-light ">
-        <div class="hero-body ">
+        <div class="hero-body hero-body-jtr">
             <div class="container">
                 <div class="columns is-centered">
                     <div class="column is-half column-banner has-text-centered has-text-white">
@@ -83,63 +83,69 @@
                         <div class="box box-sidebar has-background-white-ter">
                             <div class="content1 has-background-white-ter">
                                 <!-- Check Selections -->
-                                <p><span class="magic">LIKE MAGIC!</span><br><span class="foodastic">Foodtastic</span> will make food suggestions base on a few simple questions.</p>
-                                <br>
+                                <!-- TODO: Try to section and float sidebar content on tablet -->
+                                <div class="column fullTablet">
+                                    <p><span class="magic">LIKE MAGIC!</span><br><span class="foodastic">Foodtastic</span> will make food suggestions base on a few simple questions.</p>
+                                    <br>
+                                </div>
+
                                 <!-- Input Search -->
 
-                                <p class="allcaps">PLEASE ENTER YOUR CITY</p>
-                                <div class="field">
-                                    <div class="control">
-                                        <input class="input input-tr is-small" type="text" placeholder="City" id="cityInput">
-                                    </div>
-                                </div>
-                                <div class="content2">
-                                    <p class="allcaps">OR ZIP CODE</p>
+                                <div class="move2">
+                                    <p class="allcaps">PLEASE ENTER YOUR CITY</p>
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input input-tr is-small" type="text" placeholder="Zip" id="zipInput">
+                                            <input class="input input-tr is-small" type="text" placeholder="City" id="cityInput">
                                         </div>
                                     </div>
-                                </div>
-                                <br>
-                                <!-- Dropdown -->
-                                <div class="select is-rounded is-small">
-                                    <select id="radiusOptions" class="has-text-weight-bold">
-                                        <!-- values are in meters so work with yelp API. The maximum value is 40,000 meters (25 miles)  -->
-                                        <option value="default" disabled="true">MILE RADIUS</option>
-                                        <option value="8047">5 mi</option>
-                                        <option value="16093">10 mi</option>
-                                        <option value="24140">15 mi</option>
-                                        <option value="32187">20 mi</option>
-                                        <option value="max">20+ mi</option>
-                                    </select>
+                                    <div class="content2">
+                                        <p class="allcaps">OR ZIP CODE</p>
+                                        <div class="field">
+                                            <div class="control">
+                                                <input class="input input-tr is-small" type="text" placeholder="Zip" id="zipInput">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+
+
+
+                                    <!-- Dropdown -->
+                                    <div class="move">
+                                        <div class="select is-rounded is-small">
+                                            <select id="radiusOptions" class="has-text-weight-bold">
+                                                <!-- values are in meters so work with yelp API. The maximum value is 40,000 meters (25 miles)  -->
+                                                <option value="default" disabled="true">MILE RADIUS</option>
+                                                <option value="8047">5 mi</option>
+                                                <option value="16093">10 mi</option>
+                                                <option value="24140">15 mi</option>
+                                                <option value="32187">20 mi</option>
+                                                <option value="max">20+ mi</option>
+                                            </select>
+                                        </div>
+                                        <!-- end content2 -->
+                                        <br>
+                                        <br>
+                                        <!-- Select Multiple 2-->
+
+                                        <p class="allcaps">PREFERRED PRICE RANGE</p>
+                                        <label class="checkbox"><input type="checkbox" value="">$</label>
+                                        <br>
+                                        <label class="checkbox"><input type="checkbox" value="">$$</label>
+                                        <br>
+                                        <label class="checkbox"><input type="checkbox" value="">$$$</label>
+                                        <br>
+                                        <label class="checkbox"><input type="checkbox" value="">$$$$</label>
+                                    </div>
+                                    <br>
+
+                                    <div class="buttons">
+                                        <button class="button is-medium is-dark" id="btnSearch">Search</button>
+                                    </div>
                                 </div>
                             </div>
-                            <!-- end content2 -->
-
-                            <br>
-                            <!-- Select Multiple 2-->
-                            <div class="column">
-                                <p class="allcaps">PREFERRED PRICE RANGE</p>
-                                <label class="checkbox"><input type="checkbox" value="">$</label>
-                                <br>
-                                <label class="checkbox"><input type="checkbox" value="">$$</label>
-                                <br>
-                                <label class="checkbox"><input type="checkbox" value="">$$$</label>
-                                <br>
-                                <label class="checkbox"><input type="checkbox" value="">$$$$</label>
-                                <br>
-                                <br>
-
-                                <div class="buttons">
-                                    <button class="button is-medium is-dark" id="btnSearch">Search</button>
-                                </div>
-                            </div>
-                            <!-- end content -->
                         </div>
-                        <!-- end box -->
                     </article>
-                    <!-- end tile -->
                 </div>
                 <!-- ******************************************************-->
                 <!-- ICON FILTERS -->
