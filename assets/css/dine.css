@@ -21,13 +21,8 @@
             * {
                 box-sizing: border-box;
             }
-<<<<<<< HEAD
-            
-            .hero-body-jtr {
-=======
 
             .hero-body {
->>>>>>> 9fdcfc4d79e7611ebde8306c69b5425412ad235b
                 background-image: url("../fodastic-header-Hero.png");
                 background-position: center;
                 background-size: cover;
