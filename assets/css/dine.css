@@ -1,34 +1,34 @@
             /* Dinein/Dineout css */
-            
+
             @import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap');
             /* TODO: Taken from index.css bec. other styles clashing with dining pages */
             /* from index.css nav-links style in html */
-            
+
             html {
                 background-color: hsl(0, 0%, 96%);
             }
-            
+
             .nav-links {
                 font-family: 'Nerko One', cursive;
             }
-            
+
             .navbar-item {
                 font-family: 'Nerko One', cursive;
             }
             /* Dine CSS */
-            
+
             * {
                 box-sizing: border-box;
             }
-            
+
             .hero-body {
-                background-image: url("./assets/fodastic-header-Hero.png");
+                background-image: url("../fodastic-header-Hero.png");
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
             }
-            
+
             .column-banner {
                 height: 75px;
                 margin: auto;
@@ -36,7 +36,7 @@
                 /* background-color: #e02239; */
                 align-items: center;
             }
-            
+
             .column-banner-about {
                 height: 75px;
                 margin: auto;
@@ -44,40 +44,40 @@
                 background-color: #e02239;
                 align-items: center;
             }
-            
+
             .title {
                 font-family: 'Nerko One', cursive;
                 font-size: 3.5rem;
                 color: #fff;
                 font-weight: normal;
             }
-            
+
             .subtitle {
                 font-family: 'Monteserrat', sans-serif;
                 font-size: 2.5rem;
                 color: #fff;
                 text-align: center;
             }
-            
+
             .dunno-text,
             .dine-text {
                 font-family: 'Nerko One', cursive;
                 font-size: 25px;
             }
-            
+
             p {
                 font-family: 'Monteserrat', sans-serif;
                 font-size: .90rem;
                 color: hsl(0, 0%, 14%);
             }
             /* Sidebar all caps */
-            
+
             #btnSearch,
             #searchBtn {
                 font-family: 'Nerko One', cursive;
                 background-color: #e02239;
             }
-            
+
             .allcaps {
                 /* font-family: 'Monteserrat', sans-serif;
     font-size: .80rem; */
@@ -86,105 +86,105 @@
                 color: hsl(0, 0%, 14%);
                 /* font-weight: bold; */
             }
-            
+
             .checkbox,
             .choice {
                 font-family: 'Monteserrat', sans-serif;
                 font-size: .90rem;
                 color: #363636;
             }
-            
+
             .magic {
                 font-family: 'Nerko One', cursive;
                 font-size: 2rem;
             }
-            
+
             .foodastic {
                 font-family: 'Monteserrat', sans-serif;
                 color: #e02239;
                 font-weight: bold;
             }
             /*  cheap eats filter */
-            
+
             .best {
                 font-family: 'Monteserrat', sans-serif;
                 font-size: 1.5rem;
                 /* padding-top: 8px; */
                 /* display: block; */
             }
-            
+
             .cheap {
                 font-family: 'Nerko One', cursive;
                 font-size: 4rem;
                 line-height: .5;
             }
-            
+
             .nevermind {
                 font-family: 'Monteserrat', sans-serif;
                 font-size: 1rem;
             }
-            
+
             .box-cheapeats {
                 text-align: center;
                 height: 200px;
                 width: auto;
             }
-            
+
             .box-sidebar {
                 width: 100%;
             }
             /* Margin for global input boxes */
-            
+
             .title,
             .subtitle {
                 display: inline;
             }
-            
+
             .box-sidebar-tr {
                 padding: 10px;
             }
             /* inputs, checkboxes, textareas */
-            
+
             input {
                 margin-right: 8px;
             }
-            
+
             .input-tr,
             .textarea {
                 width: 80%;
             }
             /*Icon styling */
-            
+
             .dunno-choice-div {
                 width: 150px;
                 margin-right: auto;
                 margin-left: auto;
             }
-            
+
             .box.dunno-icon-box,
             .dine-icon.box,
             .icon-box {
                 height: 250px;
                 background-color: #fdc407;
             }
-            
+
             .dine-text {
                 text-align: center;
             }
-            
+
             .dunno-text,
             .surpriseme {
                 padding: 10px 0 15px;
                 text-align: center;
             }
-            
+
             .dunno-icon-row {
                 text-align: center;
                 letter-spacing: 5px;
                 line-height: 3;
             }
             /* Icon defaults */
-            
+
             .fa-exclamation-circle,
             .fa-smile,
             .fa-frown,
@@ -194,21 +194,21 @@
             .fa-meh-rolling-eyes {
                 color: #000;
             }
-            
+
             .is-square-icon {
                 width: 150px;
                 margin-right: auto;
                 margin-left: auto;
                 display: block;
             }
-            
+
             .is-square-savory {
                 width: 200px;
                 margin-right: auto;
                 margin-left: auto;
                 display: block;
             }
-            
+
             .dunno-random-button {
                 background-color: #000;
                 color: #fff;
@@ -219,36 +219,36 @@
                 margin-left: auto;
                 margin-right: auto;
             }
-            
+
             .dunno-random-button:focus {
                 outline: none;
                 border: none;
             }
-            
+
             .moth-icon {
                 width: 150px;
                 padding: 10px 0 10px;
                 text-align: center;
             }
-            
+
             .dunno-icon-input {
                 display: block;
                 text-align: center;
             }
             /* Add space between inline inputs */
-            
+
             .moth-choice:after {
                 content: " ";
                 display: inline-block;
                 width: 10px;
             }
-            
+
             .moth-choice {
                 display: inline-block;
                 text-align: center;
             }
             /* Dining image box*/
-            
+
             .img-box img {
                 max-width: 100%;
                 max-height: 100%;
@@ -256,16 +256,16 @@
                 display: block;
                 object-fit: cover;
             }
-            
+
             .column {
                 padding: .5rem;
             }
             /* Icon effects */
-            
+
             .clickable {
                 cursor: pointer;
             }
-            
+
             .dunno-random-button:hover,
             .far:hover,
             .fas:hover,
@@ -278,42 +278,42 @@
                 transform: scale(1.1);
             }
             /* for random buttons */
-            
+
             .red {
                 background-color: #e02239;
             }
-            
+
             .exclamation-red {
                 color: #e02239;
             }
             /* Face icon toggle */
-            
+
             .icon-toggle {
                 color: #000;
             }
-            
+
             .selected {
                 color: #e02239;
             }
-            
+
             .shadow {
                 -webkit-box-shadow: 0 8px 6px -6px black;
                 -moz-box-shadow: 0 8px 6px -6px black;
                 box-shadow: 0 8px 6px -6px black;
             }
-            
+
             .shadow-down {
                 -moz-box-shadow: inset 0 0 10px #000000;
                 -webkit-box-shadow: inset 0 0 10px #000000;
                 box-shadow: inset 0 0 10px #000000;
             }
             /* About */
-            
+
             .col-space {
                 padding: 0 20px;
             }
             /* Media Queries */
-            
+
             @media screen and (min-width: 769px) and (max-width: 1023px) {
                 .column.is-3 {
                     flex: none;
@@ -338,7 +338,7 @@
         float: right;
     } */
             }
-            
+
             @media screen and (max-width: 768px) {
                 .title {
                     font-size: 3rem;

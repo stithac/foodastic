@@ -4,13 +4,22 @@ var apiKey = "214f60134dc9416a9544280f08aa9f0b"
 //filter variables
 var cuisine;
 
-var limit = 2;
+var limit = 10;
 var ids = [];
 var recipes = [];
 
-$(".result").hide(); //Hide results divs on page load
+/******************************
+Start of the application's functions
+******************************/
 
-//getFilters() function is called when the searchBtn is clicked. The filter values are taken from the left-hand filters and stored in an object "parameters". It is then passed to the getQueryURL() function
+$(".result").hide(); //Hide results divs on page load
+$(".detailInformation").hide() //Hide detail information div on page load
+
+/****** getFilters() function:
+- Called when the searchBtn is clicked.
+- The filter values are taken from the left-hand filters and stored in an object "parameters".
+- It is then passed to the getQueryURL() function.
+******/
 function getFilters(){
 
     //get selected ingredients from #ingredientSelections
@@ -44,7 +53,12 @@ function getFilters(){
 
 }//End of getFilters()
 
-//createQueryURL() takes in an object and creates a queryURL based on the parameters passed in.  It then passes the URL to the getResults() function
+
+/****** createQueryURL() function:
+- Invoked at end of getFilters() function.
+- Takes in an object and creates a queryURL based on the parameters passed in.
+- It then passes the URL to the getResults() function.
+******/
 function createQueryURL(params){
 
     var queryURL1 ="https://api.spoonacular.com/recipes/complexSearch?apiKey=" + apiKey + "&includeNutrition=true&addRecipeInformation=true&includeIngredients=" + params.ingredients.toString() + "&titleMatch="+ params.name + "&cuisine=" + params.cuisine + "&type=" + params.category;
@@ -55,7 +69,12 @@ function createQueryURL(params){
 
 }//End of createQueryURL()
 
-//getResults() function takes in the queryURL and makes the AJAX call.  The response is then passed to the populateRecipes function
+
+/****** getResults() function:
+- Invoked at end of createQueryURL() function.
+- Takes in the queryURL and makes the AJAX call.
+- The response is then passed to the populateRecipes function.
+******/
 function getResults(url){
 
     $.ajax({
@@ -64,62 +83,77 @@ function getResults(url){
     }).then(function(response) {
         console.log(response);
 
+        for(i = 0; i < response.results.length; i++){
+            recipe = response.results[i];
+            recipes.push(recipe);
+        }
+        populateResults(response);
     });
 
 }//End of getResults()
 
-// function getRecipeDetails(ids){
 
-//     for (i = 0; i < ids.length; i++){
-
-//         var queryURL2 = "https://api.spoonacular.com/recipes/" + ids[i] + "/information" + "/?apiKey=" + apiKey;
-
-//         $.ajax({
-//             url: queryURL2,
-//             method: "GET"
-//         }).then(function(response) {
-
-//             recipes.push(response);
-//             console.log(recipes);
-
-//             populateResults(recipes);
-//         });
-//     }
-// }
-
+/****** populateResults() function:
+- Invoked from getResults() function.
+- Takes in response from AJAX call and updates DOM elements with appropriate parameters
+- The response is then passed to the populateRecipes function.
+******/
 function populateResults(recipes){
-    console.log(recipes);
+    console.log(recipes.results.length);
+
+    // $(".result").show();
+
     var j = 1;
 
-    for (i = 0; i < limit; i++){
+    //hide filter images / results and clear recipeTitles
+    $(".filterImage").hide();
+    $(".result").hide();
+    $(".recipeTitle").val("");
 
-        $("#pic"+ j).attr("src", recipes[i].image);
-        $("#title" + j).text(recipes[i].title);
-        $("#rating" + j).text("Rating: " + recipes[i].spoonacularScore + "/100");
 
-        if(parseInt(recipes[i].pricePerServing) <= 100){
+    for (i = 0; i < recipes.results.length; i++){
+
+        console.log(recipes.results[i]); //testing
+
+        $("#pic"+ j).attr("src", recipes.results[i].image);
+        $("#title" + j).text(recipes.results[i].title);
+        $("#rating" + j).text("Rating: " + recipes.results[i].spoonacularScore + "/100");
+
+        if(parseInt(recipes.results[i].pricePerServing) <= 100){
             $("#price" + j).text("$");
-        }else if(parseInt(recipes[i].pricePerServing) > 100 && parseInt(recipes[i].pricePerServing) < 600 ){
+        }else if(parseInt(recipes.results[i].pricePerServing) > 100 && parseInt(recipes.results[i].pricePerServing) < 600 ){
             $("#price" + j).text("$$");
         }else{
             $("#price" + j).text("$$$");
         }
 
-        $("#blurb" + j).text(response[i].summary);
+        if($("#title"+j) !== ""){
+            $("#result" + i).show();
+            j++;
+        }else {
+            $("#result" + i).hide();
+        }
 
-        j++;
     }
-}
 
-//Event Listeners
+}//End of populateResults()
+
+
+/******
+ Event Listeners
+******/
+
+//searchBtn event listener
 $(searchBtn).on("click",function(event){
 
     event.preventDefault();
     // getResults();
+
     getFilters();
 
 });
 
+//filterImages event listener
 $(".filterImage").on("click", function(event){
 
     event.preventDefault();
@@ -158,6 +192,7 @@ $(".filterImage").on("click", function(event){
             cuisine: "french",
             category: ""
         }
+
     }else if(id === "surprise"){
         parameters = {
             ingredients: "",
@@ -165,6 +200,7 @@ $(".filterImage").on("click", function(event){
             cuisine: "",
             category: "main course"
         }
+
     }else if(id === "healthy"){
         parameters = {
             ingredients: "",
@@ -174,15 +210,49 @@ $(".filterImage").on("click", function(event){
         }
     }
 
+    createQueryURL(parameters);
+
 })//End of filterImage click event
 
+
+function getRecipeDetails(recipeId){
+
+    var queryURL2 = "https://api.spoonacular.com/recipes/" + recipeId + "/information?apiKey=" + apiKey;
+
+    $.ajax({
+        url: queryURL2,
+        method: "GET"
+        }).then(function(response) {
+            console.log(response);
+            showRecipeDetails(response);
+        });
+
+}//End of getRecipeDetails()
+
+function showRecipeDetails(recipe){
+    $(".result").hide();
+    $(".detailInformation").show();
+
+    $("#detailImage").attr("src", recipe.image);
+    $("#detailTitle").text(recipe.title);
+    $("#detailSummary").text(recipe.summary);
+    $("#detailIngredients").text(recipe.analyzedInstructions);
+    $("#detailTime").text("Ready in: " +  recipe.readyInMinutes + " minutes");
+
+    console.log(recipe);
+
+}
+
+//.result event listener
 $(".result").on("click", function(event){
 
     event.preventDefault();
-    // console.log("Result clicked");
+    console.log("Result clicked");
     // console.log($(this).children(".title")[0].innerHTML);
     var title = $(this).children(".recipeTitle")[0].innerHTML;
-    // console.log(recipes);
+    console.log(title);
+
+    console.log(recipes);
 
     index = recipes.findIndex(x => x.title === title);
     console.log(index);
@@ -191,27 +261,8 @@ $(".result").on("click", function(event){
     img = recipe.image;
     console.log(img);
 
-    var ingredients = [];
+    getRecipeDetails(recipe.id);
 
-    for(i = 0; i < recipe.extendedIngredients.length; i++ ){
-        ingredients.push(recipe.extendedIngredients[i].name);
-    }
-    // ingredients = recipe.extendedIngredients;
-    console.log(ingredients);
-
-    var instructions = recipe.instructions.replace(/\./g, ".\n");
-    console.log(instructions);
-
-    var readyInMinutes = recipe.readyInMinutes;
-    console.log(readyInMinutes);
-
-    var servings = recipe.servings;
-    console.log(servings);
-
-    var mask = "diamondMask";
-
-    var backgroundImage = "none";
-
-});
+}); //End of .result event listener
 
 
