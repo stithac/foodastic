@@ -22,8 +22,8 @@
                 box-sizing: border-box;
             }
             
-            .hero-body {
-                background-image: url("./assets/fodastic-header-Hero.png");
+            .hero-body-jtr {
+                background-image: url("../fodastic-header-Hero.png");
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
@@ -329,14 +329,6 @@
                 .textarea {
                     max-width: 50%;
                 }
-                /* TODO: responsive sidebar floats */
-                /* .content1,
-    .content2 {
-        width: 50%;
-    }
-    .float-tablet {
-        float: right;
-    } */
             }
             
             @media screen and (max-width: 768px) {
