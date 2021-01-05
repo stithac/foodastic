@@ -6,7 +6,9 @@
             /* from index.css nav-links style in html */
             
             html {
-                background-color: hsl(0, 0%, 96%);
+                background-color: hsl(0, 0%, 98%);
+                /* background-color: #cacaca9d; */
+                background-color: #fff;
             }
             
             .nav-links {
@@ -23,8 +25,14 @@
             }
             
             .hero-body-jtr {
-
                 background-image: url("../fodastic-header-Hero.png");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            
+            .hero-body-about {
+                background-image: url("../img/foodastic_Foodastic-Hero-250.png");
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
@@ -52,13 +60,42 @@
                 /* color: #fff; */
                 color: hsl(0, 0%, 14%);
                 font-weight: normal;
+                text-align: center;
             }
             
             .subtitle {
                 font-family: 'Monteserrat', sans-serif;
+                color: hsl(0, 0%, 14%);
+                text-align: center;
+            }
+            
+            .titleA {
+                font-family: 'Nerko One', cursive;
+                color: hsl(0, 0%, 14%);
                 font-size: 2.5rem;
-                /* color: #fff; */
-                color: hsl(0, 0%, 14%) text-align: center;
+                font-weight: normal;
+                text-align: center;
+            }
+            
+            .subtitleA {
+                font-family: 'Monteserrat', sans-serif;
+                font-size: 1.25rem;
+                text-align: center;
+                font-weight: bold;
+                color: #e02239;
+            }
+            
+            .about-blurb {
+                display: block;
+                font-family: 'Monteserrat', sans-serif;
+                font-size: .85rem;
+                font-style: italic;
+                color: hsl(0, 0%, 14%);
+                text-align: center
+            }
+            
+            .hero-text-about {
+                font-size: 40px;
             }
             
             .dunno-text,
@@ -82,7 +119,7 @@
             
             .allcaps {
                 /* font-family: 'Monteserrat', sans-serif;
-    font-size: .80rem; */
+                font-size: .80rem; */
                 font-family: 'Nerko One', cursive;
                 font-size: 1rem;
                 color: hsl(0, 0%, 14%);
@@ -123,7 +160,19 @@
             
             .nevermind {
                 font-family: 'Monteserrat', sans-serif;
+                font-size: 1.2rem;
+            }
+            
+            .name a,
+            .name {
+                font-family: 'Nerko One', cursive;
                 font-size: 1rem;
+                font-weight: normal;
+                color: hsl(0, 0%, 14%);
+            }
+            
+            a.blink:hover {
+                color: #e02239;
             }
             
             .box-cheapeats {
@@ -249,14 +298,35 @@
                 display: inline-block;
                 text-align: center;
             }
-            /* Dining image box*/
+            /* Dining images box*/
+            /* Adjust on mobile */
+            
+            .api-img {
+                height: 300px;
+                width: 100%
+            }
             
             .img-box img {
                 max-width: 100%;
                 max-height: 100%;
                 margin: auto;
                 display: block;
+                padding-bottom: 10px;
                 object-fit: cover;
+            }
+            
+            .yelp-img-box img {
+                max-width: 100%;
+                max-height: 100%;
+                /* height: 300px; */
+                margin: auto;
+                display: block;
+                object-fit: cover;
+            }
+            
+            .yelp-img-box {
+                max-height: 100%;
+                min-height: 400px;
             }
             
             .column {
@@ -309,10 +379,18 @@
                 -webkit-box-shadow: inset 0 0 10px #000000;
                 box-shadow: inset 0 0 10px #000000;
             }
-            /* About */
             
             .col-space {
                 padding: 0 20px;
+            }
+            /* Results Page */
+            
+            .info {
+                font-size: .75rem;
+                color: grey;
+                display: inline-block;
+                margin-left: 20px;
+                font-style: italic
             }
             /* Media Queries */
             
@@ -331,6 +409,16 @@
                 .textarea {
                     max-width: 50%;
                 }
+                .tile.is-child {
+                    width: 50%;
+                    height: max-content;
+                    margin-bottom: 25px;
+                }
+                .api-img {
+                    height: 200px;
+                    margin-bottom: 3px;
+                }
+                .img-box img {}
             }
             
             @media screen and (max-width: 768px) {
@@ -343,5 +431,26 @@
                 .input,
                 .textarea {
                     max-width: 35%;
+                }
+                .parent-avatar {
+                    width: 100%;
+                    max-width: 50%;
+                    height: max-content;
+                    float: left;
+                    /* height: 50rem; */
+                    /* max-height: 100%; */
+                    margin-bottom: 25px;
+                }
+                /* adjust results image div */
+                .api-img {
+                    height: 200px;
+                    width: 50%;
+                    float: left;
+                    margin-right: 15px;
+                }
+                .infoDiv {
+                    margin-left: 15px;
+                    padding-left: 15px;
+                    display: inline-block;
                 }
             }
