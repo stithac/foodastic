@@ -312,6 +312,68 @@
             .col-space {
                 padding: 0 20px;
             }
+
+            /* **************Modal Styles***************** */
+
+            /* for the whole modal component */
+            .modal {
+                position: fixed;
+                z-index: 9999;
+                padding: 50px 0 50px 0;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, .4);
+            }
+            /* for the content inside the modal */
+            .content {
+                width: 50%;
+            border: none;
+            background-color: #fbfdfe;
+                margin: auto;
+                padding: 15px;
+                border-radius: 10px;
+                overflow: hidden;
+                text-align: center;
+                box-shadow: 1px 1px 14px 3px rgba(0,0,0,0.75);
+            }
+            /* for the close (X) */
+            .close {
+                color: #aaa;
+                float: right;
+                font-size: 30px;
+                font-weight: 700
+            }
+            /* when we hover on the close (X) */
+            .close:focus,
+            .close:hover {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer
+            }
+
+            /* ******************************* */
+
+            #LoadingImage{
+                width:300px;
+                height:auto;
+                align-self: center;
+                margin: 0 auto;
+            }
+
+            #favIcon{
+
+                margin:0 auto;
+                width:30px;
+                height:auto
+            }
+
+            #favIcon:hover{
+                cursor:pointer;
+            }
+
             /* Media Queries */
 
             @media screen and (min-width: 769px) and (max-width: 1023px) {
