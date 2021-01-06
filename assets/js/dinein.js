@@ -153,6 +153,7 @@ $(searchBtn).on("click", function(event) {
 });
 
 //filterImages event listener
+<<<<<<< HEAD
 $(".filterImage").on("click", function(event) {
 
         event.preventDefault();
@@ -210,6 +211,65 @@ $(".filterImage").on("click", function(event) {
         }
 
         createQueryURL(parameters);
+=======
+$(".filterImage").on("click", function(event){
+
+    event.preventDefault();
+    var id = $(this).attr("id");
+    console.log(id);
+
+    var parameters = {};
+
+    if (id === "spicy"){
+        parameters = {
+            ingredients: "",
+            name: "spicy",
+            cuisine: "",
+            category: ""
+        }
+    }else if(id === "savory"){
+        parameters = {
+            ingredients: "",
+            name: "savory",
+            cuisine: "",
+            category: ""
+        }
+
+    }else if(id === "onepot"){
+        parameters = {
+            ingredients: "",
+            name: "casserole",
+            cuisine: "",
+            category: ""
+        }
+
+    }else if(id === "special"){
+        parameters = {
+            ingredients: "",
+            name: "",
+            cuisine: "french",
+            category: ""
+        }
+
+    }else if(id === "surprise"){
+        parameters = {
+            ingredients: "",
+            name: "",
+            cuisine: "",
+            category: "main course"
+        }
+
+    }else if(id === "healthy"){
+        parameters = {
+            ingredients: "",
+            name: "",
+            cuisine: "",
+            category: "salad"
+        }
+    }
+
+    createQueryURL(parameters);
+>>>>>>> 220508be8a6ffbf45f821c0e6437443f3e17d4e0
 
     }) //End of filterImage click event
 

@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap');
 
-/* bg color for now 1.2.20, will update later */
+/* bg color for now 1.2.20, will update laterSh */
 body,
 html {
     height: 100%;
-    background-color: #cacaca9d
+    background-color: white;
 }
 
 
@@ -28,6 +28,7 @@ html {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: #e02239;
 }
 
 .hero-text {
@@ -56,6 +57,11 @@ p {
     color: #e02239;
 }
 
+h4 {
+  font-family: 'Nerko One', cursive;
+  font-size: 20px;
+  color: black;
+}
 
 /* Button animation and styling */
 
@@ -105,56 +111,51 @@ label {
 }
 
 footer {
-    background-color: #e02239;
-    color: white;
+    color:black;
     font-weight: bold;
+    font-family: 'Nerko One' , cursive;
 }
 
-#social {
-    display: table-cell;
-    vertical-align: middle;
-  }
-  
-  #social ul {
+#social ul {
     text-align: center;
     padding-left: 0px;
     margin: 0 auto;
-  }
+}
   
-  #social li {
+#social li {
     display: inline-block;
     list-style-type: none;
     margin-left: 30px;
-  }
+}
   
-  /** Facebook **/
+ /** Facebook **/
   
-  .facebook {
+.facebook {
     width: 50px;
     height: 50px;
-  }
+}
   
   .facebook .border {
     background: transparent;
     outline: none;
-    color:rgba(255,255,255, 0.3);
+    color: #e02239;
     width: 50px;
     height: 50px;
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
     border-radius: 100px;
-    border: 2px solid rgba(255,255,255, 0.3);
+    border: 2px solid #e02239;
     transition: all .2s ease-in-out;
   }
   
   .facebook .border:hover {
-    background: #3b5998;
-    border-color: #436aaf;
+    background: #e02239;
+    border-color: #e02239;
     color: rgba(255,255,255, 0.9);
     transform: scale(1.2);
   }
   
-  .fa.fa-facebook {
+  .fab.fa-facebook {
     font-size: 25px;
   }
   
@@ -168,26 +169,23 @@ footer {
   .twitter .border {
     background: transparent;
     outline: none;
-    color:rgba(255,255,255, 0.3);
+    color: #e02239;
     width: 50px;
     height: 50px;
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
     border-radius: 100px;
-    border: 2px solid rgba(255,255,255, 0.3);
+    border: 2px solid #e02239;
     transition: all .2s ease-in-out;
   }
   
   .twitter .border:hover {
-    background: #00aced;
-    border-color: #72c6e6;
+    background: #e02239;
+    border-color: #e02239;
     color: rgba(255,255,255, 0.9);
     transform: scale(1.2);
   }
   
-  .fa.fa-twitter {
-    font-size: 25px;
-  }
   
   /** Instagram **/
   
@@ -199,27 +197,25 @@ footer {
   .instagram .border {
     background: transparent;
     outline: none;
-    color:rgba(255,255,255, 0.3);
+    color: #e02239;
     width: 50px;
     height: 50px;
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
     border-radius: 100px;
-    border: 2px solid rgba(255,255,255, 0.3);
+    border: 2px solid #e02239;
     transition: all .2s ease-in-out;
   }
   
   .instagram .border:hover {
-    background: #517fa4;
-    border-color: #7495af;
+    background: #e02239;
+    border-color: #e02239;
     color: rgba(255,255,255, 0.9);
     transform: scale(1.2);
   }
   
-  .fa.fa-instagram {
-    font-size: 25px;
-  }
+ 
 
   #social ul:hover > li:hover {
     opacity: 1;
-  }
+  } 
