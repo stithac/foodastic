@@ -23,6 +23,7 @@
             * {
                 box-sizing: border-box;
             }
+            /* Text throughout */
             
             .hero-body-jtr {
                 background-image: url("../fodastic-header-Hero.png");
@@ -67,19 +68,21 @@
                 font-family: 'Monteserrat', sans-serif;
                 color: hsl(0, 0%, 14%);
                 text-align: center;
+                font-size: 2rem;
             }
+            /***** about page ******/
             
             .titleA {
                 font-family: 'Nerko One', cursive;
                 color: hsl(0, 0%, 14%);
-                font-size: 2.5rem;
+                font-size: 1.5rem;
                 font-weight: normal;
                 text-align: center;
             }
             
             .subtitleA {
                 font-family: 'Monteserrat', sans-serif;
-                font-size: 1.25rem;
+                font-size: .75rem;
                 text-align: center;
                 font-weight: bold;
                 color: #e02239;
@@ -88,10 +91,21 @@
             .about-blurb {
                 display: block;
                 font-family: 'Monteserrat', sans-serif;
-                font-size: .85rem;
+                font-size: .75rem;
                 font-style: italic;
                 color: hsl(0, 0%, 14%);
                 text-align: center
+            }
+            
+            .columns.columns-avatar {
+                justify-content: space-evenly;
+            }
+            
+            .about-avatar {
+                width: 100%;
+                height: auto;
+                margin: auto;
+                max-width: 75%;
             }
             
             .hero-text-about {
@@ -114,10 +128,12 @@
             #btnSearch,
             #searchBtn {
                 font-family: 'Nerko One', cursive;
-                background-color: #e02239;
+                background-color: hsl(0, 0%, 14%);
             }
             
             .allcaps {
+                font-family: 'Nerko One', cursive;
+                font-size: 90rem;
                 /* font-family: 'Monteserrat', sans-serif;
                 font-size: .80rem; */
                 font-family: 'Nerko One', cursive;
@@ -145,6 +161,10 @@
             }
             /*  cheap eats filter */
             
+            .fiterImageBack {
+                background-color: #fdc407;
+            }
+            
             .best {
                 font-family: 'Monteserrat', sans-serif;
                 font-size: 1.5rem;
@@ -163,26 +183,8 @@
                 font-size: 1.2rem;
             }
             
-            .name a,
-            .name {
-                font-family: 'Nerko One', cursive;
-                font-size: 1rem;
-                font-weight: normal;
-                color: hsl(0, 0%, 14%);
-            }
-            
             a.blink:hover {
                 color: #e02239;
-            }
-            
-            .box-cheapeats {
-                text-align: center;
-                height: 200px;
-                width: auto;
-            }
-            
-            .box-sidebar {
-                width: 100%;
             }
             /* Margin for global input boxes */
             
@@ -190,21 +192,53 @@
             .subtitle {
                 display: inline;
             }
+            /* Dining pages images box*/
+            /* Adjust on mobile */
+            /* Dine In & Dunno  */
+            
+            .img-box img {
+                max-width: 100%;
+                max-height: 100%;
+                margin: auto;
+                display: block;
+                padding-bottom: 10px;
+                object-fit: cover;
+            }
+            /* Dining Page Global Divs */
             
             .box-sidebar-tr {
                 padding: 10px;
             }
-            /* inputs, checkboxes, textareas */
             
-            input {
-                margin-right: 8px;
+            .box-sidebar {
+                width: 100%;
             }
+            
+            .filterImageBack {
+                font-family: 'Monteserrat', sans-serif;
+                color: hsl(0, 0%, 14%);
+                text-align: center;
+                font-size: 1.75rem;
+                font-weight: bold;
+                height: 75px;
+            }
+            /* inputs, checkboxes, textareas */
             
             .input-tr,
             .textarea {
                 width: 80%;
             }
-            /*Icon styling */
+            
+            input {
+                margin-right: 8px;
+            }
+            /****** Dunno Page Filters ******/
+            
+            .box-cheapeats {
+                text-align: center;
+                height: 200px;
+                width: auto;
+            }
             
             .dunno-choice-div {
                 width: 150px;
@@ -298,36 +332,6 @@
                 display: inline-block;
                 text-align: center;
             }
-            /* Dining images box*/
-            /* Adjust on mobile */
-            
-            .api-img {
-                height: 300px;
-                width: 100%
-            }
-            
-            .img-box img {
-                max-width: 100%;
-                max-height: 100%;
-                margin: auto;
-                display: block;
-                padding-bottom: 10px;
-                object-fit: cover;
-            }
-            
-            .yelp-img-box img {
-                max-width: 100%;
-                max-height: 100%;
-                /* height: 300px; */
-                margin: auto;
-                display: block;
-                object-fit: cover;
-            }
-            
-            .yelp-img-box {
-                max-height: 100%;
-                min-height: 400px;
-            }
             
             .column {
                 padding: .5rem;
@@ -344,7 +348,8 @@
             .is-square-icon:hover,
             .is-square-savory:hover,
             .is-square-eats:hover,
-            .moth-icon {
+            .moth-icon,
+            .imageFilterBack {
                 -webkit-transform: scale(1.1);
                 -ms-transform: scale(1.1);
                 transform: scale(1.1);
@@ -383,6 +388,28 @@
             .col-space {
                 padding: 0 20px;
             }
+<<<<<<< HEAD
+            /********** Dineout results images & info  **********/
+            /* YELP */
+            /* .api-img {
+                height: 300px;
+                width: 100%
+            } */
+            
+            .yelp-img-box {
+                max-height: 100%;
+                min-height: 500px;
+            }
+            
+            .yelp-img {
+                max-width: 100%;
+                max-height: 100%;
+                height: 350px;
+                margin: auto;
+                display: block;
+                object-fit: cover;
+            }
+=======
 
             /* **************Modal Styles***************** */
 
@@ -446,15 +473,36 @@
             }
 
             /* Results Page */
+>>>>>>> 220508be8a6ffbf45f821c0e6437443f3e17d4e0
             
-            .info {
+            .do-info-div {
+                padding-top: 20px
+            }
+            
+            .name a,
+            .name {
+                font-family: 'Nerko One', cursive;
+                font-size: 1rem;
+                font-weight: normal;
+                color: hsl(0, 0%, 14%);
+            }
+            
+            .binfo {
                 font-size: .75rem;
                 color: grey;
                 display: inline-block;
                 margin-left: 20px;
                 font-style: italic
             }
-            /* Media Queries */
+            
+            .btext,
+            .rating {
+                font-size: .90rem;
+                color: #363636;
+                display: inline-block;
+            }
+            /*Dining Pages Icon styling */
+            /*********** Media Queries ***********/
             
             @media screen and (min-width: 769px) and (max-width: 1023px) {
                 .column.is-3 {
@@ -480,7 +528,32 @@
                     height: 200px;
                     margin-bottom: 3px;
                 }
-                .img-box img {}
+                .titleA {
+                    font-size: 1.5rem;
+                }
+                .subtitleA {
+                    font-size: .75rem;
+                }
+                .about-blurb {
+                    font-size: .50rem;
+                }
+                /* Controlling Yelp Results */
+                /* .yelp-img-box {
+                    max-height: 100%;
+                    min-height: 500px;
+                }
+                .yelp-img {
+                    height: 200px;
+                    width: 50%;
+                    float: left;
+                    margin-right: 15px;
+                }
+                .do-info-div {
+                    margin-left: 15px;
+                    padding-left: 15px;
+                    display: inline-block;
+                    height: 300px;
+                } */
             }
             
             @media screen and (max-width: 768px) {
@@ -494,25 +567,22 @@
                 .textarea {
                     max-width: 35%;
                 }
-                .parent-avatar {
-                    width: 100%;
-                    max-width: 50%;
-                    height: max-content;
-                    float: left;
-                    /* height: 50rem; */
-                    /* max-height: 100%; */
-                    margin-bottom: 25px;
+                /* Controlling Yelp Results */
+                .yelp-img-box {
+                    max-height: 100%;
+                    min-height: 250px;
                 }
-                /* adjust results image div */
-                .api-img {
+                .yelp-img {
                     height: 200px;
                     width: 50%;
                     float: left;
                     margin-right: 15px;
                 }
-                .infoDiv {
-                    margin-left: 15px;
-                    padding-left: 15px;
+                .do-info-div {
+                    margin-top: 0px;
+                    padding-top: 0px;
+                    /* margin-left: 15px; */
+                    /* padding-left: 15px; */
                     display: inline-block;
                 }
             }

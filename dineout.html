@@ -93,7 +93,8 @@
                         <div class="box box-sidebar has-background-white-ter">
                             <div class=" has-background-white-ter">
                                 <!-- Check Selections -->
-                                <p class="allcaps">SPECIALITY FOOD</p>
+
+                                <p class="allcaps">POPULAR FOODS</p>
                                 <fieldset id="specialitySelections">
                                     <label class="checkbox">
                                         <input type="checkbox" id="bbq">
@@ -108,8 +109,8 @@
                                         Pizza
                                     </label><br>
                                     <label class="checkbox">
-                                        <input type="checkbox" id="ramen">
-                                        Ramen
+                                        <input type="checkbox" id="sushi">
+                                        Sushi
                                     </label><br>
                                     <label class="checkbox">
                                         <input type="checkbox" id="seafood">
@@ -117,13 +118,6 @@
                                     </label>
                                 </fieldset>
                                 <br>
-                                <!-- <p class="allcaps">SEARCH WORDS</p>
-                                <div class="field">
-                                    <div class="control">
-                                        <input class="input input-tr is-small" type="text" placeholder="" id="term">
-                                    </div>
-                                </div> -->
-
 
                                 <!-- Dropdown -->
                                 <label class="allcaps">BY CUISINE</label><br>
@@ -147,61 +141,66 @@
                                 <br>
                                 <br>
 
+                                <!-- half -->
+
+
                                 <!-- Input Search -->
-                                <form class="floatOnTablet">
+                                <div>
                                     <div class="field">
-                                        <p class="allcaps">SEARCH BY CITY</label><br>
+                                        <p class="allcaps required">SEARCH BY CITY</label><br>
                                             <input class="input input-tr is-small" type="text" placeholder="City, State" id="cityInput">
                                     </div>
 
                                     <div class="field">
-                                        <label class="allcaps">OR ZIPCODE</label><br>
+                                        <label class="allcaps required">OR ZIPCODE</label><br>
                                         <input class="input input-tr is-small" type="text" placeholder="Zipcode" id="zipInput">
                                     </div>
-                            </div>
-                            <!-- Dropdown -->
-                            <div class="field">
-                                <label class="allcaps">RADIUS</label><br>
-                                <div class="select is-rounded is-small">
-                                    <select id="radiusOptions" class="has-text-weight-bold">
-                                        <!-- values are in meters so work with yelp API. The maximum value is 40,000 meters (25 miles)  -->
-                                        <option value="default" disabled="true" class="allcaps">MILE RADIUS</option>
-                                        <option value="8047">5 mi</option>
-                                        <option value="16093">10 mi</option>
-                                        <option value="24140">15 mi</option>
-                                        <option value="32187">20 mi</option>
-                                        <option value="max">20+ mi</option>
-                                    </select>
                                 </div>
-                            </div>
-                            <br>
-                            <!-- Select Multiple 2-->
-                            <p class="allcaps">PRICE</p>
-                            <fieldset id="pricePref">
-                                <label class="checkbox">
-                                    <input type="checkbox" id="1" value="1">
-                                    $
-                                </label><br>
-                                <label class="checkbox">
-                                    <input type="checkbox" id="2" value="2">
-                                    $$
-                                </label><br>
-                                <label class="checkbox">
-                                    <input type="checkbox" id="3" value="3">
-                                    $$$
-                                </label><br>
-                                <label class="checkbox">
-                                    <input type="checkbox" id="4" value="4">
-                                    $$$$
-                                </label>
                                 <br>
-                                <br>
-                                </form>
-                                <!-- end float on tablet-->
-                                <div class="buttons">
-                                    <button class="button is-medium is-dark" id="btnSearch">Search</button>
+                                <!-- Dropdown -->
+                                <div class="field">
+                                    <label class="allcaps optional ">RADIUS</label><br>
+                                    <div class="select is-rounded is-small">
+                                        <select id="radiusOptions" class="has-text-weight-bold">
+                                            <!-- values are in meters so work with yelp API. The maximum value is 40,000 meters (25 miles)  -->
+                                            <option value="default" disabled="true" class="allcaps">MILE RADIUS</option>
+                                            <option value="8047">5 mi</option>
+                                            <option value="16093">10 mi</option>
+                                            <option value="24140">15 mi</option>
+                                            <option value="32187">20 mi</option>
+                                            <option value="max">20+ mi</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </fieldset>
+                                <br>
+                                <!-- Select Multiple 2-->
+                                <p class="allcaps optional">PRICE</p>
+                                <fieldset id="pricePref">
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="1" value="1">
+                                        $
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="2" value="2">
+                                        $$
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="3" value="3">
+                                        $$$
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="4" value="4">
+                                        $$$$
+                                    </label>
+                                    <br>
+                                    <br>
+                                    </form>
+                                    <!-- end float on tablet-->
+                                    <div class="buttons">
+                                        <button class="button is-medium is-dark" id="btnSearch">Search</button>
+                                    </div>
+                                </fieldset>
+                            </div>
                         </div>
                     </article>
                 </div>
@@ -216,7 +215,7 @@
                 <div class="column ">
                     <article class="box">
                         <div class="columns is-multiline">
-
+                            <div class="column filterImageBack clickable is-12">speedy eat picks</div>
                             <div class="column is-4  iconHide">
                                 <div id="spicy" class="box icon-box filterImage">
                                     <p class="dine-text">spicy</p>
@@ -230,7 +229,7 @@
                                 </div>
                             </div>
                             <div class="column is-4 iconHide">
-                                <div class="box icon-box filterImage">
+                                <div id="cheapeats" class="box icon-box filterImage">
                                     <div class="box box-cheapeats is-square-eats">
                                         <p class="p-best"><span class="best">BEST</span></p>
                                         <p class="p-cheap"><span class="cheap">cheap eats</span></p>
@@ -259,51 +258,86 @@
 
                             <!-- **********************FOR RESULTS***************-->
 
-                            <div class="columns is-multiline" id="imageContainer">
+                            <div class="columns is-multiline has-background-link " id="imageContainer">
                                 <!-- IMAGES RESULTS HERE -->
                             </div>
                             <!-- ************************************************ -->
 
 
-                            <!-- <div class="column yelp-column is-4">
-                                <div class="box yelp-img-box card">
-                                    <figure class="image is-3by4">
-                                        <img id="pic3" class="pic" src="https://s3-media3.fl.yelpcdn.com/bphoto/274eWXY5UtihrNWGQMa4aA/o.jpg">
+                            <div class="column is-4 ">
+                                <div class="box yelp-img-box ">
+                                    <figure class="yelp-image">
+                                        <img class="image yelp-img is3by4 " src="https://s3-media3.fl.yelpcdn.com/bphoto/274eWXY5UtihrNWGQMa4aA/o.jpg">
                                     </figure>
-                                    <br>
-                                    <p id="name">Name:</p>
-                                    <p id="phone">Phone: </p>
-                                    <p id="rating">Rating: </p>
-                                    <p id="reviews">Reviews</p>
-                                    <p id="price">Price</p>
+                                    <div class="do-info-div">
+                                        <p class="name">
+                                            <a class="blink" href=#></a>Name:<a />
+                                        </p>
+                                        <p class="btext brating">PRating<span class="binfo">#ofReviews</span></p>
+                                        <p id="btext">000-000-0000</p>
+                                        <p class="btext">$$</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="column yelp-column is-4">
-                                <div class="box yelp-img-box card">
-                                    <figure class="image is-3by4">
-                                        <img id="pic4" class="pic" src="https://s3-media1.fl.yelpcdn.com/bphoto/p4Q3VczRBcS80CZck3zyng/o.jpg">
+
+                            <div class="column is-4 ">
+                                <div class="box yelp-img-box ">
+                                    <figure class="yelp-image">
+                                        <img class="image yelp-img is3by4 " src="https://s3-media3.fl.yelpcdn.com/bphoto/274eWXY5UtihrNWGQMa4aA/o.jpg">
                                     </figure>
-                                    <br>
-                                    <p id="name">Name:</p>
-                                    <p id="phone">Phone: </p>
-                                    <p id="rating">Rating: </p>
-                                    <p id="reviews">Reviews</p>
-                                    <p id="price">Price</p>
+                                    <div class="do-info-div">
+                                        <p class="name">
+                                            <a class="blink" href=#></a>Name:<a />
+                                        </p>
+                                        <p class="btext brating">PRating<span class="binfo">#ofReviews</span></p>
+                                        <p id="btext">000-000-0000</p>
+                                        <p class="btext">$$</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="column yelp-column is-4">
-                                <div class="box yelp-img-box card">
-                                    <figure class="image is-3by4">
-                                        <img id="pic5" class="pic" src="https://s3-media2.fl.yelpcdn.com/bphoto/IgQWG2Zzbh0CAZRwous7mA/o.jpg" alt="test image">
+
+
+                            <div class="column is-4 ">
+                                <div class="box yelp-img-box ">
+                                    <figure class="yelp-image">
+                                        <img class="image yelp-img is3by4 " src="https://s3-media3.fl.yelpcdn.com/bphoto/274eWXY5UtihrNWGQMa4aA/o.jpg">
                                     </figure>
-                                    <br>
-                                    <p id="name">Name:</p>
-                                    <p id="phone">Phone: </p>
-                                    <p id="rating">Rating: </p>
-                                    <p id="reviews">Reviews</p>
-                                    <p id="price">Price</p>
+                                    <div class="do-info-div">
+                                        <p class="name">
+                                            <a class="blink" href=#></a>Name:<a />
+                                        </p>
+                                        <p class="btext brating">PRating<span class="binfo">#ofReviews</span></p>
+                                        <p id="btext">000-000-0000</p>
+                                        <p class="btext">$$</p>
+                                    </div>
                                 </div>
-                            </div> -->
+                            </div>
+
+
+                            <div class="column is-4 ">
+                                <div class="box yelp-img-box ">
+                                    <figure class="yelp-image">
+                                        <img class="image yelp-img is3by4 " src="https://s3-media3.fl.yelpcdn.com/bphoto/274eWXY5UtihrNWGQMa4aA/o.jpg">
+                                    </figure>
+                                    <div class="do-info-div">
+                                        <p class="name">
+                                            <a class="blink" href=#></a>Name:<a />
+                                        </p>
+                                        <p class="btext brating">PRating<span class="binfo">#ofReviews</span></p>
+                                        <p id="btext">000-000-0000</p>
+                                        <p class="btext">$$</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
 
                         </div>
                         <!-- End of columns -->
