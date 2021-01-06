@@ -164,14 +164,14 @@ $(".filterImage").on("click", function(event){
     if (id === "spicy"){
         parameters = {
             ingredients: "",
-            name: "",
-            cuisine: "african",
+            name: "spicy",
+            cuisine: "",
             category: ""
         }
     }else if(id === "savory"){
         parameters = {
-            ingredients: "onion",
-            name: "",
+            ingredients: "",
+            name: "savory",
             cuisine: "",
             category: ""
         }
@@ -205,7 +205,7 @@ $(".filterImage").on("click", function(event){
             ingredients: "",
             name: "",
             cuisine: "",
-            category: ""
+            category: "salad"
         }
     }
 

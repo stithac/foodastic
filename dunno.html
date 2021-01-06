@@ -72,6 +72,37 @@
         </div>
     </section>
 
+    <!--MODAL -->
+    <div class='modal' id='modal'>
+    <!-- MODAL CONTENT -->
+          <div class='content'>
+    <!-- For the close button -->
+              <span class="close" id='close'>&times;</span>
+    <!-- Actual content -->
+
+                <h1>Dunno? Tell us more</h1>
+                <p class="allcaps">PLEASE ENTER YOUR CITY</p>
+                <div class="field">
+                    <div class="control">
+                        <input class="input input-tr is-small" type="text" placeholder="City" id="cityInput">
+                    </div>
+                </div>
+                <div class="content2">
+                    <p class="allcaps">OR ZIP CODE</p>
+                    <div class="field">
+                        <div class="control">
+                            <input class="input input-tr is-small" type="text" placeholder="Zip" id="zipInput">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <p id="helpText" style="color:red; font-weight: bold;">
+
+                </p>
+
+                <button class="button is-medium is-dark okay" id="btnOK" style="margin-top:10px;">OK</button>
+          </div>
+      </div>
 
     <!-- SIDE BAR-->
     <section class="section">
@@ -151,151 +182,277 @@
                 <!-- ICON FILTERS -->
                 <div class="column ">
                     <article class="box ">
+
+
                         <div class="columns is-multiline">
-                            <div class="column is-4">
+                            <div class="column is-12">
+                                <p id ="recipesTitle" class = "allcaps"></p>
+                            </div>
+
+                            <div class="column is-4 filterImage">
                                 <div class="box dunno-icon-box">
                                     <p class="dunno-text">mood du jour</p>
 
                                     <figure class="dunno-icon-row">
-                                        <span class="clickable"><i class="good-mood far fa-smile fa-3x icon-toggle"></i></span>
-                                        <span class="clickable"><i class="sad-mood far fa-frown fa-3x icon-toggle"></i></span>
-                                        <span class="clickable"><i class="sad-mood far fa-meh fa-3x icon-toggle"></i></span>
+                                        <span class="clickable"><i id="goodIcon" class="good-mood far fa-smile fa-3x icon-toggle dunnoIcon"></i></span>
+                                        <span class="clickable"><i id="sadIcon" class="sad-mood far fa-frown fa-3x icon-toggle dunnoIcon"></i></span>
+                                        <span class="clickable"><i id="mehIcon" class="sad-mood far fa-meh fa-3x icon-toggle dunnoIcon"></i></span>
                                     </figure>
                                     <figure class="dunno-icon-row">
-                                        <span class="clickable"><i class="good-mood far fa-kiss-wink-heart fa-3x icon-toggle"></i></span>
-                                        <span class="clickable"><i class="bad-mood far fa-angry fa-3x icon-toggle"></i></span>
-                                        <span class="clickable"><i class="bad-mood far fa-meh-rolling-eyes fa-3x icon-toggle"></i></span>
+                                        <span class="clickable"><i id="kissIcon" class="good-mood far fa-kiss-wink-heart fa-3x icon-toggle dunnoIcon"></i></span>
+                                        <span class="clickable"><i id="angryIcon" class="bad-mood far fa-angry fa-3x icon-toggle dunnoIcon"></i></span>
+                                        <span class="clickable"><i id="eyesIcon" class="bad-mood far fa-meh-rolling-eyes fa-3x icon-toggle dunnoIcon"></i></span>
                                     </figure>
 
                                 </div>
                             </div>
 
-                            <div class="column is-4">
+                            <div class="column is-4 filterImage">
                                 <div class="box dunno-icon-box">
                                     <p class="dunno-text">random query</p>
                                     <div class="dunno-icon-div">
-                                        <button class="button is-rounded dunno-random-button has-text-white-ter">veni?</button>
-                                        <button class="button is-rounded dunno-random-button has-text-white-ter">vidi?</button>
-                                        <button class="button is-rounded dunno-random-button has-text-white-ter">vici?</button>
+                                        <button id="veniBtn" class="button is-rounded dunno-random-button has-text-white-ter dunnoIcon">veni?</button>
+                                        <button  id="vidiBtn" class="button is-rounded dunno-random-button has-text-white-ter dunnoIcon">vidi?</button>
+                                        <button   id="viciBtn" class="button is-rounded dunno-random-button has-text-white-ter dunnoIcon">vici?</button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="column is-4">
+                            <div class="column is-4 filterImage">
                                 <div class="box dunno-icon-box">
                                     <p class="dunno-text">your day?</p>
                                     <div class="dunno-choice-div">
-                                        <label class="good-mood checkbox day-choice"><input type="checkbox">Normal, Chill</label><br>
-                                        <label class="good-mood checkbox day-choice"><input type="checkbox">Awesome</label><br>
-                                        <label class="sad-mood checkbox day-choice"><input type="checkbox">Too Long</label><br>
-                                        <label class="bad-mood checkbox day-choice"><input type="checkbox">Bat **** crazy </label><br>
-                                        <label class="sad-mood checkbox day-choice"><input type="checkbox">Doesn't Matter</label>
+                                        <label class="good-mood checkbox day-choice"><input id="normalCheck" class="dunnoIcon" type="checkbox">Normal, Chill</label><br>
+                                        <label class="good-mood checkbox day-choice"><input id="awesomeCheck" class="dunnoIcon"  type="checkbox">Awesome</label><br>
+                                        <label class="sad-mood checkbox day-choice"><input id="longCheck" class="dunnoIcon" type="checkbox">Too Long</label><br>
+                                        <label class="bad-mood checkbox day-choice"><input id="crazyCheck"  class="dunnoIcon" type="checkbox">Bat **** crazy </label><br>
+                                        <label class="sad-mood checkbox day-choice"><input id="whateverCheck" class="dunnoIcon" type="checkbox">Doesn't Matter</label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="column is-4">
+                            <div class="column is-4 filterImage">
                                 <div class="box dunno-icon-box">
                                     <div class="dunno-moth-div" style="text-align: center;">
                                         <img class="moth-icon" src="assets/filter-inkblot.png" alt="moth icon">
                                     </div><br>
                                     <div class="dunno-icon-input">
-                                        <span class=moth-choice><label><input type="checkbox" value="">bat?</label></span>
-                                        <span class=moth-choice><label><input type="checkbox" value="">moth?</label></span>
-                                        <span class=moth-choice><label><input type="checkbox" value="">butterfly?</label></span>
+                                        <span class=moth-choice><label><input id="batCheck" class="dunnoIcon" type="checkbox" value="">bat?</label></span>
+                                        <span class=moth-choice><label><input id="mothCheck" class="dunnoIcon" type="checkbox" value="">moth?</label></span>
+                                        <span class=moth-choice><label><input id="butterflyCheck" class="dunnoIcon" type="checkbox" value="">butterfly?</label></span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="column is-4">
+                            <div class="column is-4 filterImage">
                                 <div class="box dunno-icon-box">
                                     <p class="dunno-text">pick</p>
                                     <div class="dunno-icon-div">
                                         <div class="dunno-icon-row">
-                                            <span class="sad-mood clickable" style="color: #e02239;"><i class="fas fa-palette fa-3x"></i></span>&nbsp;
-                                            <span class="good-mood clickable" style="color: #52cc00;"><i class="fas fa-palette fa-3x"></i></span>
-                                            <span class="bad-mood clickable" style="color: #654321;"><i class="fas fa-palette fa-3x"></i></span>
+                                            <span class="sad-mood clickable" style="color: #e02239;"><i id="redIcon" class="fas fa-palette fa-3x dunnoIcon"></i></span>&nbsp;
+                                            <span class="good-mood clickable" style="color: #52cc00;"><i id="greenIcon" class="fas fa-palette fa-3x dunnoIcon"></i></span>
+                                            <span class="bad-mood clickable" style="color: #654321;"><i id="brownIcon" class="fas fa-palette fa-3x dunnoIcon"></i></span>
                                         </div>
                                         <div class="dunno-icon-row">
-                                            <span class="sad-mood clickable" style="color: #0018f9;"><i class="fas fa-palette fa-3x"></i></span>
-                                            <span class="good-mood clickable" style="color: #ffff00;"><i class="fas fa-palette fa-3x"></i></span>
-                                            <span class="bad-mood clickable" style="color: #000;"><i class="fas fa-palette fa-3x"></i></span>
+                                            <span class="sad-mood clickable" style="color: #0018f9;"><i id="blueIcon" class="fas fa-palette fa-3x dunnoIcon"></i></span>
+                                            <span class="good-mood clickable" style="color: #ffff00;"><i id="yellowIcon" class="fas fa-palette fa-3x dunnoIcon"></i></span>
+                                            <span class="bad-mood clickable" style="color: #000;"><i id="blackIcon" class="fas fa-palette fa-3x dunnoIcon"></i></span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="column is-4">
+                            <div class="column is-4 filterImage">
                                 <div class="box dunno-icon-box">
                                     <p class="surpriseme"><span class="nevermind">Nevermind The Rest...</span><br><span class="dunno-text">SURPRISE ME!</span></p>
                                     <div class="dunno-icon-row">
-                                        <span class="clickable dunno-surprise-icon"><i class="fas fa-exclamation-circle fa-7x"></i></span>
+                                        <span class="clickable dunno-surprise-icon"><i id="surpriseIcon" class="fas fa-exclamation-circle fa-7x  dunnoIcon"></i></span>
                                     </div>
                                 </div>
                             </div>
+                            <div class="column is-4">
+
+                                <div class="box img-box result" id="result1">
+                                    <figure class="image is-4by5">
+                                        <img id="pic1" class="pic" src="" alt="test image">
+                                    </figure>
+                                    <br>
+                                    <p class="recipeTitle" id="title1"></p>
+                                    <p class="blurb" id="blurb1"></p>
+                                    <p class="rating" id="rating1"></p>
+                                    <p class="price" id="price1">$$$</p>
+                                </div>
+                            </div>
+                            <div class="column is-4 ">
+                                <div class="box img-box result" id="result2">
+                                    <figure class="image is-4by5">
+                                        <img id="pic2" class="pic" src="" alt="test image">
+                                    </figure>
+                                    <br>
+                                    <p class="recipeTitle" id="title2"></p>
+                                    <p class="blurb" id="blurb2"></p>
+                                    <p class="rating" id="rating2"></p>
+                                    <p class="price" id="price2">$$$</p>
+                                </div>
+                            </div>
+                            <div class="column is-4 ">
+                                <div class="box img-box result" id="result3">
+                                    <figure class="image is-4by5">
+                                        <img id="pic3" class="pic" src="" alt="test image">
+                                    </figure>
+                                    <br>
+                                    <p class="recipeTitle" id="title3"></p>
+                                    <p class="blurb" id="blurb3"></p>
+                                    <p class="rating" id="rating3"></p>
+                                    <p class="price" id="price3">$$$</p>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="box img-box result" id="result4">
+                                    <figure class="image is-4by5">
+                                        <img id="pic4" class="pic" src="" alt="test image">
+                                    </figure>
+                                    <br>
+                                    <p class="recipeTitle" id="title4"></p>
+                                    <p class="blurb" id="blurb4"></p>
+                                    <p class="rating" id="rating4"></p>
+                                    <p class="price" id="price4">$$$</p>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="box img-box result" id="result5">
+                                    <figure class="image is-4by5">
+                                        <img id="pic5" class="pic" src="" alt="test image">
+                                    </figure>
+                                    <br>
+                                    <p class="recipeTitle" id="title5"></p>
+                                    <p class="blurb" id="blurb5"></p>
+                                    <p class="rating" id="rating5"></p>
+                                    <p class="price" id="price5">$$$</p>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <!-- <div class="box img-box result" > -->
+                                <div class="box img-box result "id="result6">
+                                    <figure class="image is-4by5">
+                                        <img id="pic6" class="pic" src="" alt="test image">
+                                    </figure>
+                                    <br>
+                                    <p class="recipeTitle" id="title6"></p>
+                                    <p class="blurb" id="blurb6"></p>
+                                    <p class="rating" id="rating6"></p>
+                                    <p class="price" id="price6">$$$</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- Adding below div for results display - Ashley -->
+                        <div class = "detailInformation">
+                            <div style="text-align: right;">
+                                <img id="favIcon" src="./assets/img/white-heart.png" alt="favorite" class="nonfave"/>
+                            </div>
+
+                            <h2 id="detailTitle"></h2>
+                            <br>
+                            <img id= "detailImage" src="" alt="Recipe Image"/>
+                            <br>
+                            <p id="detailSummary"></p>
+                            <br>
+                            <p id="detailInstructions"></p>
+                            <br>
+                            <p id="detailTime"></p>
+
+                        </div>
+                    </article>
                             <!-- ******************************************************-->
                             <!-- RESULTS IMAGES -->
-                            <!-- <div class="column is-4">
-                                <div class="box img-box card">
+
+                    <article id = "restaurantResults" class="box ">
+
+                            <p id ="restaurantsTitle" class = "allcaps"></p>
+                            <div id="LoadingImage" style="display: none">
+                                <img src="./assets/img/loading.gif" />
+                              </div>
+
+                        <div class="columns is-multiline">
+
+
+                            <div class="column is-4">
+                                <div class="box img-box  restaurant" id="result7" >
                                     <figure class="image is-4by5">
-                                        <img id="pic1" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                        <img id="pic7" class="pic" src="" alt="test image">
                                     </figure>
                                     <br>
-                                    <p id="name">Name:</p>
-                                    <p id="phone">Phone: </p>
-                                    <p id="rating">Rating: </p>
-                                    <p id="reviews">Reviews</p>
-                                    <p id="price">Price</p>
+                                    <p class="recipeTitle" id="title7"></p>
+                                    <p class="blurb" id="blurb7"></p>
+                                    <p class="rating" id="rating7"></p>
+                                    <p class="price" id="price7">$$$</p>
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box card">
+                                <div class="box img-box  restaurant" id="result8">
                                     <figure class="image is-4by5">
-                                        <img id="pic2" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                        <img id="pic8" class="pic" src="" alt="test image">
                                     </figure>
                                     <br>
-                                    <p id="name">Name:</p>
-                                    <p id="phone">Phone: </p>
-                                    <p id="rating">Rating: </p>
-                                    <p id="reviews">Reviews</p>
-                                    <p id="price">Price</p>
+                                    <p class="recipeTitle" id="title8"></p>
+                                    <p class="blurb" id="blurb8"></p>
+                                    <p class="rating" id="rating8"></p>
+                                    <p class="price" id="price8">$$$</p>
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box card">
+                                <div class="box img-box  restaurant" id="result9">
                                     <figure class="image is-4by5">
-                                        <img id="pic3" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                        <img id="pic9" class="pic" src="" alt="test image">
                                     </figure>
                                     <br>
-                                    <p id="name">Name:</p>
-                                    <p id="phone">Phone: </p>
-                                    <p id="rating">Rating: </p>
-                                    <p id="reviews">Reviews</p>
-                                    <p id="price">Price</p>
+                                    <p class="recipeTitle" id="title9"></p>
+                                    <p class="blurb" id="blurb9"></p>
+                                    <p class="rating" id="rating9"></p>
+                                    <p class="price" id="price9">$$$</p>
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box card">
+                                <div class="box img-box  restaurant" id="result10">
                                     <figure class="image is-4by5">
-                                        <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                        <img id="pic10" class="pic" src="" alt="test image">
                                     </figure>
                                     <br>
-                                    <p id="name">Name:</p>
-                                    <p id="phone">Phone: </p>
-                                    <p id="rating">Rating: </p>
-                                    <p id="reviews">Reviews</p>
-                                    <p id="price">Price</p>
+                                    <p class="recipeTitle" id="title10"></p>
+                                    <p class="blurb" id="blurb10"></p>
+                                    <p class="rating" id="rating10"></p>
+                                    <p class="price" id="price10">$$$</p>
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box card">
+                                <div class="box img-box  restaurant" id="result11">
                                     <figure class="image is-4by5">
-                                        <img id="pic5" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                        <img id="pic11" class="pic" src="" alt="test image">
                                     </figure>
                                     <br>
-                                    <p id="name">Name:</p>
-                                    <p id="phone">Phone: </p>
-                                    <p id="rating">Rating: </p>
-                                    <p id="reviews">Reviews</p>
-                                    <p id="price">Price</p>
+                                    <p class="recipeTitle" id="title11"></p>
+                                    <p class="blurb" id="blurb11"></p>
+                                    <p class="rating" id="rating11"></p>
+                                    <p class="price" id="price11">$$$</p>
                                 </div>
-                            </div> -->
+                            </div>
+                            <div class="column is-4">
+                                <div class="box img-box  restaurant" id="result12">
+                                    <figure class="image is-4by5">
+                                        <img id="pic12" class="pic" src="" alt="test image">
+                                    </figure>
+                                    <br>
+                                    <p class="recipeTitle" id="title12"></p>
+                                    <p class="blurb" id="blurb12"></p>
+                                    <p class="rating" id="rating12"></p>
+                                    <p class="price" id="price12">$$$</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- End img-icon columns -->
+
+
+
                     </article>
                     </div>
                 </div>
@@ -307,9 +464,18 @@
     <!-- end main section -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="assets/js/app.js"></script>
+
+    <!-- <script src="assets/js/app.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+        <script src="assets/js/dunno.js"></script>
+
+    
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
     <script src="./assets/js/specialfx.js"></script>
 
 
