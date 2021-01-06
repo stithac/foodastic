@@ -1,34 +1,43 @@
             /* Dinein/Dineout css */
-
+            
             @import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap');
             /* TODO: Taken from index.css bec. other styles clashing with dining pages */
             /* from index.css nav-links style in html */
-
+            
             html {
-                background-color: hsl(0, 0%, 96%);
+                background-color: hsl(0, 0%, 98%);
+                /* background-color: #cacaca9d; */
+                background-color: #fff;
             }
-
+            
             .nav-links {
                 font-family: 'Nerko One', cursive;
             }
-
+            
             .navbar-item {
                 font-family: 'Nerko One', cursive;
             }
             /* Dine CSS */
-
+            
             * {
                 box-sizing: border-box;
             }
-
-            .hero-body {
+            
+            .hero-body-jtr {
                 background-image: url("../fodastic-header-Hero.png");
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
             }
-
+            
+            .hero-body-about {
+                background-image: url("../img/foodastic_Foodastic-Hero-250.png");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            
             .column-banner {
                 height: 75px;
                 margin: auto;
@@ -36,7 +45,7 @@
                 /* background-color: #e02239; */
                 align-items: center;
             }
-
+            
             .column-banner-about {
                 height: 75px;
                 margin: auto;
@@ -44,147 +53,189 @@
                 background-color: #e02239;
                 align-items: center;
             }
-
+            
             .title {
                 font-family: 'Nerko One', cursive;
                 font-size: 3.5rem;
-                color: #fff;
+                /* color: #fff; */
+                color: hsl(0, 0%, 14%);
                 font-weight: normal;
-            }
-
-            .subtitle {
-                font-family: 'Monteserrat', sans-serif;
-                font-size: 2.5rem;
-                color: #fff;
                 text-align: center;
             }
-
+            
+            .subtitle {
+                font-family: 'Monteserrat', sans-serif;
+                color: hsl(0, 0%, 14%);
+                text-align: center;
+            }
+            
+            .titleA {
+                font-family: 'Nerko One', cursive;
+                color: hsl(0, 0%, 14%);
+                font-size: 2.5rem;
+                font-weight: normal;
+                text-align: center;
+            }
+            
+            .subtitleA {
+                font-family: 'Monteserrat', sans-serif;
+                font-size: 1.25rem;
+                text-align: center;
+                font-weight: bold;
+                color: #e02239;
+            }
+            
+            .about-blurb {
+                display: block;
+                font-family: 'Monteserrat', sans-serif;
+                font-size: .85rem;
+                font-style: italic;
+                color: hsl(0, 0%, 14%);
+                text-align: center
+            }
+            
+            .hero-text-about {
+                font-size: 40px;
+            }
+            
             .dunno-text,
             .dine-text {
                 font-family: 'Nerko One', cursive;
                 font-size: 25px;
             }
-
+            
             p {
                 font-family: 'Monteserrat', sans-serif;
                 font-size: .90rem;
                 color: hsl(0, 0%, 14%);
             }
             /* Sidebar all caps */
-
+            
             #btnSearch,
             #searchBtn {
                 font-family: 'Nerko One', cursive;
                 background-color: #e02239;
             }
-
+            
             .allcaps {
                 /* font-family: 'Monteserrat', sans-serif;
-    font-size: .80rem; */
+                font-size: .80rem; */
                 font-family: 'Nerko One', cursive;
                 font-size: 1rem;
                 color: hsl(0, 0%, 14%);
                 /* font-weight: bold; */
             }
-
+            
             .checkbox,
             .choice {
                 font-family: 'Monteserrat', sans-serif;
                 font-size: .90rem;
                 color: #363636;
             }
-
+            
             .magic {
                 font-family: 'Nerko One', cursive;
                 font-size: 2rem;
             }
-
+            
             .foodastic {
                 font-family: 'Monteserrat', sans-serif;
                 color: #e02239;
                 font-weight: bold;
             }
             /*  cheap eats filter */
-
+            
             .best {
                 font-family: 'Monteserrat', sans-serif;
                 font-size: 1.5rem;
                 /* padding-top: 8px; */
                 /* display: block; */
             }
-
+            
             .cheap {
                 font-family: 'Nerko One', cursive;
                 font-size: 4rem;
                 line-height: .5;
             }
-
+            
             .nevermind {
                 font-family: 'Monteserrat', sans-serif;
-                font-size: 1rem;
+                font-size: 1.2rem;
             }
-
+            
+            .name a,
+            .name {
+                font-family: 'Nerko One', cursive;
+                font-size: 1rem;
+                font-weight: normal;
+                color: hsl(0, 0%, 14%);
+            }
+            
+            a.blink:hover {
+                color: #e02239;
+            }
+            
             .box-cheapeats {
                 text-align: center;
                 height: 200px;
                 width: auto;
             }
-
+            
             .box-sidebar {
                 width: 100%;
             }
             /* Margin for global input boxes */
-
+            
             .title,
             .subtitle {
                 display: inline;
             }
-
+            
             .box-sidebar-tr {
                 padding: 10px;
             }
             /* inputs, checkboxes, textareas */
-
+            
             input {
                 margin-right: 8px;
             }
-
+            
             .input-tr,
             .textarea {
                 width: 80%;
             }
             /*Icon styling */
-
+            
             .dunno-choice-div {
                 width: 150px;
                 margin-right: auto;
                 margin-left: auto;
             }
-
+            
             .box.dunno-icon-box,
             .dine-icon.box,
             .icon-box {
                 height: 250px;
                 background-color: #fdc407;
             }
-
+            
             .dine-text {
                 text-align: center;
             }
-
+            
             .dunno-text,
             .surpriseme {
                 padding: 10px 0 15px;
                 text-align: center;
             }
-
+            
             .dunno-icon-row {
                 text-align: center;
                 letter-spacing: 5px;
                 line-height: 3;
             }
             /* Icon defaults */
-
+            
             .fa-exclamation-circle,
             .fa-smile,
             .fa-frown,
@@ -194,21 +245,21 @@
             .fa-meh-rolling-eyes {
                 color: #000;
             }
-
+            
             .is-square-icon {
                 width: 150px;
                 margin-right: auto;
                 margin-left: auto;
                 display: block;
             }
-
+            
             .is-square-savory {
                 width: 200px;
                 margin-right: auto;
                 margin-left: auto;
                 display: block;
             }
-
+            
             .dunno-random-button {
                 background-color: #000;
                 color: #fff;
@@ -219,53 +270,74 @@
                 margin-left: auto;
                 margin-right: auto;
             }
-
+            
             .dunno-random-button:focus {
                 outline: none;
                 border: none;
             }
-
+            
             .moth-icon {
                 width: 150px;
                 padding: 10px 0 10px;
                 text-align: center;
             }
-
+            
             .dunno-icon-input {
                 display: block;
                 text-align: center;
             }
             /* Add space between inline inputs */
-
+            
             .moth-choice:after {
                 content: " ";
                 display: inline-block;
                 width: 10px;
             }
-
+            
             .moth-choice {
                 display: inline-block;
                 text-align: center;
             }
-            /* Dining image box*/
-
+            /* Dining images box*/
+            /* Adjust on mobile */
+            
+            .api-img {
+                height: 300px;
+                width: 100%
+            }
+            
             .img-box img {
                 max-width: 100%;
                 max-height: 100%;
                 margin: auto;
                 display: block;
+                padding-bottom: 10px;
                 object-fit: cover;
             }
-
+            
+            .yelp-img-box img {
+                max-width: 100%;
+                max-height: 100%;
+                /* height: 300px; */
+                margin: auto;
+                display: block;
+                object-fit: cover;
+            }
+            
+            .yelp-img-box {
+                max-height: 100%;
+                min-height: 400px;
+            }
+            
             .column {
                 padding: .5rem;
             }
             /* Icon effects */
-
+            
             .clickable {
                 cursor: pointer;
             }
-
+            
             .dunno-random-button:hover,
             .far:hover,
             .fas:hover,
@@ -278,37 +350,36 @@
                 transform: scale(1.1);
             }
             /* for random buttons */
-
+            
             .red {
                 background-color: #e02239;
             }
-
+            
             .exclamation-red {
                 color: #e02239;
             }
             /* Face icon toggle */
-
+            
             .icon-toggle {
                 color: #000;
             }
-
+            
             .selected {
                 color: #e02239;
             }
-
+            
             .shadow {
                 -webkit-box-shadow: 0 8px 6px -6px black;
                 -moz-box-shadow: 0 8px 6px -6px black;
                 box-shadow: 0 8px 6px -6px black;
             }
-
+            
             .shadow-down {
                 -moz-box-shadow: inset 0 0 10px #000000;
                 -webkit-box-shadow: inset 0 0 10px #000000;
                 box-shadow: inset 0 0 10px #000000;
             }
-            /* About */
-
+            
             .col-space {
                 padding: 0 20px;
             }
@@ -374,8 +445,17 @@
                 cursor:pointer;
             }
 
+            /* Results Page */
+            
+            .info {
+                font-size: .75rem;
+                color: grey;
+                display: inline-block;
+                margin-left: 20px;
+                font-style: italic
+            }
             /* Media Queries */
-
+            
             @media screen and (min-width: 769px) and (max-width: 1023px) {
                 .column.is-3 {
                     flex: none;
@@ -391,8 +471,18 @@
                 .textarea {
                     max-width: 50%;
                 }
+                .tile.is-child {
+                    width: 50%;
+                    height: max-content;
+                    margin-bottom: 25px;
+                }
+                .api-img {
+                    height: 200px;
+                    margin-bottom: 3px;
+                }
+                .img-box img {}
             }
-
+            
             @media screen and (max-width: 768px) {
                 .title {
                     font-size: 3rem;
@@ -403,5 +493,26 @@
                 .input,
                 .textarea {
                     max-width: 35%;
+                }
+                .parent-avatar {
+                    width: 100%;
+                    max-width: 50%;
+                    height: max-content;
+                    float: left;
+                    /* height: 50rem; */
+                    /* max-height: 100%; */
+                    margin-bottom: 25px;
+                }
+                /* adjust results image div */
+                .api-img {
+                    height: 200px;
+                    width: 50%;
+                    float: left;
+                    margin-right: 15px;
+                }
+                .infoDiv {
+                    margin-left: 15px;
+                    padding-left: 15px;
+                    display: inline-block;
                 }
             }
