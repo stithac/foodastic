@@ -119,7 +119,7 @@ function getYelpResults(url) {
             }
             //Create image div
             var figure = $("<figure>");
-            var image = $("<img class='image api-img is3by4'>").attr("src", `${response.businesses[i].image_url}`)
+            var image = $("<img class='image yelp-img is3by4'>").attr("src", `${response.businesses[i].image_url}`)
             var figimg = figure.append(image);
             //Construct remaining result info
             var divCard = $("<div class='box img-box card'>").append(figimg);

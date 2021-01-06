@@ -2,31 +2,35 @@
 console.log("hello");
 
 var apiKey = "Cx23_JQh8GT1YzyuG6ozLIGRwIjI7TWKmwOL0leh4B35y_Kfy7y0GdfSbwU7TjuUanJ2XRpW7PiDhQL8vs3P1K2-e3E_p9CEf0MZoWLuFPFddvLxsnIkspS5Vq3bX3Yx"
-
-// var term = [];
-var categories = [];
+var apiKey2 = "3O5kyW6F4g5mDywsBmxsp0roWlT-dciawIInefnOItXxFkZFSR3rvRenorOaVfIEtnNRdlOHqVEXwHJQat0PkPa-YBt9EIf_NTTOo0S1AmHCbk3ALK0mPPXCCSLeX3Yx"
+    // var term = [];
+var categories;
+var categories2;
 var cuisine;
-var price;
+var price = [];
 var parameters;
+// var term;
 var results = [];
 var radius;
-
 var image;
 var name;
 var pRating;
 var spanInfo;
 var phone;
-var priceHTML
-
+var pPrice;
+var infoDiv;
+var col;
+var figure;
+var divCard;
 // Initailize search
 $("#btnSearch").on("click", function() {
+
     getFilters();
-    $(".iconHide").hide();
 });
 
 
 function getFilters() {
-
+    categories = [];
     // get checked items from# sepcialitySelections
     $("#specialitySelections input:checked").each(function() {
         categories.push($(this).attr("id"));
@@ -40,7 +44,11 @@ function getFilters() {
     }
     console.log(categories);
 
-    //number of $ signes
+    // if (categories2 !== []) {
+    //     categories.push(categories2);
+    // } 
+
+    //number of $ signs
     price = [];
     $("#pricePref input:checked").each(function() {
         price.push($(this).attr("id"));
@@ -57,19 +65,14 @@ function getFilters() {
     }
     console.log(parameters);
 
-    buildURL1(parameters);
-    console.log(yelpURL1);
+    buildURL(parameters);
 };
 
-
-
-
-
-//GOOD CODE
 //Build URL from sidebar filters
-function buildURL1(param) {
-    yelpURL1 =
-        "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=12&term=restaurants"
+function buildURL(param) {
+    url =
+        "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=6&term=restaurants";
+    console.log(url);
 
     //Ensure either city or zip is present -- MOVED TO GLOBAL
     var citySearch = $("#cityInput").val();
@@ -81,24 +84,26 @@ function buildURL1(param) {
         return;
     } else {
         if (citySearch.length > 0) {
-            yelpURL1 += "&location=" + citySearch
+            url += "&location=" + citySearch
             console.log(citySearch)
         } else {
-            yelpURL1 += "&location=" + zipSearch
+            url += "&location=" + zipSearch
         }
     }
     //to avoid empty spaces in url
     if (param.categories != "") {
-        yelpURL1 += "&categories=" + categories;
+        url += "&categories=" + categories;
     }
 
     if (param.price != "") {
-        yelpURL1 += "&price=" + price;
+        url += "&price=" + price;
     }
     if (param.radius != "") {
-        yelpURL1 += "&radius=" + radius;
+        url += "&radius=" + radius;
     }
-    getYelpResults(yelpURL1);
+
+    $("#imageContainer").html("");
+    getYelpResults(url);
 }
 
 ////////////////////////////
@@ -110,10 +115,12 @@ function getYelpResults(url) {
         method: "GET",
         timeout: 0,
         headers: {
-            // Authorization: "Bearer 3O5kyW6F4g5mDywsBmxsp0roWlT-dciawIInefnOItXxFkZFSR3rvRenorOaVfIEtnNRdlOHqVEXwHJQat0PkPa-YBt9EIf_NTTOo0S1AmHCbk3ALK0mPPXCCSLeX3Yx",
-            Authorization: "Bearer Cx23_JQh8GT1YzyuG6ozLIGRwIjI7TWKmwOL0leh4B35y_Kfy7y0GdfSbwU7TjuUanJ2XRpW7PiDhQL8vs3P1K2-e3E_p9CEf0MZoWLuFPFddvLxsnIkspS5Vq3bX3Yx",
-        },
+            "accept": "application/json",
+            // "x-requested-with": "xmlhttprequest",
+            "Access-Control-Allow-Origin": "*",
 
+            "Authorization": `Bearer ${apiKey2}`,
+        },
     };
 
     $.ajax(settings).done(function(response) {
@@ -123,159 +130,134 @@ function getYelpResults(url) {
         for (var i = 0; i < response.businesses.length; i++) {
             result = response.businesses[i];
             results.push(result);
-            console.log(results);
-
-            //check to see if the price is defined
-            if ("price" in response.businesses[i]) {
-                priceHTML = "Price: " + response.businesses[i].price;
-            } else {
-                priceHTML = "Price: Unavailable";
-            }
-            //Create image div
-            var figure = $("<figure>");
-            image = $("<img class='image api-img is3by4'>").attr("src", `${response.businesses[i].image_url}`)
-            var figimg = figure.append(image);
-            //Construct remaining result info
-            var divCard = $("<div class='box img-box card'>").append(figimg);
-            var col = $("<div class='column is-4'>");
-            pName = $("<p class='name'>").html(`<a class="blink" href=${response.businesses[i].url}>${response.businesses[i].name}</a>`);
-
-            pRating = $("<p class='btext'>").text(`Rating: ${response.businesses[i].rating}`);
-            spanInfo = $("<span class='info'>").text(`${response.businesses[i].review_count} Reviews`);
-            pRating.append(spanInfo);
-            // var pReview = $("<p>").text(`Reviews: ${response.businesses[i].review_count}`);
-            pPhone = $("<p class='btext'>").text(`Phone: ${response.businesses[i].display_phone}`);
-            var pPrice = $("<p>").text(priceHTML);
-            var infoDiv = $("<div class='infoDiv'>").append(pName, pRating, pPhone, pPrice);
-            divCard.append(figimg, infoDiv);
-            col.append(divCard);
-            $("#imageContainer").append(col);
+            console.log(response); //Test
+            console.log(results); //Test
         }
+        $(".iconHide").hide();
+        renderResults(response);
     });
 }
 
+function renderResults(response) {
+    console.log(response); //Test
+
+    for (var i = 0; i < response.businesses.length; i++) {
+
+        // check to see if the price is defined
+        if ("price" in response.businesses[i]) {
+            var priceHTML = "Price: " + response.businesses[i].price;
+        } else {
+            var priceHTML = "Price: Unavailable";
+        };
+
+        //build image-info div
 
 
+        image = $("<img class='image yelp-img is3by4'>").attr("src", `${response.businesses[i].image_url}`)
+        figure = $("<figure>").append(image);
 
+        pName = $("<p class='name'>").html(`<a class="blink" href=${response.businesses[i].url}>${response.businesses[i].name}</a>`);
+        pRating = $("<p class='btext brating'>").text(`Rating: ${response.businesses[i].rating}`);
+        spanInfo = $("<span class='binfo'>").text(`${response.businesses[i].review_count} Reviews`);
+        pRating.append(spanInfo);
+        // var pAddress = $("<p class='binfo'>").html(`<span> ${businesses[i].location.display_address}</span>`);
+        pPhone = $("<p class='btext'>").text(`Phone: ${response.businesses[i].display_phone}`);
+        pPrice = $("<p class='btext'>").text(priceHTML);
 
+        infoDiv = $("<div class='do-info-div'>").append(figure, pName, pRating, pPhone, pPrice);
+        divCard = $("<div class='box yelp-img-box'>").append(infoDiv);
+        col = $("<div class='column is-4'>").append(divCard);
+        $("#imageContainer").append(col);
+    };
+}
 
-
-//filterImages event listener
+//filterImages listener events
 $(".filterImage").on("click", function(event) {
 
+    //add to parameters - consolidate this step later
     event.preventDefault();
     var id = $(this).attr("id");
     console.log(id);
 
-    var parameters = {};
+    //check for price and radius
+    price = [];
+    $("#pricePref input:checked").each(function() {
+        price.push($(this).attr("id"));
+    });
 
+    radius = $("#radiusOptions").val();
+    console.log(radius);
+
+    // parameters = {};
     if (id === "spicy") {
+        categories = ["thai", "korean", "indian", "chicken_wings"];
         parameters = {
-                term: "spicy",
-                categories: [thai,
-                    indian,
-                    pakistani,
-                    korean
-                ],
-                price: price,
-                radius: radius,
-            }
-            // } else if (id === "savory") {
-            //     parameters = {
-            //         term = "savory",
-            //         categories: [italian, spanish, mexican, greek],
-            //         price: price,
-            //         radius: radius,
-            //     }
-
-        // } else if (id === "onepot") {
-        //     parameters = {
-        //         ingredients: "",
-        //         name: "casserole",
-        //         cuisine: "",
-        //         category: ""
-        //     }
-
-        // } else if (id === "special") {
-        //     parameters = {
-        //         ingredients: "",
-        //         name: "",
-        //         cuisine: "french",
-        //         category: ""
-        //     }
-
-        // } else if (id === "surprise") {
-        //     parameters = {
-        //         ingredients: "",
-        //         name: "",
-        //         cuisine: "",
-        //         category: "main course"
-        //     }
-
-        // } else if (id === "healthy") {
-        //     parameters = {
-        //         ingredients: "",
-        //         name: "",
-        //         cuisine: "",
-        //         category: ""
-        //     }
+            categories: categories,
+            price: price,
+            radius: radius,
+        }
+    };
+    if (id === "savory") {
+        categories = ["spanish", "greek", "indian", "italian"];
+        parameters = {
+            categories: categories,
+            price: price,
+            radius: radius,
+        }
+    };
+    if (id === "cheapeats") {
+        categories = ["barbeque", "chicken_wings", "chili", "cafes", "diners"];
+        price = [1, 2];
+        parameters = {
+            categories: categories,
+            price: price,
+            radius: radius,
+        }
+    };
+    if (id === "special") {
+        categories = ["french", "italian", "steak"];
+        price = [3, 4];
+        parameters = {
+            categories: categories,
+            price: price,
+            radius: radius,
+        }
+    };
+    if (id === "healthy") {
+        categories = ["vegan", "vegetarian", "salad"];
+        parameters = {
+            categories: categories,
+            price: price,
+            radius: radius,
+        }
+    }
+    if (id === "surprise") {
+        categories = ["local_flavors", "hot_and_new"];
+        parameters = {
+            categories: categories,
+            price: price,
+            radius: radius,
+        }
     }
 
-    createQueryURL(parameters);
+    buildURL(parameters);
 
 });
 
 
 
+$(".filterImageBack").on("click", function(event) {
+    event.preventDefault();
+    $("#imageContainer").html("");
+    $(".iconHide").show();
+
+});
+// // /////////////////////JENNER CODE
 
 
 
 
-
-
-
-// function renderResults(results) {
-
-
-//     // image = response.businesses[i].image_url;
-//     // pName = response.businesses[i].url;
-//     // pRating = response.businesses[i].rating;
-//     // pPhone = response.businesses[i].display_phone;
-//     // response.businesses[i].review_count;
-
-
-
-//     for (var i = 0; i < results.length; i++) {
-//         //check to see if the price is defined
-//         if ("price" in response.businesses[i]) {
-//             var priceHTML = "Price: " + response.businesses[i].price;
-//         } else {
-//             var priceHTML = "Price: Unavailable";
-//         }
-//         //Create image div
-//         var figure = $("<figure>");
-//         var image = $("<img class='image api-img is3by4'>").attr("src", `${response.businesses[i].image_url}`)
-//         var figimg = figure.append(image);
-//         //Construct remaining result info
-//         var divCard = $("<div class='box img-box card'>").append(figimg);
-//         var col = $("<div class='column is-4'>");
-//         var pName = $("<p class='name'>").html(`<a class="blink" href=${response.businesses[i].url}>${response.businesses[i].name}</a>`);
-//         var pRating = $("<p>").text(`Rating: ${response.businesses[i].rating}`);
-//         var pReview = $("<p>").text(`Reviews: ${response.businesses[i].review_count}`);
-//         var pPhone = $("<p>").text(`Phone: ${response.businesses[i].display_phone}`);
-//         var pPrice = $("<p>").text(priceHTML);
-//         var infoDiv = $("<div class='infoDiv'>").append(pName, pRating, pReview, pPhone, pPrice);
-//         divCard.append(figimg, infoDiv);
-//         col.append(divCard);
-//         $("#imageContainer").append(col);
-//     }
-
-
-
-
-// }
-
-///////////////END GOOD CODE
+// //build image-info div
 
 
 
@@ -290,14 +272,16 @@ $(".filterImage").on("click", function(event) {
 
 
 
-///////////////////////////////// RABIA'S ORIGINAL CODE 
+
+/////////////////////////////// RABIA'S ORIGINAL CODE 
+
 
 // $("#btnSearch").click(yelpSearch);
 
 // function yelpSearch() {
 
 //     var yelpURL =
-//         "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=6&term=soup&categories=Vietnamese,ramen";
+//         "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=6&term=starbucks";
 
 //     //Ensure either city or zip is present
 //     var citySearch = $("#cityInput").val();
@@ -375,6 +359,7 @@ $(".filterImage").on("click", function(event) {
 //         }
 //     });
 // }
+// /////////////////////////END RABIA CODE
 
 
 
