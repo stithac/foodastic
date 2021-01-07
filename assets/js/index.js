@@ -1,3 +1,5 @@
+/* 1/6 changes with GABE */
+
 var inputName = document.getElementById('inputName')
 var inputEmail= document.getElementById('inputEmailField')  
 var submit = document.getElementById('submitButton')
