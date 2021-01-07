@@ -108,18 +108,18 @@ function buildURL(param) {
     var zipSearch = $("#zipInput").val();
     // var radiusOptions = $("#radiusOptions");
 
-    if (citySearch.length === 0 && !(isNaN(zipSearch)) && zipSearch.length != 5) {
-        alert("Please provide a city or a 5-digit ZIP code");
-        return;
-    } else {
-        if (citySearch.length > 0) {
-            url += "&location=" + citySearch
-            console.log(citySearch)
-        }
-        if (zipSearch !== "") {
-            url += "&location=" + zipSearch
-        }
+    // if (citySearch.length === 0 && !(isNaN(zipSearch)) && zipSearch.length != 5) {
+    //     alert("Please provide a city or a 5-digit ZIP code");
+    //     return;
+    // } else {
+    if (citySearch.length > 0) {
+        url += "&location=" + citySearch
+        console.log(citySearch)
     }
+    if (zipSearch !== "") {
+        url += "&location=" + zipSearch
+    }
+    // }
     //to avoid empty spaces in url
     if (param.categories != "") {
         url += "&categories=" + categories;
@@ -364,8 +364,12 @@ $("#favIcon").on("click", function(){
 
 
 $("#filterImageBack").on("click", function() {
-    $(".filterImage").show();
     console.log("clicked");
+<<<<<<< HEAD
+    $("#imageContainer").empty();
+    $(".iconHide").show();
+});
+=======
 });
 
 
@@ -503,3 +507,4 @@ $("#filterImageBack").on("click", function() {
 // var citySearch = $("#cityInput").val();
 // var zipSearch = $("#zipInput").val();
 // var radiusOptions = $("#radiusOptions");
+>>>>>>> main
