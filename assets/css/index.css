@@ -1,8 +1,13 @@
 /* index.html styles */
+
 @import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap');
+
 /* 1/6 changes with GABE */
+
+
 /* bg color */
+
 body,
 html {
     height: 100%;
@@ -31,7 +36,7 @@ html {
     background-color: #e02239;
 }
 
-/* #section-tile {
+#section-tile {
     font-family: 'Nerko One', cursive;
     font-size: 25px;
     line-height: 1;
@@ -44,26 +49,23 @@ html {
     transform: translate(-50%, -50%);
     color: white;
     background-color: #e02239;
-} */
-
+}
 
 .hero-body-about {
-  background-image: url("../img/foodastic_Foodastic-Hero.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+    background-image: url("../img/foodastic_Foodastic-Hero.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .title.has-text-white {
-  
-  font-size: 30px;
-  height: 75px;
-  margin: auto;
-  background-color: #e02239;
-  align-items: center;
-  /* line-height: 5vh; */
+    font-size: 30px;
+    height: 75px;
+    margin: auto;
+    background-color: #e02239;
+    align-items: center;
+    /* line-height: 5vh; */
 }
-
 
 .content {
     font-family: 'Nerko One', cursive;
@@ -77,10 +79,11 @@ p {
 }
 
 h4 {
-  font-family: 'Nerko One', cursive;
-  font-size: 20px;
-  color: black;
+    font-family: 'Nerko One', cursive;
+    font-size: 20px;
+    color: black;
 }
+
 
 /* Button animation and styling for favorites and three tiles*/
 
@@ -129,68 +132,40 @@ label {
     font-family: 'Nerko One', cursive;
 }
 
-
 .Footer {
     padding: 1.5rem 1.5rem;
     font-weight: bold;
     font-size: 0.85em;
     overflow-x: hidden;
     text-align: center;
-  }
-  
-  .Footer a {
+}
+
+.Footer a {
     padding-bottom: 1px;
     border: 0;
-  }
+}
 
 hr.style {
     border-top: 2px solid #e02239;
 }
 
+
 /* footer: social media */
+
 #social ul {
     padding-left: 0px;
     margin: 0 auto;
 }
 
-  
- /** Facebook **/
-  
+
+/** Facebook **/
+
 .facebook {
     width: 25px;
     height: 25px;
 }
-  
-  .facebook .border {
-    background: transparent;
-    outline: none;
-    color: #e02239;
-    width: 25px;
-    height: 25px;
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-    border-radius: 100px;
-    border: 2px solid #e02239;
-    transition: all .2s ease-in-out;
-  }
-  
-  .facebook .border:hover {
-    background: #e02239;
-    border-color: #e02239;
-    color: rgba(255,255,255, 0.9);
-    transform: scale(1.2);
-  }
-  
 
-  
-  /** Twitter **/
-  
-  .twitter {
-    width: 25px;
-    height: 25px;
-  }
-  
-  .twitter .border {
+.facebook .border {
     background: transparent;
     outline: none;
     color: #e02239;
@@ -201,98 +176,125 @@ hr.style {
     border-radius: 100px;
     border: 2px solid #e02239;
     transition: all .2s ease-in-out;
-  }
-  
-  .twitter .border:hover {
-    background: #e02239;
-    border-color: #e02239;
-    color: rgba(255,255,255, 0.9);
-    transform: scale(1.2);
-  }
-  
-  
-  /** Instagram **/
-  
-  .instagram {
-    width: 25px;
-    height: 25px;
-  }
-  
-  .instagram .border {
-    background: transparent;
-    outline: none;
-    color: #e02239;
-    width: 25px;
-    height: 25px;
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-    border-radius: 100px;
-    border: 2px solid #e02239;
-    transition: all .2s ease-in-out;
-  }
-  
-  .instagram .border:hover {
-    background: #e02239;
-    border-color: #e02239;
-    color: rgba(255,255,255, 0.9);
-    transform: scale(1.2);
-  }
-  
- 
+}
 
-  #social ul:hover > li:hover {
+.facebook .border:hover {
+    background: #e02239;
+    border-color: #e02239;
+    color: rgba(255, 255, 255, 0.9);
+    transform: scale(1.2);
+}
+
+
+/** Twitter **/
+
+.twitter {
+    width: 25px;
+    height: 25px;
+}
+
+.twitter .border {
+    background: transparent;
+    outline: none;
+    color: #e02239;
+    width: 25px;
+    height: 25px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    border: 2px solid #e02239;
+    transition: all .2s ease-in-out;
+}
+
+.twitter .border:hover {
+    background: #e02239;
+    border-color: #e02239;
+    color: rgba(255, 255, 255, 0.9);
+    transform: scale(1.2);
+}
+
+
+/** Instagram **/
+
+.instagram {
+    width: 25px;
+    height: 25px;
+}
+
+.instagram .border {
+    background: transparent;
+    outline: none;
+    color: #e02239;
+    width: 25px;
+    height: 25px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    border: 2px solid #e02239;
+    transition: all .2s ease-in-out;
+}
+
+.instagram .border:hover {
+    background: #e02239;
+    border-color: #e02239;
+    color: rgba(255, 255, 255, 0.9);
+    transform: scale(1.2);
+}
+
+#social ul:hover>li:hover {
     opacity: 1;
-  } 
+}
 
-            /*********** Media Queries ***********/
-            /* From dine.css */
-            
-            @media screen and (min-width: 769px) and (max-width: 1023px) {
-              .column.is-3 {
-                  flex: none;
-                  width: 100%;
-              }
-              .title {
-                  font-size: 3rem;
-              }
-              .subtitle {
-                  font-size: 1.75rem;
-              }
-              .input,
-              .textarea {
-                  max-width: 50%;
-              }
-              .tile.is-child {
-                  width: 50%;
-                  height: max-content;
-                  margin-bottom: 25px;
-              }
-              .api-img {
-                  height: 200px;
-                  margin-bottom: 3px;
-              }
-              .titleA {
-                  font-size: 1.5rem;
-              }
-              .subtitleA {
-                  font-size: .75rem;
-              }
-              .about-blurb {
-                  font-size: .50rem;
-              }
-              
-          }
-          
-          @media screen and (max-width: 768px) {
-              .title {
-                  font-size: 3rem;
-              }
-              .subtitle {
-                  font-size: 1.75rem;
-              }
-              .input,
-              .textarea {
-                  max-width: 35%;
-              }
-              
-          }
+
+/*********** Media Queries ***********/
+
+
+/* From dine.css */
+
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+    .column.is-3 {
+        flex: none;
+        width: 100%;
+    }
+    .title {
+        font-size: 3rem;
+    }
+    .subtitle {
+        font-size: 1.75rem;
+    }
+    .input,
+    .textarea {
+        max-width: 50%;
+    }
+    .tile.is-child {
+        width: 50%;
+        height: max-content;
+        margin-bottom: 25px;
+    }
+    .api-img {
+        height: 200px;
+        margin-bottom: 3px;
+    }
+    .titleA {
+        font-size: 1.5rem;
+    }
+    .subtitleA {
+        font-size: .75rem;
+    }
+    .about-blurb {
+        font-size: .50rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+    .subtitle {
+        font-size: 1.75rem;
+    }
+    .input,
+    .textarea {
+        max-width: 35%;
+    }
+}
