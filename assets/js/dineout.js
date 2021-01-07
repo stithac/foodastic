@@ -2,7 +2,7 @@
 console.log("hello");
 
 var apiKey = "Cx23_JQh8GT1YzyuG6ozLIGRwIjI7TWKmwOL0leh4B35y_Kfy7y0GdfSbwU7TjuUanJ2XRpW7PiDhQL8vs3P1K2-e3E_p9CEf0MZoWLuFPFddvLxsnIkspS5Vq3bX3Yx"
-var apiKey2 = "3O5kyW6F4g5mDywsBmxsp0roWlT-dciawIInefnOItXxFkZFSR3rvRenorOaVfIEtnNRdlOHqVEXwHJQat0PkPa-YBt9EIf_NTTOo0S1AmHCbk3ALK0mPPXCCSLeX3Yx"
+var apiKey2 = "niMDXDEIx28W6kVP8Bs8oTlmzECwV5853cqETWmyfxWN-ggxYrpJcx0XPiSkO5e-rgllcs3CpbV57NiYuh43Z0psPVmHpXjU8AzfucLh85am1UQS3rN_3pK88nP3X3Yx"
     // var term = [];
 var categories;
 var categories2;
@@ -58,6 +58,7 @@ $(".okay").on("click", function() {
 $("#btnSearch").on("click", function() {
 
     $("#LoadingImage").show();
+    $(".filterImage").hide();
     getFilters();
 });
 
@@ -99,8 +100,7 @@ function getFilters() {
 
 //Build URL from sidebar filters
 function buildURL(param) {
-    url =
-        "https://cors-anywhere.herokuapp.com/api.yelp.com/v3/businesses/search?limit=12&term=restaurants";
+    url ="https://cors-anywhere.herokuapp.com/api.yelp.com/v3/businesses/search?limit=12&term=restaurants";
     console.log(url);
 
     //Ensure either city or zip is present -- MOVED TO GLOBAL
@@ -367,4 +367,3 @@ $("#filterImageBack").on("click", function() {
     console.log("clicked");
     $("#imageContainer").empty();
     $(".iconHide").show();
-});
