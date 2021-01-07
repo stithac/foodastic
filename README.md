@@ -90,7 +90,7 @@ The page renders the results in the same manner as the dinein page.
 A modal is displayed everytime a user accesses the dunno page.  It includes input fields for the city and zip.  (Having one of those fields is helpful in calling the Yelp API).
 
 Users are able to use the 5 yellow mood cards to filter the results.  Once all 5 cards have been selected, the results are rendered on the page.  Alternatively, users can click the red "Surprise Me" button to bring back random recipes and restaurants.  The filters for the filter cards are included in the below.
-![Screenshot](/assets/img/screenshot-dunno-analyzer.PNG?raw=true)
+![Screenshot](/assets/img/screenshot-dunno-analyzer.png?raw=true)
 
 Optional filters are also included on the left.  The page renders the results in the same manner as the dinein and dineout pages.
 
