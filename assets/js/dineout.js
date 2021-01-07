@@ -365,11 +365,9 @@ $("#favIcon").on("click", function(){
 
 $("#filterImageBack").on("click", function() {
     console.log("clicked");
-<<<<<<< HEAD
     $("#imageContainer").empty();
     $(".iconHide").show();
 });
-=======
 });
 
 
@@ -507,4 +505,4 @@ $("#filterImageBack").on("click", function() {
 // var citySearch = $("#cityInput").val();
 // var zipSearch = $("#zipInput").val();
 // var radiusOptions = $("#radiusOptions");
->>>>>>> main
+
