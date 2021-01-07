@@ -5,6 +5,10 @@
             /* TODO: Taken from index.css bec. other styles clashing with dining pages */
             /* from index.css nav-links style in html */
             
+            * {
+                box-sizing: border-box;
+            }
+            
             html {
                 background-color: hsl(0, 0%, 98%);
                 /* background-color: #cacaca9d; */
@@ -18,12 +22,14 @@
             .navbar-item {
                 font-family: 'Nerko One', cursive;
             }
-            /* Dine CSS */
-            
-            * {
-                box-sizing: border-box;
-            }
+            /***** Dine CSS ******/
             /* Text throughout */
+            
+            p {
+                color: hsl(0, 0%, 14%);
+                font-family: 'Monteserrat', sans-serif;
+                font-size: .90rem;
+            }
             
             .hero-body-jtr {
                 background-image: url("../fodastic-header-Hero.png");
@@ -40,118 +46,109 @@
             }
             
             .column-banner {
-                height: 75px;
-                margin: auto;
+                align-items: center;
                 background-color: #fdc407;
-                /* background-color: #e02239; */
-                align-items: center;
-            }
-            
-            .column-banner-about {
                 height: 75px;
                 margin: auto;
-                /* background-color: #fdc407; */
-                background-color: #e02239;
-                align-items: center;
             }
             
             .title {
+                color: hsl(0, 0%, 14%);
                 font-family: 'Nerko One', cursive;
                 font-size: 3.5rem;
-                /* color: #fff; */
-                color: hsl(0, 0%, 14%);
                 font-weight: normal;
                 text-align: center;
             }
             
             .subtitle {
-                font-family: 'Monteserrat', sans-serif;
                 color: hsl(0, 0%, 14%);
-                text-align: center;
+                font-family: 'Monteserrat', sans-serif;
                 font-size: 2rem;
-            }
-            /***** about page ******/
-            
-            .titleA {
-                font-family: 'Nerko One', cursive;
-                color: hsl(0, 0%, 14%);
-                font-size: 1.5rem;
-                font-weight: normal;
                 text-align: center;
             }
+            /***** About Page ******/
             
-            .subtitleA {
-                font-family: 'Monteserrat', sans-serif;
-                font-size: .75rem;
-                text-align: center;
-                font-weight: bold;
-                color: #e02239;
-            }
-            
-            .about-blurb {
-                display: block;
-                font-family: 'Monteserrat', sans-serif;
-                font-size: .75rem;
-                font-style: italic;
-                color: hsl(0, 0%, 14%);
-                text-align: center
-            }
-            
-            .columns.columns-avatar {
-                justify-content: space-evenly;
-            }
-            
-            .about-avatar {
-                width: 100%;
-                height: auto;
+            .column-banner-about {
+                align-items: center;
+                background-color: #e02239;
+                height: 75px;
                 margin: auto;
-                max-width: 75%;
             }
             
             .hero-text-about {
                 font-size: 40px;
             }
             
-            .dunno-text,
-            .dine-text {
+            .titleA {
+                color: hsl(0, 0%, 14%);
                 font-family: 'Nerko One', cursive;
-                font-size: 25px;
+                font-size: 2rem;
+                font-weight: normal;
+                text-align: center;
             }
             
-            p {
+            .subtitleA {
+                color: #e02239;
                 font-family: 'Monteserrat', sans-serif;
-                font-size: .90rem;
-                color: hsl(0, 0%, 14%);
+                font-size: 1rem;
+                font-weight: bold;
+                text-align: center;
             }
-            /* Sidebar all caps */
+            
+            .about-blurb {
+                color: hsl(0, 0%, 14%);
+                display: block;
+                font-family: 'Monteserrat', sans-serif;
+                font-size: .75rem;
+                font-style: italic;
+                text-align: center
+            }
+            
+            .avatar-tile {
+                text-align: center;
+            }
+            
+            .about-avatar {
+                height: auto;
+                margin: auto;
+                width: 65%;
+            }
+            /* Sidebar for all Dining pages  */
             
             #btnSearch,
             #searchBtn {
                 font-family: 'Nerko One', cursive;
                 background-color: hsl(0, 0%, 14%);
             }
-            
-            .allcaps {
-                font-family: 'Nerko One', cursive;
-                font-size: 90rem;
-                /* font-family: 'Monteserrat', sans-serif;
-                font-size: .80rem; */
-                font-family: 'Nerko One', cursive;
-                font-size: 1rem;
-                color: hsl(0, 0%, 14%);
-                /* font-weight: bold; */
-            }
-            
-            .checkbox,
-            .choice {
-                font-family: 'Monteserrat', sans-serif;
-                font-size: .90rem;
-                color: #363636;
-            }
+            /* search button on Dunno */
             
             .magic {
                 font-family: 'Nerko One', cursive;
                 font-size: 2rem;
+            }
+            
+            .allcaps {
+                font-family: 'Nerko One', cursive;
+                font-size: .90rem;
+                font-family: 'Nerko One', cursive;
+                font-size: 1rem;
+                color: hsl(0, 0%, 14%);
+            }
+            
+            .box-sidebar-tr {
+                padding: 10px;
+            }
+            
+            .box-sidebar {
+                width: 100%;
+            }
+            
+            .checkbox,
+            .choice,
+            .moth-choice {
+                font-family: 'Monteserrat', sans-serif;
+                font-size: .90rem;
+                color: #363636;
             }
             
             .foodastic {
@@ -159,17 +156,10 @@
                 color: #e02239;
                 font-weight: bold;
             }
-            /*  cheap eats filter */
-            
-            .fiterImageBack {
-                background-color: #fdc407;
-            }
             
             .best {
                 font-family: 'Monteserrat', sans-serif;
                 font-size: 1.5rem;
-                /* padding-top: 8px; */
-                /* display: block; */
             }
             
             .cheap {
@@ -186,42 +176,6 @@
             a.blink:hover {
                 color: #e02239;
             }
-            /* Margin for global input boxes */
-            
-            .title,
-            .subtitle {
-                display: inline;
-            }
-            /* Dining pages images box*/
-            /* Adjust on mobile */
-            /* Dine In & Dunno  */
-            
-            .img-box img {
-                max-width: 100%;
-                max-height: 100%;
-                margin: auto;
-                display: block;
-                padding-bottom: 10px;
-                object-fit: cover;
-            }
-            /* Dining Page Global Divs */
-            
-            .box-sidebar-tr {
-                padding: 10px;
-            }
-            
-            .box-sidebar {
-                width: 100%;
-            }
-            
-            .filterImageBack {
-                font-family: 'Monteserrat', sans-serif;
-                color: hsl(0, 0%, 14%);
-                text-align: center;
-                font-size: 1.75rem;
-                font-weight: bold;
-                height: 75px;
-            }
             /* inputs, checkboxes, textareas */
             
             .input-tr,
@@ -232,12 +186,38 @@
             input {
                 margin-right: 8px;
             }
+            
+            .title,
+            .subtitle {
+                display: inline;
+            }
+            /* Speedy Eats bar */
+            
+            #filterImageBack {
+                color: hsl(0, 0%, 14%);
+                font-family: 'Monteserrat', sans-serif;
+                font-size: 1.5rem;
+                font-weight: bold;
+                text-align: center;
+                text-shadow: 2px 2px 5px grey;
+            }
+            
+            .filterImageBack:hover {
+                color: black;
+            }
             /****** Dunno Page Filters ******/
+            
+            .dunno-text,
+            .dine-text {
+                font-family: 'Nerko One', cursive;
+                font-size: 25px;
+            }
             
             .box-cheapeats {
                 text-align: center;
                 height: 200px;
                 width: auto;
+                padding-top: 35px;
             }
             
             .dunno-choice-div {
@@ -297,23 +277,22 @@
             .dunno-random-button {
                 background-color: #000;
                 color: #fff;
-                width: 125px;
-                margin-bottom: 5px;
-                font-weight: bold;
                 display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
                 margin-left: auto;
                 margin-right: auto;
+                width: 125px;
             }
             
             .dunno-random-button:focus {
-                outline: none;
                 border: none;
+                outline: none;
             }
             
             .moth-icon {
-                width: 150px;
-                padding: 10px 0 10px;
                 text-align: center;
+                width: 130px;
             }
             
             .dunno-icon-input {
@@ -326,11 +305,6 @@
                 content: " ";
                 display: inline-block;
                 width: 10px;
-            }
-            
-            .moth-choice {
-                display: inline-block;
-                text-align: center;
             }
             
             .column {
@@ -348,8 +322,7 @@
             .is-square-icon:hover,
             .is-square-savory:hover,
             .is-square-eats:hover,
-            .moth-icon,
-            .imageFilterBack {
+            .moth-icon {
                 -webkit-transform: scale(1.1);
                 -ms-transform: scale(1.1);
                 transform: scale(1.1);
@@ -388,56 +361,97 @@
             .col-space {
                 padding: 0 20px;
             }
-<<<<<<< HEAD
+            /********** DineIn & Dunno full recipe page   **********/
+            
+            .detailInformation {
+                padding: 0 80px;
+            }
+            
+            #detailTitle {
+                color: hsl(0, 0%, 14%);
+                font-family: 'Nerko One', cursive;
+                font-size: 2rem;
+                font-weight: bold;
+                height: 75px;
+                text-align: left;
+                text-transform: lowercase;
+                line-height: 1;
+            }
+            
+            #detailImage {
+                max-width: 8700px;
+                padding-bottom: 40px;
+                width: 100%;
+            }
+            
+            #detailSummary,
+            #detailIngredients {
+                color: hsl(0, 0%, 14%);
+                font-family: 'Monteserrat', sans-serif;
+                font-size: .90rem;
+                line-height: 1.75;
+            }
+            
+            #detailTime {
+                color: grey;
+                font-family: 'Monteserrat', sans-serif;
+                font-size: .90rem;
+                font-style: italic;
+                margin-bottom: 50px;
+            }
             /********** Dineout results images & info  **********/
             /* YELP */
-            /* .api-img {
-                height: 300px;
-                width: 100%
-            } */
+            /* Recipe dump pages */
             
-            .yelp-img-box {
-                max-height: 100%;
-                min-height: 500px;
+            .cheap {
+                font-size: 3rem;
+                line-height: .5;
             }
             
-            .yelp-img {
-                max-width: 100%;
-                max-height: 100%;
+            .box.yelp-img-box {
+                padding: 15px 15px;
+                max-height: 500px;
+                height: 100%;
+            }
+            
+            .yelp-img,
+            .pic.yelp-img.is-3by4 {
+                display: block;
                 height: 350px;
                 margin: auto;
-                display: block;
+                max-height: 100%;
                 object-fit: cover;
+                width: 100%;
             }
-=======
-
             /* **************Modal Styles***************** */
-
             /* for the whole modal component */
+            
             .modal {
+                background-color: rgba(0, 0, 0, .4);
                 position: fixed;
-                z-index: 9999;
-                padding: 50px 0 50px 0;
+                height: 100%;
                 left: 0;
+                overflow: auto;
+                padding: 50px 0 50px 0;
                 top: 0;
                 width: 100%;
-                height: 100%;
-                overflow: auto;
-                background-color: rgba(0, 0, 0, .4);
+                z-index: 9999;
             }
             /* for the content inside the modal */
+            
             .content {
-                width: 50%;
-            border: none;
-            background-color: #fbfdfe;
+                background-color: #fbfdfe;
+                border: none;
+                border-radius: 10px;
+                box-shadow: 1px 1px 14px 3px rgba(0, 0, 0, 0.75);
                 margin: auto;
                 padding: 15px;
-                border-radius: 10px;
                 overflow: hidden;
                 text-align: center;
-                box-shadow: 1px 1px 14px 3px rgba(0,0,0,0.75);
+                width: 50%;
             }
             /* for the close (X) */
+            
             .close {
                 color: #aaa;
                 float: right;
@@ -445,66 +459,82 @@
                 font-weight: 700
             }
             /* when we hover on the close (X) */
+            
             .close:focus,
             .close:hover {
                 color: #000;
-                text-decoration: none;
-                cursor: pointer
+                cursor: pointer text-decoration: none;
             }
-
             /* ******************************* */
-
-            #LoadingImage{
-                width:300px;
-                height:auto;
+            
+            #LoadingImage {
+                width: 300px;
+                height: auto;
                 align-self: center;
                 margin: 0 auto;
             }
-
-            #favIcon{
-
-                margin:0 auto;
-                width:30px;
-                height:auto
+            
+            #favIcon {
+                margin: 0 auto;
+                width: 30px;
+                height: auto
             }
-
-            #favIcon:hover{
-                cursor:pointer;
+            
+            s #favIcon:hover {
+                cursor: pointer;
             }
-
             /* Results Page */
->>>>>>> 220508be8a6ffbf45f821c0e6437443f3e17d4e0
             
             .do-info-div {
-                padding-top: 20px
+                padding-top: 15px;
+                padding-right: 15px;
             }
             
             .name a,
-            .name {
+            .name,
+            .recipeTitle {
                 font-family: 'Nerko One', cursive;
-                font-size: 1rem;
+                font-size: 1.15rem;
                 font-weight: normal;
                 color: hsl(0, 0%, 14%);
+                line-height: 1;
+                padding-top: 8px;
+                /* overflow-wrap: break-word; */
+                width: 225px;
+            }
+            
+            .divInfo {
+                width: 200px;
             }
             
             .binfo {
+                font-family: 'Monteserrat', sans-serif;
                 font-size: .75rem;
                 color: grey;
-                display: inline-block;
                 margin-left: 20px;
                 font-style: italic
             }
             
-            .btext,
-            .rating {
-                font-size: .90rem;
-                color: #363636;
-                display: inline-block;
+            .pPrice {
+                font-family: 'Monteserrat', sans-serif;
+                text-align: right;
+                font-style: italic;
             }
-            /*Dining Pages Icon styling */
-            /*********** Media Queries ***********/
+            
+            .btext,
+            .rating,
+            .blurb,
+            .rating,
+            .price {
+                font-family: 'Monteserrat', sans-serif;
+                font-size: .85rem;
+                color: #363636;
+                line-height: 1.5;
+            }
+            /****************MEDIA QUERIES RECOPIED *******************/
             
             @media screen and (min-width: 769px) and (max-width: 1023px) {
+                /* sidebar to full screen width */
                 .column.is-3 {
                     flex: none;
                     width: 100%;
@@ -537,23 +567,6 @@
                 .about-blurb {
                     font-size: .50rem;
                 }
-                /* Controlling Yelp Results */
-                /* .yelp-img-box {
-                    max-height: 100%;
-                    min-height: 500px;
-                }
-                .yelp-img {
-                    height: 200px;
-                    width: 50%;
-                    float: left;
-                    margin-right: 15px;
-                }
-                .do-info-div {
-                    margin-left: 15px;
-                    padding-left: 15px;
-                    display: inline-block;
-                    height: 300px;
-                } */
             }
             
             @media screen and (max-width: 768px) {
@@ -568,21 +581,22 @@
                     max-width: 35%;
                 }
                 /* Controlling Yelp Results */
-                .yelp-img-box {
+                .box.yelp-img-box {
                     max-height: 100%;
                     min-height: 250px;
                 }
-                .yelp-img {
+                .yelp-img,
+                .pic.yelp-img.is-3by4 {
+                    float: right;
                     height: 200px;
+                    display: block;
                     width: 50%;
-                    float: left;
                     margin-right: 15px;
+                    padding: 5px 15px;
                 }
                 .do-info-div {
                     margin-top: 0px;
                     padding-top: 0px;
-                    /* margin-left: 15px; */
-                    /* padding-left: 15px; */
-                    display: inline-block;
+                    float: left;
                 }
             }
