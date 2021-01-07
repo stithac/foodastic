@@ -28,8 +28,8 @@
                     </a>
                     <span class="navbar-burger burger" data-target="navbarMenu">
                         <span></span>
-                        <span></span>
-                        <span></span>
+                    <span></span>
+                    <span></span>
                     </span>
                 </div>
                 <div id="navbarMenu" class="navbar-menu">
@@ -40,15 +40,16 @@
                                 <li><a href="dineout.html" style="color: black" target="_blank">Dine Out</a></li>
                                 <li><a href="dunno.html" style="color:black" target="_blank">Dunno?</a></li>
                                 <li><a href="about.html" style="color:black" target="_blank">About Us</a></li>
-                                <li><a class = "modal-button" style="color:black" data-target="#modal">Contact Us</a></li>
+                                <li><a class="modal-button" style="color:black" data-target="#modal">Contact Us</a></li>
                                 <li><span class="navbar-item">
-                                  <a class="button is-white is-outlined" href="favorites.html" target="_blank">
-                                     <i class="fa fa-star" aria-hidden="true" style="color: #e02239"></i>
-                                     <span title="favorites" style="color: #e02239">Favorites</span>
-                                  </a></span>
+                                        <a class="button is-white is-outlined" href="favorites.html" target="_blank">
+                                            <i class="fa fa-star" aria-hidden="true" style="color: #e02239"></i>
+                                            <span title="favorites" style="color: #e02239">Favorites</span>
+                                    </a>
+                                    </span>
                                 </li>
                             </ul>
-                                </a>
+                            </a>
                             </span>
                         </div>
                     </div>
@@ -62,10 +63,8 @@
         <div class="hero-body hero-body-dine">
             <div class="container">
                 <div class="columns is-centered">
-
                     <div class="column is-half column-banner has-text-centered">
                         <h3 class="title has-text-black">
-
                             Dunno?<span>
                                 <h2 class="subtitle">tell us more</h2>
                             </span>
@@ -78,36 +77,35 @@
 
     <!--MODAL -->
     <div class='modal' id='modal'>
-    <!-- MODAL CONTENT -->
-          <div class='content'>
-    <!-- For the close button -->
-              <span class="close" id='close'>&times;</span>
-    <!-- Actual content -->
+        <!-- MODAL CONTENT -->
+        <div class='content'>
+            <!-- For the close button -->
+            <span class="close" id='close'>&times;</span>
+            <!-- Actual content -->
 
-                <h1>Dunno? Tell us more</h1>
-                <p class="allcaps">PLEASE ENTER YOUR CITY</p>
+            <h1>Dunno? Tell us more</h1>
+            <p class="allcaps">PLEASE ENTER YOUR CITY</p>
+            <div class="field">
+                <div class="control">
+                    <input class="input input-tr is-small" type="text" placeholder="City" id="city">
+                </div>
+            </div>
+            <div class="content2">
+                <p class="allcaps">OR ZIP CODE</p>
                 <div class="field">
                     <div class="control">
-                        <input class="input input-tr is-small" type="text" placeholder="City" id="city">
+                        <input class="input input-tr is-small" type="text" placeholder="Zip" id="zip">
                     </div>
                 </div>
-                <div class="content2">
-                    <p class="allcaps">OR ZIP CODE</p>
-                    <div class="field">
-                        <div class="control">
-                            <input class="input input-tr is-small" type="text" placeholder="Zip" id="zip">
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <p id="helpText" style="color:red; font-weight: bold;">
+            </div>
+            <br>
+            <p id="helpText" style="color:red; font-weight: bold;">
 
-                </p>
+            </p>
 
-                <button class="button is-medium is-dark okay" id="btnOK" style="margin-top:10px;">OK</button>
-          </div>
-      </div>
-
+            <button class="button is-medium is-dark okay" id="btnOK" style="margin-top:10px;">OK</button>
+        </div>
+    </div>
 
     <!-- SIDE BAR-->
     <section class="section">
@@ -193,13 +191,14 @@
                             <div class="column is-12">
                                 <div id="LoadingImage" style="display: none">
                                     <img src="./assets/img/loading.gif" />
-                                  </div>
-                                  <!-- *** NEW ADDITION: "speedy eat picks" on click will return imageFilters after a search ***-->
-                            <!-- *** JQUERY added to dunno.js LINE 665*** -->
-                            <div id="filterImageBack" style ="padding:0; margin:0" class="column clickable is-12">speedy eat picks</div>
-                            <!-- ***** END speedy eat picks ***** -->
-                                  <h1 class="allcaps" style="font-size: 48px; text-align: center; color:#e02239; margin-top:0">Foodastic Dunno? Analyzer</h1>
-                                <p id ="recipesTitle" class = "">So you don't know what you want? No worries!... The <b><i>Foodastic Dunno? Analyzer</i></b> will make a few recipe and restaurant suggestions based on your responses to the 5 yellow mood cards below.  Don't feel like answering? Not a problem! Just click the red "Surprise Me" button and we'll provide you with some random suggestions! </p>
+                                </div>
+                                <!-- *** NEW ADDITION: "speedy eat picks" on click will return imageFilters after a search ***-->
+                                <!-- *** JQUERY added to dunno.js LINE 665*** -->
+                                <div id="filterImageBack" style="padding:0; margin:0" class="column clickable is-12">speedy eat picks</div>
+                                <!-- ***** END speedy eat picks ***** -->
+                                <h1 class="allcaps" style="font-size: 48px; text-align: center; color:#e02239; margin-top:0">Foodastic Dunno? Analyzer</h1>
+                                <p id="recipesTitle" class="">So you don't know what you want? No worries!... The <b><i>Foodastic Dunno? Analyzer</i></b> will make a few recipe and restaurant suggestions based on your responses to the 5 yellow mood cards below. Don't feel like answering?
+                                    Not a problem! Just click the red "Surprise Me" button and we'll provide you with some random suggestions! </p>
                             </div>
 
 
@@ -228,8 +227,8 @@
                                     <p class="dunno-text">random</p>
                                     <div class="dunno-icon-div">
                                         <button id="veniBtn" cardId="2" class="button is-rounded dunno-random-button has-text-white-ter good-mood dunnoIcon">veni?</button>
-                                        <button  id="vidiBtn" cardId="2" class="button is-rounded dunno-random-button has-text-white-ter sad-mood dunnoIcon">vidi?</button>
-                                        <button   id="viciBtn" cardId="2" class="button is-rounded dunno-random-button has-text-white-ter bad-mood dunnoIcon">vici?</button>
+                                        <button id="vidiBtn" cardId="2" class="button is-rounded dunno-random-button has-text-white-ter sad-mood dunnoIcon">vidi?</button>
+                                        <button id="viciBtn" cardId="2" class="button is-rounded dunno-random-button has-text-white-ter bad-mood dunnoIcon">vici?</button>
                                     </div>
                                 </div>
                             </div>
@@ -239,10 +238,10 @@
                                     <p class="dunno-text">today?</p>
                                     <div class="dunno-choice-div">
                                         <label class=" checkbox day-choice"><input id="normalCheck" class="good-mood dunnoIcon" cardId="3" type="checkbox">Normal, Chill</label><br>
-                                        <label class=" checkbox day-choice"><input id="awesomeCheck" class="good-mood dunnoIcon" cardId="3"  type="checkbox">Awesome</label><br>
+                                        <label class=" checkbox day-choice"><input id="awesomeCheck" class="good-mood dunnoIcon" cardId="3" type="checkbox">Awesome</label><br>
                                         <label class=" checkbox day-choice"><input id="longCheck" class="sad-mood dunnoIcon" cardId="3" type="checkbox">Too Long</label><br>
-                                        <label class=" checkbox day-choice"><input id="crazyCheck"  class="bad-mood dunnoIcon" cardId="3" type="checkbox">Bat **** crazy </label><br>
-                                        <label class=" checkbox day-choice"><input id="whateverCheck" class="sad-mood dunnoIcon" cardId="3"  type="checkbox">Doesn't Matter</label>
+                                        <label class=" checkbox day-choice"><input id="crazyCheck" class="bad-mood dunnoIcon" cardId="3" type="checkbox">Bat **** crazy </label><br>
+                                        <label class=" checkbox day-choice"><input id="whateverCheck" class="sad-mood dunnoIcon" cardId="3" type="checkbox">Doesn't Matter</label>
                                     </div>
                                 </div>
                             </div>
@@ -281,7 +280,7 @@
                             </div>
                             <div class="column is-4 filterImage">
                                 <div class="box dunno-icon-box" style="background-color: #e02239;">
-                                    <p class="surpriseme" style="color:#fff" ><span class="nevermind">Nevermind The Rest...</span><br><span class="dunno-text">SURPRISE ME!</span></p>
+                                    <p class="surpriseme" style="color:#fff"><span class="nevermind">Nevermind The Rest...</span><br><span class="dunno-text">SURPRISE ME!</span></p>
                                     <div class="dunno-icon-row">
                                         <span class="clickable dunno-surprise-icon"><i id="surpriseIcon" class="fas fa-exclamation-circle fa-7x  dunnoIcon"></i></span>
                                     </div>
@@ -364,14 +363,14 @@
 
 
                         </div>
-                        <div class = "detailInformation">
+                        <div class="detailInformation">
                             <h2 id="detailTitle"></h2>
                             <div style="text-align: right;">
-                                <img id="favIcon" src="./assets/img/white-heart.png" alt="favorite" class="nonfave"/>Add to Favorites
+                                <img id="favIcon" src="./assets/img/white-heart.png" alt="favorite" class="nonfave" />Add to Favorites
                             </div>
 
                             <div style="text-align: center;">
-                                <img id= "detailImage" src="" alt="Recipe Image"/>
+                                <img id="detailImage" src="" alt="Recipe Image" />
                             </div>
 
                             <br>
@@ -383,19 +382,19 @@
 
                         </div>
                     </article>
-                            <!-- ******************************************************-->
-                            <!-- RESULTS IMAGES -->
+                    <!-- ******************************************************-->
+                    <!-- RESULTS IMAGES -->
 
-                    <article id = "restaurantResults" class="box ">
+                    <article id="restaurantResults" class="box ">
 
-                            <p id ="restaurantsTitle" ></p>
+                        <p id="restaurantsTitle"></p>
 
 
                         <div class="columns is-multiline">
 
 
                             <div class="column is-4">
-                                <div class="box yelp-img-box resultEl" resultType="restaurant" id="result7" >
+                                <div class="box yelp-img-box resultEl" resultType="restaurant" id="result7">
                                     <figure>
                                         <img id="pic7" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
@@ -432,7 +431,7 @@
                             </div>
                             <div class="column is-4">
                                 <div class="box yelp-img-box  resultEl" resultType="restaurant" id="result10">
-                                    <figure >
+                                    <figure>
                                         <img id="pic10" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <br>
@@ -512,11 +511,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- <script src="assets/js/app.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-        <script src="assets/js/dunno.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="assets/js/dunno.js"></script>
     <script src="./assets/js/specialfx.js"></script>
 
 

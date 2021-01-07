@@ -203,11 +203,11 @@ function renderResults(response) {
     };
 }
 
-function getResultDetails(obj){
+function getResultDetails(obj) {
     console.log(obj);
     var name = $(obj).find(".blink").text();
     console.log(name);
-    console.log(results);//testing
+    console.log(results); //testing
 
     var index = results.findIndex(x => x.name === name);
 
@@ -220,33 +220,33 @@ function getResultDetails(obj){
     var storedFavorites = JSON.parse(localStorage.getItem("favorites"));
 
 
-    if (storedFavorites !== null){
+    if (storedFavorites !== null) {
         favorites = storedFavorites;
         console.log(favorites);
     }
 
     var item = favorites.find(item => item.name == name);
 
-    if (item !== undefined){
+    if (item !== undefined) {
 
         $("#favIcon").attr("src", "./assets/img/red-heart.png"),
-        $("#favIcon").attr("class", "fave");
+            $("#favIcon").attr("class", "fave");
 
     }
 
 
-        var restaurant = results[index];
+    var restaurant = results[index];
 
-        $("#detailTitle").html("<b>" + restaurant.name + "</b>");
-        $("#detailImage").attr("src", restaurant.image_url);
+    $("#detailTitle").html("<b>" + restaurant.name + "</b>");
+    $("#detailImage").attr("src", restaurant.image_url);
 
-        $("#detailSummary").html("<b>Restaurant website: </b> <a href = "+ restaurant.url + "'>" + restaurant.name + " website </a><br/><br/><b>Phone Number: </b>" + restaurant.phone + "<br/><br/> <b>Address: </b>");
+    $("#detailSummary").html("<b>Restaurant website: </b> <a href = " + restaurant.url + "'>" + restaurant.name + " website </a><br/><br/><b>Phone Number: </b>" + restaurant.phone + "<br/><br/> <b>Address: </b>");
 
-        for (i = 0; i < restaurant.location.display_address.length; i++){
-            $("#detailSummary").append(restaurant.location.display_address[i] + " ");
-        }
+    for (i = 0; i < restaurant.location.display_address.length; i++) {
+        $("#detailSummary").append(restaurant.location.display_address[i] + " ");
+    }
 
-        $("#favIcon").attr("resultId", restaurant.id);
+    $("#favIcon").attr("resultId", restaurant.id);
 }
 
 //filterImages listener events
@@ -323,18 +323,18 @@ $(".filterImage").on("click", function(event) {
 
 });
 
-$("#favIcon").on("click", function(){
+$("#favIcon").on("click", function() {
 
     var index;
     var id = $("#favIcon").attr("resultId");
 
-    if($("#favIcon").hasClass("nonfave")){
+    if ($("#favIcon").hasClass("nonfave")) {
 
         $("#favIcon").attr("src", "./assets/img/red-heart.png");
         $("#favIcon").addClass("fave");
         $("#favIcon").removeClass("nonfave");
 
-    }else{
+    } else {
         $("#favIcon").attr("src", "./assets/img/white-heart.png");
         $("#favIcon").addClass("nonfave");
         $("#favIcon").removeClass("fave");
@@ -367,4 +367,3 @@ $("#filterImageBack").on("click", function() {
     console.log("clicked");
     $("#imageContainer").empty();
     $(".iconHide").show();
-});
