@@ -203,11 +203,11 @@ function renderResults(response) {
     };
 }
 
-function getResultDetails(obj){
+function getResultDetails(obj) {
     console.log(obj);
     var name = $(obj).find(".blink").text();
     console.log(name);
-    console.log(results);//testing
+    console.log(results); //testing
 
     var index = results.findIndex(x => x.name === name);
 
@@ -220,33 +220,33 @@ function getResultDetails(obj){
     var storedFavorites = JSON.parse(localStorage.getItem("favorites"));
 
 
-    if (storedFavorites !== null){
+    if (storedFavorites !== null) {
         favorites = storedFavorites;
         console.log(favorites);
     }
 
     var item = favorites.find(item => item.name == name);
 
-    if (item !== undefined){
+    if (item !== undefined) {
 
         $("#favIcon").attr("src", "./assets/img/red-heart.png"),
-        $("#favIcon").attr("class", "fave");
+            $("#favIcon").attr("class", "fave");
 
     }
 
 
-        var restaurant = results[index];
+    var restaurant = results[index];
 
-        $("#detailTitle").html("<b>" + restaurant.name + "</b>");
-        $("#detailImage").attr("src", restaurant.image_url);
+    $("#detailTitle").html("<b>" + restaurant.name + "</b>");
+    $("#detailImage").attr("src", restaurant.image_url);
 
-        $("#detailSummary").html("<b>Restaurant website: </b> <a href = "+ restaurant.url + "'>" + restaurant.name + " website </a><br/><br/><b>Phone Number: </b>" + restaurant.phone + "<br/><br/> <b>Address: </b>");
+    $("#detailSummary").html("<b>Restaurant website: </b> <a href = " + restaurant.url + "'>" + restaurant.name + " website </a><br/><br/><b>Phone Number: </b>" + restaurant.phone + "<br/><br/> <b>Address: </b>");
 
-        for (i = 0; i < restaurant.location.display_address.length; i++){
-            $("#detailSummary").append(restaurant.location.display_address[i] + " ");
-        }
+    for (i = 0; i < restaurant.location.display_address.length; i++) {
+        $("#detailSummary").append(restaurant.location.display_address[i] + " ");
+    }
 
-        $("#favIcon").attr("resultId", restaurant.id);
+    $("#favIcon").attr("resultId", restaurant.id);
 }
 
 //filterImages listener events
@@ -323,18 +323,18 @@ $(".filterImage").on("click", function(event) {
 
 });
 
-$("#favIcon").on("click", function(){
+$("#favIcon").on("click", function() {
 
     var index;
     var id = $("#favIcon").attr("resultId");
 
-    if($("#favIcon").hasClass("nonfave")){
+    if ($("#favIcon").hasClass("nonfave")) {
 
         $("#favIcon").attr("src", "./assets/img/red-heart.png");
         $("#favIcon").addClass("fave");
         $("#favIcon").removeClass("nonfave");
 
-    }else{
+    } else {
         $("#favIcon").attr("src", "./assets/img/white-heart.png");
         $("#favIcon").addClass("nonfave");
         $("#favIcon").removeClass("fave");
@@ -368,141 +368,3 @@ $("#filterImageBack").on("click", function() {
     $("#imageContainer").empty();
     $(".iconHide").show();
 });
-});
-
-
-
-
-/////////////////////////////// RABIA'S ORIGINAL CODE
-
-
-// $("#btnSearch").click(yelpSearch);
-
-// function yelpSearch() {
-
-//     var yelpURL =
-//         "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=6&term=starbucks";
-
-//     //Ensure either city or zip is present
-//     var citySearch = $("#cityInput").val();
-//     var zipSearch = $("#zipInput").val();
-
-//     if (citySearch.length === 0 && !(isNaN(zipSearch)) && zipSearch.length != 5) {
-//         alert("Please provide a city or a 5-digit ZIP code");
-//         return;
-//     } else {
-//         if (citySearch.length > 0) {
-//             yelpURL += "&location=" + citySearch
-//         } else {
-//             yelpURL += "&location=" + zipSearch
-//         }
-//     }
-
-
-
-//     console.log(yelpURL);
-
-//     // get radius option
-//     var radius = $("#radiusOptions option:selected").val();
-
-//     // if () {
-
-//     // }
-//     //Empty the contents to make room for the cards
-//     $("#imageContainer").empty();
-
-//     var settings = {
-//         url: yelpURL,
-//         method: "GET",
-//         timeout: 0,
-//         headers: {
-//             Authorization: "Bearer 3O5kyW6F4g5mDywsBmxsp0roWlT-dciawIInefnOItXxFkZFSR3rvRenorOaVfIEtnNRdlOHqVEXwHJQat0PkPa-YBt9EIf_NTTOo0S1AmHCbk3ALK0mPPXCCSLeX3Yx",
-//         },
-//     };
-
-//     $.ajax(settings).done(function(response) {
-//         console.log(response, response.businesses.length);
-
-//         for (var i = 0; i < response.businesses.length; i++) {
-
-//             //check to see if the price is defined
-//             if ("price" in response.businesses[i]) {
-//                 var priceHTML = "Price: " + response.businesses[i].price;
-//             } else {
-//                 var priceHTML = "Price: Unavailable";
-//             }
-
-
-//             var figure = $("<figure>");
-//             var image = $("<img class='image api-img is3by4'>").attr("src", `${response.businesses[i].image_url}`)
-//             var figimg = figure.append(image);
-
-//             var divCard = $("<div class='box img-box card'>").append(figimg);
-
-//             var col = $("<div class='column is-4'>");
-//             var pName = $("<p>").text(`${response.businesses[i].name}`);
-//             var pRating = $("<p>").text(`Rating: ${response.businesses[i].rating}`);
-//             var pName = $("<p>").text(`Name ${response.businesses[i].name}`);
-//             var pPhone = $("<p>").text(`Phone: ${response.businesses[i].display_phone}`);
-
-//             var pReview = $("<p>").text(`Reviews: ${response.businesses[i].review_count}`);
-//             // var pPrice = $("<p>").text(`Price: ${response.businesses[i].price}`);
-//             var pPrice = $("<p>").text(priceHTML);
-
-
-
-//             divCard.append(figimg, pName, pPhone, pRating, pReview, pPrice);
-//             col.append(divCard);
-//             $("#imageContainer").append(col);
-
-
-//         }
-//     });
-// }
-// /////////////////////////END RABIA CODE
-
-
-
-
-///////////// Returns TO WORK WITH LATER
-// var bname = businesses[x].name;
-// var btitle = businesses[x].categories[x].title;
-// var bphone = businesses[x].display_phone;
-// var bdistance = businesses[x].distance // in meters from search location - convert to mi
-// var busID = businesses[x].id // needed for reviews, if we decide to use
-// var bImage = businesses[x].image_url;
-// var bdisplayAddress = businesses[x].location.display_address // will use if format is correct
-// var baddress1 = businesses[x].location.address1
-// var bcity = businesses[x].location.city;
-// var bstate = businesses[x].location.state;
-// var bzip = businesses[x].location.zip_code;
-// var bprice = businesses[x].price //price rating $ - $$$$
-// var brating = businesses[x].rating // value 1, 1.5, 3, 3.5 to 5 total
-// var bratingCount = businesses[x].review_count;
-
-// // Variables
-// var citySearch = $("#cityInput").val();
-// var zipSearch = $("#zipInput").val();
-// var radiusOptions = $("#radiusOptions");
-
-//// Returns
-// var bname = businesses[x].name;
-// var btitle = businesses[x].categories[x].title;
-// var bphone = businesses[x].display_phone;
-// var bdistance = businesses[x].distance // in meters from search location - convert to mi
-// var busID = businesses[x].id // needed for reviews, if we decide to use
-// var bImage = businesses[x].image_url;
-// var bdisplayAddress = businesses[x].location.display_address // will use if format is correct
-// var baddress1 = businesses[x].location.address1
-// var bcity = businesses[x].location.city;
-// var bstate = businesses[x].location.state;
-// var bzip = businesses[x].location.zip_code;
-// var bprice = businesses[x].price //price rating $ - $$$$
-// var brating = businesses[x].rating // value 1, 1.5, 3, 3.5 to 5 total
-// var bratingCount = businesses[x].review_count;
-
-// // Variables
-// var citySearch = $("#cityInput").val();
-// var zipSearch = $("#zipInput").val();
-// var radiusOptions = $("#radiusOptions");
-
