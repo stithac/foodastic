@@ -21,6 +21,7 @@
 
         <!-- CSS -->
         <link href="./assets/css/filter.css" rel="stylesheet">
+        <link href="./assets/css/dine.css" rel="stylesheet">
 
         <!-- Bulma -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/>
@@ -66,7 +67,7 @@
                             </li>
                         </ul>
 
-                           
+
                     </div>
                     <!-- tabs -->
                 </div>
@@ -118,130 +119,46 @@
 <!-- recycled from filter and result pages, similar coding -->
 <section class="section">
     <div class="container">
-        <div class="tile is-ancestor">
+        <!-- <div class="tile is-ancestor">
 
 
 
-            <!-- NEW: ICON & IMAGE DUMP DIV -->
-            <!-- ************************** NOTE: THESE HIDE ON RESULTS LOAD -->
-            <!-- Main content: Icon Filters -->
+            NEW: ICON & IMAGE DUMP DIV
+            ************************** NOTE: THESE HIDE ON RESULTS LOAD
+             Main content: Icon Filters -->
             <div class="tile is-parent is-12">
                 <article class="tile is-child ">
-                    <div class="columns box is-multiline" style="margin-top:0;">
+                    <div id="LoadingImage" style="display: none">
+                        <img src="./assets/img/loading.gif" />
+                      </div>
+                    <div id="recipeFaves">
 
-                        <div class="column is-3">
-                            <div class="box img-box">
-                                <figure class="image is-2by2">
-                                    <img id="pic1" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
-                                </figure>
-                                <br>
-                                <p id="title1"></p>
-                                <p id="blurb1"></p>
-                                <p id="rating1"></p>
-                                <p id="price1">$$$</p>
-                            </div>
+                    </div>
+                    <div id="restaurantFaves">
+
+                    </div>
+                    <div class = "detailInformation" >
+
+                        <div style="text-align: right;">
+                            <img id="favIcon" src="./assets/img/white-heart.png" alt="favorite" style="width:25px" class="nonfave"/>Add to Favorites
                         </div>
-                        <div class="column is-3">
-                            <div class="box img-box">
-                                <figure class="image is-2by2">
-                                    <img id="pic2" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
-                                </figure>
-                                <br>
-                                <p id="title2"></p>
-                                <p id="blurb2"></p>
-                                <p id="rating2"></p>
-                                <p id="price2">$$$</p>
-                            </div>
+                        <h2 id="detailTitle"></h2>
+                        <div style="text-align: center;">
+                            <img id= "detailImage" src="" alt="Recipe Image"/>
                         </div>
-                        <div class="column is-3">
-                            <div class="box img-box">
-                                <figure class="image is-2by2">
-                                    <img id="pic3" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
-                                </figure>
-                                <br>
-                                <p id="title3"></p>
-                                <p id="blurb3"></p>
-                                <p id="rating3"></p>
-                                <p id="price3">$$$</p>
-                            </div>
-                        </div>
-                        <div class="column is-3">
-                            <div class="box img-box">
-                                <figure class="image is-2by2">
-                                    <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
-                                </figure>
-                                <br>
-                                <p id="title4"></p>
-                                <p id="blurb4"></p>
-                                <p id="rating4"></p>
-                                <p id="price4">$$$</p>
-                            </div>
-                        </div>
-                        <div class="column is-3">
-                            <div class="box img-box">
-                                <figure class="image is-2by2">
-                                    <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
-                                </figure>
-                                <br>
-                                <p id="title5"></p>
-                                <p id="blurb5"></p>
-                                <p id="rating5"></p>
-                                <p id="price5">$$$</p>
-                            </div>
-                        </div>
-                        <div class="column is-3">
-                            <div class="box img-box">
-                                <figure class="image is-2by2">
-                                    <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
-                                </figure>
-                                <br>
-                                <p id="title6"></p>
-                                <p id="blurb6"></p>
-                                <p id="rating6"></p>
-                                <p id="price6">$$$</p>
-                            </div>
-                        </div>
-                        <div class="column is-3">
-                            <div class="box img-box">
-                                <figure class="image is-2by2">
-                                    <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
-                                </figure>
-                                <br>
-                                <p id="title7"></p>
-                                <p id="blurb7"></p>
-                                <p id="rating7"></p>
-                                <p id="price7">$$$</p>
-                            </div>
-                        </div>
-                        <div class="column is-3">
-                            <div class="box img-box">
-                                <figure class="image is-2by2">
-                                    <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
-                                </figure>
-                                <br>
-                                <p id="title8"></p>
-                                <p id="blurb8"></p>
-                                <p id="rating8"></p>
-                                <p id="price8">$$$</p>
-                            </div>
-                        </div>
-                        <div class="column is-3">
-                            <div class="box img-box">
-                                <figure class="image is-2by2">
-                                    <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
-                                </figure>
-                                <br>
-                                <p id="title9"></p>
-                                <p id="blurb9"></p>
-                                <p id="rating9"></p>
-                                <p id="price9">$$$</p>
-                            </div>
-                        </div>
-                    </div><!-- End of columns -->
+
+                        <br>
+                        <p id="detailSummary" ></p>
+                        <br>
+                        <p id="detailInstructions" ></p>
+                        <br>
+                        <p id="detailTime"></p>
+
+                    </div>
                 </article>
             </div>
                 <!-- End main image-icon divs -->
-        </div>
+        <!-- </div>  -->
         <!-- End of sole ancestor -->
     </div>
     <!-- End of main container -->
@@ -249,18 +166,13 @@
 <!-- End of filters section -->
 
 
-
-
-
-
-
              <!-- Footer with social media elements-->
-  
-             <section>      
+
+             <section>
                 <footer class="Footer">
                     <hr class="style">
                     <div class="content has-text-centered">
-                    <h4 style="font-size: 25px">Foodastic is an independent entity with no affiliation with listed restaurants and recipes. 
+                    <h4 style="font-size: 25px">Foodastic is an independent entity with no affiliation with listed restaurants and recipes.
                         &#169; 2021 by RAIJ</h4>
                         <p style="font-size: 12px;">This project is dedicated to those who love food.</p>
                         <div class="center">
@@ -269,34 +181,35 @@
                                 <span class="facebook">
                                   <a href = "https://twitter.com/" target="_blank"><button class="border"><i class="fab fa-facebook"></i></button></a>
                                 </span>
-                            
+
                                 <span class="twitter">
                                   <a href = "https://www.facebook.com/" target="_blank"><button class="border"><i class="fab fa-twitter"></i></button></a>
                                 </span>
-                            
+
                                 <span class="instagram">
                                   <a href = "https://www.instagram.com/" target="_blank"><button class="border"><i class="fab fa-instagram"></i></button></a>
                                 </span>
-                                
+
                               </ul>
                             </span>
-                        </div>  
-                              
-            
-        
+                        </div>
+
+
+
                     </div>
                     <!-- content -->
                 </footer>
                 </section>
                 <!-- End Footer -->
-        
+
                 <!-- modal javascript, stylesheet: index.css -->
-                <script src = "./assets/js/index.js"></script>
+                <!-- <script src = "./assets/js/index.js"></script> -->
 
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./spoonacular.js"></script>
+    <!-- <script src="./spoonacular.js"></script> -->
+    <script src="assets/js/favorite.js"></script>
 </body>
 
 </html>

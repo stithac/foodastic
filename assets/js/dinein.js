@@ -6,6 +6,7 @@ var cuisine;
 var limit = 10;
 var ids = [];
 var recipes = [];
+var favorites = [];
 
 /******************************
 Start of the application's functions
@@ -21,6 +22,7 @@ $(".detailInformation").hide() //Hide detail information div on page load
 ******/
 function getFilters() {
 
+    $("#LoadingImage").show();
     //get selected ingredients from #ingredientSelections
     var ingredients = [];
     $("#ingredientSelections input:checked").each(function() {
@@ -86,6 +88,7 @@ function getResults(url) {
             recipe = response.results[i];
             recipes.push(recipe);
         }
+        $("#LoadingImage").hide();
         populateResults(response);
     });
 
@@ -112,7 +115,7 @@ function populateResults(recipes) {
 
     for (i = 0; i < recipes.results.length; i++) {
 
-        console.log(recipes.results[i]); //testing
+        // console.log(recipes.results[i]); //testing
 
         $("#pic" + j).attr("src", recipes.results[i].image);
         $("#title" + j).text(recipes.results[i].title);
@@ -155,7 +158,8 @@ $(searchBtn).on("click", function(event) {
 //filterImages event listener
 $(".filterImage").on("click", function(event) {
 
-        event.preventDefault();
+    $("#LoadingImage").show();
+    $(".filterImage").hide();
         var id = $(this).attr("id");
         console.log(id);
 
@@ -234,10 +238,36 @@ function showRecipeDetails(recipe) {
 
     $("#detailImage").attr("src", recipe.image);
     $("#detailTitle").html(recipe.title);
-    $("#detailSummary").html(recipe.summary);
-    $("#detailIngredients").html(recipe.analyzedInstructions);
+    $("#detailSummary").html("<b>RECIPE SUMMARY: </b><br/>" + recipe.summary);
+    $("#detailInstructions").html("<b>INSTRUCTIONS (if available): </b><br/>");
+    for (i = 0; i < recipe.analyzedInstructions[0].steps.length; i++){
+
+        $("#detailInstructions").append("<b> Step " + i + ": </b>" + recipe.analyzedInstructions[0].steps[i].step +"<br/>");
+        // console.log(recipe.analyzedInstructions[0].steps[i]);
+    }
+
     $("#detailTime").html("Ready in: " + recipe.readyInMinutes + " minutes");
 
+    $("#favIcon").attr("resultId", recipe.id);
+
+    var title = recipe.title;
+
+    //Checks to see if there are any favorites in localStorage. If there are favorites saved in localStorage, they are stored in favorites variable.
+    var storedFavorites = JSON.parse(localStorage.getItem("favorites"));
+
+    if (storedFavorites !== null){
+        favorites = storedFavorites;
+        console.log(favorites);
+    }
+
+    var item = favorites.find(item => item.name == title);
+
+    if (item !== undefined){
+
+        $("#favIcon").attr("src", "./assets/img/red-heart.png"),
+        $("#favIcon").attr("class", "fave");
+
+    }
     console.log(recipe);
 
 }
@@ -245,7 +275,7 @@ function showRecipeDetails(recipe) {
 //.result event listener
 $(".result").on("click", function(event) {
 
-    event.preventDefault();
+    $("#dineinBlurb").hide();
     console.log("Result clicked");
     // console.log($(this).children(".title")[0].innerHTML);
     var title = $(this).children(".recipeTitle")[0].innerHTML;
@@ -266,6 +296,45 @@ $(".result").on("click", function(event) {
 }); //End of .result event listener
 
 
+$("#favIcon").on("click", function(){
+
+    var index;
+    var id = $("#favIcon").attr("resultId");
+
+    if($("#favIcon").hasClass("nonfave")){
+
+        $("#favIcon").attr("src", "./assets/img/red-heart.png");
+        $("#favIcon").addClass("fave");
+        $("#favIcon").removeClass("nonfave");
+
+    }else{
+        $("#favIcon").attr("src", "./assets/img/white-heart.png");
+        $("#favIcon").addClass("nonfave");
+        $("#favIcon").removeClass("fave");
+    }
+
+
+        index = recipes.findIndex(x => x.id == id);
+        console.log(recipes);
+        console.log(recipes[index]);
+
+        var item = favorites.find(item => item.id == index);
+
+        if (item == undefined) {
+            var favorite = {
+                id: id,
+                name: recipes[index].title,
+                type: "recipe"
+            }
+
+            favorites.push(favorite);
+            console.log(id);
+            console.log(favorites);
+
+            localStorage.setItem("favorites", JSON.stringify(favorites)); //Updates favorites array in local storage
+        }
+
+})
 
 
 //TODO: FIX
