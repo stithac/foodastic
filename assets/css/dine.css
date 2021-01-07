@@ -329,9 +329,10 @@
             }
             /* for the content inside the modal */
             .content {
-                width: 50%;
+                width: 30%;
             border: none;
             background-color: #fbfdfe;
+            /* background-color: #e02239; */
                 margin: auto;
                 padding: 15px;
                 border-radius: 10px;
@@ -354,6 +355,14 @@
                 cursor: pointer
             }
 
+            #city{
+                width: 300px;
+            }
+
+            #zip{
+                width: 300px;
+            }
+
             /* ******************************* */
 
             #LoadingImage{
@@ -366,12 +375,39 @@
             #favIcon{
 
                 margin:0 auto;
-                width:30px;
-                height:auto
+                width:25px;
+                height:auto;
+                align-self: right;
             }
 
             #favIcon:hover{
                 cursor:pointer;
+            }
+
+            .selectedDiv{
+                border: 2px solid #242424;
+            }
+
+            .check{
+                width:30px;
+            }
+
+            /* Detail Information */
+            .detailInformation{
+                width:100%;
+            }
+
+            #detailImage{
+                width:auto;
+                max-height:500px;
+                border: 1px solid #242424;
+                align-self: center !important;
+                margin: 0 auto;
+            }
+
+            #detailTitle{
+                font-size: 32px;
+                text-align: center;
             }
 
             /* Media Queries */

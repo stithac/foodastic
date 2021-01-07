@@ -84,14 +84,14 @@
                 <p class="allcaps">PLEASE ENTER YOUR CITY</p>
                 <div class="field">
                     <div class="control">
-                        <input class="input input-tr is-small" type="text" placeholder="City" id="cityInput">
+                        <input class="input input-tr is-small" type="text" placeholder="City" id="city">
                     </div>
                 </div>
                 <div class="content2">
                     <p class="allcaps">OR ZIP CODE</p>
                     <div class="field">
                         <div class="control">
-                            <input class="input input-tr is-small" type="text" placeholder="Zip" id="zipInput">
+                            <input class="input input-tr is-small" type="text" placeholder="Zip" id="zip">
                         </div>
                     </div>
                 </div>
@@ -160,18 +160,18 @@
                                         <!-- Select Multiple 2-->
 
                                         <p class="allcaps">PREFERRED PRICE RANGE</p>
-                                        <label class="checkbox"><input type="checkbox" value="">$</label>
+                                        <label class="checkbox"><input type="checkbox" value="1">$</label>
                                         <br>
-                                        <label class="checkbox"><input type="checkbox" value="">$$</label>
+                                        <label class="checkbox"><input type="checkbox" value="2">$$</label>
                                         <br>
-                                        <label class="checkbox"><input type="checkbox" value="">$$$</label>
+                                        <label class="checkbox"><input type="checkbox" value="3">$$$</label>
                                         <br>
-                                        <label class="checkbox"><input type="checkbox" value="">$$$$</label>
+                                        <label class="checkbox"><input type="checkbox" value="4">$$$$</label>
                                     </div>
                                     <br>
 
                                     <div class="buttons">
-                                        <button class="button is-medium is-dark" id="btnSearch">Search</button>
+                                        <button class="button is-medium is-dark" id="btnSearch">Update Filters</button>
                                     </div>
                                 </div>
                             </div>
@@ -186,22 +186,26 @@
 
                         <div class="columns is-multiline">
                             <div class="column is-12">
-                                <p id ="recipesTitle" class = "allcaps"></p>
+                                <div id="LoadingImage" style="display: none">
+                                    <img src="./assets/img/loading.gif" />
+                                  </div>
+                                  <h1 class="allcaps" style="font-size: 48px; text-align: center;">Foodastic Dunno? Analyzer</h1>
+                                <p id ="recipesTitle" class = "">So you don't know what you want? No worries!... The <b><i>Foodastic Dunno? Analyzer</i></b> will make a few recipe and restaurant suggestions based on your responses to the 5 yellow mood cards below.  Don't feel like answering? Not a problem! Just click the red "Surprise Me" button and we'll provide you with some random suggestions! </p>
                             </div>
 
                             <div class="column is-4 filterImage">
                                 <div class="box dunno-icon-box">
+                                    <img class="check" id ="check1"src=""/>
                                     <p class="dunno-text">mood du jour</p>
-
                                     <figure class="dunno-icon-row">
-                                        <span class="clickable"><i id="goodIcon" class="good-mood far fa-smile fa-3x icon-toggle dunnoIcon"></i></span>
-                                        <span class="clickable"><i id="sadIcon" class="sad-mood far fa-frown fa-3x icon-toggle dunnoIcon"></i></span>
-                                        <span class="clickable"><i id="mehIcon" class="sad-mood far fa-meh fa-3x icon-toggle dunnoIcon"></i></span>
+                                        <span class="clickable"><i id="goodIcon" cardId="1" class="good-mood far fa-smile fa-3x icon-toggle dunnoIcon"></i></span>
+                                        <span class="clickable"><i id="sadIcon" cardId="1" class="sad-mood far fa-frown fa-3x icon-toggle dunnoIcon"></i></span>
+                                        <span class="clickable"><i id="mehIcon" cardId="1" class="sad-mood far fa-meh fa-3x icon-toggle dunnoIcon"></i></span>
                                     </figure>
                                     <figure class="dunno-icon-row">
-                                        <span class="clickable"><i id="kissIcon" class="good-mood far fa-kiss-wink-heart fa-3x icon-toggle dunnoIcon"></i></span>
-                                        <span class="clickable"><i id="angryIcon" class="bad-mood far fa-angry fa-3x icon-toggle dunnoIcon"></i></span>
-                                        <span class="clickable"><i id="eyesIcon" class="bad-mood far fa-meh-rolling-eyes fa-3x icon-toggle dunnoIcon"></i></span>
+                                        <span class="clickable"><i id="kissIcon" cardId="1" class="good-mood far fa-kiss-wink-heart fa-3x icon-toggle dunnoIcon"></i></span>
+                                        <span class="clickable"><i id="angryIcon" cardId="1" class="bad-mood far fa-angry fa-3x icon-toggle dunnoIcon"></i></span>
+                                        <span class="clickable"><i id="eyesIcon" cardId="1" class="bad-mood far fa-meh-rolling-eyes fa-3x icon-toggle dunnoIcon"></i></span>
                                     </figure>
 
                                 </div>
@@ -209,66 +213,70 @@
 
                             <div class="column is-4 filterImage">
                                 <div class="box dunno-icon-box">
+                                    <img class="check" id ="check2"src=""/>
                                     <p class="dunno-text">random query</p>
                                     <div class="dunno-icon-div">
-                                        <button id="veniBtn" class="button is-rounded dunno-random-button has-text-white-ter dunnoIcon">veni?</button>
-                                        <button  id="vidiBtn" class="button is-rounded dunno-random-button has-text-white-ter dunnoIcon">vidi?</button>
-                                        <button   id="viciBtn" class="button is-rounded dunno-random-button has-text-white-ter dunnoIcon">vici?</button>
+                                        <button id="veniBtn" cardId="2" class="button is-rounded dunno-random-button has-text-white-ter good-mood dunnoIcon">veni?</button>
+                                        <button  id="vidiBtn" cardId="2" class="button is-rounded dunno-random-button has-text-white-ter sad-mood dunnoIcon">vidi?</button>
+                                        <button   id="viciBtn" cardId="2" class="button is-rounded dunno-random-button has-text-white-ter bad-mood dunnoIcon">vici?</button>
                                     </div>
                                 </div>
                             </div>
                             <div class="column is-4 filterImage">
                                 <div class="box dunno-icon-box">
+                                    <img class="check" id ="check3"src=""/>
                                     <p class="dunno-text">your day?</p>
                                     <div class="dunno-choice-div">
-                                        <label class="good-mood checkbox day-choice"><input id="normalCheck" class="dunnoIcon" type="checkbox">Normal, Chill</label><br>
-                                        <label class="good-mood checkbox day-choice"><input id="awesomeCheck" class="dunnoIcon"  type="checkbox">Awesome</label><br>
-                                        <label class="sad-mood checkbox day-choice"><input id="longCheck" class="dunnoIcon" type="checkbox">Too Long</label><br>
-                                        <label class="bad-mood checkbox day-choice"><input id="crazyCheck"  class="dunnoIcon" type="checkbox">Bat **** crazy </label><br>
-                                        <label class="sad-mood checkbox day-choice"><input id="whateverCheck" class="dunnoIcon" type="checkbox">Doesn't Matter</label>
+                                        <label class=" checkbox day-choice"><input id="normalCheck" class="good-mood dunnoIcon" cardId="3" type="checkbox">Normal, Chill</label><br>
+                                        <label class=" checkbox day-choice"><input id="awesomeCheck" class="good-mood dunnoIcon" cardId="3"  type="checkbox">Awesome</label><br>
+                                        <label class=" checkbox day-choice"><input id="longCheck" class="sad-mood dunnoIcon" cardId="3" type="checkbox">Too Long</label><br>
+                                        <label class=" checkbox day-choice"><input id="crazyCheck"  class="bad-mood dunnoIcon" cardId="3" type="checkbox">Bat **** crazy </label><br>
+                                        <label class=" checkbox day-choice"><input id="whateverCheck" class="sad-mood dunnoIcon" cardId="3"  type="checkbox">Doesn't Matter</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="column is-4 filterImage">
                                 <div class="box dunno-icon-box">
+                                    <img class="check" id ="check4"src=""/>
                                     <div class="dunno-moth-div" style="text-align: center;">
                                         <img class="moth-icon" src="assets/filter-inkblot.png" alt="moth icon">
                                     </div><br>
                                     <div class="dunno-icon-input">
-                                        <span class=moth-choice><label><input id="batCheck" class="dunnoIcon" type="checkbox" value="">bat?</label></span>
-                                        <span class=moth-choice><label><input id="mothCheck" class="dunnoIcon" type="checkbox" value="">moth?</label></span>
-                                        <span class=moth-choice><label><input id="butterflyCheck" class="dunnoIcon" type="checkbox" value="">butterfly?</label></span>
+                                        <span class=moth-choice><label><input id="batCheck" class="bad-mood dunnoIcon" type="checkbox" cardId="4" value="">bat?</label></span>
+                                        <span class=moth-choice><label><input id="mothCheck" class="sad-mood dunnoIcon" type="checkbox" cardId="4" value="">moth?</label></span>
+                                        <span class=moth-choice><label><input id="butterflyCheck" class="good-mood  dunnoIcon" type="checkbox" cardId="4" value="">butterfly?</label></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="column is-4 filterImage">
                                 <div class="box dunno-icon-box">
+                                    <img class="check" id ="check5"src=""/>
                                     <p class="dunno-text">pick</p>
                                     <div class="dunno-icon-div">
                                         <div class="dunno-icon-row">
-                                            <span class="sad-mood clickable" style="color: #e02239;"><i id="redIcon" class="fas fa-palette fa-3x dunnoIcon"></i></span>&nbsp;
-                                            <span class="good-mood clickable" style="color: #52cc00;"><i id="greenIcon" class="fas fa-palette fa-3x dunnoIcon"></i></span>
-                                            <span class="bad-mood clickable" style="color: #654321;"><i id="brownIcon" class="fas fa-palette fa-3x dunnoIcon"></i></span>
+                                            <span class="clickable" style="color: #e02239;"><i id="redIcon" class="fas fa-palette fa-3x sad-mood  dunnoIcon" cardId="5"></i></span>
+                                            <span class=" clickable" style="color: #52cc00;"><i id="greenIcon" class="fas fa-palette fa-3x good-mood dunnoIcon" cardId="5"></i></span>
+                                            <span class=" clickable" style="color: #654321;"><i id="brownIcon" class="fas fa-palette fa-3x bad-mood dunnoIcon" cardId="5"></i></span>
                                         </div>
                                         <div class="dunno-icon-row">
-                                            <span class="sad-mood clickable" style="color: #0018f9;"><i id="blueIcon" class="fas fa-palette fa-3x dunnoIcon"></i></span>
-                                            <span class="good-mood clickable" style="color: #ffff00;"><i id="yellowIcon" class="fas fa-palette fa-3x dunnoIcon"></i></span>
-                                            <span class="bad-mood clickable" style="color: #000;"><i id="blackIcon" class="fas fa-palette fa-3x dunnoIcon"></i></span>
+                                            <span class=" clickable" style="color: #0018f9;"><i id="blueIcon" class="fas fa-palette fa-3x sad-mood dunnoIcon" cardId="5"></i></span>
+                                            <span class="clickable" style="color: #ffff00;"><i id="yellowIcon" class="fas fa-palette fa-3x good-mood dunnoIcon" cardId="5"></i></span>
+                                            <span class="clickable" style="color: #000;"><i id="blackIcon" class="fas fa-palette fa-3x bad-mood dunnoIcon" cardId="5"></i></span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="column is-4 filterImage">
-                                <div class="box dunno-icon-box">
-                                    <p class="surpriseme"><span class="nevermind">Nevermind The Rest...</span><br><span class="dunno-text">SURPRISE ME!</span></p>
+                                <div class="box dunno-icon-box" style="background-color: #e02239;">
+                                    <p class="surpriseme" style="color:#fff" ><span class="nevermind">Nevermind The Rest...</span><br><span class="dunno-text">SURPRISE ME!</span></p>
                                     <div class="dunno-icon-row">
                                         <span class="clickable dunno-surprise-icon"><i id="surpriseIcon" class="fas fa-exclamation-circle fa-7x  dunnoIcon"></i></span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="column is-4">
+                            <div class="column result is-4">
 
-                                <div class="box img-box result" id="result1">
+                                <div class="box img-box resultEl " resultType="recipe" id="result1">
                                     <figure class="image is-4by5">
                                         <img id="pic1" class="pic" src="" alt="test image">
                                     </figure>
@@ -279,8 +287,8 @@
                                     <p class="price" id="price1">$$$</p>
                                 </div>
                             </div>
-                            <div class="column is-4 ">
-                                <div class="box img-box result" id="result2">
+                            <div class="column result is-4 ">
+                                <div class="box img-box resultEl" resultType="recipe" id="result2">
                                     <figure class="image is-4by5">
                                         <img id="pic2" class="pic" src="" alt="test image">
                                     </figure>
@@ -291,8 +299,8 @@
                                     <p class="price" id="price2">$$$</p>
                                 </div>
                             </div>
-                            <div class="column is-4 ">
-                                <div class="box img-box result" id="result3">
+                            <div class="column result is-4 ">
+                                <div class="box img-box resultEl" resultType="recipe" id="result3">
                                     <figure class="image is-4by5">
                                         <img id="pic3" class="pic" src="" alt="test image">
                                     </figure>
@@ -303,8 +311,8 @@
                                     <p class="price" id="price3">$$$</p>
                                 </div>
                             </div>
-                            <div class="column is-4">
-                                <div class="box img-box result" id="result4">
+                            <div class="column result is-4">
+                                <div class="box img-box resultEl" resultType="recipe" id="result4">
                                     <figure class="image is-4by5">
                                         <img id="pic4" class="pic" src="" alt="test image">
                                     </figure>
@@ -315,8 +323,8 @@
                                     <p class="price" id="price4">$$$</p>
                                 </div>
                             </div>
-                            <div class="column is-4">
-                                <div class="box img-box result" id="result5">
+                            <div class="column result is-4">
+                                <div class="box img-box resultEl " resultType="recipe" id="result5">
                                     <figure class="image is-4by5">
                                         <img id="pic5" class="pic" src="" alt="test image">
                                     </figure>
@@ -327,9 +335,9 @@
                                     <p class="price" id="price5">$$$</p>
                                 </div>
                             </div>
-                            <div class="column is-4">
-                                <!-- <div class="box img-box result" > -->
-                                <div class="box img-box result "id="result6">
+                            <div class="column result is-4">
+
+                                <div class="box img-box resultEl " resultType="recipe" id="result6">
                                     <figure class="image is-4by5">
                                         <img id="pic6" class="pic" src="" alt="test image">
                                     </figure>
@@ -343,15 +351,17 @@
 
 
                         </div>
-                        <!-- Adding below div for results display - Ashley -->
                         <div class = "detailInformation">
                             <div style="text-align: right;">
-                                <img id="favIcon" src="./assets/img/white-heart.png" alt="favorite" class="nonfave"/>
+                                <img id="favIcon" src="./assets/img/white-heart.png" alt="favorite" class="nonfave"/>Add to Favorites
                             </div>
 
                             <h2 id="detailTitle"></h2>
                             <br>
-                            <img id= "detailImage" src="" alt="Recipe Image"/>
+                            <div style="text-align: center;">
+                                <img id= "detailImage" src="" alt="Recipe Image"/>
+                            </div>
+
                             <br>
                             <p id="detailSummary"></p>
                             <br>
@@ -367,15 +377,13 @@
                     <article id = "restaurantResults" class="box ">
 
                             <p id ="restaurantsTitle" class = "allcaps"></p>
-                            <div id="LoadingImage" style="display: none">
-                                <img src="./assets/img/loading.gif" />
-                              </div>
+
 
                         <div class="columns is-multiline">
 
 
                             <div class="column is-4">
-                                <div class="box img-box  restaurant" id="result7" >
+                                <div class="box img-box resultEl" resultType="restaurant" id="result7" >
                                     <figure class="image is-4by5">
                                         <img id="pic7" class="pic" src="" alt="test image">
                                     </figure>
@@ -387,7 +395,7 @@
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box  restaurant" id="result8">
+                                <div class="box img-box  resultEl" resultType="restaurant" id="result8">
                                     <figure class="image is-4by5">
                                         <img id="pic8" class="pic" src="" alt="test image">
                                     </figure>
@@ -399,7 +407,7 @@
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box  restaurant" id="result9">
+                                <div class="box img-box  resultEl" resultType="restaurant" id="result9">
                                     <figure class="image is-4by5">
                                         <img id="pic9" class="pic" src="" alt="test image">
                                     </figure>
@@ -411,7 +419,7 @@
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box  restaurant" id="result10">
+                                <div class="box img-box  resultEl" resultType="restaurant" id="result10">
                                     <figure class="image is-4by5">
                                         <img id="pic10" class="pic" src="" alt="test image">
                                     </figure>
@@ -423,7 +431,7 @@
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box  restaurant" id="result11">
+                                <div class="box img-box  resultEl" resultType="restaurant" id="result11">
                                     <figure class="image is-4by5">
                                         <img id="pic11" class="pic" src="" alt="test image">
                                     </figure>
@@ -435,7 +443,7 @@
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box  restaurant" id="result12">
+                                <div class="box img-box  resultEl" resultType="restaurant" id="result12">
                                     <figure class="image is-4by5">
                                         <img id="pic12" class="pic" src="" alt="test image">
                                     </figure>
@@ -448,10 +456,7 @@
                             </div>
                         </div>
 
-
                         <!-- End img-icon columns -->
-
-
 
                     </article>
                 </div>
