@@ -100,7 +100,7 @@ function getFilters() {
 
 //Build URL from sidebar filters
 function buildURL(param) {
-    url ="https://cors-anywhere.herokuapp.com/api.yelp.com/v3/businesses/search?limit=12&term=restaurants";
+    url ="https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=12&term=restaurants";
     console.log(url);
 
     //Ensure either city or zip is present -- MOVED TO GLOBAL
@@ -367,3 +367,4 @@ $("#filterImageBack").on("click", function() {
     console.log("clicked");
     $("#imageContainer").empty();
     $(".iconHide").show();
+})
