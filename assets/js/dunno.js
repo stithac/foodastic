@@ -182,8 +182,8 @@ function getResults(url, url2){
         $(obj2).attr("dataId","restaurant");
         $("#LoadingImage").hide();
         populateResults(obj2);
-    });
-    $.ajax({
+
+        $.ajax({
         url: url,
         method: "GET"
     }).then(function(response) {
@@ -207,6 +207,8 @@ function getResults(url, url2){
         populateResults(obj);
 
     });
+    });
+
 
 } //End of getResults()
 
