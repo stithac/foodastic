@@ -140,7 +140,7 @@ function createQueryURL(params){
     var queryURL1 = "https://api.spoonacular.com/recipes/complexSearch?apiKey=" + apiKey1 + "&includeNutrition=true&addRecipeInformation=true&includeIngredients=" + params.ingredients.toString() + "&titleMatch=" + params.name + "&cuisine=" + params.cuisine + "&type=" + params.category;
 
     var queryURL2 =
-    "https://cors-anywhere.herokuapp.com/api.yelp.com/v3/businesses/search?&categories=" + params.category2 + "&attributes=" + params.attributes + "&term=" + params.term + "&location=" + city + zipCode;
+    "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?&categories=" + params.category2 + "&attributes=" + params.attributes + "&term=" + params.term + "&location=" + city + zipCode;
     console.log(queryURL2);
 
     getResults(queryURL1, queryURL2); //Pass query URL to the getResults function
