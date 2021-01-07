@@ -25,6 +25,7 @@ var divCard;
 var pAddress;
 
 $(".yelp-img-box").hide();
+$(".detailInformation").hide();
 
 //On load get user city or zip
 $("#modal").fadeIn(); //Show modal on page load
@@ -37,15 +38,17 @@ $(".close").on("click", function() {
 });
 
 $(".okay").on("click", function() {
-        city = $("#cityInput").val();
-        zipCode = $("#zipInput").val();
+        city = $("#city").val();
+        zipCode = $("#zip").val();
 
         if (city == "" && zipCode == "") {
 
             $("#helpText").text("Please enter your city or zip code.");
             // $("#zipInput").val(zipCode)
         } else {
-            $("#modal").css("display", "none")
+            $("#modal").css("display", "none");
+            $("#zipInput").val(zipCode);
+            $("#cityInput").val(city);
         }
     }) //end of .okay event listener
 
@@ -54,6 +57,7 @@ $(".okay").on("click", function() {
 // Initailize search
 $("#btnSearch").on("click", function() {
 
+    $("#LoadingImage").show();
     getFilters();
 });
 
@@ -136,6 +140,7 @@ function buildURL(param) {
 //AJAX call
 function getYelpResults(url) {
 
+    $("#dineoutBlurb").hide();
     var settings = {
         url: url,
         method: "GET",
@@ -151,12 +156,13 @@ function getYelpResults(url) {
     $.ajax(settings).done(function(response) {
         console.log(response, response.businesses.length);
 
+        $("#LoadingImage").hide();
         //load results for page render function
         for (var i = 0; i < response.businesses.length; i++) {
             result = response.businesses[i];
             results.push(result);
-            console.log(response); //Test
-            console.log(results); //Test
+            // console.log(response); //Test
+            // console.log(results); //Test
         }
         $(".iconHide").hide();
         renderResults(response);
@@ -188,6 +194,7 @@ function renderResults(response) {
         infoDiv = $("<div>").append(pName, pAddress, pPhone, pRating, pPrice);
 
         divCard = $("<div class='box yelp-img-box'>").append(figure, infoDiv);
+        $(divCard).attr("onClick", "getResultDetails($(this))");
 
         // var linkDiv = $(`<a class="blink" href=${response.businesses[i].url} target="_blank">`).append(`${divCard}`);
 
@@ -196,11 +203,58 @@ function renderResults(response) {
     };
 }
 
+function getResultDetails(obj){
+    console.log(obj);
+    var name = $(obj).find(".blink").text();
+    console.log(name);
+    console.log(results);//testing
+
+    var index = results.findIndex(x => x.name === name);
+
+    $(".resultsDiv").hide();
+    $(".detailInformation").show();
+
+    $("#favIcon").addClass("restaurant");
+
+    //Checks to see if there are any favorites in localStorage. If there are favorites saved in localStorage, they are stored in favorites variable.
+    var storedFavorites = JSON.parse(localStorage.getItem("favorites"));
+
+
+    if (storedFavorites !== null){
+        favorites = storedFavorites;
+        console.log(favorites);
+    }
+
+    var item = favorites.find(item => item.name == name);
+
+    if (item !== undefined){
+
+        $("#favIcon").attr("src", "./assets/img/red-heart.png"),
+        $("#favIcon").attr("class", "fave");
+
+    }
+
+
+        var restaurant = results[index];
+
+        $("#detailTitle").html("<b>" + restaurant.name + "</b>");
+        $("#detailImage").attr("src", restaurant.image_url);
+
+        $("#detailSummary").html("<b>Restaurant website: </b> <a href = "+ restaurant.url + "'>" + restaurant.name + " website </a><br/><br/><b>Phone Number: </b>" + restaurant.phone + "<br/><br/> <b>Address: </b>");
+
+        for (i = 0; i < restaurant.location.display_address.length; i++){
+            $("#detailSummary").append(restaurant.location.display_address[i] + " ");
+        }
+
+        $("#favIcon").attr("resultId", restaurant.id);
+}
+
 //filterImages listener events
 $(".filterImage").on("click", function(event) {
-
+    $("#LoadingImage").show();
+    $(".filterImage").hide();
     //add to parameters - consolidate this step later
-    event.preventDefault();
+
     var id = $(this).attr("id");
     console.log(id);
 
@@ -269,6 +323,45 @@ $(".filterImage").on("click", function(event) {
 
 });
 
+$("#favIcon").on("click", function(){
+
+    var index;
+    var id = $("#favIcon").attr("resultId");
+
+    if($("#favIcon").hasClass("nonfave")){
+
+        $("#favIcon").attr("src", "./assets/img/red-heart.png");
+        $("#favIcon").addClass("fave");
+        $("#favIcon").removeClass("nonfave");
+
+    }else{
+        $("#favIcon").attr("src", "./assets/img/white-heart.png");
+        $("#favIcon").addClass("nonfave");
+        $("#favIcon").removeClass("fave");
+    }
+
+
+    index = results.findIndex(x => x.id == id);
+
+    console.log(results[index]);
+    var item = favorites.find(item => item.id == index);
+
+    if (item == undefined) {
+        var favorite = {
+            id: id,
+            name: results[index].name,
+            type: "restaurant"
+        }
+
+        favorites.push(favorite);
+        console.log(id);
+        console.log(favorites);
+
+        localStorage.setItem("favorites", JSON.stringify(favorites)); //Updates favorites array in local storage
+    }
+
+})
+
 
 $("#filterImageBack").on("click", function() {
     $(".filterImage").show();
@@ -276,16 +369,6 @@ $("#filterImageBack").on("click", function() {
 });
 
 
-//.result event listener
-$(".resultEl").on("click", function(){
-
-    console.log("Result clicked");
-    // var title = $(this).children(".recipeTitle")[0].innerText;
-    console.log($(this));
-
-    // showDetails($(this));//call showDetails and pass clicked object
-
-}); //End of .result event listener
 
 
 /////////////////////////////// RABIA'S ORIGINAL CODE

@@ -98,14 +98,14 @@
             <p class="allcaps">PLEASE ENTER YOUR CITY</p>
             <div class="field">
                 <div class="control">
-                    <input class="input input-tr is-small" type="text" placeholder="City" id="cityInput">
+                    <input class="input input-tr is-small" type="text" placeholder="City" id="city">
                 </div>
             </div>
             <div class="content2">
                 <p class="allcaps">OR ZIP CODE</p>
                 <div class="field">
                     <div class="control">
-                        <input class="input input-tr is-small" type="text" placeholder="Zip" id="zipInput">
+                        <input class="input input-tr is-small" type="text" placeholder="Zip" id="zip">
                     </div>
                 </div>
             </div>
@@ -246,7 +246,10 @@
 
                 <div class="column ">
                     <article class="box">
-                        <div class="columns is-multiline">
+                        <div id="LoadingImage" style="display: none">
+                            <img src="./assets/img/loading.gif" />
+                          </div>
+                        <div class="columns is-multiline resultsDiv">
 
 
 
@@ -256,6 +259,8 @@
                             <div id="filterImageBack" class="column clickable is-12 ">speedy eat picks</div>
 
                             <!-- ***** END speedy eat picks ***** -->
+
+                            <p id="dineoutBlurb"><b><i>So you feel like eating out...</i></b> Cool, give us a feel for what you have a taste for and we'll do the rest! If you'd prefer, use the filters on the left to narrow your search</p>
 
 
                             <div class="column is-4 iconHide">
@@ -375,6 +380,24 @@
 
                         </div>
                         <!-- End of columns -->
+                        <div class = "detailInformation">
+                            <h2 id="detailTitle"></h2>
+                            <div style="text-align: right;">
+                                <img id="favIcon" src="./assets/img/white-heart.png" alt="favorite" class="nonfave"/>Add to Favorites
+                            </div>
+
+                            <div style="text-align: center;">
+                                <img id= "detailImage" src="" alt="Recipe Image"/>
+                            </div>
+
+                            <br>
+                            <p id="detailSummary"></p>
+                            <br>
+                            <p id="detailInstructions"></p>
+                            <br>
+                            <p id="detailTime"></p>
+
+                        </div>
                     </article>
                 </div>
                 <!-- End main image-icon divs-->

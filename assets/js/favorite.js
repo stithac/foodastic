@@ -27,6 +27,8 @@ if (storedFavorites !== null){
 $("#recipeFaves a").on("click", function(){
     console.log("clicked");//testing
     $("#LoadingImage").show();
+    $("#recipeFaves").hide();
+    $("#restaurantFaves").hide();
 
    if($(this).hasClass("recipe")){
        console.log("recipe");
@@ -42,8 +44,7 @@ $("#recipeFaves a").on("click", function(){
         }).then(function(response) {
             console.log(response);
 
-            $("#recipeFaves").hide();
-            $("#restaurantFaves").hide();
+
             $("#LoadingImage").hide();
             $(".detailInformation").show();
             $("#detailTitle").html("<b>" + response.title + "</b>");
