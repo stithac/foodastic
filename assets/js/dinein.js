@@ -153,7 +153,6 @@ $(searchBtn).on("click", function(event) {
 });
 
 //filterImages event listener
-<<<<<<< HEAD
 $(".filterImage").on("click", function(event) {
 
         event.preventDefault();
@@ -165,14 +164,14 @@ $(".filterImage").on("click", function(event) {
         if (id === "spicy") {
             parameters = {
                 ingredients: "",
-                name: "",
-                cuisine: "african",
+                name: "spicy",
+                cuisine: "",
                 category: ""
             }
         } else if (id === "savory") {
             parameters = {
-                ingredients: "onion",
-                name: "",
+                ingredients: "",
+                name: "savory",
                 cuisine: "",
                 category: ""
             }
@@ -206,70 +205,11 @@ $(".filterImage").on("click", function(event) {
                 ingredients: "",
                 name: "",
                 cuisine: "",
-                category: ""
+                category: "salad"
             }
         }
 
         createQueryURL(parameters);
-=======
-$(".filterImage").on("click", function(event){
-
-    event.preventDefault();
-    var id = $(this).attr("id");
-    console.log(id);
-
-    var parameters = {};
-
-    if (id === "spicy"){
-        parameters = {
-            ingredients: "",
-            name: "spicy",
-            cuisine: "",
-            category: ""
-        }
-    }else if(id === "savory"){
-        parameters = {
-            ingredients: "",
-            name: "savory",
-            cuisine: "",
-            category: ""
-        }
-
-    }else if(id === "onepot"){
-        parameters = {
-            ingredients: "",
-            name: "casserole",
-            cuisine: "",
-            category: ""
-        }
-
-    }else if(id === "special"){
-        parameters = {
-            ingredients: "",
-            name: "",
-            cuisine: "french",
-            category: ""
-        }
-
-    }else if(id === "surprise"){
-        parameters = {
-            ingredients: "",
-            name: "",
-            cuisine: "",
-            category: "main course"
-        }
-
-    }else if(id === "healthy"){
-        parameters = {
-            ingredients: "",
-            name: "",
-            cuisine: "",
-            category: "salad"
-        }
-    }
-
-    createQueryURL(parameters);
->>>>>>> 220508be8a6ffbf45f821c0e6437443f3e17d4e0
 
     }) //End of filterImage click event
 
@@ -293,10 +233,10 @@ function showRecipeDetails(recipe) {
     $(".detailInformation").show();
 
     $("#detailImage").attr("src", recipe.image);
-    $("#detailTitle").text(recipe.title);
-    $("#detailSummary").text(recipe.summary);
-    $("#detailIngredients").text(recipe.analyzedInstructions);
-    $("#detailTime").text("Ready in: " + recipe.readyInMinutes + " minutes");
+    $("#detailTitle").html(recipe.title);
+    $("#detailSummary").html(recipe.summary);
+    $("#detailIngredients").html(recipe.analyzedInstructions);
+    $("#detailTime").html("Ready in: " + recipe.readyInMinutes + " minutes");
 
     console.log(recipe);
 
@@ -324,3 +264,15 @@ $(".result").on("click", function(event) {
     console.log("hello");
 
 }); //End of .result event listener
+
+
+
+
+//TODO: FIX
+
+//"Line 224 Speedy eats bar" on dinein.html. Returns imageFilters after  search
+$("#filterImageBack").on("click", function() {
+    $(".filterImage").show();
+    $("nameInput").val("");
+    $(".detailInformation").hide();
+});

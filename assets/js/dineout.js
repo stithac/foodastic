@@ -22,6 +22,32 @@ var infoDiv;
 var col;
 var figure;
 var divCard;
+var pAddress;
+
+//On load get user city or zip
+$("#modal").fadeIn(); //Show modal on page load
+
+// select the modal close button by class and apply a click even listener
+$(".close").on("click", function() {
+    //select the modal element by id , and apply display none when close is clicked
+    //this will close the modal on click
+    $("#modal").css("display", "none")
+});
+
+$(".okay").on("click", function() {
+        city = $("#cityInput").val();
+        zipCode = $("#zipInput").val();
+
+        if (city == "" && zipCode == "") {
+
+            $("#helpText").text("Please enter your city or zip code.");
+            // $("#zipInput").val(zipCode)
+        } else {
+            $("#modal").css("display", "none")
+        }
+    }) //end of .okay event listener
+
+
 // Initailize search
 $("#btnSearch").on("click", function() {
 
@@ -43,10 +69,6 @@ function getFilters() {
         categories.push(cuisine);
     }
     console.log(categories);
-
-    // if (categories2 !== []) {
-    //     categories.push(categories2);
-    // } 
 
     //number of $ signs
     price = [];
@@ -71,7 +93,7 @@ function getFilters() {
 //Build URL from sidebar filters
 function buildURL(param) {
     url =
-        "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=6&term=restaurants";
+        "https://cors-anywhere.herokuapp.com/api.yelp.com/v3/businesses/search?limit=12&term=restaurants";
     console.log(url);
 
     //Ensure either city or zip is present -- MOVED TO GLOBAL
@@ -86,7 +108,8 @@ function buildURL(param) {
         if (citySearch.length > 0) {
             url += "&location=" + citySearch
             console.log(citySearch)
-        } else {
+        }
+        if (zipSearch !== "") {
             url += "&location=" + zipSearch
         }
     }
@@ -116,9 +139,8 @@ function getYelpResults(url) {
         timeout: 0,
         headers: {
             "accept": "application/json",
-            // "x-requested-with": "xmlhttprequest",
+            "x-requested-with": "xmlhttprequest",
             "Access-Control-Allow-Origin": "*",
-
             "Authorization": `Bearer ${apiKey2}`,
         },
     };
@@ -145,27 +167,27 @@ function renderResults(response) {
 
         // check to see if the price is defined
         if ("price" in response.businesses[i]) {
-            var priceHTML = "Price: " + response.businesses[i].price;
+            var priceHTML = response.businesses[i].price;
         } else {
-            var priceHTML = "Price: Unavailable";
+            var priceHTML = "$ Unavailable";
         };
 
-        //build image-info div
-
-
+        //build result elements
         image = $("<img class='image yelp-img is3by4'>").attr("src", `${response.businesses[i].image_url}`)
         figure = $("<figure>").append(image);
-
-        pName = $("<p class='name'>").html(`<a class="blink" href=${response.businesses[i].url}>${response.businesses[i].name}</a>`);
+        pName = $("<p class='name'>").html(`<a class="blink" href=${response.businesses[i].url} target="_blank">${response.businesses[i].name}</a>`);
+        pAddress = $("<p class='btext'>").html(`${response.businesses[i].location.address1}<br>${response.businesses[i].location.city},${response.businesses[i].location.state}`);
         pRating = $("<p class='btext brating'>").text(`Rating: ${response.businesses[i].rating}`);
         spanInfo = $("<span class='binfo'>").text(`${response.businesses[i].review_count} Reviews`);
         pRating.append(spanInfo);
-        // var pAddress = $("<p class='binfo'>").html(`<span> ${businesses[i].location.display_address}</span>`);
-        pPhone = $("<p class='btext'>").text(`Phone: ${response.businesses[i].display_phone}`);
-        pPrice = $("<p class='btext'>").text(priceHTML);
+        pPhone = $("<p class='btext'>").text(`${response.businesses[i].display_phone}`);
+        var pPrice = $("<p>").text(priceHTML);
+        infoDiv = $("<div>").append(pName, pAddress, pPhone, pRating, pPrice);
 
-        infoDiv = $("<div class='do-info-div'>").append(figure, pName, pRating, pPhone, pPrice);
-        divCard = $("<div class='box yelp-img-box'>").append(infoDiv);
+        divCard = $("<div class='box yelp-img-box'>").append(figure, infoDiv);
+
+        // var linkDiv = $(`<a class="blink" href=${response.businesses[i].url} target="_blank">`).append(`${divCard}`);
+
         col = $("<div class='column is-4'>").append(divCard);
         $("#imageContainer").append(col);
     };
@@ -245,29 +267,10 @@ $(".filterImage").on("click", function(event) {
 });
 
 
-
-$(".filterImageBack").on("click", function(event) {
-    event.preventDefault();
-    $("#imageContainer").html("");
-    $(".iconHide").show();
-
+$("#filterImageBack").on("click", function() {
+    $(".filterImage").show();
+    console.log("clicked");
 });
-// // /////////////////////JENNER CODE
-
-
-
-
-// //build image-info div
-
-
-
-
-
-
-
-
-
-
 
 
 

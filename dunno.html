@@ -74,35 +74,35 @@
 
     <!--MODAL -->
     <div class='modal' id='modal'>
-    <!-- MODAL CONTENT -->
-          <div class='content'>
-    <!-- For the close button -->
-              <span class="close" id='close'>&times;</span>
-    <!-- Actual content -->
+        <!-- MODAL CONTENT -->
+        <div class='content'>
+            <!-- For the close button -->
+            <span class="close" id='close'>&times;</span>
+            <!-- Actual content -->
 
-                <h1>Dunno? Tell us more</h1>
-                <p class="allcaps">PLEASE ENTER YOUR CITY</p>
+            <h1>Dunno? tell us more</h1>
+            <p class="allcaps">PLEASE ENTER YOUR CITY</p>
+            <div class="field">
+                <div class="control">
+                    <input class="input input-tr is-small" type="text" placeholder="City" id="cityInput">
+                </div>
+            </div>
+            <div class="content2">
+                <p class="allcaps">OR ZIP CODE</p>
                 <div class="field">
                     <div class="control">
-                        <input class="input input-tr is-small" type="text" placeholder="City" id="cityInput">
+                        <input class="input input-tr is-small" type="text" placeholder="Zip" id="zipInput">
                     </div>
                 </div>
-                <div class="content2">
-                    <p class="allcaps">OR ZIP CODE</p>
-                    <div class="field">
-                        <div class="control">
-                            <input class="input input-tr is-small" type="text" placeholder="Zip" id="zipInput">
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <p id="helpText" style="color:red; font-weight: bold;">
+            </div>
+            <br>
+            <p id="helpText" style="color:red; font-weight: bold;">
 
-                </p>
+            </p>
 
-                <button class="button is-medium is-dark okay" id="btnOK" style="margin-top:10px;">OK</button>
-          </div>
-      </div>
+            <button class="button is-medium is-dark okay" id="btnOK" style="margin-top:10px;">OK</button>
+        </div>
+    </div>
 
     <!-- SIDE BAR-->
     <section class="section">
@@ -116,7 +116,7 @@
                                 <!-- Check Selections -->
                                 <!-- TODO: Try to section and float sidebar content on tablet -->
                                 <div class="column fullTablet">
-                                    <p><span class="magic">LIKE MAGIC!</span><br><span class="foodastic">Foodtastic</span> will make food suggestions base on a few simple questions.</p>
+                                    <p><span class="magic">LIKE MAGIC!</span><br><span class="foodastic">Foodtastic</span> can make the perfect food suggestions for you base on a few simple questions. Go ahead. </p>
                                     <br>
                                 </div>
 
@@ -171,7 +171,7 @@
                                     <br>
 
                                     <div class="buttons">
-                                        <button class="button is-medium is-dark" id="btnSearch">Search</button>
+                                        <button class="button is-medium is-dark" id="btnSearch">Press for MAGIC!</button>
                                     </div>
                                 </div>
                             </div>
@@ -186,8 +186,17 @@
 
                         <div class="columns is-multiline">
                             <div class="column is-12">
-                                <p id ="recipesTitle" class = "allcaps"></p>
+                                <p id="recipesTitle" class="allcaps"></p>
                             </div>
+
+
+                            <!-- *** NEW ADDITION: "speedy eat picks" on click will return imageFilters after a search ***-->
+                            <!-- *** JQUERY added to dunno.js LINE 665*** -->
+                            <div id="filterImageBack" class="column clickable is-12">speedy eat picks</div>
+                            <!-- ***** END speedy eat picks ***** -->
+
+
+
 
                             <div class="column is-4 filterImage">
                                 <div class="box dunno-icon-box">
@@ -209,31 +218,32 @@
 
                             <div class="column is-4 filterImage">
                                 <div class="box dunno-icon-box">
-                                    <p class="dunno-text">random query</p>
+                                    <p class="dunno-text">random</p>
                                     <div class="dunno-icon-div">
                                         <button id="veniBtn" class="button is-rounded dunno-random-button has-text-white-ter dunnoIcon">veni?</button>
-                                        <button  id="vidiBtn" class="button is-rounded dunno-random-button has-text-white-ter dunnoIcon">vidi?</button>
-                                        <button   id="viciBtn" class="button is-rounded dunno-random-button has-text-white-ter dunnoIcon">vici?</button>
+                                        <button id="vidiBtn" class="button is-rounded dunno-random-button has-text-white-ter dunnoIcon">vidi?</button>
+                                        <button id="viciBtn" class="button is-rounded dunno-random-button has-text-white-ter dunnoIcon">vici?</button>
                                     </div>
                                 </div>
                             </div>
                             <div class="column is-4 filterImage">
                                 <div class="box dunno-icon-box">
-                                    <p class="dunno-text">your day?</p>
+                                    <p class="dunno-text">today?</p>
                                     <div class="dunno-choice-div">
                                         <label class="good-mood checkbox day-choice"><input id="normalCheck" class="dunnoIcon" type="checkbox">Normal, Chill</label><br>
-                                        <label class="good-mood checkbox day-choice"><input id="awesomeCheck" class="dunnoIcon"  type="checkbox">Awesome</label><br>
+                                        <label class="good-mood checkbox day-choice"><input id="awesomeCheck" class="dunnoIcon" type="checkbox">Awesome</label><br>
                                         <label class="sad-mood checkbox day-choice"><input id="longCheck" class="dunnoIcon" type="checkbox">Too Long</label><br>
-                                        <label class="bad-mood checkbox day-choice"><input id="crazyCheck"  class="dunnoIcon" type="checkbox">Bat **** crazy </label><br>
+                                        <label class="bad-mood checkbox day-choice"><input id="crazyCheck" class="dunnoIcon" type="checkbox">Bat **** crazy </label><br>
                                         <label class="sad-mood checkbox day-choice"><input id="whateverCheck" class="dunnoIcon" type="checkbox">Doesn't Matter</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="column is-4 filterImage">
                                 <div class="box dunno-icon-box">
+                                    <p class="dunno-text">tell</p>
                                     <div class="dunno-moth-div" style="text-align: center;">
                                         <img class="moth-icon" src="assets/filter-inkblot.png" alt="moth icon">
-                                    </div><br>
+                                    </div>
                                     <div class="dunno-icon-input">
                                         <span class=moth-choice><label><input id="batCheck" class="dunnoIcon" type="checkbox" value="">bat?</label></span>
                                         <span class=moth-choice><label><input id="mothCheck" class="dunnoIcon" type="checkbox" value="">moth?</label></span>
@@ -266,13 +276,17 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="column is-4">
 
-                                <div class="box img-box result" id="result1">
-                                    <figure class="image is-4by5">
-                                        <img id="pic1" class="pic" src="" alt="test image">
+
+                            <!-- *******************************THIS FORMAT FOR RESULTS TO RENDER, ADD TEXT AS NEEDED-->
+                            <!-- Results Area-->
+
+
+                            <div class="column is-4">
+                                <div class="box yelp-img-box result" id="result1">
+                                    <figure class="image yelp-image">
+                                        <img id="pic1" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
-                                    <br>
                                     <p class="recipeTitle" id="title1"></p>
                                     <p class="blurb" id="blurb1"></p>
                                     <p class="rating" id="rating1"></p>
@@ -280,11 +294,10 @@
                                 </div>
                             </div>
                             <div class="column is-4 ">
-                                <div class="box img-box result" id="result2">
-                                    <figure class="image is-4by5">
-                                        <img id="pic2" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box result" id="result2">
+                                    <figure>
+                                        <img id="pic2" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
-                                    <br>
                                     <p class="recipeTitle" id="title2"></p>
                                     <p class="blurb" id="blurb2"></p>
                                     <p class="rating" id="rating2"></p>
@@ -292,11 +305,10 @@
                                 </div>
                             </div>
                             <div class="column is-4 ">
-                                <div class="box img-box result" id="result3">
-                                    <figure class="image is-4by5">
-                                        <img id="pic3" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box result" id="result3">
+                                    <figure>
+                                        <img id="pic3" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
-                                    <br>
                                     <p class="recipeTitle" id="title3"></p>
                                     <p class="blurb" id="blurb3"></p>
                                     <p class="rating" id="rating3"></p>
@@ -304,11 +316,10 @@
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box result" id="result4">
-                                    <figure class="image is-4by5">
-                                        <img id="pic4" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box result" id="result4">
+                                    <figure>
+                                        <img id="pic4" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
-                                    <br>
                                     <p class="recipeTitle" id="title4"></p>
                                     <p class="blurb" id="blurb4"></p>
                                     <p class="rating" id="rating4"></p>
@@ -316,11 +327,10 @@
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box result" id="result5">
-                                    <figure class="image is-4by5">
-                                        <img id="pic5" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box result" id="result5">
+                                    <figure>
+                                        <img id="pic5" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
-                                    <br>
                                     <p class="recipeTitle" id="title5"></p>
                                     <p class="blurb" id="blurb5"></p>
                                     <p class="rating" id="rating5"></p>
@@ -329,11 +339,10 @@
                             </div>
                             <div class="column is-4">
                                 <!-- <div class="box img-box result" > -->
-                                <div class="box img-box result "id="result6">
-                                    <figure class="image is-4by5">
-                                        <img id="pic6" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box result " id="result6">
+                                    <figure>
+                                        <img id="pic6" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
-                                    <br>
                                     <p class="recipeTitle" id="title6"></p>
                                     <p class="blurb" id="blurb6"></p>
                                     <p class="rating" id="rating6"></p>
@@ -344,14 +353,14 @@
 
                         </div>
                         <!-- Adding below div for results display - Ashley -->
-                        <div class = "detailInformation">
+                        <div class="detailInformation">
                             <div style="text-align: right;">
-                                <img id="favIcon" src="./assets/img/white-heart.png" alt="favorite" class="nonfave"/>
+                                <img id="favIcon" src="./assets/img/white-heart.png" alt="favorite" class="nonfave" />
                             </div>
 
                             <h2 id="detailTitle"></h2>
                             <br>
-                            <img id= "detailImage" src="" alt="Recipe Image"/>
+                            <img id="detailImage" src="" alt="Recipe Image" />
                             <br>
                             <p id="detailSummary"></p>
                             <br>
@@ -361,25 +370,24 @@
 
                         </div>
                     </article>
-                            <!-- ******************************************************-->
-                            <!-- RESULTS IMAGES -->
+                    <!-- ******************************************************-->
+                    <!-- RESULTS IMAGES -->
 
-                    <article id = "restaurantResults" class="box ">
+                    <article id="restaurantResults" class="box ">
 
-                            <p id ="restaurantsTitle" class = "allcaps"></p>
-                            <div id="LoadingImage" style="display: none">
-                                <img src="./assets/img/loading.gif" />
-                              </div>
+                        <p id="restaurantsTitle" class="allcaps"></p>
+                        <div id="LoadingImage" style="display: none">
+                            <img src="./assets/img/loading.gif" />
+                        </div>
 
                         <div class="columns is-multiline">
 
 
                             <div class="column is-4">
-                                <div class="box img-box  restaurant" id="result7" >
-                                    <figure class="image is-4by5">
-                                        <img id="pic7" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box restaurant" id="result7">
+                                    <figure>
+                                        <img id="pic7" class="pic is-3by4 yelp-img" src="" alt="test image">
                                     </figure>
-                                    <br>
                                     <p class="recipeTitle" id="title7"></p>
                                     <p class="blurb" id="blurb7"></p>
                                     <p class="rating" id="rating7"></p>
@@ -387,11 +395,10 @@
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box  restaurant" id="result8">
-                                    <figure class="image is-4by5">
-                                        <img id="pic8" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box restaurant" id="result8">
+                                    <figure>
+                                        <img id="pic8" class="pic is-3by4 yelp-img" src="" alt="test image">
                                     </figure>
-                                    <br>
                                     <p class="recipeTitle" id="title8"></p>
                                     <p class="blurb" id="blurb8"></p>
                                     <p class="rating" id="rating8"></p>
@@ -399,35 +406,34 @@
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box  restaurant" id="result9">
-                                    <figure class="image is-4by5">
-                                        <img id="pic9" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box  restaurant" id="result9">
+                                    <figure>
+                                        <img id="pic9" class="pic is-3by4 yelp-img" src="" alt="test image">
                                     </figure>
-                                    <br>
-                                    <p class="recipeTitle" id="title9"></p>
+                                    <p class="recipeTitle" id="title9">
+                                    </p>
                                     <p class="blurb" id="blurb9"></p>
                                     <p class="rating" id="rating9"></p>
                                     <p class="price" id="price9">$$$</p>
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box  restaurant" id="result10">
-                                    <figure class="image is-4by5">
-                                        <img id="pic10" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box  restaurant" id="result10">
+                                    <figure>
+                                        <img id="pic10" class="pic is-3by4 yelp-img" src="" alt="test image">
                                     </figure>
-                                    <br>
                                     <p class="recipeTitle" id="title10"></p>
                                     <p class="blurb" id="blurb10"></p>
                                     <p class="rating" id="rating10"></p>
                                     <p class="price" id="price10">$$$</p>
+
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box  restaurant" id="result11">
-                                    <figure class="image is-4by5">
-                                        <img id="pic11" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box  restaurant" id="result11">
+                                    <figure>
+                                        <img id="pic11" class="pic is-3by4 yelp-img" src="" alt="test image">
                                     </figure>
-                                    <br>
                                     <p class="recipeTitle" id="title11"></p>
                                     <p class="blurb" id="blurb11"></p>
                                     <p class="rating" id="rating11"></p>
@@ -435,21 +441,19 @@
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box  restaurant" id="result12">
-                                    <figure class="image is-4by5">
-                                        <img id="pic12" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box  restaurant" id="result12">
+                                    <figure>
+                                        <img id="pic12" class="pic is-3by4 yelp-img" src="" alt="test image">
                                     </figure>
-                                    <br>
                                     <p class="recipeTitle" id="title12"></p>
                                     <p class="blurb" id="blurb12"></p>
                                     <p class="rating" id="rating12"></p>
                                     <p class="price" id="price12">$$$</p>
                                 </div>
                             </div>
-                        </div>
 
 
-                        <!-- End img-icon columns -->
+                            <!-- End img-icon columns -->
 
 
 
@@ -466,13 +470,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- <script src="assets/js/app.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-        <script src="assets/js/dunno.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="assets/js/dunno.js"></script>
 
-    
+
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 

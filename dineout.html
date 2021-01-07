@@ -24,9 +24,8 @@
     <link rel="stylesheet" href="assets/css/dine.css">
 </head>
 
-</head>
-
 <body>
+
 
     <!-- NAVBAR  -->
     <div class="hero-head">
@@ -83,6 +82,39 @@
         </div>
     </section>
 
+    <!--MODAL -->
+    <div class='modal' id='modal'>
+        <!-- MODAL CONTENT -->
+        <div class='content'>
+            <!-- For the close button -->
+            <span class="close" id='close'>&times;</span>
+            <!-- Actual content -->
+
+            <h1>Dining Out? tell us more</h1>
+            <p class="allcaps">PLEASE ENTER YOUR CITY</p>
+            <div class="field">
+                <div class="control">
+                    <input class="input input-tr is-small" type="text" placeholder="City" id="cityInput">
+                </div>
+            </div>
+            <div class="content2">
+                <p class="allcaps">OR ZIP CODE</p>
+                <div class="field">
+                    <div class="control">
+                        <input class="input input-tr is-small" type="text" placeholder="Zip" id="zipInput">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <p id="helpText" style="color:red; font-weight: bold;">
+
+            </p>
+
+            <button class="button is-medium is-dark okay" id="btnOK" style="margin-top:10px;">OK</button>
+        </div>
+    </div>
+
+
     <!-- SIDEBAR -->
     <section class="section">
         <div class="container">
@@ -93,7 +125,6 @@
                         <div class="box box-sidebar has-background-white-ter">
                             <div class=" has-background-white-ter">
                                 <!-- Check Selections -->
-
                                 <p class="allcaps">POPULAR FOODS</p>
                                 <fieldset id="specialitySelections">
                                     <label class="checkbox">
@@ -140,8 +171,6 @@
                                 </div>
                                 <br>
                                 <br>
-
-                                <!-- half -->
 
 
                                 <!-- Input Search -->
@@ -207,7 +236,6 @@
 
 
 
-
                 <!-- NEW: ICON & IMAGE DUMP DIV -->
                 <!-- ************************** NOTE: THESE HIDE ON RESULTS LOAD -->
                 <!-- Main content: Icon Filters -->
@@ -215,8 +243,18 @@
                 <div class="column ">
                     <article class="box">
                         <div class="columns is-multiline">
-                            <div class="column filterImageBack clickable is-12">speedy eat picks</div>
-                            <div class="column is-4  iconHide">
+
+
+
+                            <!-- ******************** NEW ADDITION: "speedy eat picks" on click will return imageFilters after a search *******************-->
+
+
+                            <div id="filterImageBack" class="column clickable is-12 ">speedy eat picks</div>
+
+                            <!-- ***** END speedy eat picks ***** -->
+
+
+                            <div class="column is-4 iconHide">
                                 <div id="spicy" class="box icon-box filterImage">
                                     <p class="dine-text">spicy</p>
                                     <img class="is-square-icon" src="assets/filter-spicy2.svg" alt="chili icon">
@@ -258,7 +296,7 @@
 
                             <!-- **********************FOR RESULTS***************-->
 
-                            <div class="columns is-multiline has-background-link " id="imageContainer">
+                            <div class="columns is-multiline" id="imageContainer">
                                 <!-- IMAGES RESULTS HERE -->
                             </div>
                             <!-- ************************************************ -->
@@ -329,14 +367,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
-
-
-
-
-
-
 
 
                         </div>
