@@ -1,19 +1,32 @@
-# Group Name: RAIJ _(RAGE)_
+# Project 1: Foodastic Meal Search Engine, 7 Jan 20
+#### By Rabia, Ashley, Ikra, Jenner
 
-# Project Battle Rhythm
-- Team members check-in daily via slack: 9AM
-  - What we've worked on? Issues?
-- All team members complete a daily push to the main branch by: 10PM
-  - On a rotational basis (Rabia - Ashley - Ikra - Jenner) send reminder to team at 930 to push to main branch
-  - Team member merges all changes by 10PM
+## Group Name:
+RAIJ _(RAGE)_: Because 4 women, 1 project... Yeah, we get it
 
-# Project Description
-
+## Description
 An app to help decide what’s for lunch/dinner!!!
 
 - You want to cook? We got recipes!
 - You want to eat out? We got restaurants!
 - You don’t know? Tell us what you’re in the mood for and we’ll give you both!
+
+Foodastic is an application that allows users to search for recipes and restaurants. It features dynamically updated HTML and CSS powered by jQuery.  It also includes 2 APIs to pull in information.  The [Spoonacular Food API](https://spoonacular.com/food-api) is used to retrieve recipes, and the [Yelp Fusion API](https://www.yelp.com/fusion) is used to retrieve restaurants.  The APIs are called via AJAX based on filter criteria input by the user.
+
+### Home page
+![Screenshot](/assets/img/screenshot-home.PNG?raw=true)
+
+### Dinein page
+![Screenshot](/assets/img/screenshot-dinein.PNG?raw=true)
+
+### Dineout page
+![Screenshot](/assets/img/screenshot-dineout.PNG?raw=true)
+
+### About page
+![Screenshot](/assets/img/screenshot-about.PNG?raw=true)
+
+### Favorites page
+![Screenshot](/assets/img/screenshot-favorite.PNG?raw=true)
 
 # Starting Ideas
 

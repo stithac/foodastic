@@ -58,6 +58,7 @@ $(".okay").on("click", function() {
 $("#btnSearch").on("click", function() {
 
     $("#LoadingImage").show();
+    $(".filterImage").hide();
     getFilters();
 });
 
