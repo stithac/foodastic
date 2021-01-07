@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <!-- 1/7 working on nav burger -->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Foodastic</title>
+
+        <!-- Google Fonts: Nerko One as Header and Montserrat as Body text -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+      
+        <!-- CSS -->
+        <link href="./assets/css/index.css" type="text/css" rel="stylesheet">
+  
+        <!-- Bulma and Vue-->    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/>
+        <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+        <script src = "https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+
+   </head>
+<body>
+
+    
+    <div id="app">
+        <section class="hero is-fullheight is-primary is-bold">
+          <!-- Hero header: will stick at the top -->
+          <div class="hero-head">
+            <nav class="navbar">
+              <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                  <img src="http://bulma.io/images/bulma-logo.png" alt="Logo">
+                </a>
+                <!--
+            Using the v-on: directive to listen for the click event and toggle the data property showNav. Also, using the v-bind: directive to reactively update the class attribute 'is-active' based on the showNav property.
+            -->
+                <div class="navbar-burger" @click="showNav = !showNav" :class="{ 'is-active': showNav }">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+              <!--
+            Using the v-bind: directive to reactively update the class attribute 'is-active' based on the showNav property.
+            -->
+              <div class="navbar-menu" :class="{ 'is-active': showNav }">
+                <div class="navbar-end">
+                  <a class="navbar-item" href="/about">
+                    About
+                  </a>
+                  <a class="navbar-item" href="/path">
+                    Path
+                  </a>
+                  <a class="navbar-item" href="/blog">
+                    Blog
+                  </a>
+                </div>
+              </div>
+            </nav>
+          </div>
+          <!-- Hero content: will be in the middle -->
+          <div class="hero-body">
+            <div class="container has-text-centered">
+            </div>
+          </div>
+        </section>
+        </div>
+
+
+</body>
+<script>
+new Vue({
+  el: '#app',
+  data: {
+  	showNav: false
+  }
+});
+</script>
+</html>
