@@ -24,7 +24,7 @@
         <nav class="navbar" style="background-color: white">
             <div class="container">
                 <div class="navbar-brand">
-                    <a class="navbar-item" href="index.css">
+                    <a class="navbar-item" href="index.html">
                         <img src="assets/foodastic_logo-red.jpg" alt="Logo">
                     </a>
                     <span class="navbar-burger burger" data-target="navbarMenu">
@@ -37,17 +37,19 @@
                     <div class="navbar-end">
                         <div class="tabs is-right">
                             <ul class="nav-links">
-                                <li><a href="dinein.html" style="color: black">Dine In</a></li>
-                                <li><a href="dineout.html" style="color: black">Dine Out</a></li>
-                                <li><a href="#" style="color:black">Dunno?</a></li>
-                                <li><a href="#" style="color:black">About Us</a></li>
-                                <li><a href="#Contact Us" style="color:black">Contact Us</a></li>
+                                <li><a href="dinein.html" style="color: black" target="_blank">Dine In</a></li>
+                                <li><a href="dineout.html" style="color: black" target="_blank">Dine Out</a></li>
+                                <li><a href="dunno.html" style="color:black" target="_blank">Dunno?</a></li>
+                                <li><a href="about.html" style="color:black" target="_blank">About Us</a></li>
+                                <li><a class = "modal-button" style="color:black" data-target="#modal">Contact Us</a></li>
+                                <li><span class="navbar-item">
+                                  <a class="button is-white is-outlined" href="favorites.html" target="_blank">
+                                     <i class="fa fa-star" aria-hidden="true" style="color: #e02239"></i>
+                                     <span title="favorites" style="color: #e02239">Favorites</span>
+                                  </a></span>
+                                </li>
                             </ul>
-                            <span class="navbar-item">
-                                <a class="button is-white is-outlined" href="Favorites">
-                                    <i class="fa fa-star" aria-hidden="true" style="color: #e02239"></i>
 
-                                    <span title="favorites" style="color: #e02239">Favorites</span>
                             </a>
                             </span>
                         </div>
@@ -210,7 +212,9 @@
                 <!-- This stays -->
                 <div class=" column">
                     <article class=" box">
-
+                        <div id="LoadingImage" style="display: none">
+                            <img src="./assets/img/loading.gif" />
+                          </div>
                         <!-- ISSUE START: LINE 207 INLINE STYLE MARGIN MIGHT AFFECT LAYOUT will check back on this *************************** -->
 
                         <div class="columns is-multiline ">
@@ -333,16 +337,16 @@
                                     <p class="price" id="price6">$$$</p>
                                 </div>
                             </div>
-                            <!-- <div class="column is-4 ">
+                            <div class="column is-4 ">
                                 <div class="box yelp-img-box result" id="result7">
                                     <figure>
                                         <img id="pic7" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <div class="do-info-div">
-                                        <p class="recipeTitle" id="title3"></p>
-                                        <p class="blurb" id="blurb3"></p>
-                                        <p class="rating" id="rating3"></p>
-                                        <p class="price" id="price3">$$$</p>
+                                        <p class="recipeTitle" id="title7"></p>
+                                        <p class="blurb" id="blurb7"></p>
+                                        <p class="rating" id="rating7"></p>
+                                        <p class="price" id="price7">$$$</p>
                                     </div>
                                 </div>
                             </div>
@@ -352,10 +356,10 @@
                                         <img id="pic8" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <div class="do-info-div">
-                                        <p class="recipeTitle" id="title4"></p>
-                                        <p class="blurb" id="blurb4"></p>
-                                        <p class="rating" id="rating4"></p>
-                                        <p class="price" id="price4">$$$</p>
+                                        <p class="recipeTitle" id="title8"></p>
+                                        <p class="blurb" id="blurb8"></p>
+                                        <p class="rating" id="rating8"></p>
+                                        <p class="price" id="price8">$$$</p>
                                     </div>
                                 </div>
                             </div>
@@ -365,14 +369,14 @@
                                         <img id="pic9" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <div class="do-info-div">
-                                        <p class="recipeTitle" id="title5"></p>
-                                        <p class="blurb" id="blurb5"></p>
-                                        <p class="rating" id="rating5"></p>
-                                        <p class="price" id="price5">$$$</p>
+                                        <p class="recipeTitle" id="title9"></p>
+                                        <p class="blurb" id="blurb9"></p>
+                                        <p class="rating" id="rating9"></p>
+                                        <p class="price" id="price9">$$$</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="column is-4">
+                            <!-- <div class="column is-4">
                                 <div class="box yelp-img-box result " id="result10">
                                     <figure>
                                         <img id="pic10" class="pic yelp-img is-3by4" src="" alt="test image">
@@ -389,7 +393,7 @@
                                 <div class="box yelp-img-box result" id="result11">
                                     <figure>
                                         <img id="pic11" class="pic yelp-img is-3by4" src="" alt="test image">
-                                    </figure> 
+                                    </figure>
                                     <div class="do-info-div">
                                         <p class="recipeTitle" id="title5"></p>
                                         <p class="blurb" id="blurb5"></p>
