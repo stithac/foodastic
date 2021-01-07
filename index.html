@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <!-- 1/6 changes are being made with GABE -->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +12,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
       
         <!-- CSS -->
         <link href="./assets/css/index.css" type="text/css" rel="stylesheet">
@@ -28,18 +28,18 @@
      
     <!-- Hero and navbar -->
 
-        <section class="hero is-info is-large">
+        <section class="hero is-info is-medium">
             <div class="hero-head">
                 <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: white">
                     <div class="container">
                         <div class="navbar-brand">
-                            <a class="navbar-item" href="index.html" target="_blank">
-                                <img src="./assets/img/foodastic_logo-red.jpg" alt="Logo">
+                            <a class="navbar-item" href="index.html" target="_blank" style="background-color: white;">
+                                <img src="./assets/img/foodastic_logo-red.jpg" alt="Logo" >
                             </a>
-                            <span class="navbar-burger burger" data-target="navbarMenu">
-                                <span></span>
-                                <span></span>
-                                <span></span>
+                            <span class="navbar-burger" data-target="navbarMenu" role="button" aria-label="menu" aria-expanded="false">
+                                <span aria-hidden="true"></span>
+                                <span aria-hidden="true"></span>
+                                <span aria-hidden="true"></span>
                             </span>
                         </div>
                   <!-- end of navbar brand -->
@@ -62,66 +62,6 @@
                                 </li>
                             </ul>
 
-                                  <!-- start of modal with contact us form, JQuery used to open and close pop-up, see <script> below-->
-                                  <!--Having issues with closing the modal... 1/4/21  -->
-                                  <div id="modal" class = "modal">
-                                     <div class = "modal-background"></div>
-                                        <div class = "modal-card">
-                                           <header class = "modal-card-head">
-                                              <p class = "modal-card-title">Fellow Food Lovers!</p>
-                                           </header>
-                                           <section class = "modal-card-body">
-                                              <h2 class="title" style="font-size: 60px; color: black" id="Contact Us">Contact Us</h2>
-                                                 <div class="field">
-                                                     <label class="label" style="font-size: 20px;">Name</label>
-                                                     <div class="control">
-                                                         <input class="input" type="text" placeholder="Text input">
-                                                     </div>
-                                                 </div>
-                                 
-                                 
-                                                 <!-- fillable fields: local storage required 1/4/21 -->
-                                                 <div class="field">
-                                                     <label class="label" style="font-size: 20px;">Email</label>
-                                                     <div class="control has-icons-left has-icons-right">
-                                                         <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
-                                                         <span class="icon is-small is-left">
-                                                             <i class="fas fa-envelope"></i>
-                                                         </span>
-                                                         <span class="icon is-small is-right">
-                                                             <i class="fas fa-exclamation-triangle"></i>
-                                                         </span>
-                                                     </div>
-                                                     <p class="help is-danger">This email is invalid</p>
-                                                 </div>
-                                 
-                                 
-                                                 <div class="field">
-                                                     <label class="label" style="font-size: 20px;">Message</label>
-                                                     <div class="control">
-                                                         <textarea class="textarea" placeholder="Text area"></textarea>
-                                                     </div>
-                                                 </div>
-                                 
-                                 
-                                                 <div class="field is-grouped">
-                                                     <div class="control">
-                                                         <button class="button" style="background-color:#e02239; color: white"><span>Submit</span></button>
-                                                     </div>
-                                                     <div class="control">
-                                                         <button class="button" id="modal-close" aria-label="close" style="background-color:#e02239; color: white"><span>Cancel</span></button>
-
-                                                       </div>
-                                                 </div>
-
-                                           </section>
-                                           <!-- end of modal card section -->
-                                        </div>
-                                        <!-- modal card -->
-                                     </div>
-                                     <!-- modal background -->
-                                  </div>
-                                  <!-- end of modal div -->
                                
                         </div>
                         <!-- tabs -->
@@ -133,125 +73,182 @@
             <!-- end container -->
        </nav>
        <!-- end navbar -->
-            <!-- This is where the tagline goes, briefly describe Foodastic -->
-            <div class="hero-body">
-                <div class="container has-text-centered" >
-                    <h1 class="hero-text">
-                    Foodastic is a revolutionary search engine to guide your taste buds</h1>
-                </div>
-                <!-- hero body container -->
-            </div>
-            <!-- hero body -->
-        </div>
-        <!-- hero head -->
-        </section>
-        <!-- end of hero and navbar -->
-        <br>
 
-    <!-- Dine In/Out, Dunno Tiles -->
-    <!-- Three tiles that give the user each choice Foodastic offers -->
-    <section class="container">
-        <div class="columns features">
-            <div class="column is-4">
-                <div class="card is-shady">
-                    <div class="card-image has-text-centered">
-                        <img src="./assets/img/foodastic_icon-dinein.png" style="padding-top:10px;">
+        <!-- This is where the tagline goes, briefly describe Foodastic -->
+        <!-- HERO BANNER -->
+        <section class="hero-about is-medium">
+            <div class="hero-body hero-body-about">
+                <div class="container">
+                    <div class="columns is-centered">
+                        <div class="column is-half column-banner-about has-text-centered has-text-white">
+                            <h3 class="title has-text-white">
+                                Foodastic is a revolutionary search engine to guide your taste buds</h3>
                         </div>
-                        <div class="card-content">
-                            <div class="content">
-                                <h4 class="section-title">Dine In</h4>
-                                <p>Looking for some recipes?</p>
-                                <p><a href="dinein.html" target="_blank"><button class="button" class="button" style="background-color:#e02239; color: white" ><span>Bon Appétit!</span></button></a>
-                                </p>
-                        </div>
+                        <!-- column-text, tagline -->
                     </div>
+                    <!-- columns -->
                 </div>
+                <!-- container -->
             </div>
-            <div class="column is-4">
-                <div class="card is-shady">
-                    <div class="card-image has-text-centered">
-                        <img src="./assets/img/foodastic_icon-dineout.png" style="padding-top: 10px;">
-                    </div>
-                    <div class="card-content">
-                        <div class="content">
-                            <h4 class="section-title">Dine Out</h4>
-                            <p>Too lazy to cook?</p>
-                            <p><a href="dineout.html" target="_blank"><button class="button" style="background-color:#e02239; color: white"><span>Let's Grub!</span></button></a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-4">
-                <div class="card is-shady">
-                    <div class="card-image has-text-centered">
-                        <img src="./assets/img/foodastic_icon-dunno.png" style="padding-top: 5px;">
-                    </div>
-                    <div class="card-content">
-                        <div class="content">
-                            <h4 class="section-title">Dunno?</h4>
-                            <p>Are you that indecisive?</p>
-                            <p><a href="dunno.html" target="_blank"><button class="button" class="button" style="background-color:#e02239; color: white"><span>Help!</span></button></a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </section>   
-        <br>
+            <!-- hero-body -->
+            </section>
+            <!-- end of hero-about section -->
+            </section>
+            <!-- end of hero and nav section -->
+<br>
+       
+<!-- start of modal with Bulma contact us form, JQuery used to open and close pop-up, see <script> index.js-->
+<!--Having issues with closing the modal... 1/4/21  -->
+<!-- 1/5 Removed code from nav tag and inserted inbetween the two sections, works now. -->
+                                             
+         <!-- Start of Modal -->
+     
+         <div class = "container">
 
-            <!-- Footer with social media elements-->
+            <div id = "modal" class = "modal">
+               <div class = "modal-background"></div>
+               <div class = "modal-content">
+                <section class = "modal-card-body">
+                    <h2 class="title" style="font-size: 60px; color: black" id="Contact Us">Contact Us</h2>
+                       
+                        <!-- Contact Us: User's Name -->
+                        <div class="field">
+                           <label class="label" style="font-size: 20px;">Name</label>
+                           <div class="control">
+                               <input class="input needs-validation inputNameField" id="inputName" type="text" placeholder="Text input">
+                           </div>
+                       </div>
+       
+       
+                        <!-- Contact Us: Email Address -->
 
-        <section>      
-        <footer class="footer">
-            <div class="content has-text-centered">
-            <h4 style="font-size: 25px">Foodastic is an independent entity with no affiliation with listed restaurants and recipes.<br>
-                &#169; 2021 by RAIJpx</h4>
-                <p>This project is dedicated to those who love food.</p>
-                <div class="center">
-                    <span id="social">
-                      <ul>
-                        <span class="facebook">
-                          <a href = "https://twitter.com/" target="_blank"><button class="border"><i class="fab fa-facebook"></i></button></a>
-                        </span>
-                    
-                        <span class="twitter">
-                          <a href = "https://www.facebook.com/" target="_blank"><button class="border"><i class="fab fa-twitter"></i></button></a>
-                        </span>
-                    
-                        <span class="instagram">
-                          <a href = "https://www.instagram.com/" target="_blank"><button class="border"><i class="fab fa-instagram"></i></button></a>
-                        </span>
-                        
-                      </ul>
-                    </span>
-                </div>   
+                       <div class="field">
+                           <label class="label" style="font-size: 20px;">Email</label>
+                           <div class="control has-icons-left has-icons-right">
+                               <input class="input needs-validation inputEmailField" id="inputEmailField" type="email" placeholder="Email input" value="hello@">
+                               <span class="icon is-small is-left">
+                                   <i class="fas fa-envelope"></i>
+                               </span>
+                               <span class="icon is-small is-right">
+                                   <i class="fas fa-exclamation-triangle"></i>
+                               </span>
+                           </div>
+                           <p class="help is-danger">Goofy! This email is invalid</p>
+                       </div>
+       
+                       <!-- Contact Us: Message Field -->       
+                       <div class="field">
+                           <label class="label" style="font-size: 20px;">Message</label>
+                           <div class="control">
+                               <textarea class="textarea" placeholder="Text area"></textarea>
+                           </div>
+                       </div>
+       
+       
+                       <div class="field is-grouped">
+                           <div class="control">
+                               <button class="button" id="submitButton" style="background-color:#e02239; color: white"><span>Submit</span></button>
+                           </div>
+
+                       </div>
+                 </section>
+               </div>
+               <button class = "modal-close is-large" aria-label="close"></button>
+            </div>
+         </div>
+      
+      
+
+      <!-- Dine In/Out, Dunno Tiles -->
+      <!-- Three tiles that give the user each choice Foodastic offers -->
+      <section class="container">
+          <div class="columns features">
+              <div class="column is-4">
+                  <div class="card is-shady">
+                      <div class="card-image has-text-centered">
+                          <img src="./assets/img/foodastic_icon-dinein.png" style="padding-top:10px;">
+                          </div>
+                          <div class="card-content">
+                              <div class="content">
+                                  <h4 class="section-title">Dine In</h4>
+                                  <p>Looking for some recipes?</p>
+                                  <p><a href="dinein.html" target="_blank"><button class="button" class="button" style="background-color:#e02239; color: white" ><span>Bon Appétit!</span></button></a>
+                                  </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="column is-4">
+                  <div class="card is-shady">
+                      <div class="card-image has-text-centered">
+                          <img src="./assets/img/foodastic_icon-dineout.png" style="padding-top: 10px;">
+                      </div>
+                      <div class="card-content">
+                          <div class="content">
+                              <h4 class="section-title">Dine Out</h4>
+                              <p>Too lazy to cook?</p>
+                              <p><a href="dineout.html" target="_blank"><button class="button" style="background-color:#e02239; color: white"><span>Let's Grub!</span></button></a>
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="column is-4">
+                  <div class="card is-shady">
+                      <div class="card-image has-text-centered">
+                          <img src="./assets/img/foodastic_icon-dunno.png" style="padding-top: 5px;">
+                      </div>
+                      <div class="card-content">
+                          <div class="content">
+                              <h4 class="section-title">Dunno?</h4>
+                              <p>Are you that indecisive?</p>
+                              <p><a href="dunno.html" target="_blank"><button class="button" class="button" style="background-color:#e02239; color: white"><span>Help!</span></button></a>
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </section>   
+          
+  
+              <!-- Footer with social media elements-->
+  
+          <section>      
+          <footer class="Footer">
+              <hr class="style">
+              <div class="content has-text-centered">
+              <h4 style="font-size: 25px">Foodastic is an independent entity with no affiliation with listed restaurants and recipes. 
+                  &#169; 2021 by RAIJ</h4>
+                  <p style="font-size: 12px;">This project is dedicated to those who love food.</p>
+                  <div class="center">
+                      <span id="social">
+                        <ul>
+                          <span class="facebook">
+                            <a href = "https://twitter.com/" target="_blank"><button class="border"><i class="fab fa-facebook"></i></button></a>
+                          </span>
                       
-    
-
-            </div>
-        </footer>
-        </section>
-         
-
-        <!-- End Footer and Contact -->
-        <script>
-            $(".modal-button").click(function() {
-            var target = $(this).data("target");
-            console.log("target");
-            $("html").addClass("is-clipped");
-            $(target).addClass("is-active");
-            })
-            
-            $(".modal-close").click(function() {
-            $("html").removeClass("is-clipped");
-            console.log(".modal-close");
-            $(this).parent().removeClass("is-active");
-
-            });
-
-
-         </script>
-    </body>
-</html>
+                          <span class="twitter">
+                            <a href = "https://www.facebook.com/" target="_blank"><button class="border"><i class="fab fa-twitter"></i></button></a>
+                          </span>
+                      
+                          <span class="instagram">
+                            <a href = "https://www.instagram.com/" target="_blank"><button class="border"><i class="fab fa-instagram"></i></button></a>
+                          </span>
+                          
+                        </ul>
+                      </span>
+                  </div>  
+                        
+      
+  
+              </div>
+              <!-- content -->
+          </footer>
+          </section>
+          <!-- End Footer -->
+  
+          <!-- modal javascript, stylesheet: index.css -->
+          <script src = "./assets/js/index.js"></script>
+      </body>
+  </html>
