@@ -26,8 +26,9 @@ $(".fa-exclamation-circle").on("click", function() {
 })
 
 
-// Dine in/Dine out icon filters
-$(".filterImage").on("click", function() {
+// Pressed shadows for Dine in/Dine out icon filters
+$(".filterImage").on("click", function(event) {
+    event.preventDefault();
     $(".filterImage.shadow-down").not(this).removeClass("shadow-down");
     $(this).toggleClass("shadow-down")
 })

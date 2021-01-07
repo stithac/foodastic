@@ -24,9 +24,8 @@
     <link rel="stylesheet" href="assets/css/dine.css">
 </head>
 
-</head>
-
 <body>
+
 
     <!-- NAVBAR  -->
     <div class="hero-head">
@@ -38,8 +37,8 @@
                     </a>
                     <span class="navbar-burger burger" data-target="navbarMenu">
                         <span></span>
-                        <span></span>
-                        <span></span>
+                    <span></span>
+                    <span></span>
                     </span>
                 </div>
                 <div id="navbarMenu" class="navbar-menu">
@@ -57,7 +56,7 @@
                                     <i class="fa fa-star" aria-hidden="true" style="color: #e02239"></i>
 
                                     <span title="favorites" style="color: #e02239">Favorites</span>
-                                </a>
+                            </a>
                             </span>
                         </div>
                     </div>
@@ -71,10 +70,10 @@
         <div class="hero-body hero-body-jtr">
             <div class="container">
                 <div class="columns is-centered">
-                    <div class="column is-half column-banner has-text-centered has-text-white">
-                        <h3 class="title has-text-white">
+                    <div class="column is-half column-banner has-text-centered">
+                        <h3 class="title">
                             Dining Out?<span>
-                                <h2 class="subtitle has-text-white">tell us more</h2>
+                                <h2 class="subtitle">tell us more</h2>
                             </span>
                         </h3>
                     </div>
@@ -82,6 +81,39 @@
             </div>
         </div>
     </section>
+
+    <!--MODAL -->
+    <div class='modal' id='modal'>
+        <!-- MODAL CONTENT -->
+        <div class='content'>
+            <!-- For the close button -->
+            <span class="close" id='close'>&times;</span>
+            <!-- Actual content -->
+
+            <h1>Dining Out? tell us more</h1>
+            <p class="allcaps">PLEASE ENTER YOUR CITY</p>
+            <div class="field">
+                <div class="control">
+                    <input class="input input-tr is-small" type="text" placeholder="City" id="cityInput">
+                </div>
+            </div>
+            <div class="content2">
+                <p class="allcaps">OR ZIP CODE</p>
+                <div class="field">
+                    <div class="control">
+                        <input class="input input-tr is-small" type="text" placeholder="Zip" id="zipInput">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <p id="helpText" style="color:red; font-weight: bold;">
+
+            </p>
+
+            <button class="button is-medium is-dark okay" id="btnOK" style="margin-top:10px;">OK</button>
+        </div>
+    </div>
+
 
     <!-- SIDEBAR -->
     <section class="section">
@@ -93,46 +125,46 @@
                         <div class="box box-sidebar has-background-white-ter">
                             <div class=" has-background-white-ter">
                                 <!-- Check Selections -->
-                                <p class="allcaps">SPECIALITY FOOD</p>
+                                <p class="allcaps">POPULAR FOODS</p>
                                 <fieldset id="specialitySelections">
                                     <label class="checkbox">
-                                        <input type="checkbox" id="cheese">
-                                        Cheese Shops
+                                        <input type="checkbox" id="bbq">
+                                        Barbeque
                                     </label><br>
                                     <label class="checkbox">
-                                        <input type="checkbox" id="chocolatier">
-                                        Chocolatiers
+                                        <input type="checkbox" id="breweries">
+                                        Gastropubs
                                     </label><br>
                                     <label class="checkbox">
-                                        <input type="checkbox" id="meat">
-                                        Meat Shops
+                                        <input type="checkbox" id="pizza">
+                                        Pizza
                                     </label><br>
                                     <label class="checkbox">
-                                        <input type="checkbox" id="pasta">
-                                        Pasta Shops
+                                        <input type="checkbox" id="sushi">
+                                        Sushi
                                     </label><br>
                                     <label class="checkbox">
                                         <input type="checkbox" id="seafood">
-                                        Seafoood Markets
+                                        Seafoood
                                     </label>
                                 </fieldset>
                                 <br>
 
-
                                 <!-- Dropdown -->
-                                <p class="allcaps">BY CUISINE</p>
+                                <label class="allcaps">BY CUISINE</label><br>
                                 <div class=" select is-rounded is-small">
+
                                     <select id="cuisineSelections">
                                         <!-- <option value="default" disabled="true">BY CUISINE</option> -->
                                         <option value="">-- SELECT --</option>
-                                        <option value="steak">BBQ/Steak</option>
+                                        <option value="steak">Korean</option>
                                         <option value="japanese">Japanese</option>
                                         <option value="Italian">Italian</option>
                                         <option value="greek">Greek</option>
-                                        <option value="southern">Southern</option>
+                                        <option value="american">American</option>
                                         <option value="thai">Thai</option>
                                         <option value="indian">Indian</option>
-                                        <option value="chinese">Chinese</option>
+                                        <option value="vietnamese">Vietnamese</option>
                                         <option value="spanish">Spanish</option>
                                         <option value="latin">Latin American</option>
                                     </select>
@@ -140,117 +172,126 @@
                                 <br>
                                 <br>
 
+
                                 <!-- Input Search -->
                                 <div>
-                                    <p class="allcaps">SEARCH BY CITY</p>
                                     <div class="field">
-                                        <div class="control">
-                                            <input class="input input-tr is-small" type="text" placeholder="City" id="cityInput">
-                                        </div>
+                                        <p class="allcaps required">SEARCH BY CITY</label><br>
+                                            <input class="input input-tr is-small" type="text" placeholder="City, State" id="cityInput">
                                     </div>
-                                    <p class="allcaps">SEARCH BY ZIP CODE</p>
+
                                     <div class="field">
-                                        <div class="control">
-                                            <input class="input input-tr is-small" type="text" placeholder="Zip" id="zipInput">
-                                        </div>
+                                        <label class="allcaps required">OR ZIPCODE</label><br>
+                                        <input class="input input-tr is-small" type="text" placeholder="Zipcode" id="zipInput">
                                     </div>
                                 </div>
                                 <br>
                                 <!-- Dropdown -->
-                                <div class="select is-rounded is-small">
-                                    <select id="radiusOptions" class="has-text-weight-bold">
-                                        <!-- values are in meters so work with yelp API. The maximum value is 40,000 meters (25 miles)  -->
-                                        <option value="default" disabled="true" class="allcaps">MILE RADIUS</option>
-                                        <option value="8047">5 mi</option>
-                                        <option value="16093">10 mi</option>
-                                        <option value="24140">15 mi</option>
-                                        <option value="32187">20 mi</option>
-                                        <option value="max">20+ mi</option>
-                                    </select>
+                                <div class="field">
+                                    <label class="allcaps optional ">RADIUS</label><br>
+                                    <div class="select is-rounded is-small">
+                                        <select id="radiusOptions" class="has-text-weight-bold">
+                                            <!-- values are in meters so work with yelp API. The maximum value is 40,000 meters (25 miles)  -->
+                                            <option value="default" disabled="true" class="allcaps">MILE RADIUS</option>
+                                            <option value="8047">5 mi</option>
+                                            <option value="16093">10 mi</option>
+                                            <option value="24140">15 mi</option>
+                                            <option value="32187">20 mi</option>
+                                            <option value="max">20+ mi</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <br>
-                                <br>
-
                                 <!-- Select Multiple 2-->
-                                <p class="allcaps">PRICE</p>
-                                <label class="checkbox" id="price">
-                                    <input type="checkbox" value="">
-                                    $
-                                </label><br>
-                                <label class="checkbox">
-                                    <input type="checkbox" value="">
-                                    $$
-                                </label><br>
-                                <label class="checkbox">
-                                    <input type="checkbox" value="">
-                                    $$$
-                                </label><br>
-                                <label class="checkbox">
-                                    <input type="checkbox" value="">
-                                    $$$$
-                                </label>
-                                <br>
-                                <br>
-                                <div class="buttons">
-                                    <button class="button is-medium is-dark" id="btnSearch">Search</button>
-                                </div>
+                                <p class="allcaps optional">PRICE</p>
+                                <fieldset id="pricePref">
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="1" value="1">
+                                        $
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="2" value="2">
+                                        $$
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="3" value="3">
+                                        $$$
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="4" value="4">
+                                        $$$$
+                                    </label>
+                                    <br>
+                                    <br>
+                                    </form>
+                                    <!-- end float on tablet-->
+                                    <div class="buttons">
+                                        <button class="button is-medium is-dark" id="btnSearch">Search</button>
+                                    </div>
+                                </fieldset>
                             </div>
-                            <!-- end content -->
                         </div>
-                        <!-- end box -->
                     </article>
-                    <!-- end tile -->
                 </div>
-                <!-- End of 1st parent -->
 
 
 
                 <!-- NEW: ICON & IMAGE DUMP DIV -->
                 <!-- ************************** NOTE: THESE HIDE ON RESULTS LOAD -->
                 <!-- Main content: Icon Filters -->
+
                 <div class="column ">
                     <article class="box">
                         <div class="columns is-multiline">
 
-                            <div class="column is-4 ">
+
+
+                            <!-- ******************** NEW ADDITION: "speedy eat picks" on click will return imageFilters after a search *******************-->
+
+
+                            <div id="filterImageBack" class="column clickable is-12 ">speedy eat picks</div>
+
+                            <!-- ***** END speedy eat picks ***** -->
+
+
+                            <div class="column is-4 iconHide">
                                 <div id="spicy" class="box icon-box filterImage">
                                     <p class="dine-text">spicy</p>
                                     <img class="is-square-icon" src="assets/filter-spicy2.svg" alt="chili icon">
                                 </div>
                             </div>
-                            <div class="column is-4 ">
+                            <div class="column is-4  iconHide">
                                 <div id="savory" class="box icon-box filterImage">
                                     <p class="dine-text">savory</p>
                                     <img class="is-square-savory" src="assets/filter-savory.png" alt="savory herbs icon">
                                 </div>
                             </div>
-                            <div class="column is-4">
-                                <div class="box icon-box filterImage">
+                            <div class="column is-4 iconHide">
+                                <div id="cheapeats" class="box icon-box filterImage">
                                     <div class="box box-cheapeats is-square-eats">
                                         <p class="p-best"><span class="best">BEST</span></p>
                                         <p class="p-cheap"><span class="cheap">cheap eats</span></p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="column is-4 ">
+                            <div class="column is-4  iconHide">
                                 <div id="special" class="box icon-box filterImage">
                                     <p class="dine-text">special occasion</p>
                                     <img class="is-square-icon" src="assets/filter-special.png" alt="special day icon">
                                 </div>
                             </div>
-                            <div class="column is-4">
+                            <div class="column is-4 iconHide">
                                 <div id="healthy" class="box icon-box filterImage">
                                     <p class="dine-text">healthy</p>
                                     <img class="is-square-icon" src="assets/filter-healthy.png" alt="healthy icon">
                                 </div>
                             </div>
-                            <div class="column is-4 ">
+                            <div class="column is-4 iconHide ">
                                 <div id="surprise" class="box icon-box filterImage">
                                     <p class="dine-text">surprise me</p>
                                     <img class="is-square-icon" src="assets/filter-surprise.png" alt="surprise me icon">
                                 </div>
                             </div>
-
                             <!-- End of icon filters -->
 
                             <!-- **********************FOR RESULTS***************-->
@@ -261,45 +302,72 @@
                             <!-- ************************************************ -->
 
 
-                            <!-- <div class="column is-4">
-                                <div class="box img-box card">
-                                    <figure class="image is-4by5">
-                                        <img id="pic3" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                            <div class="column is-4 ">
+                                <div class="box yelp-img-box ">
+                                    <figure class="yelp-image">
+                                        <img class="image yelp-img is3by4 " src="https://s3-media3.fl.yelpcdn.com/bphoto/274eWXY5UtihrNWGQMa4aA/o.jpg">
                                     </figure>
-                                    <br>
-                                    <p id="name">Name:</p>
-                                    <p id="phone">Phone: </p>
-                                    <p id="rating">Rating: </p>
-                                    <p id="reviews">Reviews</p>
-                                    <p id="price">Price</p>
+                                    <div class="do-info-div">
+                                        <p class="name">
+                                            <a class="blink" href=#></a>Name:<a />
+                                        </p>
+                                        <p class="btext brating">PRating<span class="binfo">#ofReviews</span></p>
+                                        <p id="btext">000-000-0000</p>
+                                        <p class="btext">$$</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="column is-4">
-                                <div class="box img-box card">
-                                    <figure class="image is-4by5">
-                                        <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+
+                            <div class="column is-4 ">
+                                <div class="box yelp-img-box ">
+                                    <figure class="yelp-image">
+                                        <img class="image yelp-img is3by4 " src="https://s3-media3.fl.yelpcdn.com/bphoto/274eWXY5UtihrNWGQMa4aA/o.jpg">
                                     </figure>
-                                    <br>
-                                    <p id="name">Name:</p>
-                                    <p id="phone">Phone: </p>
-                                    <p id="rating">Rating: </p>
-                                    <p id="reviews">Reviews</p>
-                                    <p id="price">Price</p>
+                                    <div class="do-info-div">
+                                        <p class="name">
+                                            <a class="blink" href=#></a>Name:<a />
+                                        </p>
+                                        <p class="btext brating">PRating<span class="binfo">#ofReviews</span></p>
+                                        <p id="btext">000-000-0000</p>
+                                        <p class="btext">$$</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="column is-4">
-                                <div class="box img-box card">
-                                    <figure class="image is-4by5">
-                                        <img id="pic5" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+
+
+                            <div class="column is-4 ">
+                                <div class="box yelp-img-box ">
+                                    <figure class="yelp-image">
+                                        <img class="image yelp-img is3by4 " src="https://s3-media3.fl.yelpcdn.com/bphoto/274eWXY5UtihrNWGQMa4aA/o.jpg">
                                     </figure>
-                                    <br>
-                                    <p id="name">Name:</p>
-                                    <p id="phone">Phone: </p>
-                                    <p id="rating">Rating: </p>
-                                    <p id="reviews">Reviews</p>
-                                    <p id="price">Price</p>
+                                    <div class="do-info-div">
+                                        <p class="name">
+                                            <a class="blink" href=#></a>Name:<a />
+                                        </p>
+                                        <p class="btext brating">PRating<span class="binfo">#ofReviews</span></p>
+                                        <p id="btext">000-000-0000</p>
+                                        <p class="btext">$$</p>
+                                    </div>
                                 </div>
-                            </div> -->
+                            </div>
+
+
+                            <div class="column is-4 ">
+                                <div class="box yelp-img-box ">
+                                    <figure class="yelp-image">
+                                        <img class="image yelp-img is3by4 " src="https://s3-media3.fl.yelpcdn.com/bphoto/274eWXY5UtihrNWGQMa4aA/o.jpg">
+                                    </figure>
+                                    <div class="do-info-div">
+                                        <p class="name">
+                                            <a class="blink" href=#></a>Name:<a />
+                                        </p>
+                                        <p class="btext brating">PRating<span class="binfo">#ofReviews</span></p>
+                                        <p id="btext">000-000-0000</p>
+                                        <p class="btext">$$</p>
+                                    </div>
+                                </div>
+                            </div>
+
 
                         </div>
                         <!-- End of columns -->

@@ -29,8 +29,8 @@
                     </a>
                     <span class="navbar-burger burger" data-target="navbarMenu">
                         <span></span>
-                        <span></span>
-                        <span></span>
+                    <span></span>
+                    <span></span>
                     </span>
                 </div>
                 <div id="navbarMenu" class="navbar-menu">
@@ -48,7 +48,7 @@
                                     <i class="fa fa-star" aria-hidden="true" style="color: #e02239"></i>
 
                                     <span title="favorites" style="color: #e02239">Favorites</span>
-                                </a>
+                            </a>
                             </span>
                         </div>
                     </div>
@@ -62,10 +62,10 @@
         <div class="hero-body hero-body-jtr">
             <div class="container">
                 <div class="columns is-centered">
-                    <div class="column is-half column-banner has-text-centered has-text-white">
-                        <h3 class="title has-text-white">
+                    <div class="column is-half column-banner has-text-centered">
+                        <h3 class="title">
                             Dining In?<span>
-                                <h2 class="subtitle has-text-white">tell us more</h2>
+                                <h2 class="subtitle">tell us more</h2>
                             </span>
                         </h3>
                     </div>
@@ -83,7 +83,7 @@
                     <article class="tile box" id="main-selections">
 
                         <!-- ******* NOTE: switched placement of box and content tag AND added class box-sidecar -->
-                        <div class="box box-sidebar has-background-white-ter">
+                        <div id="sidebar" class="box box-sidebar has-background-white-ter">
                             <div class=" has-background-white-ter">
                                 <!-- Check Selections -->
                                 <p class="allcaps">MAIN INGREDIENT</p>
@@ -218,38 +218,45 @@
                             <!-- ISSUE END ************************ -->
 
 
-                            <div class="column is-4 ">
+                            <!-- *** NEW ADDITION: "speedy eat picks" on click will return imageFilters after a search ***-->
+                            <!-- *** JQUERY added to dinein.js LINE 272*** -->
+                            <div id="filterImageBack" class="column is-12 clickable">speedy eat picks</div>
+                            <!-- ***** END speedy eat picks ***** -->
+
+
+                            <!-- Added class iconHide to imageFilter columns for speedy eat picks -->
+                            <div class="column is-4 iconHide">
                                 <div id="spicy" class="box icon-box filterImage clicked">
                                     <p class="dine-text">spicy</p>
                                     <img class="is-square-icon " src="assets/filter-spicy2.svg" alt="chili icon">
                                 </div>
                             </div>
-                            <div class="column is-4 ">
+                            <div class="column is-4 iconHide">
                                 <div id="savory" class="box icon-box filterImage">
                                     <p class="dine-text">savory</p>
                                     <img class="is-square-savory" src="assets/filter-savory.png" alt="savory herbs icon">
                                 </div>
                             </div>
-                            <div class="column is-4">
+                            <div class="column is-4 iconHide">
                                 <div id="onepot" class="box icon-box filterImage">
                                     <p class="dine-text">one pot</p>
                                     <img class="is-square-icon " src="assets/filter-onepot.png" alt="one-pot icon">
                                 </div>
                             </div>
-                            <div class="column is-4 ">
+                            <div class="column is-4 iconHide">
                                 <div id="special" class="box icon-box filterImage">
                                     <p class="dine-text">special occasion</p>
                                     <img class="is-square-icon" src="assets/filter-special.png" alt="special day icon">
                                 </div>
                             </div>
 
-                            <div class="column is-4">
+                            <div class="column is-4 iconHide">
                                 <div id="healthy" class="box icon-box filterImage">
                                     <p class="dine-text">healthy</p>
                                     <img class="is-square-icon" src="assets/filter-healthy.png" alt="healthy icon">
                                 </div>
                             </div>
-                            <div class="column is-4 ">
+                            <div class="column is-4 iconHide">
                                 <div id="surprise" class="box icon-box filterImage">
                                     <p class="dine-text">surprise me</p>
                                     <img class="is-square-icon" src="assets/filter-surprise.png" alt="surprise me icon">
@@ -260,11 +267,10 @@
                             <!-- *******************************THIS FORMAT FOR RESULTS TO RENDER, ADD TEXT AS NEEDED-->
                             <!-- Results Area-->
                             <div class="column is-4">
-                                <div class="box img-box result" id="result1">
-                                    <figure class="image is-4by5">
-                                        <img id="pic1" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box result" id="result1">
+                                    <figure class="image is-3by4">
+                                        <img id="pic1" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
-                                    <br>
                                     <p class="recipeTitle" id="title1"></p>
                                     <p class="blurb" id="blurb1"></p>
                                     <p class="rating" id="rating1"></p>
@@ -272,11 +278,10 @@
                                 </div>
                             </div>
                             <div class="column is-4 ">
-                                <div class="box img-box result" id="result2">
-                                    <figure class="image is-4by5">
-                                        <img id="pic2" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box result" id="result2">
+                                    <figure class="image is-3by4">
+                                        <img id="pic2" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
-                                    <br>
                                     <p class="recipeTitle" id="title2"></p>
                                     <p class="blurb" id="blurb2"></p>
                                     <p class="rating" id="rating2"></p>
@@ -284,11 +289,10 @@
                                 </div>
                             </div>
                             <div class="column is-4 ">
-                                <div class="box img-box result" id="result3">
-                                    <figure class="image is-4by5">
-                                        <img id="pic3" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box result" id="result3">
+                                    <figure class="image is-3by4">
+                                        <img id="pic3" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
-                                    <br>
                                     <p class="recipeTitle" id="title3"></p>
                                     <p class="blurb" id="blurb3"></p>
                                     <p class="rating" id="rating3"></p>
@@ -296,11 +300,10 @@
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box result" id="result4">
-                                    <figure class="image is-4by5">
-                                        <img id="pic4" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box result" id="result4">
+                                    <figure class="image is-3by4">
+                                        <img id="pic4" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
-                                    <br>
                                     <p class="recipeTitle" id="title4"></p>
                                     <p class="blurb" id="blurb4"></p>
                                     <p class="rating" id="rating4"></p>
@@ -308,11 +311,10 @@
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box result" id="result5">
-                                    <figure class="image is-4by5">
-                                        <img id="pic5" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box result" id="result5">
+                                    <figure class="image is-3by4">
+                                        <img id="pic5" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
-                                    <br>
                                     <p class="recipeTitle" id="title5"></p>
                                     <p class="blurb" id="blurb5"></p>
                                     <p class="rating" id="rating5"></p>
@@ -321,86 +323,126 @@
                             </div>
                             <div class="column is-4">
                                 <!-- <div class="box img-box result" > -->
-                                <div class="box img-box result "id="result6">
-                                    <figure class="image is-4by5">
-                                        <img id="pic6" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box result " id="result6">
+                                    <figure class="image is-3by4">
+                                        <img id="pic6" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
-                                    <br>
                                     <p class="recipeTitle" id="title6"></p>
                                     <p class="blurb" id="blurb6"></p>
                                     <p class="rating" id="rating6"></p>
                                     <p class="price" id="price6">$$$</p>
                                 </div>
                             </div>
-                            <div class="column is-4">
-                                <div class="box img-box  result" id="result7" >
-                                    <figure class="image is-4by5">
-                                        <img id="pic7" class="pic" src="" alt="test image">
+                            <!-- <div class="column is-4 ">
+                                <div class="box yelp-img-box result" id="result7">
+                                    <figure>
+                                        <img id="pic7" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
-                                    <br>
-                                    <p class="recipeTitle" id="title7"></p>
-                                    <p class="blurb" id="blurb7"></p>
-                                    <p class="rating" id="rating7"></p>
-                                    <p class="price" id="price7">$$$</p>
+                                    <div class="do-info-div">
+                                        <p class="recipeTitle" id="title3"></p>
+                                        <p class="blurb" id="blurb3"></p>
+                                        <p class="rating" id="rating3"></p>
+                                        <p class="price" id="price3">$$$</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box  result" id="result8">
-                                    <figure class="image is-4by5">
-                                        <img id="pic8" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box result" id="result8">
+                                    <figure>
+                                        <img id="pic8" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
-                                    <br>
-                                    <p class="recipeTitle" id="title8"></p>
-                                    <p class="blurb" id="blurb8"></p>
-                                    <p class="rating" id="rating8"></p>
-                                    <p class="price" id="price8">$$$</p>
+                                    <div class="do-info-div">
+                                        <p class="recipeTitle" id="title4"></p>
+                                        <p class="blurb" id="blurb4"></p>
+                                        <p class="rating" id="rating4"></p>
+                                        <p class="price" id="price4">$$$</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box  result" id="result9">
-                                    <figure class="image is-4by5">
-                                        <img id="pic9" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box result" id="result9">
+                                    <figure>
+                                        <img id="pic9" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
-                                    <br>
-                                    <p class="recipeTitle" id="title9"></p>
-                                    <p class="blurb" id="blurb9"></p>
-                                    <p class="rating" id="rating9"></p>
-                                    <p class="price" id="price9">$$$</p>
+                                    <div class="do-info-div">
+                                        <p class="recipeTitle" id="title5"></p>
+                                        <p class="blurb" id="blurb5"></p>
+                                        <p class="rating" id="rating5"></p>
+                                        <p class="price" id="price5">$$$</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- End img-icon columns -->
+                            <div class="column is-4">
+                                <div class="box yelp-img-box result " id="result10">
+                                    <figure>
+                                        <img id="pic10" class="pic yelp-img is-3by4" src="" alt="test image">
+                                    </figure>
+                                    <div class="do-info-div">
+                                        <p class="recipeTitle" id="title6"></p>
+                                        <p class="blurb" id="blurb6"></p>
+                                        <p class="rating" id="rating6"></p>
+                                        <p class="price" id="price6">$$$</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="box yelp-img-box result" id="result11">
+                                    <figure>
+                                        <img id="pic11" class="pic yelp-img is-3by4" src="" alt="test image">
+                                    </figure> 
+                                    <div class="do-info-div">
+                                        <p class="recipeTitle" id="title5"></p>
+                                        <p class="blurb" id="blurb5"></p>
+                                        <p class="rating" id="rating5"></p>
+                                        <p class="price" id="price5">$$$</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="box yelp-img-box result " id="result12">
+                                    <figure>
+                                        <img id="pic12" class="pic yelp-img is-3by4" src="" alt="test image">
+                                    </figure>
+                                    <div class="do-info-div">
+                                        <p class="recipeTitle" id="title6"></p>
+                                        <p class="blurb" id="blurb6"></p>
+                                        <p class="rating" id="rating6"></p>
+                                        <p class="price" id="price6">$$$</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                            <!-- Adding below div for results display - Ashley -->
+                            <div class="detailInformation">
+                                <div style="text-align: right;">
+                                    <img id="favIcon" src="./assets/img/white-heart.png" alt="favorite" class="nonfave" />
+                                </div>
 
-                        <!-- Adding below div for results display - Ashley -->
-                        <div class = "detailInformation">
-                            <img id= "detailImage" src="" alt="Recipe Image"/>
-                            <br>
-                            <p id="detailTitle"></p>
-                            <br>
-                            <p id="detailSummary"></p>
-                            <br>
-                            <p id="detailIngredients"></p>
-                            <br>
-                            <p id="detailTime"></p>
+                                <h2 id="detailTitle"></h2>
+                                <br>
+                                <img id="detailImage" src="" alt="Recipe Image" />
+                                <br>
+                                <p id="detailSummary"></p>
+                                <br>
+                                <p id="detailInstructions"></p>
+                                <br>
+                                <p id="detailTime"></p>
 
-                        </div>
+                            </div>
                     </article>
-                    <!-- End img-icon box -->
-                </div>
-                <!-- End main image-icon column 3/4-->
 
-                <!-- ISSUE END TAG FOR LINE 205 & 204 ********************-->
-                <!-- </article>
+                    <!-- ISSUE END TAG FOR LINE 205 & 204 ********************-->
+                    <!-- </article>
                 </div> -->
-                <!-- END TAG ISSUE ******************  -->
+                    <!-- END TAG ISSUE ******************  -->
 
 
 
-                <!-- Everything ok here -->
-            </div>
-            <!-- End main columns-->
-        </div>
-        <!-- End main container -->
+                    <!-- Everything ok here -->
+                    </div>
+                    <!-- End main columns-->
+                </div>
+                <!-- End main container -->
     </section>
     <!-- End main section -->
 
