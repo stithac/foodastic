@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DineIn | Dine Out</title>
+  <!-- Bulma-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="styles.css">
+    <!-- NOTE: Included CSS here so you can add to test before adding to project style sheet -->
+    <style>
+        body {
+            /* background-image: url("vector-menu-sketches-different-dishes-handwriting-inscriptions-black-background-drawing-chalk-wooden-board-91568497.jpg")*/
+            background-color: #000;
+            color: #fff;
+        }
+
+        .title,
+        .subtitle {
+            display: inline;
+        }
+
+        .tile.is-parent {
+            padding: 0;
+        }
+
+        /* Sidebar styles */
+        .menu.sticky {
+            position: sticky;
+            top: 0;
+        }
+
+        .box-sidebar-tr {
+            padding: 10px;
+        }
+
+        .section-jg {
+            padding: 1rem 1rem;
+        }
+
+        .input-tr,
+        .textarea {
+            width: 80%;
+        }
+
+
+        /* image divs for ICONS */
+        .icon-box {
+            height: 250px;
+            background-color: #fdc407;
+        }
+
+        .icon-box img {
+            max-width: 100%;
+            max-height: 100%;
+            margin: auto;
+            display: block;
+        }
+
+        /* image divs for IMGs */
+        .img-box img {
+            max-width: 100%;
+            max-height: 100%;
+            margin: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* decrese space between image div columns */
+        .column {
+            padding: .25rem;
+        }
+    </style>
+</head>
+
+<body>
+  <!-- Nav -->
+  <nav class="navbar has-shadow is-white">
+    <div class="container">
+      <!-- logo/brand -->
+      <div class="navbar-brand">
+        <a class="navbar item">
+          <img src="assets/eating-computer-icons-spoon-fork-lunch-7d56894e393f5075a621664c945bf41d.png" alt="dummy logo"
+            style="max-height: 80px" class="py-2 px-2">
+        </a>
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end">
+          <a href="" class="navbar-item">About</a>
+          <a href="" class="navbar-item">My Favorites</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Components>Breadcrumbs-->
+  <div class="section pt-4 pb-0">
+    <nav class="breadcrumb has-bullet-separator " aria-label="breadcrumbs">
+      <ul class="container">
+        <li><a class="has-text-grey" href="./index.html">Home</a></li>
+        <li><a class="has-text-grey" href= "#">Breadcrumb1</a></li>
+        <li><a class="has-text-grey" href= "#">Breadcrumb2</a></li>
+        <li class="is-active"><a href="#" aria-current="page">Breadcrumb3</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Page Header -->
+  <section class="section">
+    <div class="container">
+      <div class="columns is-vcentered has-background-light">
+        <div class="column is-12">
+          <span><em>note: this is filter page for DINE IN</em></span>
+          <h1 class="is-size-1 title">So you feel like cooking?<span>
+              <h2 class="is-size-2 subtitle">tell us more</h2>
+            </span></h1>
+        </div>
+      </div>
+    </div>
+    <!--container end-->
+  </section>
+
+  <div class="container main dine-in">
+    <!-- Tile Option -->
+    <!-- <div class="container left-nav" > -->
+      <!-- <div class="tile is-ancestor"> -->
+      <div class="tile is-parent is-3" style="float:left" >
+        <div class="tile is-child box" id="main-selections">
+          <!-- Check Selections -->
+          <div id="choices-ingredients">
+            <p>MAIN INGREDIENT</p>
+              <label class="checkbox">
+                <input type="checkbox" id="vegetables">
+                  Vegetables / Plant-based
+              </label><br>
+              <label class="checkbox">
+                <input type="checkbox" id="meat">
+                  Meat
+                </label><br>
+              <label class="checkbox">
+                <input type="checkbox" id="seafood">
+                  Seafood
+              </label><br>
+              <label class="checkbox">
+                <input type="checkbox" id="poultry">
+                  Poultry
+              </label><br>
+              <label class="checkbox">
+                <input type="checkbox" id="dairy">
+                  Dairy
+              </label><br>
+              <label class="checkbox">
+                <input type="checkbox" id="bread">
+                  Bread
+              </label><br>
+          </div>
+          <!-- End of choices-ingredients div -->
+          <br>
+
+          <!-- By Specific Ingredient -->
+          <div id="choices-recipes">
+            <p>FIND A RECIPE</p>
+            <div class="field">
+              <div class="control">
+                <input class="input is-small is-primary" type="text" placeholder="Recipe Name or Keyword">
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <input class="input is-small is-primary" type="text" placeholder="Include">
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <input class="input is-small is-primary" type="text" placeholder="Do Not Include">
+              </div>
+            </div>
+          </div>
+          <!-- End of recipes inputs -->
+
+          <br>
+
+          <!-- Cuisines Dropdown -->
+          <div class="select is-rounded is-medium">
+            <select id="cuisines">
+              <option>BY CUISINE</option>
+              <option id="american">BBQ/Steak</option>
+              <option>Japanese</option>
+              <option>Italian</option>
+              <option>Greek</option>
+              <option>Southern</option>
+              <option>Thai</option>
+              <option>Indian</option>
+              <option>Chinese</option>
+              <option>Spanish</option>
+              <option>Latin American</option>
+            </select>
+          </div>
+          <!-- End of cuisines dropdown -->
+
+          <br>
+          <br>
+
+          <!-- Category dropdown-->
+          <div class="select is-rounded is-medium">
+            <select>
+              <option>BY CATEGORY</option>
+              <option>Appetizers</option>
+              <option>Bowls</option>
+              <option>Casseroles</option>
+              <option>Entertaining</option>
+              <option>Breakfast & Brunch</option>
+              <option>Salads</option>
+              <option>Main Dish</option>
+              <option>Side Dishes</option>
+              <option>Desserts</option>
+              <option>Drinks</option>
+            </select>
+          </div>
+          <!-- End of category dropdown -->
+
+          <br>
+          <br>
+
+          <div class="buttons">
+            <button id="searchBtn" class="button is-large is-warning is-light">Search</button>
+          </div>
+        </div>
+        <!-- End of main-selections -->
+      <!-- </div> -->
+      </div>
+      <!-- End of left-nav -->
+
+
+    <!--Image Suggestions-->
+    <!-- Main content area -->
+    <div class="tile is-parent is-9">
+      <article class="tile is-child ">
+          <div class="columns box is-multiline">
+              <div class="column is-4">
+                  <div class="box icon-box">
+                      <img class="is-square" src="assets/img/filter-spicy.png" alt="chili icon">
+                  </div>
+              </div>
+              <div class="column is-4">
+                  <div class="box icon-box">
+                      <img class="is-square" src="assets/img/filter-savory.png" alt="savory herbs icon">
+                  </div>
+              </div>
+              <div class="column is-4">
+                  <div class="box icon-box">
+                      <img class="is-square" src="assets/img/filter-onepot.png" alt="one-pot icon">
+                  </div>
+              </div>
+              <div class="column is-4">
+                  <div class="box icon-box">
+                      <img class="is-square" src="assets/img/filter-special.png" alt="special day icon">
+                  </div>
+              </div>
+              <div class="column is-4">
+                  <div class="box icon-box">
+                      <img class="is-square" src="assets/img/filter-surprise.png" alt="surprise me icon">
+                  </div>
+              </div>
+              <div class="column is-4">
+                  <div class="box icon-box">
+                      <img class="is-square" src="assets/img/filter-healthy.png" alt="healthy icon">
+                  </div>
+              </div>
+      </article>
+    </div>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="./spoonacular.js"></script>
+</body>
+
+</html>

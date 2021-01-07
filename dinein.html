@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodastic</title>
+    <!-- Bulma-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <!-- Bootstrap CSS JENNER NOT USING, this tag is affecting layout -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
+    <!-- Not sure what link below is -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!--  Dine Pages CSS -->
+    <link rel="stylesheet" href="./assets/css/dine.css">
+
+</head>
+
+<body>
+
+    <!-- Nav Bar  -->
+    <div class="hero-head">
+        <nav class="navbar" style="background-color: white">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="index.css">
+                        <img src="assets/foodastic_logo-red.jpg" alt="Logo">
+                    </a>
+                    <span class="navbar-burger burger" data-target="navbarMenu">
+                        <span></span>
+                    <span></span>
+                    <span></span>
+                    </span>
+                </div>
+                <div id="navbarMenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        <div class="tabs is-right">
+                            <ul class="nav-links">
+                                <li><a href="dinein.html" style="color: black">Dine In</a></li>
+                                <li><a href="dineout.html" style="color: black">Dine Out</a></li>
+                                <li><a href="#" style="color:black">Dunno?</a></li>
+                                <li><a href="#" style="color:black">About Us</a></li>
+                                <li><a href="#Contact Us" style="color:black">Contact Us</a></li>
+                            </ul>
+                            <span class="navbar-item">
+                                <a class="button is-white is-outlined" href="Favorites">
+                                    <i class="fa fa-star" aria-hidden="true" style="color: #e02239"></i>
+
+                                    <span title="favorites" style="color: #e02239">Favorites</span>
+                            </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- HERO BANNER -->
+    <section class="hero is-light">
+        <div class="hero-body hero-body-jtr">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-half column-banner has-text-centered">
+                        <h3 class="title">
+                            Dining In?<span>
+                                <h2 class="subtitle">tell us more</h2>
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIDEBAR -->
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline ">
+                <!-- Filter sidebar -->
+                <div class="column is-3 column-sidebar">
+                    <article class="tile box" id="main-selections">
+
+                        <!-- ******* NOTE: switched placement of box and content tag AND added class box-sidecar -->
+                        <div class="box box-sidebar has-background-white-ter">
+                            <div class=" has-background-white-ter">
+                                <!-- Check Selections -->
+                                <p class="allcaps">MAIN INGREDIENT</p>
+                                <fieldset id="ingredientSelections">
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="bread">
+                                        Bread
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="vegetables">
+                                        Vegetables / Plant-based
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="beef">
+                                        Beef
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="chicken">
+                                        Chicken
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="pork">
+                                        Pork
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="fish">
+                                        Seafood
+                                    </label>
+
+                                </fieldset>
+                                <br>
+
+                                <!-- By Specific Ingredient -->
+                                <div>
+                                    <p class="allcaps">FIND A RECIPE</p>
+                                    <div class="field">
+                                        <div class="control">
+                                            <input id="nameInput" class="input input-tr is-small" type="text" placeholder="Recipe Name or Keyword">
+                                        </div>
+                                    </div>
+                                    <!-- <div class="field">
+                                            <div class="control">
+                                                <input class="input input-tr is-small" type="text" placeholder="Include">
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <div class="control">
+                                                <input class="input input-tr is-small" type="text" placeholder="Do Not Include">
+                                            </div>
+                                        </div> -->
+                                </div>
+                                <br>
+
+                                <!-- Dropdown -->
+                                <p class="allcaps">BY CUISINE</p>
+                                <div class="select is-rounded is-small">
+                                    <select id="cuisineSelections">
+                                        <option value="">-- SELECT --</option>
+                                        <option value="african">African</option>
+                                        <option value="american">American</option>
+                                        <option value="cajun">Cajun</option>
+                                        <option value="caribbean">Caribbean</option>
+                                        <option value="chinese">Chinese</option>
+                                        <option value="european">European</option>
+                                        <option value="french">French</option>
+                                        <option value="greek">Greek</option>
+                                        <option value="italian">Italian</option>
+                                        <option value="indian">Indian</option>
+                                        <option value="japanese">Japanese</option>
+                                        <option value="latin american">Latin American</option>
+                                        <option value="mexican">Mexican</option>
+                                        <option value="southern">Southern</option>
+                                        <option value="spanish">Spanish</option>
+                                        <option value="thai">Thai</option>
+                                        <option value="vietnamese">Vietnamese</option>
+                                    </select>
+                                </div>
+                                <br>
+                                <br>
+
+                                <!-- dropdown 2-->
+                                <p class="allcaps">BY CATEGORY</p>
+                                <div class="select is-rounded is-small">
+                                    <select id="categorySelections">
+                                        <option value="">-- SELECT --</option>
+                                        <option value="breakfast">Breakfast & Brunch</option>
+                                        <option value="lunch">Lunch</option>
+                                        <option value="dinner">Dinner</option>
+                                        <option value="soup">Soups</option>
+                                        <option value="salad">Salads</option>
+                                        <option value="appetizer">Appetizers</option>
+                                        <option value="side dish">Side Dishes</option>
+                                        <option value="main course">Main Dishes</option>
+                                        <option value="dessert">Desserts</option>
+                                        <option value="beverage">Drinks</option>
+                                    </select>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="buttons">
+                                    <button id="searchBtn" class="button is-medium is-dark">Search</button>
+                                </div>
+                            </div>
+                            <!-- end content -->
+                        </div>
+                        <!-- end box -->
+                    </article>
+                    <!-- end tile -->
+                </div>
+                <!-- end quarter column-->
+
+                <!-- NEW: ICON & IMAGE DUMP DIV -->
+                <!-- ************************** NOTE: THESE HIDE ON RESULTS LOAD -->
+                <!-- Main content: Icon Filters -->
+
+
+                <!-- ISSUE: CAN WE MOVE idResultsDiv to column or box below? Current code is affecting layout. UNCOMMENT this and partnering divs below to see -->
+
+                <!-- <div id="resultsDiv" class="tile is-parent is-9">
+                    <article class="tile is-child "> -->
+
+                <!-- ISSUE END************************ -->
+
+                <!-- This stays -->
+                <div class=" column">
+                    <article class=" box">
+
+                        <!-- ISSUE START: LINE 207 INLINE STYLE MARGIN MIGHT AFFECT LAYOUT will check back on this *************************** -->
+
+                        <div class="columns is-multiline ">
+                            <!-- this is inline style removed from #line 215 ** style="margin-top:0;" ** -->
+                            <!-- ISSUE END ************************ -->
+
+
+                            <div class="column is-4 ">
+                                <div id="spicy" class="box icon-box filterImage clicked">
+                                    <p class="dine-text">spicy</p>
+                                    <img class="is-square-icon " src="assets/filter-spicy2.svg" alt="chili icon">
+                                </div>
+                            </div>
+                            <div class="column is-4 ">
+                                <div id="savory" class="box icon-box filterImage">
+                                    <p class="dine-text">savory</p>
+                                    <img class="is-square-savory" src="assets/filter-savory.png" alt="savory herbs icon">
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div id="onepot" class="box icon-box filterImage">
+                                    <p class="dine-text">one pot</p>
+                                    <img class="is-square-icon " src="assets/filter-onepot.png" alt="one-pot icon">
+                                </div>
+                            </div>
+                            <div class="column is-4 ">
+                                <div id="special" class="box icon-box filterImage">
+                                    <p class="dine-text">special occasion</p>
+                                    <img class="is-square-icon" src="assets/filter-special.png" alt="special day icon">
+                                </div>
+                            </div>
+
+                            <div class="column is-4">
+                                <div id="healthy" class="box icon-box filterImage">
+                                    <p class="dine-text">healthy</p>
+                                    <img class="is-square-icon" src="assets/filter-healthy.png" alt="healthy icon">
+                                </div>
+                            </div>
+                            <div class="column is-4 ">
+                                <div id="surprise" class="box icon-box filterImage">
+                                    <p class="dine-text">surprise me</p>
+                                    <img class="is-square-icon" src="assets/filter-surprise.png" alt="surprise me icon">
+                                </div>
+                            </div>
+                            <!-- End of icon filters -->
+
+                            <!-- *******************************THIS FORMAT FOR RESULTS TO RENDER, ADD TEXT AS NEEDED-->
+                            <!-- Results Area-->
+                            <div class="column is-4">
+                                <div class="box img-box result" id="result1">
+                                    <figure class="image is-4by5">
+                                        <img id="pic1" class="pic" src="" alt="test image">
+                                    </figure>
+                                    <br>
+                                    <p class="recipeTitle" id="title1"></p>
+                                    <p class="blurb" id="blurb1"></p>
+                                    <p class="rating" id="rating1"></p>
+                                    <p class="price" id="price1">$$$</p>
+                                </div>
+                            </div>
+                            <div class="column is-4 ">
+                                <div class="box img-box result" id="result2">
+                                    <figure class="image is-4by5">
+                                        <img id="pic2" class="pic" src="" alt="test image">
+                                    </figure>
+                                    <br>
+                                    <p class="recipeTitle" id="title2"></p>
+                                    <p class="blurb" id="blurb2"></p>
+                                    <p class="rating" id="rating2"></p>
+                                    <p class="price" id="price2">$$$</p>
+                                </div>
+                            </div>
+                            <div class="column is-4 ">
+                                <div class="box img-box result" id="result3">
+                                    <figure class="image is-4by5">
+                                        <img id="pic3" class="pic" src="" alt="test image">
+                                    </figure>
+                                    <br>
+                                    <p class="recipeTitle" id="title3"></p>
+                                    <p class="blurb" id="blurb3"></p>
+                                    <p class="rating" id="rating3"></p>
+                                    <p class="price" id="price3">$$$</p>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="box img-box result" id="result4">
+                                    <figure class="image is-4by5">
+                                        <img id="pic4" class="pic" src="" alt="test image">
+                                    </figure>
+                                    <br>
+                                    <p class="recipeTitle" id="title4"></p>
+                                    <p class="blurb" id="blurb4"></p>
+                                    <p class="rating" id="rating4"></p>
+                                    <p class="price" id="price4">$$$</p>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="box img-box result" id="result5">
+                                    <figure class="image is-4by5">
+                                        <img id="pic5" class="pic" src="" alt="test image">
+                                    </figure>
+                                    <br>
+                                    <p class="recipeTitle" id="title5"></p>
+                                    <p class="blurb" id="blurb5"></p>
+                                    <p class="rating" id="rating5"></p>
+                                    <p class="price" id="price5">$$$</p>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <!-- <div class="box img-box result" > -->
+                                <div class="box img-box result " id="result6">
+                                    <figure class="image is-4by5">
+                                        <img id="pic6" class="pic" src="" alt="test image">
+                                    </figure>
+                                    <br>
+                                    <p class="recipeTitle" id="title6"></p>
+                                    <p class="blurb" id="blurb6"></p>
+                                    <p class="rating" id="rating6"></p>
+                                    <p class="price" id="price6">$$$</p>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="box img-box  result" id="result7">
+                                    <figure class="image is-4by5">
+                                        <img id="pic7" class="pic" src="" alt="test image">
+                                    </figure>
+                                    <br>
+                                    <p class="recipeTitle" id="title7"></p>
+                                    <p class="blurb" id="blurb7"></p>
+                                    <p class="rating" id="rating7"></p>
+                                    <p class="price" id="price7">$$$</p>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="box img-box  result" id="result8">
+                                    <figure class="image is-4by5">
+                                        <img id="pic8" class="pic" src="" alt="test image">
+                                    </figure>
+                                    <br>
+                                    <p class="recipeTitle" id="title8"></p>
+                                    <p class="blurb" id="blurb8"></p>
+                                    <p class="rating" id="rating8"></p>
+                                    <p class="price" id="price8">$$$</p>
+                                </div>
+                            </div>
+                            <div class="column is-4">
+                                <div class="box img-box  result" id="result9">
+                                    <figure class="image is-4by5">
+                                        <img id="pic9" class="pic" src="" alt="test image">
+                                    </figure>
+                                    <br>
+                                    <p class="recipeTitle" id="title9"></p>
+                                    <p class="blurb" id="blurb9"></p>
+                                    <p class="rating" id="rating9"></p>
+                                    <p class="price" id="price9">$$$</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End img-icon columns -->
+
+                        <!-- Adding below div for results display - Ashley -->
+                        <div class="detailInformation">
+                            <img id="detailImage" src="" alt="Recipe Image" />
+                            <br>
+                            <p id="detailTitle"></p>
+                            <br>
+                            <p id="detailSummary"></p>
+                            <br>
+                            <p id="detailIngredients"></p>
+                            <br>
+                            <p id="detailTime"></p>
+
+                        </div>
+                    </article>
+                    <!-- End img-icon box -->
+                </div>
+                <!-- End main image-icon column 3/4-->
+
+                <!-- ISSUE END TAG FOR LINE 205 & 204 ********************-->
+                <!-- </article>
+                </div> -->
+                <!-- END TAG ISSUE ******************  -->
+
+
+
+                <!-- Everything ok here -->
+            </div>
+            <!-- End main columns-->
+        </div>
+        <!-- End main container -->
+    </section>
+    <!-- End main section -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!--Bootstrap js -->
+    <script src="./assets/js/dinein.js"></script>
+    <script src="./assets/js/specialfx.js"></script>
+
+</body>
+
+</html>

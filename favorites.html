@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Favorites</title>
+
+        <!-- Icons: Use as placeholders for now until images are created. Update: Only using this for favorites, star icon  -->
+        <link rel="shortcut icon" href="" type="image/x-icon">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+        <!-- Google Fonts: Nerko One as Header and Montserrat as Body -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+
+        <!-- CSS -->
+        <link href="./assets/css/filter.css" rel="stylesheet">
+
+        <!-- Bulma -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/>
+        <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+        <script src = "https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+    </head>
+
+<body>
+
+    <!-- Hero and navbar -->
+
+    <section class="hero is-info is-medium">
+        <div class="hero-head">
+            <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: white">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="index.html" target="_blank" style="background-color: white;">
+                            <img src="./assets/img/foodastic_logo-red.jpg" alt="Logo" >
+                        </a>
+                        <span class="navbar-burger" data-target="navbarMenu" role="button" aria-label="menu" aria-expanded="false">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </span>
+                    </div>
+              <!-- end of navbar brand -->
+
+              <!-- Navbar menu items -->
+              <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <div class="tabs is-right">
+                        <ul class="nav-links">
+                            <li><a href="dinein.html" style="color: black" target="_blank">Dine In</a></li>
+                            <li><a href="dineout.html" style="color: black" target="_blank">Dine Out</a></li>
+                            <li><a href="dunno.html" style="color:black" target="_blank">Dunno?</a></li>
+                            <li><a href="about.html" style="color:black" target="_blank">About Us</a></li>
+                            <li><a class = "modal-button" style="color:black" data-target="#modal">Contact Us</a></li>
+                            <li><span class="navbar-item">
+                              <a class="button is-white is-outlined" href="favorites.html" target="_blank">
+                                 <i class="fa fa-star" aria-hidden="true" style="color: #e02239"></i>
+                                 <span title="favorites" style="color: #e02239">Favorites</span>
+                              </a></span>
+                            </li>
+                        </ul>
+
+                           
+                    </div>
+                    <!-- tabs -->
+                </div>
+                <!-- end navbar end -->
+            </div>
+            <!-- end navbar menu -->
+        </div>
+        <!-- end container -->
+   </nav>
+   <!-- end navbar -->
+
+    <!-- This is where the tagline goes, briefly describe Foodastic -->
+    <!-- HERO BANNER -->
+    <section class="hero is-light">
+        <div class="hero-body hero-body-jtr">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-half column-banner has-text-centered">
+                        <h3 class="title" style="color: hsl(0, 0%, 14%); font-size: 3.5rem;">
+                            Favorites
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+        <!-- Dine In/Out, Dunno Tiles -->
+        <br>
+    <!-- Page Header -->
+    <section class="section">
+        <div class="container">
+            <div class="columns is-vcentered has-background-light">
+                <div class="column is-12">
+                    <h2 class="is-size-2 title">Your personal repository of delicious food for now, later or to share.
+                        <span>
+                            <h3 class="is-size-3 subtitle">see below</h3>
+                        </span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+<!-- recycled from filter and result pages, similar coding -->
+<section class="section">
+    <div class="container">
+        <div class="tile is-ancestor">
+
+
+
+            <!-- NEW: ICON & IMAGE DUMP DIV -->
+            <!-- ************************** NOTE: THESE HIDE ON RESULTS LOAD -->
+            <!-- Main content: Icon Filters -->
+            <div class="tile is-parent is-12">
+                <article class="tile is-child ">
+                    <div class="columns box is-multiline" style="margin-top:0;">
+
+                        <div class="column is-3">
+                            <div class="box img-box">
+                                <figure class="image is-2by2">
+                                    <img id="pic1" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                </figure>
+                                <br>
+                                <p id="title1"></p>
+                                <p id="blurb1"></p>
+                                <p id="rating1"></p>
+                                <p id="price1">$$$</p>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="box img-box">
+                                <figure class="image is-2by2">
+                                    <img id="pic2" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                </figure>
+                                <br>
+                                <p id="title2"></p>
+                                <p id="blurb2"></p>
+                                <p id="rating2"></p>
+                                <p id="price2">$$$</p>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="box img-box">
+                                <figure class="image is-2by2">
+                                    <img id="pic3" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                </figure>
+                                <br>
+                                <p id="title3"></p>
+                                <p id="blurb3"></p>
+                                <p id="rating3"></p>
+                                <p id="price3">$$$</p>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="box img-box">
+                                <figure class="image is-2by2">
+                                    <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                </figure>
+                                <br>
+                                <p id="title4"></p>
+                                <p id="blurb4"></p>
+                                <p id="rating4"></p>
+                                <p id="price4">$$$</p>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="box img-box">
+                                <figure class="image is-2by2">
+                                    <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                </figure>
+                                <br>
+                                <p id="title5"></p>
+                                <p id="blurb5"></p>
+                                <p id="rating5"></p>
+                                <p id="price5">$$$</p>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="box img-box">
+                                <figure class="image is-2by2">
+                                    <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                </figure>
+                                <br>
+                                <p id="title6"></p>
+                                <p id="blurb6"></p>
+                                <p id="rating6"></p>
+                                <p id="price6">$$$</p>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="box img-box">
+                                <figure class="image is-2by2">
+                                    <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                </figure>
+                                <br>
+                                <p id="title7"></p>
+                                <p id="blurb7"></p>
+                                <p id="rating7"></p>
+                                <p id="price7">$$$</p>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="box img-box">
+                                <figure class="image is-2by2">
+                                    <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                </figure>
+                                <br>
+                                <p id="title8"></p>
+                                <p id="blurb8"></p>
+                                <p id="rating8"></p>
+                                <p id="price8">$$$</p>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="box img-box">
+                                <figure class="image is-2by2">
+                                    <img id="pic4" class="pic" src="assets/img/test-food-img.jpeg" alt="test image">
+                                </figure>
+                                <br>
+                                <p id="title9"></p>
+                                <p id="blurb9"></p>
+                                <p id="rating9"></p>
+                                <p id="price9">$$$</p>
+                            </div>
+                        </div>
+                    </div><!-- End of columns -->
+                </article>
+            </div>
+                <!-- End main image-icon divs -->
+        </div>
+        <!-- End of sole ancestor -->
+    </div>
+    <!-- End of main container -->
+</section>
+<!-- End of filters section -->
+
+
+
+
+
+
+
+             <!-- Footer with social media elements-->
+  
+             <section>      
+                <footer class="Footer">
+                    <hr class="style">
+                    <div class="content has-text-centered">
+                    <h4 style="font-size: 25px">Foodastic is an independent entity with no affiliation with listed restaurants and recipes. 
+                        &#169; 2021 by RAIJ</h4>
+                        <p style="font-size: 12px;">This project is dedicated to those who love food.</p>
+                        <div class="center">
+                            <span id="social">
+                              <ul>
+                                <span class="facebook">
+                                  <a href = "https://twitter.com/" target="_blank"><button class="border"><i class="fab fa-facebook"></i></button></a>
+                                </span>
+                            
+                                <span class="twitter">
+                                  <a href = "https://www.facebook.com/" target="_blank"><button class="border"><i class="fab fa-twitter"></i></button></a>
+                                </span>
+                            
+                                <span class="instagram">
+                                  <a href = "https://www.instagram.com/" target="_blank"><button class="border"><i class="fab fa-instagram"></i></button></a>
+                                </span>
+                                
+                              </ul>
+                            </span>
+                        </div>  
+                              
+            
+        
+                    </div>
+                    <!-- content -->
+                </footer>
+                </section>
+                <!-- End Footer -->
+        
+                <!-- modal javascript, stylesheet: index.css -->
+                <script src = "./assets/js/index.js"></script>
+            </body>
+        </html>

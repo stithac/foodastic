@@ -1,0 +1,383 @@
+/* CSS stylesheet for Filter and Result pages */
+
+
+/* Favorites*/
+
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap');
+
+/* bg color */
+body,
+html {
+    background-color: hsl(0, 0%, 98%);
+    background-color: #fff;
+}
+
+/* Fonts and headers */
+
+
+option {
+    font-family: 'Monteserrat' sans-serif;
+    font-size: 10px;
+    font-weight: 500px;
+}
+.column-banner {
+    height: 75px;
+    margin: auto;
+    background-color: #fdc407;
+    align-items: center;
+}
+
+.column-banner-about {
+    height: 75px;
+    margin: auto;
+    /* background-color: #fdc407; */
+    background-color: #e02239;
+    align-items: center;
+}
+
+.title {
+    font-family: 'Nerko One', cursive;
+    font-size: 3.5rem;
+    color:black;
+    font-weight: normal;
+    text-align: center;
+}
+
+.subtitle {
+    font-family: 'Monteserrat', sans-serif;
+    color: hsl(0, 0%, 14%);
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* Containers for subheader */
+
+.has-background-light {
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: center;
+}
+
+
+/* nav-links style in html */
+
+.nav-links {
+    font-family: 'Nerko One', cursive;
+}
+
+.navbar-item {
+    font-family: 'Nerko One', cursive;
+}
+
+
+/* Hero section */
+.hero-body-jtr {
+    background-image: url("../img/foodastic_Foodastic-Hero.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.content {
+    font-family: 'Nerko One', cursive;
+    font-size: 40px;
+}
+
+p {
+    font-family: 'Monteserrat', sans-serif;
+    font-size: 20px;
+    color: #e02239;
+}
+
+h4 {
+  font-family: 'Nerko One', cursive;
+  font-size: 20px;
+  color: black;
+}
+
+
+.title,
+.subtitle {
+    display: inline;
+}
+
+.tile.is-parent {
+    padding: 0;
+}
+
+
+/* Sidebar styles */
+
+.menu.sticky {
+    position: sticky;
+    top: 0;
+}
+
+.box-sidebar-tr {
+    padding: 10px;
+}
+
+.section-jg {
+    padding: 1rem 1rem;
+}
+
+.input-tr,
+.textarea {
+    width: 80%;
+}
+
+
+/* image divs for ICONS */
+
+.icon-box {
+    height: 250px;
+    background-color: #fdc407;
+}
+
+.icon-box img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    display: block;
+}
+
+
+/* image divs for IMGs */
+
+.img-box img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    display: block;
+    object-fit: cover;
+}
+
+
+/* decrease space between image div columns */
+
+.column {
+    padding: .25rem;
+}
+
+.img-box {
+    height: 470px;
+    overflow-y: auto !important;
+}
+
+
+/* Button animation and styling for favorites and three tiles*/
+
+button {
+    font-family: 'Monteserrat', sans-serif;
+    border-radius: none;
+    font-size: 15px;
+    padding: 20px;
+    width: 150px;
+    transition: all 0.5s;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+
+/* Contact */
+
+label {
+    font-family: 'Nerko One', cursive;
+}
+
+.title {
+    font-family: 'Nerko One', cursive;
+}
+
+
+.Footer {
+    padding: 1.5rem 1.5rem;
+    font-weight: bold;
+    font-size: 0.85em;
+    overflow-x: hidden;
+    text-align: center;
+  }
+  
+  .Footer a {
+    padding-bottom: 1px;
+    border: 0;
+  }
+
+hr.style {
+    border-top: 2px solid #e02239;
+}
+
+/* footer: social media */
+#social ul {
+    padding-left: 0px;
+    margin: 0 auto;
+}
+
+  
+ /** Facebook **/
+  
+.facebook {
+    width: 25px;
+    height: 25px;
+}
+  
+  .facebook .border {
+    background: transparent;
+    outline: none;
+    color: #e02239;
+    width: 25px;
+    height: 25px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    border: 2px solid #e02239;
+    transition: all .2s ease-in-out;
+  }
+  
+  .facebook .border:hover {
+    background: #e02239;
+    border-color: #e02239;
+    color: rgba(255,255,255, 0.9);
+    transform: scale(1.2);
+  }
+  
+
+  
+  /** Twitter **/
+  
+  .twitter {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .twitter .border {
+    background: transparent;
+    outline: none;
+    color: #e02239;
+    width: 25px;
+    height: 25px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    border: 2px solid #e02239;
+    transition: all .2s ease-in-out;
+  }
+  
+  .twitter .border:hover {
+    background: #e02239;
+    border-color: #e02239;
+    color: rgba(255,255,255, 0.9);
+    transform: scale(1.2);
+  }
+  
+  
+  /** Instagram **/
+  
+  .instagram {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .instagram .border {
+    background: transparent;
+    outline: none;
+    color: #e02239;
+    width: 25px;
+    height: 25px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    border: 2px solid #e02239;
+    transition: all .2s ease-in-out;
+  }
+  
+  .instagram .border:hover {
+    background: #e02239;
+    border-color: #e02239;
+    color: rgba(255,255,255, 0.9);
+    transform: scale(1.2);
+  }
+  
+ 
+
+  #social ul:hover > li:hover {
+    opacity: 1;
+  } 
+
+            /*********** Media Queries ***********/
+            /* From dine.css */
+            
+            @media screen and (min-width: 769px) and (max-width: 1023px) {
+              .column.is-3 {
+                  flex: none;
+                  width: 100%;
+              }
+              .title {
+                  font-size: 3rem;
+              }
+              .subtitle {
+                  font-size: 1.75rem;
+              }
+              .input,
+              .textarea {
+                  max-width: 50%;
+              }
+              .tile.is-child {
+                  width: 50%;
+                  height: max-content;
+                  margin-bottom: 25px;
+              }
+              .api-img {
+                  height: 200px;
+                  margin-bottom: 3px;
+              }
+              .titleA {
+                  font-size: 1.5rem;
+              }
+              .subtitleA {
+                  font-size: .75rem;
+              }
+              .about-blurb {
+                  font-size: .50rem;
+              }
+              
+          }
+          
+          @media screen and (max-width: 768px) {
+              .title {
+                  font-size: 3rem;
+              }
+              .subtitle {
+                  font-size: 1.75rem;
+              }
+              .input,
+              .textarea {
+                  max-width: 35%;
+              }
+              
+          }

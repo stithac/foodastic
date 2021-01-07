@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodastic</title>
+
+    <!-- Bulma CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+
+    <!-- Google Fonts: Nerko One as Header and Montserrat as Body -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome  -->
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+    <!-- NOTE: Included CSS here so you can add to test before adding to project style sheet -->
+
+    <!-- CSS-2 -->
+    <link rel="stylesheet" href="assets/css/dine.css">
+</head>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR  -->
+    <div class="hero-head">
+        <nav class="navbar" style="background-color: white">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="index.css">
+                        <img src="assets/foodastic_logo-red.jpg" alt="Logo">
+                    </a>
+                    <span class="navbar-burger burger" data-target="navbarMenu">
+                        <span></span>
+                    <span></span>
+                    <span></span>
+                    </span>
+                </div>
+                <div id="navbarMenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        <div class="tabs is-right">
+                            <ul class="nav-links">
+                                <li><a href="dinein.html" style="color: black">Dine In</a></li>
+                                <li><a href="dineout.html" style="color: black">Dine Out</a></li>
+                                <li><a href="#" style="color:black">Dunno?</a></li>
+                                <li><a href="#" style="color:black">About Us</a></li>
+                                <li><a href="#Contact Us" style="color:black">Contact Us</a></li>
+                            </ul>
+                            <span class="navbar-item">
+                                <a class="button is-white is-outlined" href="Favorites">
+                                    <i class="fa fa-star" aria-hidden="true" style="color: #e02239"></i>
+
+                                    <span title="favorites" style="color: #e02239">Favorites</span>
+                            </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- HERO BANNER -->
+    <section class="hero is-light ">
+        <div class="hero-body hero-body-jtr">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-half column-banner has-text-centered">
+                        <h3 class="title">
+                            Dining Out?<span>
+                                <h2 class="subtitle">tell us more</h2>
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIDEBAR -->
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                <!-- Filter sidebar -->
+                <div class="column is-3 column-sidebar">
+                    <article class="box" id="main-selections">
+                        <div class="box box-sidebar has-background-white-ter">
+                            <div class=" has-background-white-ter">
+                                <!-- Check Selections -->
+
+                                <p class="allcaps">POPULAR FOODS</p>
+                                <fieldset id="specialitySelections">
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="bbq">
+                                        Barbeque
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="breweries">
+                                        Gastropubs
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="pizza">
+                                        Pizza
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="sushi">
+                                        Sushi
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="seafood">
+                                        Seafoood
+                                    </label>
+                                </fieldset>
+                                <br>
+
+                                <!-- Dropdown -->
+                                <label class="allcaps">BY CUISINE</label><br>
+                                <div class=" select is-rounded is-small">
+
+                                    <select id="cuisineSelections">
+                                        <!-- <option value="default" disabled="true">BY CUISINE</option> -->
+                                        <option value="">-- SELECT --</option>
+                                        <option value="steak">Korean</option>
+                                        <option value="japanese">Japanese</option>
+                                        <option value="Italian">Italian</option>
+                                        <option value="greek">Greek</option>
+                                        <option value="american">American</option>
+                                        <option value="thai">Thai</option>
+                                        <option value="indian">Indian</option>
+                                        <option value="vietnamese">Vietnamese</option>
+                                        <option value="spanish">Spanish</option>
+                                        <option value="latin">Latin American</option>
+                                    </select>
+                                </div>
+                                <br>
+                                <br>
+
+                                <!-- half -->
+
+
+                                <!-- Input Search -->
+                                <div>
+                                    <div class="field">
+                                        <p class="allcaps required">SEARCH BY CITY</label><br>
+                                            <input class="input input-tr is-small" type="text" placeholder="City, State" id="cityInput">
+                                    </div>
+
+                                    <div class="field">
+                                        <label class="allcaps required">OR ZIPCODE</label><br>
+                                        <input class="input input-tr is-small" type="text" placeholder="Zipcode" id="zipInput">
+                                    </div>
+                                </div>
+                                <br>
+                                <!-- Dropdown -->
+                                <div class="field">
+                                    <label class="allcaps optional ">RADIUS</label><br>
+                                    <div class="select is-rounded is-small">
+                                        <select id="radiusOptions" class="has-text-weight-bold">
+                                            <!-- values are in meters so work with yelp API. The maximum value is 40,000 meters (25 miles)  -->
+                                            <option value="default" disabled="true" class="allcaps">MILE RADIUS</option>
+                                            <option value="8047">5 mi</option>
+                                            <option value="16093">10 mi</option>
+                                            <option value="24140">15 mi</option>
+                                            <option value="32187">20 mi</option>
+                                            <option value="max">20+ mi</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <br>
+                                <!-- Select Multiple 2-->
+                                <p class="allcaps optional">PRICE</p>
+                                <fieldset id="pricePref">
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="1" value="1">
+                                        $
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="2" value="2">
+                                        $$
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="3" value="3">
+                                        $$$
+                                    </label><br>
+                                    <label class="checkbox">
+                                        <input type="checkbox" id="4" value="4">
+                                        $$$$
+                                    </label>
+                                    <br>
+                                    <br>
+                                    </form>
+                                    <!-- end float on tablet-->
+                                    <div class="buttons">
+                                        <button class="button is-medium is-dark" id="btnSearch">Search</button>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+
+
+
+                <!-- NEW: ICON & IMAGE DUMP DIV -->
+                <!-- ************************** NOTE: THESE HIDE ON RESULTS LOAD -->
+                <!-- Main content: Icon Filters -->
+
+                <div class="column ">
+                    <article class="box">
+                        <div class="columns is-multiline">
+                            <div class="column filterImageBack clickable is-12">speedy eat picks</div>
+                            <div class="column is-4  iconHide">
+                                <div id="spicy" class="box icon-box filterImage">
+                                    <p class="dine-text">spicy</p>
+                                    <img class="is-square-icon" src="assets/filter-spicy2.svg" alt="chili icon">
+                                </div>
+                            </div>
+                            <div class="column is-4  iconHide">
+                                <div id="savory" class="box icon-box filterImage">
+                                    <p class="dine-text">savory</p>
+                                    <img class="is-square-savory" src="assets/filter-savory.png" alt="savory herbs icon">
+                                </div>
+                            </div>
+                            <div class="column is-4 iconHide">
+                                <div id="cheapeats" class="box icon-box filterImage">
+                                    <div class="box box-cheapeats is-square-eats">
+                                        <p class="p-best"><span class="best">BEST</span></p>
+                                        <p class="p-cheap"><span class="cheap">cheap eats</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-4  iconHide">
+                                <div id="special" class="box icon-box filterImage">
+                                    <p class="dine-text">special occasion</p>
+                                    <img class="is-square-icon" src="assets/filter-special.png" alt="special day icon">
+                                </div>
+                            </div>
+                            <div class="column is-4 iconHide">
+                                <div id="healthy" class="box icon-box filterImage">
+                                    <p class="dine-text">healthy</p>
+                                    <img class="is-square-icon" src="assets/filter-healthy.png" alt="healthy icon">
+                                </div>
+                            </div>
+                            <div class="column is-4 iconHide ">
+                                <div id="surprise" class="box icon-box filterImage">
+                                    <p class="dine-text">surprise me</p>
+                                    <img class="is-square-icon" src="assets/filter-surprise.png" alt="surprise me icon">
+                                </div>
+                            </div>
+                            <!-- End of icon filters -->
+
+                            <!-- **********************FOR RESULTS***************-->
+
+                            <div class="columns is-multiline has-background-link " id="imageContainer">
+                                <!-- IMAGES RESULTS HERE -->
+                            </div>
+                            <!-- ************************************************ -->
+
+
+                            <div class="column is-4 ">
+                                <div class="box yelp-img-box ">
+                                    <figure class="yelp-image">
+                                        <img class="image yelp-img is3by4 " src="https://s3-media3.fl.yelpcdn.com/bphoto/274eWXY5UtihrNWGQMa4aA/o.jpg">
+                                    </figure>
+                                    <div class="do-info-div">
+                                        <p class="name">
+                                            <a class="blink" href=#></a>Name:<a />
+                                        </p>
+                                        <p class="btext brating">PRating<span class="binfo">#ofReviews</span></p>
+                                        <p id="btext">000-000-0000</p>
+                                        <p class="btext">$$</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="column is-4 ">
+                                <div class="box yelp-img-box ">
+                                    <figure class="yelp-image">
+                                        <img class="image yelp-img is3by4 " src="https://s3-media3.fl.yelpcdn.com/bphoto/274eWXY5UtihrNWGQMa4aA/o.jpg">
+                                    </figure>
+                                    <div class="do-info-div">
+                                        <p class="name">
+                                            <a class="blink" href=#></a>Name:<a />
+                                        </p>
+                                        <p class="btext brating">PRating<span class="binfo">#ofReviews</span></p>
+                                        <p id="btext">000-000-0000</p>
+                                        <p class="btext">$$</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="column is-4 ">
+                                <div class="box yelp-img-box ">
+                                    <figure class="yelp-image">
+                                        <img class="image yelp-img is3by4 " src="https://s3-media3.fl.yelpcdn.com/bphoto/274eWXY5UtihrNWGQMa4aA/o.jpg">
+                                    </figure>
+                                    <div class="do-info-div">
+                                        <p class="name">
+                                            <a class="blink" href=#></a>Name:<a />
+                                        </p>
+                                        <p class="btext brating">PRating<span class="binfo">#ofReviews</span></p>
+                                        <p id="btext">000-000-0000</p>
+                                        <p class="btext">$$</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="column is-4 ">
+                                <div class="box yelp-img-box ">
+                                    <figure class="yelp-image">
+                                        <img class="image yelp-img is3by4 " src="https://s3-media3.fl.yelpcdn.com/bphoto/274eWXY5UtihrNWGQMa4aA/o.jpg">
+                                    </figure>
+                                    <div class="do-info-div">
+                                        <p class="name">
+                                            <a class="blink" href=#></a>Name:<a />
+                                        </p>
+                                        <p class="btext brating">PRating<span class="binfo">#ofReviews</span></p>
+                                        <p id="btext">000-000-0000</p>
+                                        <p class="btext">$$</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                        <!-- End of columns -->
+                    </article>
+                </div>
+                <!-- End main image-icon divs-->
+            </div>
+            <!-- End of sole ancestor -->
+        </div>
+        <!-- End of main container -->
+    </section>
+    <!-- End of filters section -->
+
+    <!-- FOR APP JS IMAGE RESULTS ********************************************** -->
+
+    <!-- var figure = $("<figure>");
+    var image = $("<img>").attr("src", `${response.businesses[i].image_url}`)
+    var figimg = figure.append(image);
+
+    var divCard = $("<div class='box img-box'>").append(figimg);
+
+    var col = $("<div class='column is-4'>");
+    var pName = $("<p>").text(`Name ${response.businesses[i].price}`);
+    var pPhone = $("<p>").text(`Phone: ${response.businesses[i].display_phone}`);
+    var pRating = $("<p>").text(`Rating: ${response.businesses[i].rating}`);
+    var pReview = $("<p>").text(`Reviews: ${response.businesses[i].review_count}`);
+    var pPrice = $("<p>").text(`Price: ${response.businesses[i].price}`);
+
+
+
+    divCard.append(figimg, pName, pPhone, pRating, pReview, pPrice);
+    col.append(divCard);
+    $("#imageContainer").append(col); -->
+
+
+    <!-- ********************************************** -->
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/dineout.js"></script>
+    <script src="./assets/js/specialfx.js"></script>
+    <!-- NOT USING BOOTSTRAP -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
+
+
+</body>
+
+</html>
