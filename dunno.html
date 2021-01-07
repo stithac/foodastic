@@ -22,7 +22,7 @@
         <nav class="navbar" style="background-color: white">
             <div class="container">
                 <div class="navbar-brand">
-                    <a class="navbar-item" href="index.css">
+                    <a class="navbar-item" href="index.html">
                         <img src="assets/foodastic_logo-red.jpg" alt="Logo">
                     </a>
                     <span class="navbar-burger burger" data-target="navbarMenu">
@@ -35,17 +35,18 @@
                     <div class="navbar-end">
                         <div class="tabs is-right">
                             <ul class="nav-links">
-                                <li><a href="dinein.html" style="color: black">Dine In</a></li>
-                                <li><a href="dineout.html" style="color: black">Dine Out</a></li>
-                                <li><a href="#" style="color:black">Dunno?</a></li>
-                                <li><a href="#" style="color:black">About Us</a></li>
-                                <li><a href="#Contact Us" style="color:black">Contact Us</a></li>
+                                <li><a href="dinein.html" style="color: black" target="_blank">Dine In</a></li>
+                                <li><a href="dineout.html" style="color: black" target="_blank">Dine Out</a></li>
+                                <li><a href="dunno.html" style="color:black" target="_blank">Dunno?</a></li>
+                                <li><a href="about.html" style="color:black" target="_blank">About Us</a></li>
+                                <li><a class = "modal-button" style="color:black" data-target="#modal">Contact Us</a></li>
+                                <li><span class="navbar-item">
+                                  <a class="button is-white is-outlined" href="favorites.html" target="_blank">
+                                     <i class="fa fa-star" aria-hidden="true" style="color: #e02239"></i>
+                                     <span title="favorites" style="color: #e02239">Favorites</span>
+                                  </a></span>
+                                </li>
                             </ul>
-                            <span class="navbar-item">
-                                <a class="button is-white is-outlined" href="Favorites">
-                                    <i class="fa fa-star" aria-hidden="true" style="color: #e02239"></i>
-
-                                    <span title="favorites" style="color: #e02239">Favorites</span>
                                 </a>
                             </span>
                         </div>
@@ -61,9 +62,9 @@
             <div class="container">
                 <div class="columns is-centered">
                     <div class="column is-half column-banner has-text-centered has-text-white">
-                        <h3 class="title has-text-white">
+                        <h3 class="title">
                             Dunno?<span>
-                                <h2 class="subtitle has-text-white">tell us more</h2>
+                                <h2 class="subtitle">tell us more</h2>
                             </span>
                         </h3>
                     </div>
@@ -116,7 +117,7 @@
                                 <!-- Check Selections -->
                                 <!-- TODO: Try to section and float sidebar content on tablet -->
                                 <div class="column fullTablet">
-                                    <p><span class="magic">LIKE MAGIC!</span><br><span class="foodastic">Foodtastic</span> will make food suggestions base on a few simple questions.</p>
+                                    <p><span class="magic">LIKE MAGIC!</span><br><span class="foodastic">Foodtastic</span> will make food suggestions based on a few simple questions. Go ahead</p>
                                     <br>
                                 </div>
 
@@ -189,9 +190,15 @@
                                 <div id="LoadingImage" style="display: none">
                                     <img src="./assets/img/loading.gif" />
                                   </div>
-                                  <h1 class="allcaps" style="font-size: 48px; text-align: center;">Foodastic Dunno? Analyzer</h1>
+                                  <!-- *** NEW ADDITION: "speedy eat picks" on click will return imageFilters after a search ***-->
+                            <!-- *** JQUERY added to dunno.js LINE 665*** -->
+                            <div id="filterImageBack" style ="padding:0; margin:0" class="column clickable is-12">speedy eat picks</div>
+                            <!-- ***** END speedy eat picks ***** -->
+                                  <h1 class="allcaps" style="font-size: 48px; text-align: center; color:#e02239; margin-top:0">Foodastic Dunno? Analyzer</h1>
                                 <p id ="recipesTitle" class = "">So you don't know what you want? No worries!... The <b><i>Foodastic Dunno? Analyzer</i></b> will make a few recipe and restaurant suggestions based on your responses to the 5 yellow mood cards below.  Don't feel like answering? Not a problem! Just click the red "Surprise Me" button and we'll provide you with some random suggestions! </p>
                             </div>
+
+
 
                             <div class="column is-4 filterImage">
                                 <div class="box dunno-icon-box">
@@ -214,7 +221,7 @@
                             <div class="column is-4 filterImage">
                                 <div class="box dunno-icon-box">
                                     <img class="check" id ="check2"src=""/>
-                                    <p class="dunno-text">random query</p>
+                                    <p class="dunno-text">random</p>
                                     <div class="dunno-icon-div">
                                         <button id="veniBtn" cardId="2" class="button is-rounded dunno-random-button has-text-white-ter good-mood dunnoIcon">veni?</button>
                                         <button  id="vidiBtn" cardId="2" class="button is-rounded dunno-random-button has-text-white-ter sad-mood dunnoIcon">vidi?</button>
@@ -225,7 +232,7 @@
                             <div class="column is-4 filterImage">
                                 <div class="box dunno-icon-box">
                                     <img class="check" id ="check3"src=""/>
-                                    <p class="dunno-text">your day?</p>
+                                    <p class="dunno-text">today?</p>
                                     <div class="dunno-choice-div">
                                         <label class=" checkbox day-choice"><input id="normalCheck" class="good-mood dunnoIcon" cardId="3" type="checkbox">Normal, Chill</label><br>
                                         <label class=" checkbox day-choice"><input id="awesomeCheck" class="good-mood dunnoIcon" cardId="3"  type="checkbox">Awesome</label><br>
@@ -238,6 +245,8 @@
                             <div class="column is-4 filterImage">
                                 <div class="box dunno-icon-box">
                                     <img class="check" id ="check4"src=""/>
+                                    <p class="dunno-text">tell</p>
+
                                     <div class="dunno-moth-div" style="text-align: center;">
                                         <img class="moth-icon" src="assets/filter-inkblot.png" alt="moth icon">
                                     </div><br>
@@ -276,9 +285,9 @@
                             </div>
                             <div class="column result is-4">
 
-                                <div class="box img-box resultEl " resultType="recipe" id="result1">
-                                    <figure class="image is-4by5">
-                                        <img id="pic1" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box resultEl " resultType="recipe" id="result1">
+                                    <figure class="image yelp-image">
+                                        <img id="pic1" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <br>
                                     <p class="recipeTitle" id="title1"></p>
@@ -288,9 +297,9 @@
                                 </div>
                             </div>
                             <div class="column result is-4 ">
-                                <div class="box img-box resultEl" resultType="recipe" id="result2">
-                                    <figure class="image is-4by5">
-                                        <img id="pic2" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box resultEl" resultType="recipe" id="result2">
+                                    <figure class="image yelp-image">
+                                        <img id="pic2" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <br>
                                     <p class="recipeTitle" id="title2"></p>
@@ -300,9 +309,9 @@
                                 </div>
                             </div>
                             <div class="column result is-4 ">
-                                <div class="box img-box resultEl" resultType="recipe" id="result3">
-                                    <figure class="image is-4by5">
-                                        <img id="pic3" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box resultEl" resultType="recipe" id="result3">
+                                    <figure class="image yelp-image">
+                                        <img id="pic3" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <br>
                                     <p class="recipeTitle" id="title3"></p>
@@ -312,9 +321,9 @@
                                 </div>
                             </div>
                             <div class="column result is-4">
-                                <div class="box img-box resultEl" resultType="recipe" id="result4">
-                                    <figure class="image is-4by5">
-                                        <img id="pic4" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box resultEl" resultType="recipe" id="result4">
+                                    <figure class="image yelp-image">
+                                        <img id="pic4" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <br>
                                     <p class="recipeTitle" id="title4"></p>
@@ -324,9 +333,9 @@
                                 </div>
                             </div>
                             <div class="column result is-4">
-                                <div class="box img-box resultEl " resultType="recipe" id="result5">
-                                    <figure class="image is-4by5">
-                                        <img id="pic5" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box resultEl " resultType="recipe" id="result5">
+                                    <figure class="image yelp-image">
+                                        <img id="pic5" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <br>
                                     <p class="recipeTitle" id="title5"></p>
@@ -337,9 +346,9 @@
                             </div>
                             <div class="column result is-4">
 
-                                <div class="box img-box resultEl " resultType="recipe" id="result6">
-                                    <figure class="image is-4by5">
-                                        <img id="pic6" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box resultEl " resultType="recipe" id="result6">
+                                    <figure class="image yelp-image">
+                                        <img id="pic6" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <br>
                                     <p class="recipeTitle" id="title6"></p>
@@ -352,12 +361,11 @@
 
                         </div>
                         <div class = "detailInformation">
+                            <h2 id="detailTitle"></h2>
                             <div style="text-align: right;">
                                 <img id="favIcon" src="./assets/img/white-heart.png" alt="favorite" class="nonfave"/>Add to Favorites
                             </div>
 
-                            <h2 id="detailTitle"></h2>
-                            <br>
                             <div style="text-align: center;">
                                 <img id= "detailImage" src="" alt="Recipe Image"/>
                             </div>
@@ -376,16 +384,16 @@
 
                     <article id = "restaurantResults" class="box ">
 
-                            <p id ="restaurantsTitle" class = "allcaps"></p>
+                            <p id ="restaurantsTitle" ></p>
 
 
                         <div class="columns is-multiline">
 
 
                             <div class="column is-4">
-                                <div class="box img-box resultEl" resultType="restaurant" id="result7" >
-                                    <figure class="image is-4by5">
-                                        <img id="pic7" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box resultEl" resultType="restaurant" id="result7" >
+                                    <figure>
+                                        <img id="pic7" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <br>
                                     <p class="recipeTitle" id="title7"></p>
@@ -395,9 +403,9 @@
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box  resultEl" resultType="restaurant" id="result8">
-                                    <figure class="image is-4by5">
-                                        <img id="pic8" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box  resultEl" resultType="restaurant" id="result8">
+                                    <figure>
+                                        <img id="pic8" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <br>
                                     <p class="recipeTitle" id="title8"></p>
@@ -407,9 +415,9 @@
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box  resultEl" resultType="restaurant" id="result9">
-                                    <figure class="image is-4by5">
-                                        <img id="pic9" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box  resultEl" resultType="restaurant" id="result9">
+                                    <figure>
+                                        <img id="pic9" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <br>
                                     <p class="recipeTitle" id="title9"></p>
@@ -419,9 +427,9 @@
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box  resultEl" resultType="restaurant" id="result10">
-                                    <figure class="image is-4by5">
-                                        <img id="pic10" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box  resultEl" resultType="restaurant" id="result10">
+                                    <figure >
+                                        <img id="pic10" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <br>
                                     <p class="recipeTitle" id="title10"></p>
@@ -431,9 +439,9 @@
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box  resultEl" resultType="restaurant" id="result11">
-                                    <figure class="image is-4by5">
-                                        <img id="pic11" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box  resultEl" resultType="restaurant" id="result11">
+                                    <figure>
+                                        <img id="pic11" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <br>
                                     <p class="recipeTitle" id="title11"></p>
@@ -443,9 +451,9 @@
                                 </div>
                             </div>
                             <div class="column is-4">
-                                <div class="box img-box  resultEl" resultType="restaurant" id="result12">
-                                    <figure class="image is-4by5">
-                                        <img id="pic12" class="pic" src="" alt="test image">
+                                <div class="box yelp-img-box  resultEl" resultType="restaurant" id="result12">
+                                    <figure>
+                                        <img id="pic12" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <br>
                                     <p class="recipeTitle" id="title12"></p>

@@ -197,8 +197,11 @@ function getResults(url, url2){
         obj = response
         $(obj).attr("dataId","recipe");
 
-        $("#recipesTitle").addClass("allcaps");
+        // $("#recipesTitle").addClass("allcaps");
+        $("#recipesTitle").css("fontSize", "28px");
         $("#recipesTitle").text("Recipes:");
+
+        $("#restaurantsTitle").css("fontSize", "28px");
         $("#restaurantsTitle").html("Restaurants: ");
         $("#restaurantResults").show();
         populateResults(obj);
@@ -312,12 +315,12 @@ function showDetails(obj){
         $("#detailTitle").html("<b>" + recipe.title + "</b>");
         $("#detailImage").attr("src", recipe.image);
 
-        $("#detailSummary").html("<b>Summary: </b><br/><br/>" + recipe.summary);
-        $("#detailInstructions").html("<b>Instructions: </b><br/><br/>");
+        $("#detailSummary").html("<b>RECIPE SUMMARY: </b><br/>" + recipe.summary);
+        $("#detailInstructions").html("<b>INSTRUCTIONS (if available): </b><br/>");
 
         for (i = 0; i < recipe.analyzedInstructions[0].steps.length; i++){
 
-            $("#detailInstructions").append("<b> Step " + i + ": </b>" + recipe.analyzedInstructions[0].steps[i].step +"<br/><br/>");
+            $("#detailInstructions").append("<b> Step " + i + ": </b>" + recipe.analyzedInstructions[0].steps[i].step +"<br/>");
             // console.log(recipe.analyzedInstructions[0].steps[i]);
         }
 
@@ -469,3 +472,10 @@ $("#favIcon").on("click", function(){
 
 })
 
+$("#filterImageBack").on("click", function() {
+    $(".filterImage").show();
+    // $("nameInput").val("");
+    $(".detailInformation").hide();
+    // $("#surpriseIcon").show();
+
+});

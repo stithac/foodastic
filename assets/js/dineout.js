@@ -24,6 +24,8 @@ var figure;
 var divCard;
 var pAddress;
 
+$(".yelp-img-box").hide();
+
 //On load get user city or zip
 $("#modal").fadeIn(); //Show modal on page load
 
@@ -46,6 +48,7 @@ $(".okay").on("click", function() {
             $("#modal").css("display", "none")
         }
     }) //end of .okay event listener
+
 
 
 // Initailize search
@@ -273,10 +276,19 @@ $("#filterImageBack").on("click", function() {
 });
 
 
+//.result event listener
+$(".resultEl").on("click", function(){
+
+    console.log("Result clicked");
+    // var title = $(this).children(".recipeTitle")[0].innerText;
+    console.log($(this));
+
+    // showDetails($(this));//call showDetails and pass clicked object
+
+}); //End of .result event listener
 
 
-
-/////////////////////////////// RABIA'S ORIGINAL CODE 
+/////////////////////////////// RABIA'S ORIGINAL CODE
 
 
 // $("#btnSearch").click(yelpSearch);
