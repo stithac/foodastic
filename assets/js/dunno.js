@@ -3,7 +3,7 @@ var apiKey1 = "214f60134dc9416a9544280f08aa9f0b";
 
 // var apiKey2 = "oTnHrNvfv_FD3_ZDg5QIUKHNbMbXvkowMU_TZMvjbF7I8_8JKQD0et_Scz_JwrnDvP0y2sqhnF9k2sz1PSvcM9iIQ2GfaLsFN52Rsw3YxocCyqTamA-qKIFOO3jaX3Yx"
 
-var apiKey2 = "dDXCEOuFO9JSMVQHXuQ0f_DK5y9AD2FFbHB6Ru9_oX5gPxDUXWqs1y__DTsKXd7rBGezL5GhwlInm5uVEaQNN2UWjsaeqVb-z7SanE7e9tLoVkPI_1SIRb5i2sD0X3Yx";
+var apiKey2 = "niMDXDEIx28W6kVP8Bs8oTlmzECwV5853cqETWmyfxWN-ggxYrpJcx0XPiSkO5e-rgllcs3CpbV57NiYuh43Z0psPVmHpXjU8AzfucLh85am1UQS3rN_3pK88nP3X3Yx"
 
 //filter variables
 var cuisine;
@@ -166,9 +166,10 @@ function getResults(url, url2){
         // dataType: "jsonp",
         // 'cache': true,
         headers: {
-            "Authorization": "Bearer " + apiKey2,
             "accept": "application/json",
-            "Access-Control-Allow-Origin":"*",
+            "x-requested-with": "xmlhttprequest",
+            "Access-Control-Allow-Origin": "*",
+            "Authorization": "Bearer " + apiKey2,
         },
     }).then(function(response) {
 
