@@ -16,11 +16,13 @@ html {
 /* Fonts and headers */
 
 
+
 option {
     font-family: 'Monteserrat' sans-serif;
     font-size: 10px;
     font-weight: 500px;
 }
+
 .column-banner {
     height: 75px;
     margin: auto;
@@ -98,6 +100,7 @@ h4 {
 }
 
 
+
 .title,
 .subtitle {
     display: inline;
@@ -156,6 +159,7 @@ h4 {
 
 
 /* decrease space between image div columns */
+
 
 .column {
     padding: .25rem;
@@ -381,3 +385,4 @@ hr.style {
               }
               
           }
+
