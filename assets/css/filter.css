@@ -9,13 +9,20 @@
 /* bg color */
 body,
 html {
-    background-color: hsl(0, 0%, 98%);
     background-color: #fff;
 }
 
 /* Fonts and headers */
 
-
+.title.has-text-white-itr {
+  
+    font-size: 50px;
+    color:white;
+    height: 75px;
+    margin: auto;
+    align-items: center;
+    /* line-height: 5vh; */
+  }
 
 option {
     font-family: 'Monteserrat' sans-serif;
@@ -23,10 +30,10 @@ option {
     font-weight: 500px;
 }
 
-.column-banner {
+.column-banner-ikr {
     height: 75px;
     margin: auto;
-    background-color: #fdc407;
+    background-color: #e02239;
     align-items: center;
 }
 
@@ -38,7 +45,7 @@ option {
     align-items: center;
 }
 
-.title {
+.title-ikr {
     font-family: 'Nerko One', cursive;
     font-size: 3.5rem;
     color:black;
@@ -46,12 +53,14 @@ option {
     text-align: center;
 }
 
-.subtitle {
+.subtitle-ikr {
     font-family: 'Monteserrat', sans-serif;
     color: hsl(0, 0%, 14%);
     text-align: center;
     font-size: 2rem;
 }
+
+
 
 /* Containers for subheader */
 
@@ -70,11 +79,31 @@ option {
 
 .navbar-item {
     font-family: 'Nerko One', cursive;
+    color: black !important; 
+    background-color: white;
+}
+
+.navbar-item:hover {
+    font-family: 'Nerko One', cursive;
+    color: black;
+    background: white !important;
+}
+
+.navbar-menu {
+    background-color:white !important ;
+}
+.navbar-burger.is-active:hover {
+    background-color:#e02239 !important ;
+ }
+
+.button-favorites{
+    color:black;
 }
 
 
+
 /* Hero section */
-.hero-body-jtr {
+.hero-body-ikr {
     background-image: url("../img/foodastic_Foodastic-Hero.png");
     background-position: center;
     background-size: cover;
@@ -218,8 +247,8 @@ label {
     font-family: 'Nerko One', cursive;
 }
 
-
-.Footer {
+/* footer */
+.Footer-itr {
     padding: 1.5rem 1.5rem;
     font-weight: bold;
     font-size: 0.85em;
@@ -227,12 +256,12 @@ label {
     text-align: center;
   }
   
-  .Footer a {
+  .Footer-itr a {
     padding-bottom: 1px;
     border: 0;
   }
 
-hr.style {
+hr.style-itr {
     border-top: 2px solid #e02239;
 }
 
@@ -250,7 +279,7 @@ hr.style {
     height: 25px;
 }
   
-  .facebook .border {
+  .facebook .border-itr {
     background: transparent;
     outline: none;
     color: #e02239;
@@ -263,7 +292,7 @@ hr.style {
     transition: all .2s ease-in-out;
   }
   
-  .facebook .border:hover {
+  .facebook .border-itr:hover {
     background: #e02239;
     border-color: #e02239;
     color: rgba(255,255,255, 0.9);
@@ -279,7 +308,7 @@ hr.style {
     height: 25px;
   }
   
-  .twitter .border {
+  .twitter .border-itr {
     background: transparent;
     outline: none;
     color: #e02239;
@@ -292,7 +321,7 @@ hr.style {
     transition: all .2s ease-in-out;
   }
   
-  .twitter .border:hover {
+  .twitter .border-itr:hover {
     background: #e02239;
     border-color: #e02239;
     color: rgba(255,255,255, 0.9);
@@ -307,7 +336,7 @@ hr.style {
     height: 25px;
   }
   
-  .instagram .border {
+  .instagram .border-itr {
     background: transparent;
     outline: none;
     color: #e02239;
@@ -320,7 +349,7 @@ hr.style {
     transition: all .2s ease-in-out;
   }
   
-  .instagram .border:hover {
+  .instagram .border-itr:hover {
     background: #e02239;
     border-color: #e02239;
     color: rgba(255,255,255, 0.9);
