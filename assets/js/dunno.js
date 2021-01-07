@@ -63,7 +63,7 @@ function getFilters(elem){
     var id = elem.attr("cardId");
     // console.log(id);
 
-    $("#check" + id).attr("src", "./assets/img/check.png");
+    // $("#check" + id).attr("src", "./assets/img/check.png");
 
     var total = goodIndicator + sadIndicator + badIndicator;
     console.log(total);

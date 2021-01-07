@@ -14,6 +14,15 @@ html {
     background-color: white;
 }
 
+body {
+display: flex;
+min-height: 100vh;
+flex-direction: column;
+}
+
+#wrapper {
+flex: 1;
+}
 
 /* nav-links style in html */
 
@@ -23,9 +32,23 @@ html {
 
 .navbar-item {
     font-family: 'Nerko One', cursive;
+    color: black !important; 
+    background-color: white;
+    
 }
 
+.navbar-item:hover {
+    font-family: 'Nerko One', cursive;
+    color: black;
+    background: white !important;
+}
 
+.navbar-menu {
+    background-color:white !important ;
+}
+.navbar-burger.is-active:hover {
+    background-color:#e02239 !important ;
+ }
 /* Hero section */
 
 .hero-body {
@@ -67,6 +90,17 @@ html {
     /* line-height: 5vh; */
 }
 
+.title.has-text-white-itr {
+  
+    font-size: 50px;
+    color:white;
+    height: 75px;
+    margin: auto;
+    background-color: #e02239;
+    align-items: center;
+    /* line-height: 5vh; */
+  }
+
 .content {
     font-family: 'Nerko One', cursive;
     font-size: 40px;
@@ -87,7 +121,8 @@ h4 {
 
 /* Button animation and styling for favorites and three tiles*/
 
-button {
+button,
+.button-itr {
     font-family: 'Monteserrat', sans-serif;
     border-radius: none;
     font-size: 15px;
@@ -112,6 +147,7 @@ button {
     transition: 0.5s;
 }
 
+
 .button:hover span {
     padding-right: 25px;
 }
@@ -132,20 +168,21 @@ label {
     font-family: 'Nerko One', cursive;
 }
 
-.Footer {
+/* footer */
+.Footer-itr {
     padding: 1.5rem 1.5rem;
     font-weight: bold;
     font-size: 0.85em;
     overflow-x: hidden;
     text-align: center;
-}
-
-.Footer a {
+  }
+  
+  .Footer-itr a {
     padding-bottom: 1px;
     border: 0;
 }
 
-hr.style {
+hr.style-itr {
     border-top: 2px solid #e02239;
 }
 
@@ -164,8 +201,8 @@ hr.style {
     width: 25px;
     height: 25px;
 }
-
-.facebook .border {
+  
+  .facebook .border-itr {
     background: transparent;
     outline: none;
     color: #e02239;
@@ -176,9 +213,9 @@ hr.style {
     border-radius: 100px;
     border: 2px solid #e02239;
     transition: all .2s ease-in-out;
-}
-
-.facebook .border:hover {
+  }
+  
+  .facebook .border-itr:hover {
     background: #e02239;
     border-color: #e02239;
     color: rgba(255, 255, 255, 0.9);
@@ -191,9 +228,9 @@ hr.style {
 .twitter {
     width: 25px;
     height: 25px;
-}
-
-.twitter .border {
+  }
+  
+  .twitter .border-itr {
     background: transparent;
     outline: none;
     color: #e02239;
@@ -204,9 +241,9 @@ hr.style {
     border-radius: 100px;
     border: 2px solid #e02239;
     transition: all .2s ease-in-out;
-}
-
-.twitter .border:hover {
+  }
+  
+  .twitter .border-itr:hover {
     background: #e02239;
     border-color: #e02239;
     color: rgba(255, 255, 255, 0.9);
@@ -219,9 +256,9 @@ hr.style {
 .instagram {
     width: 25px;
     height: 25px;
-}
-
-.instagram .border {
+  }
+  
+  .instagram .border-itr {
     background: transparent;
     outline: none;
     color: #e02239;
@@ -232,9 +269,9 @@ hr.style {
     border-radius: 100px;
     border: 2px solid #e02239;
     transition: all .2s ease-in-out;
-}
-
-.instagram .border:hover {
+  }
+  
+  .instagram .border-itr:hover {
     background: #e02239;
     border-color: #e02239;
     color: rgba(255, 255, 255, 0.9);
