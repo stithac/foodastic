@@ -159,6 +159,7 @@ $(searchBtn).on("click", function(event) {
 $(".filterImage").on("click", function(event) {
 
     $("#LoadingImage").show();
+    $(".filterImage").hide();
         var id = $(this).attr("id");
         console.log(id);
 
@@ -274,7 +275,7 @@ function showRecipeDetails(recipe) {
 //.result event listener
 $(".result").on("click", function(event) {
 
-    event.preventDefault();
+    $("#dineinBlurb").hide();
     console.log("Result clicked");
     // console.log($(this).children(".title")[0].innerHTML);
     var title = $(this).children(".recipeTitle")[0].innerHTML;
