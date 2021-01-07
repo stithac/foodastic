@@ -19,7 +19,8 @@
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
     <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
     <!-- NOTE: Included CSS here so you can add to test before adding to project style sheet -->
-
+    <!-- CSS -->
+    <link href="./assets/css/index.css" type="text/css" rel="stylesheet">
     <!-- CSS-2 -->
     <link rel="stylesheet" href="assets/css/dine.css">
 </head>
@@ -67,7 +68,7 @@
 
     <!-- HERO BANNER -->
     <section class="hero is-light ">
-        <div class="hero-body hero-body-jtr">
+        <div class="hero-body hero-body-dine">
             <div class="container">
                 <div class="columns is-centered">
                     <div class="column is-half column-banner has-text-centered">
@@ -113,6 +114,7 @@
             <button class="button is-medium is-dark okay" id="btnOK" style="margin-top:10px;">OK</button>
         </div>
     </div>
+
 
 
     <!-- SIDEBAR -->
@@ -249,7 +251,7 @@
                             <!-- ******************** NEW ADDITION: "speedy eat picks" on click will return imageFilters after a search *******************-->
 
 
-                            <div id="filterImageBack" class="column clickable is-12 ">speedy eat picks</div>
+                            <div id="filterImageBack" class="column clickable is-12">speedy eat picks</div>
 
                             <!-- ***** END speedy eat picks ***** -->
 
@@ -301,13 +303,13 @@
                             </div>
                             <!-- ************************************************ -->
 
-
-                            <div class="column is-4 ">
+                            <!-- TEST IMAGES -->
+                            <!-- <div class="column is-4 ">
                                 <div class="box yelp-img-box ">
                                     <figure class="yelp-image">
                                         <img class="image yelp-img is3by4 " src="https://s3-media3.fl.yelpcdn.com/bphoto/274eWXY5UtihrNWGQMa4aA/o.jpg">
                                     </figure>
-                                    <div class="do-info-div">
+                                    <div class="column is-half-tablet do-info-div">
                                         <p class="name">
                                             <a class="blink" href=#></a>Name:<a />
                                         </p>
@@ -316,31 +318,14 @@
                                         <p class="btext">$$</p>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
-                            <div class="column is-4 ">
+                            <!-- <div class="column is-4 ">
                                 <div class="box yelp-img-box ">
                                     <figure class="yelp-image">
                                         <img class="image yelp-img is3by4 " src="https://s3-media3.fl.yelpcdn.com/bphoto/274eWXY5UtihrNWGQMa4aA/o.jpg">
                                     </figure>
-                                    <div class="do-info-div">
-                                        <p class="name">
-                                            <a class="blink" href=#></a>Name:<a />
-                                        </p>
-                                        <p class="btext brating">PRating<span class="binfo">#ofReviews</span></p>
-                                        <p id="btext">000-000-0000</p>
-                                        <p class="btext">$$</p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="column is-4 ">
-                                <div class="box yelp-img-box ">
-                                    <figure class="yelp-image">
-                                        <img class="image yelp-img is3by4 " src="https://s3-media3.fl.yelpcdn.com/bphoto/274eWXY5UtihrNWGQMa4aA/o.jpg">
-                                    </figure>
-                                    <div class="do-info-div">
+                                    <div class="column do-info-div">
                                         <p class="name">
                                             <a class="blink" href=#></a>Name:<a />
                                         </p>
@@ -367,55 +352,66 @@
                                     </div>
                                 </div>
                             </div>
+
+
+                            <div class="column is-4 ">
+                                <div class="box yelp-img-box ">
+                                    <figure class="yelp-image">
+                                        <img class="image yelp-img is3by4 " src="https://s3-media3.fl.yelpcdn.com/bphoto/274eWXY5UtihrNWGQMa4aA/o.jpg">
+                                    </figure>
+                                    <div class="do-info-div">
+                                        <p class="name">
+                                            <a class="blink" href=#></a>Name:<a />
+                                        </p>
+                                        <p class="btext brating">PRating<span class="binfo">#ofReviews</span></p>
+                                        <p id="btext">000-000-0000</p>
+                                        <p class="btext">$$</p>
+                                    </div>
+                                </div>
+                            </div> -->
 
 
                         </div>
-                        <!-- End of columns -->
                     </article>
                 </div>
-                <!-- End main image-icon divs-->
             </div>
-            <!-- End of sole ancestor -->
         </div>
-        <!-- End of main container -->
     </section>
-    <!-- End of filters section -->
 
-    <!-- FOR APP JS IMAGE RESULTS ********************************************** -->
+    <!-- Footer with social media elements-->
 
-    <!-- var figure = $("<figure>");
-    var image = $("<img>").attr("src", `${response.businesses[i].image_url}`)
-    var figimg = figure.append(image);
+    <section>
+        <footer class="Footer">
+            <hr class="style">
+            <div class="content-jtr has-text-centered">
+                <h4 style="font-size: 25px">Foodastic is an independent entity with no affiliation with listed restaurants and recipes. &#169; 2021 by RAIJ</h4>
+                <p style="font-size: 12px;">This project is dedicated to those who love food.</p>
+                <div class="center">
+                    <span id="social">
+                        <ul>
+                            <span class="facebook">
+                                <a href="https://twitter.com/" target="_blank"><button class="border"><i class="fab fa-facebook"></i></button></a>
+                            </span>
 
-    var divCard = $("<div class='box img-box'>").append(figimg);
+                    <span class="twitter">
+                                <a href="https://www.facebook.com/" target="_blank"><button class="border"><i class="fab fa-twitter"></i></button></a>
+                            </span>
 
-    var col = $("<div class='column is-4'>");
-    var pName = $("<p>").text(`Name ${response.businesses[i].price}`);
-    var pPhone = $("<p>").text(`Phone: ${response.businesses[i].display_phone}`);
-    var pRating = $("<p>").text(`Rating: ${response.businesses[i].rating}`);
-    var pReview = $("<p>").text(`Reviews: ${response.businesses[i].review_count}`);
-    var pPrice = $("<p>").text(`Price: ${response.businesses[i].price}`);
-
-
-
-    divCard.append(figimg, pName, pPhone, pRating, pReview, pPrice);
-    col.append(divCard);
-    $("#imageContainer").append(col); -->
-
-
-    <!-- ********************************************** -->
+                    <span class="instagram">
+                                <a href="https://www.instagram.com/" target="_blank"><button class="border"><i class="fab fa-instagram"></i></button></a>
+                            </span>
+                    </ul>
+                    </span>
+                </div>
+            </div>
+        </footer>
+    </section>
 
 
-
-
-
+    <!-- scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/js/dineout.js"></script>
     <script src="./assets/js/specialfx.js"></script>
-    <!-- NOT USING BOOTSTRAP -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
-
 
 </body>
 

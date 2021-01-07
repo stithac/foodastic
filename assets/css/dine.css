@@ -10,7 +10,7 @@
             }
             
             html {
-                background-color: hsl(0, 0%, 98%);
+                background-color: #000;
                 /* background-color: #cacaca9d; */
                 background-color: #fff;
             }
@@ -26,13 +26,14 @@
             /* Text throughout */
             
             p {
-                color: hsl(0, 0%, 14%);
+                color: #000;
                 font-family: 'Monteserrat', sans-serif;
                 font-size: .90rem;
             }
             
-            .hero-body-jtr {
-                background-image: url("../fodastic-header-Hero.png");
+            .hero-body-jtr,
+            .hero-body-dine {
+                background-image: url("../img/foodastic_Hero-yellow-250.png");
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
@@ -53,15 +54,15 @@
             }
             
             .title {
-                color: hsl(0, 0%, 14%);
+                color: #000;
                 font-family: 'Nerko One', cursive;
                 font-size: 3.5rem;
-                font-weight: normal;
+                /* font-weight: normal; */
                 text-align: center;
             }
             
             .subtitle {
-                color: hsl(0, 0%, 14%);
+                color: #000;
                 font-family: 'Monteserrat', sans-serif;
                 font-size: 2rem;
                 text-align: center;
@@ -80,7 +81,7 @@
             }
             
             .titleA {
-                color: hsl(0, 0%, 14%);
+                color: #000;
                 font-family: 'Nerko One', cursive;
                 font-size: 2rem;
                 font-weight: normal;
@@ -95,8 +96,8 @@
                 text-align: center;
             }
             
-            .about-blurb {
-                color: hsl(0, 0%, 14%);
+            .about-blurb-jtr {
+                color: #000;
                 display: block;
                 font-family: 'Monteserrat', sans-serif;
                 font-size: .75rem;
@@ -108,17 +109,21 @@
                 text-align: center;
             }
             
-            .about-avatar {
+            .about-avatar-jtr {
                 height: auto;
                 margin: auto;
                 width: 65%;
+            }
+            
+            .about-section {
+                padding: 1.5rem;
             }
             /* Sidebar for all Dining pages  */
             
             #btnSearch,
             #searchBtn {
                 font-family: 'Nerko One', cursive;
-                background-color: hsl(0, 0%, 14%);
+                background-color: #000;
             }
             /* search button on Dunno */
             
@@ -132,7 +137,7 @@
                 font-size: .90rem;
                 font-family: 'Nerko One', cursive;
                 font-size: 1rem;
-                color: hsl(0, 0%, 14%);
+                color: #000;
             }
             
             .box-sidebar-tr {
@@ -194,7 +199,7 @@
             /* Speedy Eats bar */
             
             #filterImageBack {
-                color: hsl(0, 0%, 14%);
+                color: #000;
                 font-family: 'Monteserrat', sans-serif;
                 font-size: 1.5rem;
                 font-weight: bold;
@@ -364,11 +369,11 @@
             /********** DineIn & Dunno full recipe page   **********/
             
             .detailInformation {
-                padding: 0 80px;
+                padding: 0 100px;
             }
             
             #detailTitle {
-                color: hsl(0, 0%, 14%);
+                color: #000;
                 font-family: 'Nerko One', cursive;
                 font-size: 2rem;
                 font-weight: bold;
@@ -379,14 +384,14 @@
             }
             
             #detailImage {
-                max-width: 8700px;
+                max-width: 700px;
                 padding-bottom: 40px;
                 width: 100%;
             }
             
             #detailSummary,
             #detailIngredients {
-                color: hsl(0, 0%, 14%);
+                color: h#000;
                 font-family: 'Monteserrat', sans-serif;
                 font-size: .90rem;
                 line-height: 1.75;
@@ -496,7 +501,7 @@
                 font-family: 'Nerko One', cursive;
                 font-size: 1.15rem;
                 font-weight: normal;
-                color: hsl(0, 0%, 14%);
+                color: #000;
                 line-height: 1;
                 padding-top: 8px;
                 /* overflow-wrap: break-word; */
@@ -550,7 +555,7 @@
                     max-width: 50%;
                 }
                 .tile.is-child {
-                    width: 50%;
+                    width: 40%;
                     height: max-content;
                     margin-bottom: 25px;
                 }
@@ -562,10 +567,13 @@
                     font-size: 1.5rem;
                 }
                 .subtitleA {
+                    font-size: .80rem;
+                }
+                .about-blurb-jtr {
                     font-size: .75rem;
                 }
-                .about-blurb {
-                    font-size: .50rem;
+                .about-avatar-jtr {
+                    width: 65%;
                 }
             }
             
@@ -587,16 +595,145 @@
                 }
                 .yelp-img,
                 .pic.yelp-img.is-3by4 {
-                    float: right;
                     height: 200px;
-                    display: block;
                     width: 50%;
+                    float: right;
                     margin-right: 15px;
-                    padding: 5px 15px;
                 }
                 .do-info-div {
                     margin-top: 0px;
                     padding-top: 0px;
                     float: left;
                 }
+                .about-avatar {
+                    width: 200px;
+                }
+                .avatar-tile {
+                    display: inline;
+                }
+                .detailInformation {
+                    padding: 0 60px;
+                }
+            }
+            /* FROM INDEX CSS ********************** */
+            
+            h4 {
+                font-family: 'Nerko One', cursive;
+                font-size: 20px;
+                color: black;
+            }
+            
+            .title {
+                font-family: 'Nerko One', cursive;
+            }
+            
+            .Footer {
+                background-color: #fff;
+                padding: 1.5rem 1.5rem;
+                font-weight: bold;
+                font-size: 0.85em;
+                overflow-x: hidden;
+                text-align: center;
+                position: sticky;
+                left: 0;
+                bottom: 0 !important;
+                width: 100%;
+                height: 200px;
+            }
+            
+            .Footer a {
+                padding-bottom: 1px;
+                border: 0;
+            }
+            
+            hr.style {
+                border-top: 2px solid #e02239;
+            }
+            /* footer: social media */
+            
+            #social ul {
+                padding-left: 0px;
+                margin: 0 auto;
+            }
+            /** Facebook **/
+            
+            .facebook {
+                width: 25px;
+                height: 25px;
+            }
+            
+            .facebook .border {
+                background: transparent;
+                outline: none;
+                color: #e02239;
+                width: 25px;
+                height: 25px;
+                -webkit-border-radius: 100px;
+                -moz-border-radius: 100px;
+                border-radius: 100px;
+                border: 2px solid #e02239;
+                transition: all .2s ease-in-out;
+            }
+            
+            .facebook .border:hover {
+                background: #e02239;
+                border-color: #e02239;
+                color: rgba(255, 255, 255, 0.9);
+                transform: scale(1.2);
+            }
+            /** Twitter **/
+            
+            .twitter {
+                width: 25px;
+                height: 25px;
+            }
+            
+            .twitter .border {
+                background: transparent;
+                outline: none;
+                color: #e02239;
+                width: 25px;
+                height: 25px;
+                -webkit-border-radius: 100px;
+                -moz-border-radius: 100px;
+                border-radius: 100px;
+                border: 2px solid #e02239;
+                transition: all .2s ease-in-out;
+            }
+            
+            .twitter .border:hover {
+                background: #e02239;
+                border-color: #e02239;
+                color: rgba(255, 255, 255, 0.9);
+                transform: scale(1.2);
+            }
+            /** Instagram **/
+            
+            .instagram {
+                width: 25px;
+                height: 25px;
+            }
+            
+            .instagram .border {
+                background: transparent;
+                outline: none;
+                color: #e02239;
+                width: 25px;
+                height: 25px;
+                -webkit-border-radius: 100px;
+                -moz-border-radius: 100px;
+                border-radius: 100px;
+                border: 2px solid #e02239;
+                transition: all .2s ease-in-out;
+            }
+            
+            .instagram .border:hover {
+                background: #e02239;
+                border-color: #e02239;
+                color: rgba(255, 255, 255, 0.9);
+                transform: scale(1.2);
+            }
+            
+            #social ul:hover>li:hover {
+                opacity: 1;
             }
