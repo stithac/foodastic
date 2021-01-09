@@ -111,7 +111,8 @@ function populateResults(recipes) {
     $(".filterImage").hide();
     $(".result").hide();
     $(".recipeTitle").val("");
-
+    //ADDED - turn speedy eat's bar yellow to signify it's clickable/can return to filter images
+    $("#filterImageBack").attr("style", "background-color: #fdc407;");
 
     for (i = 0; i < recipes.results.length; i++) {
 
@@ -158,8 +159,8 @@ $(searchBtn).on("click", function(event) {
 //filterImages event listener
 $(".filterImage").on("click", function(event) {
 
-    $("#LoadingImage").show();
-    $(".filterImage").hide();
+        $("#LoadingImage").show();
+        $(".filterImage").hide();
         var id = $(this).attr("id");
         console.log(id);
 
@@ -240,9 +241,9 @@ function showRecipeDetails(recipe) {
     $("#detailTitle").html(recipe.title);
     $("#detailSummary").html("<b>RECIPE SUMMARY: </b><br/>" + recipe.summary);
     $("#detailInstructions").html("<b>INSTRUCTIONS (if available): </b><br/>");
-    for (i = 0; i < recipe.analyzedInstructions[0].steps.length; i++){
+    for (i = 0; i < recipe.analyzedInstructions[0].steps.length; i++) {
 
-        $("#detailInstructions").append("<b> Step " + i + ": </b>" + recipe.analyzedInstructions[0].steps[i].step +"<br/>");
+        $("#detailInstructions").append("<b> Step " + i + ": </b>" + recipe.analyzedInstructions[0].steps[i].step + "<br/>");
         // console.log(recipe.analyzedInstructions[0].steps[i]);
     }
 
@@ -255,17 +256,17 @@ function showRecipeDetails(recipe) {
     //Checks to see if there are any favorites in localStorage. If there are favorites saved in localStorage, they are stored in favorites variable.
     var storedFavorites = JSON.parse(localStorage.getItem("favorites"));
 
-    if (storedFavorites !== null){
+    if (storedFavorites !== null) {
         favorites = storedFavorites;
         console.log(favorites);
     }
 
     var item = favorites.find(item => item.name == title);
 
-    if (item !== undefined){
+    if (item !== undefined) {
 
         $("#favIcon").attr("src", "./assets/img/red-heart.png"),
-        $("#favIcon").attr("class", "fave");
+            $("#favIcon").attr("class", "fave");
 
     }
     console.log(recipe);
@@ -296,43 +297,43 @@ $(".result").on("click", function(event) {
 }); //End of .result event listener
 
 
-$("#favIcon").on("click", function(){
+$("#favIcon").on("click", function() {
 
     var index;
     var id = $("#favIcon").attr("resultId");
 
-    if($("#favIcon").hasClass("nonfave")){
+    if ($("#favIcon").hasClass("nonfave")) {
 
         $("#favIcon").attr("src", "./assets/img/red-heart.png");
         $("#favIcon").addClass("fave");
         $("#favIcon").removeClass("nonfave");
 
-    }else{
+    } else {
         $("#favIcon").attr("src", "./assets/img/white-heart.png");
         $("#favIcon").addClass("nonfave");
         $("#favIcon").removeClass("fave");
     }
 
 
-        index = recipes.findIndex(x => x.id == id);
-        console.log(recipes);
-        console.log(recipes[index]);
+    index = recipes.findIndex(x => x.id == id);
+    console.log(recipes);
+    console.log(recipes[index]);
 
-        var item = favorites.find(item => item.id == index);
+    var item = favorites.find(item => item.id == index);
 
-        if (item == undefined) {
-            var favorite = {
-                id: id,
-                name: recipes[index].title,
-                type: "recipe"
-            }
-
-            favorites.push(favorite);
-            console.log(id);
-            console.log(favorites);
-
-            localStorage.setItem("favorites", JSON.stringify(favorites)); //Updates favorites array in local storage
+    if (item == undefined) {
+        var favorite = {
+            id: id,
+            name: recipes[index].title,
+            type: "recipe"
         }
+
+        favorites.push(favorite);
+        console.log(id);
+        console.log(favorites);
+
+        localStorage.setItem("favorites", JSON.stringify(favorites)); //Updates favorites array in local storage
+    }
 
 })
 
@@ -342,6 +343,8 @@ $("#favIcon").on("click", function(){
 //"Line 224 Speedy eats bar" on dinein.html. Returns imageFilters after  search
 $("#filterImageBack").on("click", function() {
     $(".filterImage").show();
+    $("#filterImageBack").attr("style", "background-color: #fff");
     $("nameInput").val("");
     $(".detailInformation").hide();
+
 });

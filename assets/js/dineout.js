@@ -59,6 +59,7 @@ $("#btnSearch").on("click", function() {
 
     $("#LoadingImage").show();
     $(".filterImage").hide();
+
     getFilters();
 });
 
@@ -100,7 +101,7 @@ function getFilters() {
 
 //Build URL from sidebar filters
 function buildURL(param) {
-    url ="https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=12&term=restaurants";
+    url = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?limit=12&term=restaurants";
     console.log(url);
 
     //Ensure either city or zip is present -- MOVED TO GLOBAL
@@ -164,7 +165,9 @@ function getYelpResults(url) {
             // console.log(response); //Test
             // console.log(results); //Test
         }
-        $(".iconHide").hide();
+        $(".filterImage").hide();
+        //ADDED - turn speedy eat's bar yellow to signify it's clickable/can return to filter images
+        $("#filterImageBack").attr("style", "background-color: #fdc407;");
         renderResults(response);
     });
 }
@@ -200,6 +203,8 @@ function renderResults(response) {
 
         col = $("<div class='column is-4'>").append(divCard);
         $("#imageContainer").append(col);
+
+
     };
 }
 
@@ -254,6 +259,7 @@ $(".filterImage").on("click", function(event) {
     $("#LoadingImage").show();
     $(".filterImage").hide();
     //add to parameters - consolidate this step later
+
 
     var id = $(this).attr("id");
     console.log(id);
@@ -366,5 +372,10 @@ $("#favIcon").on("click", function() {
 $("#filterImageBack").on("click", function() {
     console.log("clicked");
     $("#imageContainer").empty();
-    $(".iconHide").show();
+    $(".filterImage").show();
+
+    //ADDED - turn speedy background "white"
+    $("#filterImageBack").attr("style", "background-color: #fff");
+
+
 })
