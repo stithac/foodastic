@@ -8,12 +8,8 @@
     <!-- Bulma-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
-    <!-- Bootstrap CSS JENNER NOT USING, this tag is affecting layout -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
-    <!-- Not sure what link below is -->
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- CSS -->
-    <!-- <link href="./assets/css/index.css" type="text/css" rel="stylesheet"> -->
     <!-- CSS-2-->
     <link rel="stylesheet" href="./assets/css/dine.css">
 
@@ -192,25 +188,10 @@
                                     <button id="searchBtn" class="button is-medium is-dark">Search</button>
                                 </div>
                             </div>
-                            <!-- end content -->
                         </div>
-                        <!-- end box -->
                     </article>
-                    <!-- end tile -->
                 </div>
-                <!-- end quarter column-->
 
-                <!-- NEW: ICON & IMAGE DUMP DIV -->
-                <!-- ************************** NOTE: THESE HIDE ON RESULTS LOAD -->
-                <!-- Main content: Icon Filters -->
-
-
-                <!-- ISSUE: CAN WE MOVE idResultsDiv to column or box below? Current code is affecting layout. UNCOMMENT this and partnering divs below to see -->
-
-                <!-- <div id="resultsDiv" class="tile is-parent is-9">
-                    <article class="tile is-child "> -->
-
-                <!-- ISSUE END************************ -->
 
                 <!-- This stays -->
                 <div class=" column">
@@ -276,7 +257,7 @@
                             <!-- Results Area-->
                             <div class="column is-4">
                                 <div class="box yelp-img-box result" id="result1">
-                                    <figure class="image is-3by4">
+                                    <figure class="image yelp-image">
                                         <img id="pic1" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <p class="recipeTitle" id="title1"></p>
@@ -287,7 +268,7 @@
                             </div>
                             <div class="column is-4 ">
                                 <div class="box yelp-img-box result" id="result2">
-                                    <figure class="image is-3by4">
+                                    <figure class="image yelp-image">
                                         <img id="pic2" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <p class="recipeTitle" id="title2"></p>
@@ -298,7 +279,7 @@
                             </div>
                             <div class="column is-4 ">
                                 <div class="box yelp-img-box result" id="result3">
-                                    <figure class="image is-3by4">
+                                    <figure class="image yelp-image">
                                         <img id="pic3" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <p class="recipeTitle" id="title3"></p>
@@ -309,7 +290,7 @@
                             </div>
                             <div class="column is-4">
                                 <div class="box yelp-img-box result" id="result4">
-                                    <figure class="image is-3by4">
+                                    <figure class="image yelp-image">
                                         <img id="pic4" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <p class="recipeTitle" id="title4"></p>
@@ -320,7 +301,7 @@
                             </div>
                             <div class="column is-4">
                                 <div class="box yelp-img-box result" id="result5">
-                                    <figure class="image is-3by4">
+                                    <figure class="image yelp-image">
                                         <img id="pic5" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <p class="recipeTitle" id="title5"></p>
@@ -332,7 +313,7 @@
                             <div class="column is-4">
                                 <!-- <div class="box img-box result" > -->
                                 <div class="box yelp-img-box result " id="result6">
-                                    <figure class="image is-3by4">
+                                    <figure class="image yelp-image">
                                         <img id="pic6" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <p class="recipeTitle" id="title6"></p>
@@ -345,7 +326,7 @@
                                 <div class="box yelp-img-box result" id="result7">
                                     <figure>
                                         <img id="pic7" class="pic yelp-img is-3by4" src="" alt="test image">
-                                    </figure>
+                                    </figure class="image yelp-image">
                                     <div class="do-info-div">
                                         <p class="recipeTitle" id="title7"></p>
                                         <p class="blurb" id="blurb7"></p>
@@ -356,7 +337,7 @@
                             </div>
                             <div class="column is-4">
                                 <div class="box yelp-img-box result" id="result8">
-                                    <figure>
+                                    <figure class="image yelp-image">
                                         <img id="pic8" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <div class="do-info-div">
@@ -369,7 +350,7 @@
                             </div>
                             <div class="column is-4">
                                 <div class="box yelp-img-box result" id="result9">
-                                    <figure>
+                                    <figure class="image yelp-image">
                                         <img id="pic9" class="pic yelp-img is-3by4" src="" alt="test image">
                                     </figure>
                                     <div class="do-info-div">
@@ -478,10 +459,11 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <!--Bootstrap js -->
+
+    <script src="./assets/js/navbar.js"></script>
     <script src="./assets/js/dinein.js"></script>
     <script src="./assets/js/specialfx.js"></script>
-    <script src="./assets/js/navbar.js"></script>
+
 
 </body>
 

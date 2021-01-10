@@ -10,7 +10,7 @@ var cuisine;
 var city;
 var zipCode;
 
-var limit = 10;//Number of results to bring back
+var limit = 10; //Number of results to bring back
 
 //Indicators for dunno analyzer
 var goodIndicator = 0;
@@ -36,29 +36,29 @@ $(".detailInformation").hide() //Hide detail information div on page load
 $("#modal").fadeIn(); //Show modal on page load
 
 //select the modal close button by class and apply a click even listener
-    $(".close").on("click", function (){
-        //select the modal element by id , and apply display none when close is clicked
-        //this will close the modal on click
-        $("#modal").css("display", "none")
-    });
+$(".close").on("click", function() {
+    //select the modal element by id , and apply display none when close is clicked
+    //this will close the modal on click
+    $("#modal").css("display", "none")
+});
 
-    $(".okay").on("click", function(){
+$(".okay").on("click", function() {
         city = $("#city").val();
 
         zipCode = $("#zip").val();
 
-        if(city == "" && zipCode == ""){
+        if (city == "" && zipCode == "") {
 
             $("#helpText").text("Please enter your city or zip code.");
 
-        }else{
+        } else {
             $("#modal").css("display", "none");
             $("#zipInput").val(zipCode);
             $("#cityInput").val(city);
         }
-    })//end of .okay event listener
+    }) //end of .okay event listener
 
-function getFilters(elem){
+function getFilters(elem) {
 
     var id = elem.attr("cardId");
     // console.log(id);
@@ -70,20 +70,20 @@ function getFilters(elem){
 
     var parameters = {};
 
-    if(total < 4){
-        if(elem.hasClass("good-mood")){
+    if (total < 4) {
+        if (elem.hasClass("good-mood")) {
             goodIndicator++;
-            console.log("Good: "+ goodIndicator);
-        }else if (elem.hasClass("sad-mood")){
+            console.log("Good: " + goodIndicator);
+        } else if (elem.hasClass("sad-mood")) {
             sadIndicator++;
             console.log("Sad: " + sadIndicator);
-        }else if (elem.hasClass("bad-mood")){
+        } else if (elem.hasClass("bad-mood")) {
             badIndicator++;
             console.log("Bad: " + badIndicator);
         }
-    }else if (total >= 4){
+    } else if (total >= 4) {
 
-        if(goodIndicator >= sadIndicator && goodIndicator >= badIndicator){
+        if (goodIndicator >= sadIndicator && goodIndicator >= badIndicator) {
 
             parameters = {
                 ingredients: "",
@@ -94,7 +94,7 @@ function getFilters(elem){
                 attributes: "",
                 term: "restaurants"
             }
-        }else if(sadIndicator >= goodIndicator && sadIndicator >= badIndicator){
+        } else if (sadIndicator >= goodIndicator && sadIndicator >= badIndicator) {
             parameters = {
                 ingredients: "",
                 name: "casserole",
@@ -104,7 +104,7 @@ function getFilters(elem){
                 attributes: "",
                 term: "restaurants"
             }
-        }else if(badIndicator >= goodIndicator && badIndicator >= sadIndicator){
+        } else if (badIndicator >= goodIndicator && badIndicator >= sadIndicator) {
             parameters = {
                 ingredients: "",
                 name: "soup",
@@ -114,7 +114,7 @@ function getFilters(elem){
                 attributes: "",
                 term: "restaurants"
             }
-        }else{
+        } else {
             parameters = {
                 ingredients: "",
                 name: "",
@@ -135,12 +135,12 @@ function getFilters(elem){
 - Takes in an object and creates a queryURL based on the parameters passed in.
 - It then passes the URL to the getResults() function.
 ******/
-function createQueryURL(params){
+function createQueryURL(params) {
 
     var queryURL1 = "https://api.spoonacular.com/recipes/complexSearch?apiKey=" + apiKey1 + "&includeNutrition=true&addRecipeInformation=true&includeIngredients=" + params.ingredients.toString() + "&titleMatch=" + params.name + "&cuisine=" + params.cuisine + "&type=" + params.category;
 
     var queryURL2 =
-    "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?&categories=" + params.category2 + "&attributes=" + params.attributes + "&term=" + params.term + "&location=" + city + zipCode;
+        "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?&categories=" + params.category2 + "&attributes=" + params.attributes + "&term=" + params.term + "&location=" + city + zipCode;
     console.log(queryURL2);
 
     getResults(queryURL1, queryURL2); //Pass query URL to the getResults function
@@ -153,11 +153,13 @@ function createQueryURL(params){
 - Takes in the queryURL and makes the AJAX call.
 - The response is then passed to the populateRecipes function.
 ******/
-function getResults(url, url2){
+function getResults(url, url2) {
 
     $("#LoadingImage").show();
     //hide filter images / results and clear recipeTitles
     $(".filterImage").hide();
+    //ADDED - turn speedy eat's bar yellow to signify it's clickable/can return to filter images
+    $("#filterImageBack").attr("style", "background-color: #fdc407");
     // $(".result").hide();
 
     $.ajax({
@@ -173,41 +175,41 @@ function getResults(url, url2){
         },
     }).then(function(response) {
 
-        for (i = 0; i <response.businesses.length; i++){
+        for (i = 0; i < response.businesses.length; i++) {
             var restaurant = response.businesses[i];
             restaurants.push(restaurant);
         }
 
         var obj2 = {};
         obj2 = response
-        $(obj2).attr("dataId","restaurant");
+        $(obj2).attr("dataId", "restaurant");
         $("#LoadingImage").hide();
         populateResults(obj2);
 
         $.ajax({
-        url: url,
-        method: "GET"
-    }).then(function(response) {
+            url: url,
+            method: "GET"
+        }).then(function(response) {
 
 
-        for(i = 0; i < response.results.length; i++){
-            var recipe = response.results[i];
-            recipes.push(recipe);
-        }
-        var obj = {};
-        obj = response
-        $(obj).attr("dataId","recipe");
+            for (i = 0; i < response.results.length; i++) {
+                var recipe = response.results[i];
+                recipes.push(recipe);
+            }
+            var obj = {};
+            obj = response
+            $(obj).attr("dataId", "recipe");
 
-        // $("#recipesTitle").addClass("allcaps");
-        $("#recipesTitle").css("fontSize", "28px");
-        $("#recipesTitle").text("Recipes:");
+            // $("#recipesTitle").addClass("allcaps");
+            $("#recipesTitle").css("fontSize", "28px");
+            $("#recipesTitle").text("Recipes:");
 
-        $("#restaurantsTitle").css("fontSize", "28px");
-        $("#restaurantsTitle").html("Restaurants: ");
-        $("#restaurantResults").show();
-        populateResults(obj);
+            $("#restaurantsTitle").css("fontSize", "28px");
+            $("#restaurantsTitle").html("Restaurants: ");
+            $("#restaurantResults").show();
+            populateResults(obj);
 
-    });
+        });
     });
 
 
@@ -218,7 +220,7 @@ function getResults(url, url2){
 - Invoked from getResults() function.
 - Takes in response from AJAX call and updates DOM elements with appropriate parameters
 ******/
-function populateResults(response){
+function populateResults(response) {
     // console.log(response.results.length);
 
     $(".result").show();
@@ -229,54 +231,54 @@ function populateResults(response){
     var dataId = $(response).attr("dataId");
     $(".recipeTitle").val("");
 
-    if( dataId === "recipe"){
+    if (dataId === "recipe") {
 
         results = response;
         console.log(results);
         j = 1;
 
-        for (i = 0; i < 6; i++){
+        for (i = 0; i < 6; i++) {
 
-            $("#pic"+ j).attr("src", results.results[i].image);
+            $("#pic" + j).attr("src", results.results[i].image);
             $("#title" + j).text(results.results[i].title);
             $("#rating" + j).text("Rating: " + results.results[i].spoonacularScore + "/100");
 
-            if(parseInt(results.results[i].pricePerServing) <= 100){
+            if (parseInt(results.results[i].pricePerServing) <= 100) {
                 $("#price" + j).text("$");
-            }else if(parseInt(results.results[i].pricePerServing) > 100 && parseInt(results.results[i].pricePerServing) < 600 ){
+            } else if (parseInt(results.results[i].pricePerServing) > 100 && parseInt(results.results[i].pricePerServing) < 600) {
                 $("#price" + j).text("$$");
             } else {
                 $("#price" + j).text("$$$");
             }
 
-            if($("#title"+j) !== ""){
+            if ($("#title" + j) !== "") {
                 $("#result" + j).show();
                 j++;
-            }else {
+            } else {
                 $("#result" + j).hide();
             }
             // console.log(j);
         }
-    }else if( dataId === "restaurant"){
+    } else if (dataId === "restaurant") {
         j = 7;
         results = response;
         console.log(results);
-        for (i = 0; i < 7; i++){
+        for (i = 0; i < 7; i++) {
 
             console.log(j);
-               $("#pic"+ j).attr("src", results.businesses[i].image_url);
-               $("#title" + j).text(results.businesses[i].name);
-               $("#rating" + j).text("Rating: " + results.businesses[i].rating + "/5");
-               $("#price" + j).text(results.businesses[i].price);
+            $("#pic" + j).attr("src", results.businesses[i].image_url);
+            $("#title" + j).text(results.businesses[i].name);
+            $("#rating" + j).text("Rating: " + results.businesses[i].rating + "/5");
+            $("#price" + j).text(results.businesses[i].price);
 
-               $("#result" + j).show();
-               j++;
-            }
+            $("#result" + j).show();
+            j++;
+        }
     }
 
-}//End of populateResults()
+} //End of populateResults()
 
-function showDetails(obj){
+function showDetails(obj) {
     console.log(obj);
 
     $(".result").hide();
@@ -291,23 +293,23 @@ function showDetails(obj){
     var storedFavorites = JSON.parse(localStorage.getItem("favorites"));
 
 
-    if (storedFavorites !== null){
+    if (storedFavorites !== null) {
         favorites = storedFavorites;
         console.log(favorites);
     }
 
     var item = favorites.find(item => item.name == title);
 
-    if (item !== undefined){
+    if (item !== undefined) {
 
         $("#favIcon").attr("src", "./assets/img/red-heart.png"),
-        $("#favIcon").attr("class", "fave");
+            $("#favIcon").attr("class", "fave");
 
     }
 
     // console.log(obj.attr("resultType"));//testing
 
-    if(obj.attr("resultType") == "recipe"){
+    if (obj.attr("resultType") == "recipe") {
         $("#favIcon").addClass("recipe");
 
         var index = recipes.findIndex(x => x.title === title);
@@ -321,17 +323,17 @@ function showDetails(obj){
         $("#detailSummary").html("<b>RECIPE SUMMARY: </b><br/>" + recipe.summary);
         $("#detailInstructions").html("<b>INSTRUCTIONS (if available): </b><br/>");
 
-        for (i = 0; i < recipe.analyzedInstructions[0].steps.length; i++){
+        for (i = 0; i < recipe.analyzedInstructions[0].steps.length; i++) {
 
-            $("#detailInstructions").append("<b> Step " + i + ": </b>" + recipe.analyzedInstructions[0].steps[i].step +"<br/>");
+            $("#detailInstructions").append("<b> Step " + i + ": </b>" + recipe.analyzedInstructions[0].steps[i].step + "<br/>");
             // console.log(recipe.analyzedInstructions[0].steps[i]);
         }
 
-        $("#detailTime").html("<b> Ready in: </b>" +  recipe.readyInMinutes + " minutes");
+        $("#detailTime").html("<b> Ready in: </b>" + recipe.readyInMinutes + " minutes");
 
         $("#favIcon").attr("resultId", recipe.id);
 
-    }else if (obj.attr("resultType") == "restaurant"){
+    } else if (obj.attr("resultType") == "restaurant") {
         $("#favIcon").addClass("restaurant");
 
         var index2 = restaurants.findIndex(x => x.name === title);
@@ -341,9 +343,9 @@ function showDetails(obj){
         $("#detailTitle").html("<b>" + restaurant.name + "</b>");
         $("#detailImage").attr("src", restaurant.image_url);
 
-        $("#detailSummary").html("<b>Restaurant website: </b> <a href = "+ restaurant.url + "'>" + restaurant.name + " website </a><br/><br/><b>Phone Number: </b>" + restaurant.phone + "<br/><br/> <b>Address: </b>");
+        $("#detailSummary").html("<b>Restaurant website: </b> <a href = " + restaurant.url + "'>" + restaurant.name + " website </a><br/><br/><b>Phone Number: </b>" + restaurant.phone + "<br/><br/> <b>Address: </b>");
 
-        for (i = 0; i < restaurant.location.display_address.length; i++){
+        for (i = 0; i < restaurant.location.display_address.length; i++) {
             $("#detailSummary").append(restaurant.location.display_address[i] + " ");
         }
 
@@ -352,19 +354,19 @@ function showDetails(obj){
 
 }
 
-function getRecipeDetails(resultId){
+function getRecipeDetails(resultId) {
 
     var queryURL2 = "https://api.spoonacular.com/recipes/" + resultId + "/information?apiKey=" + apiKey1;
 
     $.ajax({
         url: queryURL2,
         method: "GET"
-        }).then(function(response) {
-            console.log(response);
-            showRecipeDetails(response);
-        });
+    }).then(function(response) {
+        console.log(response);
+        showRecipeDetails(response);
+    });
 
-}//End of getRecipeDetails()
+} //End of getRecipeDetails()
 
 
 /******
@@ -372,7 +374,7 @@ function getRecipeDetails(resultId){
 ******/
 
 //searchBtn event listener
-$("#btnSearch").on("click",function(event){
+$("#btnSearch").on("click", function(event) {
 
     event.preventDefault();
     console.log("Search button clicked");
@@ -380,58 +382,58 @@ $("#btnSearch").on("click",function(event){
 });
 
 //filterImages event listener
-$(".dunnoIcon").on("click", function(){
+$(".dunnoIcon").on("click", function() {
 
-    getFilters($(this));//Call getFilters() function and pass the obj that was clicked
+        getFilters($(this)); //Call getFilters() function and pass the obj that was clicked
 
-})//End of filterImage click event
+    }) //End of filterImage click event
 
-$("#surpriseIcon").on("click",function(){
+$("#surpriseIcon").on("click", function() {
 
-        parameters = {
-            ingredients: "",
-            name: "",
-            cuisine: "african,american,cajun,chinese,french,italian,mexican,southern,thai,spanish",
-            category: "",
-            category2: "",
-            attributes: "",
-            term: "restaurants"
-        }
+    parameters = {
+        ingredients: "",
+        name: "",
+        cuisine: "african,american,cajun,chinese,french,italian,mexican,southern,thai,spanish",
+        category: "",
+        category2: "",
+        attributes: "",
+        term: "restaurants"
+    }
 
     createQueryURL(parameters);
 })
 
 //.result event listener
-$(".resultEl").on("click", function(){
+$(".resultEl").on("click", function() {
 
     console.log("Result clicked");
     var title = $(this).children(".recipeTitle")[0].innerText;
     console.log(title);
 
-    showDetails($(this));//call showDetails and pass clicked object
+    showDetails($(this)); //call showDetails and pass clicked object
 
 }); //End of .result event listener
 
 
 
-$("#favIcon").on("click", function(){
+$("#favIcon").on("click", function() {
 
     var index;
     var id = $("#favIcon").attr("resultId");
 
-    if($("#favIcon").hasClass("nonfave")){
+    if ($("#favIcon").hasClass("nonfave")) {
 
         $("#favIcon").attr("src", "./assets/img/red-heart.png");
         $("#favIcon").addClass("fave");
         $("#favIcon").removeClass("nonfave");
 
-    }else{
+    } else {
         $("#favIcon").attr("src", "./assets/img/white-heart.png");
         $("#favIcon").addClass("nonfave");
         $("#favIcon").removeClass("fave");
     }
 
-    if($("#favIcon").hasClass("recipe")){
+    if ($("#favIcon").hasClass("recipe")) {
 
         index = recipes.findIndex(x => x.id == id);
         console.log(recipes);
@@ -452,7 +454,7 @@ $("#favIcon").on("click", function(){
             localStorage.setItem("favorites", JSON.stringify(favorites)); //Updates favorites array in local storage
         }
 
-    }else if($("#favIcon").hasClass("restaurant")){
+    } else if ($("#favIcon").hasClass("restaurant")) {
         index = restaurants.findIndex(x => x.id == id);
 
         console.log(restaurants[index]);
@@ -478,6 +480,8 @@ $("#favIcon").on("click", function(){
 $("#filterImageBack").on("click", function() {
     $(".filterImage").show();
     // $("nameInput").val("");
+    //ADDED - turn speedy eat's bar back to white
+    $("#filterImageBack").attr("style", "background-color: #fff");
     $(".detailInformation").hide();
     // $("#surpriseIcon").show();
 
