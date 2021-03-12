@@ -2,7 +2,7 @@
 #### By Rabia, Ashley, Ikra, Jenner
 
 ## Link to Application
-Direct link to application: https://github.com/stithac/project1_group7/
+Direct link to application: https://stithac.github.io/project1_group7/
 
 ## Group Name:
 RAIJ _(RAGE)_: Because 4 women, 1 project... Yeah, we get it
