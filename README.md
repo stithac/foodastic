@@ -1,3 +1,5 @@
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://www.mit.edu/~amini/LICENSE.md)
+
 # Project 1: Foodastic Meal Search Engine, 7 Jan 20
 #### By Rabia, Ashley, Ikra, Jenner
 
